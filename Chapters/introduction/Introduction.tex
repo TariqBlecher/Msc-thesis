@@ -88,7 +88,7 @@ In M87, where the jet is dominant, micro-arcsecond scale astrometry, capable wit
 \textbf{Fig: 2/3 panels of simulated polarimetric images of Sgr A*/M87 showing ordered magnetic fields}
 \subsection{Challenges and obstacles in mm-VLBI observations}
 %Pr : 2, St : 2
-Performing what is known as Very Long Baseline Interometry (VLBI) at mm-wavelengths presents unique calibration challenges, including very short atmospheric coherence times that are typically $\lesssim$10~s \citep{Doeleman_2009}, low calibrator source sky density, complex and variable calibrator source structure, and antenna pointing accuracies that are a non-negligible fraction of the antenna primary beam. Addition These effects may place significant limitations on the sensitivity, image fidelity, and dynamic range that can be achieved with mm-VLBI.  Performing mm-VLBI however, is a difficult task for a variety of reasons. Firstly the arrays are inhomogenous, made up of a collections of different stations working together, Difficult to get time on all the stations. there are a variety of signal corruptions which take place. Briefly introduce signal corruptions, variability, ..etc, how these represent calibration and interpretation challenges.
+Performing Very Long Baseline Interometry (VLBI) at mm-wavelengths presents unique calibration challenges, including very short atmospheric coherence times that are typically $\lesssim$10~s \citep{Doeleman_2009}, low calibrator source sky density, complex and variable calibrator source structure, and antenna pointing accuracies that are a non-negligible fraction of the antenna primary beam. Addition These effects may place significant limitations on the sensitivity, image fidelity, and dynamic range that can be achieved with mm-VLBI.  Performing mm-VLBI however, is a difficult task for a variety of reasons. Firstly the arrays are inhomogenous, made up of a collections of different stations working together, Difficult to get time on all the stations. there are a variety of signal corruptions which take place. Briefly introduce signal corruptions, variability, ..etc, how these represent calibration and interpretation challenges.
 
 
 \subsection{Science extraction : parameter estimation and imaging}
@@ -99,14 +99,44 @@ Briefly discuss imaging, it's difficulties..\\we need to measure the fractional
 asymmetry of the shadow shape with respect to its angular size to the few percent
 ~\\
 Estimating the `macro'-parameters of Sgr A*, spin, orientation, position angle through a Bayesian parameter estimation analysis with closure quantities\\
-Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's many objectives. 
+Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's many objectives.
 ~\\
 \textbf{Fig: A Broderick 2016 posterior probability distribution (?)}
 
 \subsection{A realistic mm-VLBI simulator}
-%Pr : 1 : St : 1
+%Pr : 1 : St : 2
 
-Given the significant, yet surmountable, observational challenges that the EHT faces, we have undertaken this project to leverage metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package called \textsc{MeqSilhouette}. While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. \textsc{MeqSilhouette} enables realistic interferometric simulations of mm-VLBI observations in order to gain deeper understanding of a wide range of signal propagation and calibration effects. In this paper we describe the software package along with its main features that include the capability to simulate tropospheric, ISM scattering, and time-variable antenna pointing error effects. This technology enables us to understand a wide range of mm-VLBI signal propagation and calibration systematics, quantify their effect on accretion flow and gravitational theoretical model selection, and hence maximise the scientific utility from EHT observations. 
+%Why simulate: intro
+Given the significant observation challenges that the EHT faces, we have undertaken this project to build a mm-VLBI observation and signal corruption simulator.  There are many benefits of such a toolkit and indeed synthetic data simulation is common practice for every major scientific experiment, with a recent example of gravitational wave template matching for LIGO (ref) or the extensive synthetic data generation for LHC particle collision experiments (ref).  In essence such a simulator would bridge the divide between physics governing the region associate with the source (e.g. SMBH) and the raw data, hence completing the link in the theoretical signal propagation chain. The remainder of this section will briefly discuss the variety of use cases for an EHT synthetic data simulator and how we have designed the software to meet these requirements. 
+
+%Specific use cases of simulations
+A key observational use case is the testing of calibration, parameter estimation and imaging algorithms and strategies. As the inputs to the simulator are known exactly, when passing simulated data through the data processing pipelines, we are better able to explore sources of error which would otherwise be impossible to disentangle from intrinsic source features.  A straightforward way to perform such a test is through the simulation of a set of `standard challenges' . Such datasets would then be calibrated and/or imaged with a variety of algorithms and routines which should identify comparative benefits and drawbacks.   
+
+
+This be especially useful to explore unknown systematic errors which could be present in the signal processing chain and if unaccounted, could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's objectives.
+
+
+
+
+Through the eventual construction of an end-to-end pipeline, realistic synthetic data can be fit to observations, effectively reversing the simulator to perform calibration and parameter estimation. 
+
+This contributes to theory through better determination of the scientific capabilities of the available instrumentation and measurement techniques.
+
+
+
+[doeleman 2009]
+Another use case for observations is that critical resources (such as stable frequency standards, high-bandwidth recording equipment, and phased-array processors) are likely to be limited initially, and telescope upgrades (such as surface accuracy improvement, expanded IF bandwidth, additional receiver bands, and simultaneous dual-polarization capability) must necessarily be prioritized. Simulated observational data can help assess the tradeoffs that must be considered for optimization of Galactic Center VLBI observations.
+
+
+
+While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. \textsc{MeqSilhouette} enables realistic interferometric simulations of mm-VLBI observations in order to gain deeper understanding of a wide range of signal propagation and calibration effects. 
+leverage metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package called \textsc{MeqSilhouette}. 
+
+
+%what the thesis will do
+This thesis will describe the software package along with its main features that include the capability to simulate tropospheric, ISM scattering, and time-variable antenna pointing error effects. 
+
+This technology enables us to understand a wide range of mm-VLBI signal propagation and calibration systematics, quantify their effect on accretion flow and gravitational theoretical model selection, and hence maximise the scientific utility from EHT observations. 
 
 
 
