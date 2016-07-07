@@ -50,50 +50,18 @@ s_{ij}=|V_{ij}| \sqrt{\frac{ \tau \Delta \nu}{SEFD_i SEFD_j}},
 where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $|V_{ij}|$ is the visibility amplitude and $SEFD$ is the system equivalent flux density. The result that closure phase is entirely immune to station based effects breaks down however when time averaging in the presence of baseline dependent effects like thermal noise as illustrated in section~\ref{closure_errors}.
  
  \subsubsection{Variability and the static source assumption}
-%PR 1 St 2
+%PR 1 St 1
 
-%the assumption
+%the assumption and how it breaks the image-vis fourier transform relation
 Implicit in our description of interferometry above, we assumed that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is time-variable),  the visibilities measured over the course of an observation can no longer be related to a single image and if they are, the resulting image would appear smeared out as it is averaged over many realisations. 
-%explicitly defining variability
-Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Most commonly variability is refers to changes in source flux (visibility amplitude) but I include changes in source structure and position (visibility phase) and source polarisation. Practically it is difficult to separate source and instrumental variability without accurate models and measurements for all non-source signal propagation effects. Models of several signal corruptions will be discussed in later chapters but here it is relevant to repeat that time variability of each corruption is emphasised in our theory and simulation. In addition the simulator allows for the input source to be generically variable. 
-%Observed variability from SgrA
-Although the static source assumption holds for most interferometric observations, the accretion flow and magnetic field structures around a SMBH can be variable on far shorter timescales.  In particular, Sgr~$^\star$ exhibits variability on timescales of minutes to hours in the radio (including mm-VLBI), near-infrared, and X-ray bands (Doeleman 2009 and references therein, Fish_2009, Johnson_2015b). This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delay between flares in different bands an expanding plasma model (Marrone, 2008) is often used. One intriguing observational result is that variability in the polarisation domain is far more rapid than the total intensity. 
-
-%Light crossing analysis
-ISCO depends on spin so maybe can constrain spin through periodic orbital features
-In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes for a maximally rotating BH to about half an hour for a non-rotating BH. M87 ISCO is longer ~ dConsidering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src} is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, $\theta =  variability   which corresponds to scales of  $15 R_{\rm Sch}$  light-crossing times of . 
-
-Early EHT observations of Sgr~A$^\star$ already showed significant inter-day variability in total intensity \cite{Fish_2009}. The variability timescale is much shorter in polarisation which detect intra-hour variability of fractional polarisation \cite{Johnson_2015b}.  and  Johnson (2014) shows that even with few baselines, the astrometry of a compact flaring component can be well constrained. 
-
+%explicitly defining variability any intrinsic source variability
+Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Most commonly variability is refers to changes in source flux (visibility amplitude) but I include changes in source structure and position (visibility phase) and source polarisation. Practically it is difficult to separate source and instrumental variability without accurate models and measurements for all non-source signal propagation effects. 
 %There are some ways to track/mitigate variability but this is beyond scope
-Depending on the science goals, variability can either be a target or an obstacle to the observation. If a flare is dominated by a localised variable structure, several approaches \citep{Doeleman_2009, Johnson_2014} show that EHT can track flaring structures using closure quantities and polarimetric ratios which could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can  mitigate the effects of variability so that the shadow can still be measured although approach would downweight the longest baselines. An extensive discussion on analysis and interpretation of variability is out of the scope of this thesis.
-
-
-conversation with Jeandrew - hotspot if in a resonant orbit, would not be sheared as the orbital frequency is constant within the resonance. easier example of orbital resonance is saturn's rings 
-
-From Fish 2011:
-``
-Broad band flares:
-(Marrone
-et al. 2008; Yusef-Zadeh et al. 2009; Dodds-Eden et al. 2009)
-
-For previous sub-mm observations which show variability of SgrA*: 
-Marrone et al. 2006; Yusef-Zadeh et al. 2009;
-Kunneriath et al. 2010
-
-While a low expansion speed is predicted by
-models of adiabatically expanding source components (Eckart
-et al. 2008, 2009; Yusef-Zadeh et al. 2009), these models also
-5The Astrophysical Journal Letters, 727:L36 (6pp), 2011 February 1
-Fish et al.
-predict an increase in source size. Our observations detect
-Sgr A* after the increase in flux density has occurred, but we do
-not find evidence of an increase in source size as predicted by
-adiabatic expansion. Future, more sensitive observations of Sgr
-A* before, during, and after a flare event will be necessary to
-more fully understand the mechanism responsible for variability
-in Sgr A*.
-``
+If a flare is dominated by a localised variable structure, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track flaring structures with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios which could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no fringe-fitting errors.
+%Observed variability from SgrA
+Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~$^\star$,  exhibits variability on timescales of minutes to hours in the radio (including in EHT observations), near-infrared (NIR), and X-ray bands (e.g. Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b). This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model (Fish_2011).  Signatures of periodic variability at NIR and x-ray (Genzel et al. 2003; B ́elanger et al. 2006) have been used to argue for the presence of orbiting hotspots (Doeleman_2009). As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrain through the detection periodic orbital features. However a longer light curve in the NIR is more representative of a power-law scale variability (Meyer_2008). These observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating the presence of highly variable magnetic fields.
+%Light crossing analysis
+In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the maximally rotating realisation to about half an hour for a non-rotating BH. The ISCO period for M87 is longer on the order of day scales. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src} is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, which corresponds to scales of  $15 R_{\rm Sch}$, further evidence of emission areas close the event horizon.
 
 \subsection{Scattering basics}
 %PR 1 St 2

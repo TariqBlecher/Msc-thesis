@@ -14,7 +14,7 @@ A more recent example is a 2014 science verification result with the Atacama Lar
 \begin{figure*}
 \begin{center}
 
-\includegraphics[width=1.4\columnwidth]{../../images/hltau}
+\includegraphics[width=1.4\columnwidth]{Images/hl_tau}
 \caption{The young stellar system HL Tau, observed at 223 GHz by ALMA. The orbits of forming planets appear as dark rings cut out of the disk. The presence of these bodies are suprising given that host star is still very young. The detail in this image was made possible by the milliarcsec resolution acheivable with ALMA. \label{fig:hl_tau}}
 
 \end{center}
@@ -48,7 +48,7 @@ This thesis is centred around such a class of emerging early 21st century instru
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=1.4\columnwidth]{../../images/eht_globe}
+\includegraphics[width=1.4\columnwidth]{Images/eht_globe}
 \caption{(Image credit: Remo Tilanius) Event Horizon Telescope uses \textbf{Earth-diameter baselines} to attain \textbf{resolution} \boldmath$\sim 10$ $\mu$arcsec. \label{fig:eht_globe}%
 }
 \end{center}
@@ -104,45 +104,28 @@ Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could 
 \textbf{Fig: A Broderick 2016 posterior probability distribution (?)}
 
 \subsection{A realistic mm-VLBI simulator}
-%Pr : 1 : St : 2
+%Pr : 1 : St : 1
 
 %Why simulate: intro
-Given the significant observation challenges that the EHT faces, we have undertaken this project to build a mm-VLBI observation and signal corruption simulator.  There are many benefits of such a toolkit and indeed synthetic data simulation is common practice for every major scientific experiment, with a recent example of gravitational wave template matching for LIGO (ref) or the extensive synthetic data generation for LHC particle collision experiments (ref).  In essence such a simulator would bridge the divide between physics governing the region associate with the source (e.g. SMBH) and the raw data, hence completing the link in the theoretical signal propagation chain. The remainder of this section will briefly discuss the variety of use cases for an EHT synthetic data simulator and how we have designed the software to meet these requirements. 
+Given the significant observation challenges that the EHT faces, we have undertaken this project to build a mm-VLBI observation and signal corruption simulator.  There are many benefits for using such a toolkit and indeed synthetic data simulation is common practice for every major scientific experiment. Two prominent examples is the  extensive synthetic data generation for gravitational wave template matching for LIGO (ref) or for LHC particle collision experiments (ref). In essence such a simulator would fill in the final part of the theoretical signal propagation chain, effectively taking  astrophysical simulations of the source (e.g. SMBH) as an input and returning realistic synthetic data. This allows a more effective interplay between theory and observation. The remainder of this section will briefly discuss several use cases for an EHT synthetic data simulator and how we have designed the software to meet these requirements. 
 
 %Specific use cases of simulations
-A key observational use case is the testing of calibration, parameter estimation and imaging algorithms and strategies. As the inputs to the simulator are known exactly, when passing simulated data through the data processing pipelines, we are better able to explore sources of error which would otherwise be impossible to disentangle from intrinsic source features.  A straightforward way to perform such a test is through the simulation of a set of `standard challenges' . Such datasets would then be calibrated and/or imaged with a variety of algorithms and routines which should identify comparative benefits and drawbacks.   
 
+%Testing calim through standard challenges
+A key observational use case is the testing of calibration, parameter estimation and imaging algorithms and strategies. As the inputs to the simulator are known exactly, when passing simulated data through the data processing pipelines, we are better able to explore sources of error which are difficult to disentangle from intrinsic source features in real data.  A straightforward way to perform such a test is through the creation of a set of `standard challenge' dataset. Such datasets would be available to the entire community input into their calibration and/or imaging routines. Following this, a detailed comparison between the different strategies in varying regimes (source and other factors) can be made. Importantly, a systematic investigation of a particular algorithm across many different datasets could provide insight into subtle or previously unknown sources of error.
 
-This be especially useful to explore unknown systematic errors which could be present in the signal processing chain and if unaccounted, could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's objectives.
+%bayesian parameter estimation
+Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016} offer a promising approach to constrain theoretical models when using visibilities or visibility derived quantities. However, unaccounted systematic errors in the signal processing chain could bias  the posterior probability distribution, precluding a robust and accurate determination of key science parameters. Through the construction of an end-to-end simulation pipeline, the Bayesian parameter estimation procedure extended to handle more realistic synthetic data. This would entail combining many iterations data simulator with a solver to perform calibration and parameter estimation. %leave for now
 
+%Optimising observations
+Simulated data can also assist in the optimisation of the experimental configuration. Financial constrains require the prioritisation of hardware upgrades e.g. increasing bandwidth, surface accuracy improvement, deployment of water vapour radiometers or additional receiver bands. Simulated data together with calibration and imaging pipelines can help to quantify the benefit of each improvement based on expected scientific return. This approach can even be extended to assess new candidate stations, especially as new geographic locations e.g. in Southern Africa are receiving increasing attention due to the potential long baselines to ALMA, SPT and European stations.
 
+%other simulation efforts
+Recently, there has been an increase in the attention given to simulating EHT observations of Sgr~A$^*$ (\citealt{Fish_2014}; \citealt{Lu_2014}; \citealt{2015arXiv151201413B}). However, these are primarily focused on image reconstruction and assume perfect phase calibration i.e. no troposphere-induced fringe-fitting errors; perfect antenna pointing accuracy; perfect phasing efficiency; and in most cases simple, non-variable Gaussian kernel smoothing to simulate ISM scattering. Clearly, as the EHT array is enhanced (and likely expanded), so too must the interferometric simulations evolve to provide ever-more realistic predictions on the confidence levels with which parameters can be extracted and hence exclude theoretical models of gravity and/or accretion flows.
 
+%the Meqtrees+MS approach
 
-Through the eventual construction of an end-to-end pipeline, realistic synthetic data can be fit to observations, effectively reversing the simulator to perform calibration and parameter estimation. 
-
-This contributes to theory through better determination of the scientific capabilities of the available instrumentation and measurement techniques.
-
-
-
-[doeleman 2009]
-Another use case for observations is that critical resources (such as stable frequency standards, high-bandwidth recording equipment, and phased-array processors) are likely to be limited initially, and telescope upgrades (such as surface accuracy improvement, expanded IF bandwidth, additional receiver bands, and simultaneous dual-polarization capability) must necessarily be prioritized. Simulated observational data can help assess the tradeoffs that must be considered for optimization of Galactic Center VLBI observations.
-
-
-
-While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. \textsc{MeqSilhouette} enables realistic interferometric simulations of mm-VLBI observations in order to gain deeper understanding of a wide range of signal propagation and calibration effects. 
-leverage metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package called \textsc{MeqSilhouette}. 
-
-
-%what the thesis will do
-This thesis will describe the software package along with its main features that include the capability to simulate tropospheric, ISM scattering, and time-variable antenna pointing error effects. 
-
-This technology enables us to understand a wide range of mm-VLBI signal propagation and calibration systematics, quantify their effect on accretion flow and gravitational theoretical model selection, and hence maximise the scientific utility from EHT observations. 
-
-
-
-
-
-
+Over the past decade, significant effort has been placed on advanced radio interferometric calibration and imaging algorithms for centimetre and metre-wave facilities in response to the large number of new arrays in construction or design phase (e.g. MeerKAT, ASKAP, SKA, LOFAR, HERA). A leading software package in this pursuit is \textsc{MeqTrees}\footnote{https://ska-sa.github.io/meqtrees/} \citep*{Noordam_2010}, which was developed to simulate, understand and address the calibration issues to be faced with the greatly enhanced sensitivity, instantaneous bandwidth, and field-of-view of such facilities. For example, \textsc{MeqTrees} is rooted in the Measurement Equation mathematical formalism \citep{Hamaker_1996}, which parameterizes the signal path into distinct $2 \times 2$ complex  matrices called Jones matrices. This formalism and applications thereof are laid out in \citep{Smirnov_2011a,Smirnov_2011b,Smirnov_2011c} and are arbitrarily generalized to model any (linear) effect, including undesired signal corruptions that often may have subtle yet systematic effects. \textsc{MeqTrees} has been applied to correct for direction dependent calibration errors to JVLA and WSRT observations, achieving record-breaking high dynamic range images \citep{Smirnov_2011c}. The effectiveness provided by the Measurement Equation formalism in radio interferometric calibration provides a strong motivation to explore its application to challenging goal of imaging a supermassive black hole silhouette with mm-VLBI. To construct this simulator we leverage off metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package which we name, \textsc{MeqSilhouette}.  Use of \textsc{MeqTrees} and \textsc{measurement set} data format lends itself to investigating a range of different techniques that are used in other areas of interferometry (e.g. coh-Jones paper). While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. This technology enables us to understand a wide range of mm-VLBI signal propagation and calibration systematics, quantify their effect on accretion flow and gravitational theoretical model selection, and hence maximise the scientific utility from EHT observations. 
 
 
 
