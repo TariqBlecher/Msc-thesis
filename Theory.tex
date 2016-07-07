@@ -10,11 +10,11 @@ The signal corruptions which we have identified as the most prominent occurs in 
 
 van-citterlike theorem a relationship between the image of the sky and it's fourier transform.
 
-\begin{equation}\label{eq:vis_im}
+%\begin{equation}\label{eq:vis_im}
 
-van-citterlike theorem
+%van-citterlike theorem
 
-\end{equation}•
+%\end{equation}•
 
 
 Briefly introduce interferometry. Necessity of interferometry to obtain adequate
@@ -59,12 +59,12 @@ Note that I am using the term `variability' in a general sense which refers to c
 %There are some ways to track/mitigate variability but this is beyond scope
 If a flare is dominated by a localised variable structure, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track flaring structures with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios which could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no fringe-fitting errors.
 %Observed variability from SgrA
-Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~$^\star$,  exhibits variability on timescales of minutes to hours in the radio (including in EHT observations), near-infrared (NIR), and X-ray bands (e.g. Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b). This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model (Fish_2011).  Signatures of periodic variability at NIR and x-ray (Genzel et al. 2003; B ́elanger et al. 2006) have been used to argue for the presence of orbiting hotspots (Doeleman_2009). As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrain through the detection periodic orbital features. However a longer light curve in the NIR is more representative of a power-law scale variability (Meyer_2008). These observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating the presence of highly variable magnetic fields.
+Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~$^\star$,  exhibits variability on timescales of minutes to hours in the radio (including in EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.  Signatures of periodic variability at NIR and x-ray \citep{Genzel_2003; Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrain through the detection periodic orbital features. However a longer light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. These observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating the presence of highly variable magnetic fields.
 %Light crossing analysis
-In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the maximally rotating realisation to about half an hour for a non-rotating BH. The ISCO period for M87 is longer on the order of day scales. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src} is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, which corresponds to scales of  $15 R_{\rm Sch}$, further evidence of emission areas close the event horizon.
+In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the maximally rotating realisation to about half an hour for a non-rotating BH. The ISCO period for M87 is longer on the order of day scales. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, which corresponds to scales of  $15 R_{\rm Sch}$, further evidence of emission areas close the event horizon.
 
 \subsection{Scattering basics}
-%PR 1 St 2
+%PR 1 St 1
 % Similiar to paper Fig. An illustration of basic scattering in the strong and weak regimes PR 1
 
 Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the interstellar medium (ISM) (\citealt{Bower_2006}, \citealt{Gwinn_2014}), while the second is due to poorly-mixed water vapour in the Earth's troposphere (\citealt*{Carilli_1999}, \citealt*{Lay_1997}). It is essential that the effects of the scattering phenomena are understood for a rigorous calibration and interpretation of data.  Towards this end, simulation modules approximating scattering in both media are implemented in \textsc{MeqSilhouette}. As an introduction to the separate descriptions of each, we review a simple scattering model.
@@ -73,7 +73,7 @@ Millimetre wavelength radiation originating at the Galactic Centre is repeatedly
 An electro-magnetic wave is scattered when it passes through a medium with refractive index inhomogeneities. Following \citet{Narayan_1992}, this effect can be modeled as a thin screen, located between source and observer planes and orientated perpendicular to the line-of-sight. The screen, indexed by coordinate vector $\mathbf{x}$, adds a stochastic phase $\phi(\mathbf{x})$ to the incoming wave at each point on the screen, yielding a corrugated, outgoing wavefront. We define the Fresnel scale as  $r_{\rm F} = \sqrt{\lambda D_{\rm os}/2\pi}$, where $D_{\rm os}$ is the observer-scatterer distance, or the distance where the geometrical path difference $\frac{2\pi}{\lambda} (D_{\rm os} - \sqrt{D_{\rm os}^2 + r_{\rm F}^2}) =\frac{1}{2}$~rad.
 
 
-To determine the resultant electric field at a point in the plane of the observer, indexed by coordinate vector $\mathbf{X}$, one has to take into account all possible ray paths from the screen to $\mathbf{X}$. To illustrate the model, a calculation of the electric field amplitude, $|E(\mathbf{X})|$ yields the Fresnel-Kirchoff integral \citep*{BORN_1980}
+To determine the resultant electric field at a point in the plane of the observer, indexed by coordinate vector $\mathbf{X}$, one has to take into account all possible ray paths from the screen to $\mathbf{X}$. To illustrate the model, a calculation of the electric field amplitude generated by a point source, $|E(\mathbf{X})|$ yields the Fresnel-Kirchoff integral \citep*{BORN_1980}
 \begin{equation}\label{Fresnel- Kirchoff}
 |E(\mathbf{X})| = C \int_{\rm screen} \exp\left[i\phi(\mathbf{x}) + i \frac{(\mathbf{x}-\mathbf{X})^2}{2 r_{\rm F}}\right]\mathbf{dx},
 \end{equation}
@@ -96,7 +96,16 @@ where $r_{\rm 0}$ is the phase coherence length scale defined such that $D_\phi(
 Kolmogorov turbulence, which describes how kinetic energy injected at an outer length scale $r_{\rm out}$ cascades to increasingly smaller scales until finally dissipated at an inner length scale $r_{\rm in}$, predicts $\beta = 5/3$ in the domain ${r_{\rm in}<<r<<r_{\rm out}}$. This scaling has been demonstrated to be a reasonable approximation for the ISM over scales $r \sim 10^2$~km to $>1$~AU \citep*{Johnson_2015a}, and also for the troposphere with $r< \Delta h$, where $\Delta h$ is the thickness of the turbulent layer \cite{Coulman_1985}. The specifics of the tropospheric model will be explored further in later sections.
 
 
-The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the scattering which is split into the strong and weak regimes. In weak scattering, $ r_{\rm 0} \gg r_{\rm F}$ and hence by equation\ ~\ref{kolmogorov}, $D_{\phi}(r_{\rm F}) \ll 1$. This implies that most of the radiative power measured on a point $\mathbf{X}$ will originate from a screen area $A_{\rm weak} \approx \pi r_{\rm F}^2$. Whereas in the regime of \emph{strong scattering}, $ r_{\rm 0} \ll r_{\rm F}$ yielding  $D_{\phi}(r_{\rm F}) \gg 1$. This  results in coherent signal propagation onto the point $\mathbf{X}$ from multiple disconnected zones each of area $A_{strong} \approx \pi r_{\rm 0}^2$ \citep{Narayan_1992}. Scattering in the troposphere and ISM fall into the regimes of weak and strong scattering respectively.
+The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the scattering which is split into the strong and weak regimes, Fig.~ref{fig:scatter}. In weak scattering, $ r_{\rm 0} \gg r_{\rm F}$ and hence by equation\ ~\ref{kolmogorov}, $D_{\phi}(r_{\rm F}) \ll 1$. This implies that most of the radiative power measured on a point $\mathbf{X}$ will originate from a screen area $A_{\rm weak} \approx \pi r_{\rm F}^2$. Whereas in the regime of \emph{strong scattering}, $ r_{\rm 0} \ll r_{\rm F}$ yielding  $D_{\phi}(r_{\rm F}) \gg 1$. This  results in coherent signal propagation onto the point $\mathbf{X}$ from multiple disconnected zones each of area $A_{strong} \approx \pi r_{\rm 0}^2$ \citep{Narayan_1992}. Scattering in the troposphere and ISM fall into the regimes of weak and strong scattering respectively.
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=1.\columnwidth]{Images/scatter.pdf}
+\caption{Illustration depicting the basics of scattering in the weak (left) and strong (right) regimes. In the weak regime, the signal is coherently propagated over an area, $A_{\rm weak} \approx \pi r_{\rm F}^2$ whereas in the strong regime, coherent propagation is split over many areas of size $A_{strong} \approx \pi r_{\rm 0}^2$. \label{fig:scatter}
+}
+\end{center}
+\end{figure*}
 
 
 To evolve the screen in time, we assume a frozen screen i.e. that the velocity of the individual turbulent eddies is dominated by the bulk motion of scattering medium \citep[e.g.][]{Lay_1997}. This allows us to treat the screen as frozen but advected over the observer by a constant motion. Hence time variability can be easily incorporated by the relative motion between source, scattering screen and observer.
@@ -105,25 +114,32 @@ To evolve the screen in time, we assume a frozen screen i.e. that the velocity o
 \section{ISM scattering}
 %PR 2 St 3
 
+%An intro following on from basics
  For Galactic centre sources like Sagittarius A*, interstellar density inhomogeneities result in angular and temporal broadening as well as scintillation. Understanding the effect of each of these corruptions is key to the interpretation and modeling of intrinsic source structure. 
+
+%observations - history of scattering towards GC - blurring\\
+  %                       {\bf Fig. Plot showing angular size of source as a function of frequency}
+
+
+
+                %          - recent evidence of refractive substructure and non-zero closure phases\\
+                         {\bf Fig. Gwinn 2014 image of refractive scattering? or something at 1.3mm like Ortiz 2016}
+                         
+%Review theory and simulation based on Johnson (2015) in more detail than paper
+
 
 Scattering in the ISM falls in the regime of strong scattering (Narayan, 1992) as $r_{diff} < r_{FR} < r_{ref} $. We consider to effects, diffractive scintillation and refractive scintillation. Scattering in the interstellar medium has been a key factor in the move of VLBI to short millimeter wavelengths as the blurring effect. This scatter-broadening is associated with diffractive case. 
 refractive kolmogorov screen is associated with refractive case. 
 
 
-
-
 \section{Troposphere}
-%PR 1 St 2
-The coherence and intensity of millimeter wavelength electromagnetic waves deteriorate most strongly in the lowest atmospheric layer, the troposphere, which extends for roughly 11 km (Thompson, ibid), where the temperature drops to $\sim218K$. The tropospheric signal corruption places strong limits on ground-based interferometry at millimeter wavelengths, especially in VLBI mode where elevations are low and time delays are uncorrelated between stations. This chapter will focus on the simulation of tropospheric errors in the mm-VLBI context. Three primary and inter-related effects will be discussed: flucuations in the visibility phase, signal attenuation and sky noise. There exist several strategems for calibration and science extraction in the presence of this corruption which shall be discussed in later chapters. \\
-~\\
-Opacity and sky brightness degrade flux density and sensitivity respectively. Visibility phase decoheres on timescales of $\le 10$s due to shifting column densities of water vapour. Incoherent time averaging therefore limits the high S/N required for accurate calibration. We have used a 3rd party code base (section \ref{ATM})  to calculate mean, zenith values for the opacity, sky brightness and time delay. Delay variability is simulated with a Kolmogorov turbulent random walk about its mean value. Opacity and brightness temperature fluctuations are considered negligible(scale of amplitude/brightness temp flucuation?). \\
-~\\
-Let me begin with the corner stone assumptions of our model. First, the field of view of a mm-VLBI global array is so tiny ($\sim0.2$  mas) that the atmospheric corruption is considered constant across it. Second, as the stations are so widely spaced (1000's of km),  the weather conditions of each site are unconsidered entirely independent of the others. Third, radiative transfer through the atmosphere is an unpolarised phenonemon at the millimeter wavelengths. Fourth, defining the Fresnel scale as the transverse distance where the geometrical phase delay is equal to 1 radian and the diffractive scale as the transverse distance where the phase delay due to refractive index changes equals  1 radian. Scattering in the troposphere is in the weak scattering regime as the Fresnel scale is smaller than the diffractive scale, $r_{FR} < r_{diff}$(Narayan, 1992). The It follows then that , multipath propagation is negligible. 
+%PR 2 St 2
+%Introduction to the troposphere
+The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere, which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and $\rm CO_2$, as well as particulates of water droplets and dust. 
 
-\subsection{Propagation in the troposphere}
-
-%PR 1 St 2
+\subsection{Wave propagation through a linear medium}
+%propagation fundamentals (hmmm should this go before the scattering section?)
+%PR 2 St 2
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
 E(x,t) = E_0 \exp^{i(knx - 2\pi\nu t)},
@@ -144,6 +160,7 @@ The phase velocity of light slows according to the refractive index, $v_p = c/n_
 \end{equation}
 where the integral is over the total path through the scattering medium.
 ~\\
+%repeat here, not sure which version is better
 The phase velocity of light slows according to the refractive index, $v_p = c/n_R$, which results in a time delay.  Because the electric field is causal, $n_R$ and $n_I$ contain the same information and can be interchanged via the Kramers-Kronig relations. The time delay, $\delta t$ and optical depth $\tau$ can be calculated in a cylindrical coordinate system as  
 \begin{equation}
 \delta t + i \tau = (\sec\theta/c) \int_{0}^{L} dz\  (n(\theta, \phi, z, \nu) -1),
@@ -152,12 +169,60 @@ where L is the height of the troposphere and $\sec\theta$ is approximately the a
 \begin{equation}
 \Delta \phi_\nu = (\delta t_1 - \delta t_2)/\nu.
 \end{equation}
+
+%PR 2 St 1.5
 Hence the delay causes a phase slope across the bandwidth which can wrap multiple times. \\
 ~\\
 There are measured opacities for each site but this is usually taken in optimal conditions and would not be applicable generally. Official measurements of time delay and sky noise are never published. Theory demands that the three effects to simulated consistently and experiment demands that the simulations be carried out over a range of possible weather conditions. 
 
+
+
+The absorption spectrum in the GHz range (e.g. \citealt{Pardo_2001}) is dominated by several transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the far wings of a multitude of broadened water vapour lines above 1~THz \citep{Carilli_1999}. 
+
+In contrast to the other atmospheric chemical components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the measured visibility phase at short wavelengths. The water vapour column density is measured as the depth of the column when converted to the liquid phase and is referred to as the precipitable water vapour (PWV). The PWV is, via the real component of the refractive index, directly proportional to phase offset, 
+\begin{equation}
+\delta\phi \approx \frac{12.6\pi}{\lambda} \times w, 
+\end{equation}\label{eq:phi-pwv}
+
+\noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \cite{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm. This sensitive dependence of phase coherence on atmospheric stability is aggravated by typically low antenna observation elevation angles, uncorrelated atmospheric variations between stations, and observing with a sparse VLBI array.
+
+~\\
+Opacity and sky brightness degrade flux density and sensitivity respectively. Visibility phase decoheres on timescales of $\le 10$s due to shifting column densities of water vapour. Incoherent time averaging therefore limits the high S/N required for accurate calibration. We have used a 3rd party code base (section \ref{ATM})  to calculate mean, zenith values for the opacity, sky brightness and time delay. Delay variability is simulated with a Kolmogorov turbulent random walk about its mean value. Opacity and brightness temperature fluctuations are considered negligible(scale of amplitude/brightness temp flucuation?). \\
+~
+
+
 \subsection{Atmospheric Transmission at Microwaves} \label{ATM}
 %PR 1 St 2
+%
+
+The problem of radiative transfer through a static atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) package \citep{Pardo_2001}. \textsc{atm} has been incorporated into \textsc{MeqSilhouette} to provide a fast and sophisticated procedure to calculate average opacities, sky brightness temperatures and time delays. Here we provide a brief summary of the theory underpinning the package but see the original paper for further detail. \textsc{atm} is commonly used in the ALMA community \citep{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
+
+We start from the unpolarised radiative transfer equation, which is unidirectional in the absence of scattering,
+\begin{equation}
+\frac{dI_\nu (s) }{ds} = \epsilon_\nu(s) -\kappa_\nu(s)  I_\nu (s),
+\end{equation}\label{eq:rad_trans}
+where $s$ is the coordinate along the signal path through the atmosphere, $I_\nu(s)$ is the specific intensity, $\epsilon_\nu$ is the macroscopic emission coefficient and $\kappa_\nu$ is the macroscopic absorption coefficient. 
+
+The goal is to integrate this equation over the signal path which requires $\kappa_\nu$ as a function of altitude and frequency. In practice, this involves a triple sum over altitude layer, chemical species and rotational energy transition. Atmospheric temperature and pressure profiles are calculated based on several station dependent inputs, namely, ground temperature and pressure and the precipitable water vapour column depth.
+
+A general equation of the absorption coefficient for a transition between a lower $l$ and upper $u$ states is given in the original paper. Here we merely point out that it should be proportional to the energy of the photon, $h\nu_{l \to u}$, the transition probability or Einstein coefficient, $ B_{l \to u}$, the line-shape, $f(\nu,\nu_{l \to u})$ and the number densities $N$ of electronic populations. Line profiles which describe pressure broadening (perturbations to the Hamiltonian due to the presence of nearby molecules) and Doppler broadening are used. The condition of detailed balance further requires that decays from the upper state are included yielding, $g_u B_{u \to l} =g_l B_{l \to u}$, where $g$ is the degeneracy of the electronic state. Putting this together we find,
+
+\begin{equation}
+\kappa(\nu) _{l \to u}  \propto  h\nu   B_{l \to u}  \left(\frac{N_l}{g_l}  -  \frac{N_u}{g_u} \right) f(\nu,\nu_{l \to u}),
+\end{equation}
+
+\noindent where the Einstein coefficients are calculated from the inner product of the initial and final states with the dipole transition operator. The number densities of the two states, $N_u$ and $N_l$ in local thermodynamic equilibrium (LTE) are simply related to the local number density and temperature via Boltzmann statistics.
+
+Typical opacities and sky brightness temperatures for ALMA, Submillimeter Array (SMA) and SPT  are shown in Fig.~\ref{fig:mean_atm}. A typical PWV range \cite{Lane_1998}, ground pressure and temperature were assumed for each site. Note that both the opacity and brightness temperature are inversely proportional to the ground temperature and proportional to ground pressure.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.\columnwidth]{Images/opacity_c}
+\caption{Best fit opacity (red) and sky brightness temperature (blue) line solutions at $\nu =230$~GHz as a function of precipitable water vapour (PWV) for three indicative ground pressures and temperatures which approximately represent the sites of SPT (solid), ALMA (diamond) and SMA (dashed). The legend shows the estimated input ground (pressure, temperature) parameters for each site.\label{fig:mean_atm}%
+}
+\end{center}
+\end{figure}
+
 Fortunately atmospheric transmission has been widely studied over a broad range of scientific and engineering disciplines. Within millimeter wave interferometry, a simulation package called  Atmospheric Transmission at Microwaves (ATM) (Pardo et al, 2001) is used in the ALMA community (Curtis et al., 2009; Nikolic et al., 2013).  ATM is a C++ package which performs radiative transfer using a detailed model of the atmospheric spectrum. ATM forms a key component of the tropospheric module and is used to calculate mean values for the opacity, sky temperature and time delay. A summary of the theory here but read the original paper for the full description. \\
 ~\\
 Starting from the unpolarised radiative transfer equation which is unidirectional in the absence of scattering,
@@ -200,7 +265,7 @@ Far wing broadening of $H_2O$ lines $> 1.2$ THz extends to lower frequencies and
  ~\\
 FIGURE : plot of mauna kea's opacity with different amounts of precipital water vapour (pwv).particularly dry sites : Mauna Kea(4200m), Andes(3000m to 7000m), Antartice(3000m), atmosphere above these sites contain 0.5 - 2 mm. 
 
-\subsection{Kolmogorov turbulence} \label{turb}
+\subsection{Kolmogorov turbulence} 
 %PR 1 St 2
 The shifting distribution of water vapour in the troposphere causes the refractive index and hence the phase velocity to change on timescales of seconds and of spatial scales of metres (Thompson et al., ibid).  At centimeter wavelengths and below, water vapour in the troposphere dominates errors in delay and delay rate over hydrogen maser clock errors (Rogers \& Moran,1981). Stochastic phase errors lead to a decrease in flux due to incoherent vector averaging. This makes it difficult to obtain adequate SNR for calibration. The uncertainty in the phase degrades structural information which makes conventional imaging difficult and hence closure quantities are often used (e.g. Fish et al 2011). Incoherent phases represent a fundamental limit to all types of interferometry. \\
 ~\\
@@ -217,7 +282,7 @@ D_{n_{R}} (d) = C R^{2/3},
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[height=60mm,width=120mm]{screen}
+    \includegraphics[height=60mm,width=120mm]{Images/screen}
     \caption{A cartoon illustration of poorly mixed water vapour moving over a baseline (credit : Thompson et al, ibid) \label{phase:screen}}
 \end{figure}
 
@@ -246,30 +311,12 @@ Note that the power law index, $\beta$ falls off with increasing d and beyond a 
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[scale=0.2]{screentransition}
+    \includegraphics[scale=0.2]{Images/screentransition}
     \caption{showing $\beta$ changes with distance on the phase screen. Note the three distinct regime but continous variation in between}
 \end{figure}
 In the regime of $d<<L$, $\beta \approx 2/3$
 
-Often used to simulate phase screens is the spatial spectral power function (Thompson eq ) however because the field of view is so small, the phase screen shouldn't change therefore time seriesis better than simulating a phase screen because its resistant to coarseness sampling bias of the power spectrum which otherwise needs to be corrected for ( Lane et al, 1992)
-\begin{figure}[h!]
-\centering
-    \includegraphics[height=60mm,width=120mm]{flow3}
-    \caption{block diagram of the MeqSilhouette simulator }
-\end{figure}
-
-Treuft \& Lanyi (1987) $\beta$ varies with zenith angle and d.  at d<<h where h is the height of the troposphere $\sigma \sim (pathlength)^0.5$ but as d>>h $\sigma \sim pathlength$. Also need to address angle between wind and base.
  
-allan variance useful for comparing tropospheric errors with other stochastic errors
-
-for ALMA:
-The timescale for changes in water vapour distribution is long compared to time for wind to carry features over array $v_w=10 m/s$
-
-define $d_0$ where $\sigma = 1$~rad, i.e. phases are completely uncorrelated.
-
-\begin{equation}
-d_0 = 0.058 \lambda^\frac{6}{5}\sqrt{C_N^2 L}^\frac{-3}{5}
-\end{equation}
 
 \subsection{Instrumental}
 
