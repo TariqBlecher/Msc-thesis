@@ -1,0 +1,62 @@
+
+There are measured opacities for each site but this is usually taken in optimal conditions and would not be applicable generally. Official measurements of time delay and sky noise are never published. Theory demands that the three effects to simulated consistently and experiment demands that the simulations be carried out over a range of possible weather conditions. 
+
+
+Because the electric field is causal, $n_R$ and $n_I$ contain the same information and can be interchanged via the Kramers-Kronig relations. The time delay, $\delta t$ and optical depth $\tau$ can be calculated in a cylindrical coordinate system as  
+\begin{equation}
+\delta t + i \tau = (\sec\theta/c) \int_{0}^{L} dz\  (n(\theta, \phi, z, \nu) -1),
+\end{equation}
+where L is the height of the troposphere and $\sec\theta$ is approximately the airmass. The phase difference for a baseline where antenna 1 is the reference will be
+\begin{equation}
+\Delta \phi_\nu = (\delta t_1 - \delta t_2)/\nu.
+\end{equation}
+
+Hence the delay causes a phase slope across the bandwidth which can wrap multiple times. \\
+
+*********************
+
+
+The driver script, azishe.py. 
+
+Separable components of the simular havebeen modularized, parameter\_work, table\_work etc. This keeps the logic separate, makes it easy to follow and debug.
+Controlling input, station dependent variables read from a separate txt file (whose name is in the main parameter dictionary)
+MS creation with the simms task, https://github.com/radio-astro/simms.
+
+turbo-sim with Meqtrees
+
+make images for checking at various steps, useful for debugging and judging qualitative impact
+
+Construction of a new class object which handles the more detailed tropospheric corruption. 
+
+attenuation, noise and phase fluctuation.
+
+plot uv coverage
+
+timing the run time is important as well as isolating which parts of the code are slowest.
+Inputs - 
+station text file
+Json parameter dictionary, prefixes and filtering
+
+Through the ever useful Python module structure we make abundant use of Numerical Python, NumPY,  
+
+MeqTrees (Smirnov, ) performs the FFT and UV sampling. Meqtrees is used with a python-like API called pyxis. 
+
+PyFITS for the handling of FITS files, 
+
+NumPY for all numerical operations, numpy broadcasting, numpy functionality. The setup of matricies for broadcasting.
+
+pyrap + casapy is a python API for Measurement Set(MS) format. MS is user friendly data format.
+
+
+
+\begin{equation}
+\sigma \sim \sqrt((sefd_ant(t, \nu) * sefd_ant(t,  \nu) /(tint * \delta \nu )),
+\end{equation}
+
+where the SEFD's are functions of receiver temperature, elevation and frequency dependence of opacity \& sky temperature.
+\begin{equation}
+ sefd = 2 * k / A * (T_R + 1e26*T_sky *(1. - np.exp(-1.0 * self.opacity /sin(elevation)))
+\end{equation}
+where k is the Boltzmann constant.
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.15)  7 JUL 2016 16:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.15)  8 JUL 2016 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -388,13 +388,37 @@ LaTeX Info: Redefining \nameref on input line 17.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
- (./Introduction.tex
+ (./main.toc
+LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+] (./Introduction.tex
 Chapter 1.
 
 Package natbib Warning: Citation `brogan_2015' on page 1 undefined on input lin
 e 12.
 
-<Images/hl_tau.png, id=120, 740.7675pt x 608.2725pt>
+<Images/hl_tau.png, id=158, 740.7675pt x 608.2725pt>
 File: Images/hl_tau.png Graphic file (type png)
  <use Images/hl_tau.png>
 Package pdftex.def Info: Images/hl_tau.png used on input line 17.
@@ -404,26 +428,22 @@ Package pdftex.def Info: Images/hl_tau.png used on input line 17.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 27.
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.43 E
+      xamples of Arrays : Very Long Baseline Array (VLBA) : 1.4 - 87 GHz, Eu...
 [1
 
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./Images/hl_tau.png>]
-LaTeX Font Info:    Try loading font information for U+lasy on input line 47.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<Images/eht_globe.png, id=136, 1171.37625pt x 599.23875pt>
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.43 E
+      xamples of Arrays : Very Long Baseline Array (VLBA) : 1.4 - 87 GHz, Eu...
+[2 <./Images/hl_tau.png>]
+<Images/eht_globe.png, id=168, 1171.37625pt x 599.23875pt>
 File: Images/eht_globe.png Graphic file (type png)
 
 <use Images/eht_globe.png>
@@ -628,52 +648,58 @@ Package natbib Warning: Citation `Meyer_2008' on page 9 undefined on input line
  62.
 
 [9]
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 
-Package natbib Warning: Citation `Bower_2006' on page 10 undefined on input lin
-e 70.
-
-
-Package natbib Warning: Citation `Gwinn_2014' on page 10 undefined on input lin
-e 70.
+ []
 
 
-Package natbib Warning: Citation `Carilli_1999' on page 10 undefined on input l
-ine 70.
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
+
+ []
+
+[10]
+
+Package natbib Warning: Citation `Bower_2006' on page 11 undefined on input lin
+e 96.
 
 
-Package natbib Warning: Citation `Lay_1997' on page 10 undefined on input line 
-70.
+Package natbib Warning: Citation `Gwinn_2014' on page 11 undefined on input lin
+e 96.
 
 
-Package natbib Warning: Citation `Narayan_1992' on page 10 undefined on input l
-ine 73.
-
-
-Package natbib Warning: Citation `BORN_1980' on page 10 undefined on input line
- 76.
-
-
-Underfull \vbox (badness 6110) has occurred while \output is active []
-
- [10]
-
-Package natbib Warning: Citation `Armstrong_1995' on page 11 undefined on input
- line 89.
-
-
-Package natbib Warning: Citation `carilli_1997' on page 11 undefined on input l
-ine 89.
-
-
-Package natbib Warning: Citation `Johnson_2015a' on page 11 undefined on input 
-line 96.
-
-
-Package natbib Warning: Citation `Coulman_1985' on page 11 undefined on input l
+Package natbib Warning: Citation `Carilli_1999' on page 11 undefined on input l
 ine 96.
 
 
-Overfull \hbox (11.84172pt too wide) in paragraph at lines 96--97
+Package natbib Warning: Citation `Lay_1997' on page 11 undefined on input line 
+96.
+
+
+Package natbib Warning: Citation `Narayan_1992' on page 11 undefined on input l
+ine 99.
+
+
+Package natbib Warning: Citation `BORN_1980' on page 11 undefined on input line
+ 102.
+
+
+Package natbib Warning: Citation `Armstrong_1995' on page 11 undefined on input
+ line 115.
+
+
+Package natbib Warning: Citation `carilli_1997' on page 11 undefined on input l
+ine 115.
+
+
+Package natbib Warning: Citation `Johnson_2015a' on page 11 undefined on input 
+line 122.
+
+
+Package natbib Warning: Citation `Coulman_1985' on page 11 undefined on input l
+ine 122.
+
+
+Overfull \hbox (11.84172pt too wide) in paragraph at lines 122--123
 \OT1/cmr/m/n/10 pated at an in-ner length scale $\OML/cmm/m/it/10 r[]$\OT1/cmr/
 m/n/10 , pre-dicts $\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 5\OML/cmm/m/it/10 =\
 OT1/cmr/m/n/10 3$ in the do-main $[]$.
@@ -681,55 +707,46 @@ OT1/cmr/m/n/10 3$ in the do-main $[]$.
 
 
 Package natbib Warning: Citation `Narayan_1992' on page 11 undefined on input l
-ine 99.
+ine 125.
 
-<Images/scatter.pdf, id=197, 626.15933pt x 372.5619pt>
+[11] <Images/scatter.pdf, id=240, 626.15933pt x 372.5619pt>
 File: Images/scatter.pdf Graphic file (type pdf)
 
 <use Images/scatter.pdf>
-Package pdftex.def Info: Images/scatter.pdf used on input line 104.
+Package pdftex.def Info: Images/scatter.pdf used on input line 130.
 (pdftex.def)             Requested size: 345.0pt x 205.2735pt.
 
 
-Package natbib Warning: Citation `Lay_1997' on page 11 undefined on input line 
-111.
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 150--154
-
- []
+Package natbib Warning: Citation `Lay_1997' on page 12 undefined on input line 
+137.
 
 [12 <./Images/scatter.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
-
- []
-
 
 Package natbib Warning: Citation `Thompson_2001' on page 13 undefined on input 
-line 176.
+line 164.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
+
+ []
 
 
 Package natbib Warning: Citation `Pardo_2001' on page 13 undefined on input lin
-e 177.
+e 180.
 
 
 Package natbib Warning: Citation `Carilli_1999' on page 13 undefined on input l
-ine 177.
+ine 180.
+
+
+Package natbib Warning: Citation `Carilli_1999' on page 13 undefined on input l
+ine 187.
+
+
+Package natbib Warning: Citation `hogg_1981' on page 13 undefined on input line
+ 187.
 
 [13]
-
-Package natbib Warning: Citation `Carilli_1999' on page 14 undefined on input l
-ine 184.
-
-
-Package natbib Warning: Citation `hogg_1981' on page 14 undefined on input line
- 184.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--189
-
- []
-
 
 Package natbib Warning: Citation `Pardo_2001' on page 14 undefined on input lin
 e 195.
@@ -746,12 +763,11 @@ ine 195.
 Package natbib Warning: Citation `Serabyn_1998' on page 14 undefined on input l
 ine 195.
 
-[14]
 
-Package natbib Warning: Citation `Lane_1998' on page 15 undefined on input line
+Package natbib Warning: Citation `Lane_1998' on page 14 undefined on input line
  213.
 
-<Images/opacity_c.png, id=251, 1480.53125pt x 813.0375pt>
+[14] <Images/opacity_c.png, id=282, 1480.53125pt x 813.0375pt>
 File: Images/opacity_c.png Graphic file (type png)
 
 <use Images/opacity_c.png>
@@ -827,7 +843,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--276
 
  []
 
-<Images/screen.png, id=279, 1018.80624pt x 470.75874pt>
+<Images/screen.png, id=311, 1018.80624pt x 470.75874pt>
 File: Images/screen.png Graphic file (type png)
 
 <use Images/screen.png>
@@ -848,17 +864,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
-<Images/screentransition.png, id=288, 1096.095pt x 823.075pt>
+<Images/screentransition.png, id=322, 1096.095pt x 823.075pt>
 File: Images/screentransition.png Graphic file (type png)
 
 <use Images/screentransition.png>
 Package pdftex.def Info: Images/screentransition.png used on input line 311.
 (pdftex.def)             Requested size: 219.21512pt x 164.61208pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[19]
+ [19 <./Images/screentransition.png>]
 
 Package natbib Warning: Citation `Popping_2008' on page 20 undefined on input l
 ine 337.
@@ -867,7 +879,7 @@ ine 337.
 Package natbib Warning: Citation `Smirnov_2011c' on page 20 undefined on input 
 line 346.
 
-[20 <./Images/screentransition.png>]) (./Implementation.tex [21]
+[20]) (./Implementation.tex [21]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
@@ -881,7 +893,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
 [22
 
-] <Images/flow_full.png, id=330, 1505.625pt x 864.22874pt>
+] <Images/flow_full.png, id=360, 1505.625pt x 864.22874pt>
 File: Images/flow_full.png Graphic file (type png)
 
 <use Images/flow_full.png>
@@ -934,7 +946,7 @@ Chapter 4.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 3.
 
-<Images/ism.png, id=343, 1505.625pt x 966.61125pt>
+<Images/ism.png, id=374, 1505.625pt x 966.61125pt>
 File: Images/ism.png Graphic file (type png)
  <use Images/ism.png>
 Package pdftex.def Info: Images/ism.png used on input line 9.
@@ -953,13 +965,13 @@ File: Images/opacity_c.png Graphic file (type png)
 Package pdftex.def Info: Images/opacity_c.png used on input line 17.
 (pdftex.def)             Requested size: 345.0pt x 189.45107pt.
 
-<Images/delays.png, id=344, 1505.625pt x 600.2425pt>
+<Images/delays.png, id=375, 1505.625pt x 600.2425pt>
 File: Images/delays.png Graphic file (type png)
  <use Images/delays.png>
 Package pdftex.def Info: Images/delays.png used on input line 26.
 (pdftex.def)             Requested size: 345.0pt x 137.53996pt.
 
-<Images/trop_images.png, id=347, 1505.625pt x 1123.19624pt>
+<Images/trop_images.png, id=378, 1505.625pt x 1123.19624pt>
 File: Images/trop_images.png Graphic file (type png)
 
 <use Images/trop_images.png>
@@ -974,7 +986,7 @@ Package natbib Warning: Citation `Lu_2014' on page 25 undefined on input line 3
 Package natbib Warning: Citation `Lu_2014' on page 25 undefined on input line 3
 7.
 
-<Images/point_Crop.png, id=348, 1328.965pt x 843.15pt>
+<Images/point_Crop.png, id=379, 1328.965pt x 843.15pt>
 File: Images/point_Crop.png Graphic file (type png)
 
 <use Images/point_Crop.png>
@@ -1015,16 +1027,16 @@ No file main.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
 [31
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1896DCBFB95C8F5A11465FFD90B01AE4;2105.
+(rerunfilecheck)             Checksum: 655D05B4BF0299D3A406ABDB5D275A54;1999.
 
 
 LaTeX Warning: There were undefined references.
@@ -1032,16 +1044,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 6844 strings out of 494765
- 98101 string characters out of 6175712
- 194357 words of memory out of 5000000
- 9944 multiletter control sequences out of 15000+600000
- 15877 words of font info for 62 fonts, out of 8000000 for 9000
+ 6846 strings out of 494765
+ 98111 string characters out of 6175712
+ 195219 words of memory out of 5000000
+ 9943 multiletter control sequences out of 15000+600000
+ 16176 words of font info for 63 fonts, out of 8000000 for 9000
  80 hyphenation exceptions out of 8191
- 36i,8n,28p,2469b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,28p,2469b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -1063,10 +1075,10 @@ type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb>
-Output written on main.pdf (31 pages, 8385998 bytes).
+Output written on main.pdf (33 pages, 8387092 bytes).
 PDF statistics:
- 479 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
+ 510 PDF objects out of 1000 (max. 8388607)
+ 426 compressed objects within 5 object streams
  115 named destinations out of 1000 (max. 500000)
- 288 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 280 words of extra memory for PDF output out of 10000 (max. 10000000)
 
