@@ -65,9 +65,8 @@ If a flare is dominated by a localised variable structure, several approaches \c
 
 \section{Signal Corruptions}
 
-\subsection{Scattering basics}
+\subsection{Scattering basics}\label{sec:scatter_basics}
 %PR 1 St 1
-%Should link to previous section
 
 %motivation
 Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the interstellar medium (ISM) (\citealt{Bower_2006}, \citealt{Gwinn_2014}), while the second is due to poorly-mixed water vapour in the Earth's troposphere (\citealt*{Carilli_1999}, \citealt*{Lay_1997}). It is essential that the effects of the scattering phenomena are understood for a rigorous calibration and interpretation of data.  Towards this end, simulation modules approximating scattering in both media are implemented in \textsc{MeqSilhouette}. As an introduction to the separate descriptions of each, we review a simple scattering model.
@@ -116,62 +115,59 @@ To evolve the screen in time, we assume a frozen screen i.e. that the velocity o
 \section{Interstellar medium scattering}
 %PR 1 St 2
 
-%observational history of scattering towards GC  (Backer 1978, Lo 1998, Lu 2011)
-Electron density inhomogeneities in the interstellar medium (ISM) scatter the radio emission from the Galactic centre.  Radio interferometric observations of Sgr~A$^\star$ have characterised the properties of the scattering medium over a broad range of wavelengths. The dominant observational effect of the scattering is to convolve the intrinsic source structure by an elliptical gaussian.  The guassian convolution appears to scale with a $\lambda^2$ dependence \cite{Backer_1978}. The angular size $1.31 \times 0.64$~mas cm$^-2$, oriented $78^\circ$ east of north. 
+Electron density inhomogeneities in the interstellar medium (ISM) scatter the radio emission from the Galactic centre .  Radio interferometric observations of Sgr~A$^\star$ have characterised the properties of the scattering medium over a broad range of wavelengths, however more observations at shorter wavelengths are still needed to properly characterise mm and sub-mm regimes. Scattering theory has been comprehensively developed and applied. This first half of this section will summarise important observational results while the second half will expand further the scattering theory develop   (see Sec.~ref{sec:basic_scat} for an introduction)
+
+%blurring
+The dominant observational effect of the scattering at and above cm-wavelengths is to convolve the intrinsic source structure with an elliptical gaussian. The size of the guassian exhibits a $\lambda^2$ scaling dependence over several orders of magnitude \citep[see Fig.~\ref{fig:scattering_law}]{Backer_1978, Shen_2005, Bower_2006, Lu_2011}. In order to determine the parameters of the scattering kernel, i.e. major axis, minor axis and position angle,  one has to observe at wavelengths where the angular size of scattering ellipse is much larger than the expected source size. A VLBA campaign \cite{Bower_2006} has put present estimates of the size as $1.31 \times 0.64$~mas cm$^-2$, oriented $78^\circ$ east of north. 
+%deblurring and uncertainties of the extrapolation
+This result is important for the EHT scattering-mitigation strategy \cite{Fish_2014} which aims to deblur the scattered image through deconvolution with the extrapolated scattering kernel at 1.3mm. However as this extrapolation is over at least an order of magnitude, any small systematic error in the original estimate can significantly effect the extrapolated size. A recent review of VLBA observations of Sgr~A$^\star$, \cite{Psaltis_2015}, has noted that there are significant inconsistencies between different measurements. Furthermore, they used Bayesian methods to reanalyse the datasets resulting in increased uncertainties shown in \ref{tab:ism_gauss}. The minor axis has much larger uncertainties due to the VLBA having few north-south baseline coverage. 
+%fig showing power laws of scattering and intrinsic source
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\columnwidth]{Images/scattering_law}
+\caption{The $\lambda^2$ dependence of scattering kernel size is shown by the solid line. This has been derived from measurements made at $\lambda > 17$~cm \cite{Bower_2006}. The dotted line shows the derived instrinsic source size which scales as $\lambda^{1.44 \pm 0.07}$. This was derived from measurements in the wavelength range, 2~cm~$< \lambda < 1.3$~mm. The red circles show major-axis observed sizes of Sgr~A$^\star$  and the green points show the derived major-axis intrinsic sizes. This plot was reproduced from \citet{Doeleman_2008}.\label{fig:scattering_law}
+}
+\end{center}
+\end{figure*}
+%table showing latest scattering kernel parameters
+\begin{table}[]
+\centering
+\caption{A re-analysis of a VLBI observations of Sgr~A$^\star$ by \citet{Psaltis_2015} has yielded revised estimates of the parameters associated with the guassian scattering kernel. The large uncertainty on the minor axis and positional angle is due to the lack of north-south coverage of the VLBA.\label{tab:ism_gauss}}
+\begin{tabular}{lll}
+\hline
+major axis & 1.32 & 0.04 \\
+minor axis & 0.82 & 0.21 \\
+position angle       & 77.8 & 9.7  
+\hline
+\end{tabular}
+\end{table}
+
+%Intrinsic source structure
+Observations at mm-wavelengths have revealed deviations from the $\lambda^2$ scaling law. This is interpreted as due to the presence of intrinsic source structure and has been used to construct a similiar power-law scaling index of $1.34 \pm 0.01$ \cite{Lu_2011}. This has enabled the constraint of various theoretical models \cite{Bower_2006}, excluding advection-dominated accretion flows (ADAF) \cite{Narayan_1998}, Bondi-Hoyle accretion \cite{Melia_1994}. 
+%Locating the scattering screen Bower 2014
+An important revision to the scattering towards GC came with observations of the pulsar SGR J1745-29. Information on the temporal scattering combined with the angular scattering has constrained the scattering screen to lie, not in the GC as originally thought but instead at a distance $D_{\rm os} = 5.8 \pm 0.3$~kpc, in the scutum spiral arm.
+%evidence of refractive substructure towards GC
+Recently, focus has shifted away from the well-studied scattering convolution effect and into the presence of stochastic scattering substructure. Substructure  Fig.~ref{fig:substructure}, flux modulation
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=1.\columnwidth]{Images/scattering_law}
-\caption{Reproduced from \citet{Psaltis_2015} 
+\includegraphics[width=\columnwidth]{Images/refractive_substructure}
+\caption{Visibility amplitudes recorded in a VLBA+GMT observation \cite{Gwinn_2014} of Sgr~A$^\star$ at $\lambda = 1.3$~cm against baseline length. GBT–VLBA data points are represented by squares and VLBA–VLBA data points are represented by circles. The green curve shows the prediction due to the ensemble-average scattering kernel. The gray curves show quantiles associated with theoretical predictions of the visibility amplitudes induced by refractive substructure. Reproduced from \citet{Gwinn_2014} \label{fig:substructure}
 }
 \end{center}
 \end{figure*}
 
-
-%tie to theory
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\columnwidth]{Images/ism_cp}
+\caption{Closure phases recorded in a VLBA + LMT observation of  Sgr~A$^\star$ at $\lambda = 3.5$~mm \cite{Ortiz_2016}. The data points are shown as red circles and blue squares. They are only distinguished by the calibrator used. The green envelopes show the $1\sigma$ on the scattering substructure.Reproduced from \citet{Ortiz_2016} \label{fig:substructure}
+}
+\end{center}
+\end{figure*}
+%Foundational scattering theory papers had predicted refractive substructure Goodman, Narayan 1989, sieber 1982 etc
+To understand Theoretical predictions \citep*{Narayan_1989,Goodman_1989, Johnson_2015} show that there are actually 3 regimes of strong scattering. The ensemble-average regime, average and snapshot$\theta_{\rm scatt} \sim \lambda/r_0$, there we can infer, $r_0  = 3136.67*(1.3e-6/\lambda) $\cite{Narayan_1992}
 As discussed in the previous section this falls into the strong scattering regime. 
 
-
-In order to determine the scattering properties, one has to observe at wavelengths where the angular size of scattering effects is much larger than the expected source size and substructure.
-
-To determine the scattering kernel properties, have to observed at wavelengths where the kernel is much larger than the expected source size and substructure, at least 10-20 cm, then we extrapolate to mm, which means minor uncertainties at 10cm turn to huge systematics when scaled 2 orders of magnitude (Psaltis,2015)The origin of the anisotropy
-is widely believed to be related to large-scale magnetic fields in
-the turbulent interstellar medium, the statistical properties of
-which determine both the axis ratio of the scattering ellipse and
-its orientation (see, e.g., Chandran & Backer 2002). T. These two
-quantities may not remain constant, as is currently assumed,
-when the wavelength changes by over two orders of
-magnitude. A theoretical investigation of this issue is necessary
-to make progress but is beyond the scope of the present work.
-
-Derivation of the diffraction length from from size.
-1.31 × 0.64 mas cm −2 at 78 o east of
-north
-The uncertainties in these values are ±0.03 mas
-in major axis size, +0.04 and −0.05 mas in minor axis
-size and ±1 o in position angle. At 3.5 mm, this law
-gives scattering sizes of 159.2 ± 3.6 μas and 77.8 +4.9
-−6.1 μas
-for major and minor axis, respectively
- Hence to reveal intrinsic structure, scattering in the interstellar medium has been a key factor in the move of VLBI to short millimeter wavelengths as the blurring effect.
-However, Psaltis et al. (2015) have also analyzed the set
-of measured sizes of Sgr A ∗ and suggest that there are
-large systematic errors in the minor axis size. Indeed,
-our comparison of self-calibration and closure-only re-
-sults reinforces the suspicion that uncertainties derived
-in previous experiments may be systematically low.
-
-
-%separating dependence on screen and source  Shen 2005, Bower 2006, Lu 2011
-Going to shorter wavelengths, we can fit a intrinsic source power law. This has enabled the constraint of various theoretical models, excluding advection-dominated accretion flows (ADAF) \cite{Narayan_1998}, Bondi-Hoyle accretion \cite(Melia_1994}. 
-
-
-%Locating the scattering screen
-
-%evidence of refractive substructure towards GC
-%{Fig. Gwinn 2014 image of refractive scattering}
-
-%Foundational scattering theory papers had predicted refractive substructure Goodman, Narayan 1989
 
 
  %Johnson (2015) extension of refractive substructure scattering calculation & simulation in the average regime
@@ -179,13 +175,7 @@ Going to shorter wavelengths, we can fit a intrinsic source power law. This has 
 %{Fig closure phases at 3mm Ortiz 2016}      
 
  have been 
-
-
-
-
-Se
-
- This scatter-broadening is associated with diffractive case. - derive angular size from diffractive scale. link to scattering intro.
+This scatter-broadening is associated with diffractive case. - derive angular size from diffractive scale. link to scattering intro.
 
 
 Scattering in the ISM falls in the regime of strong scattering (Narayan, 1992) as $r_{diff} < r_{FR} < r_{ref} $. 
@@ -196,6 +186,7 @@ Scattering in the ISM falls in the regime of strong scattering (Narayan, 1992) a
 3. The direction and magnitude of shuffling should be coherent to about ~ a few uas. (rf**2 * coherency of phase gradient)
 4. Key assumption is that there is no source flux on baselines long enough to resolve the inner scale.(0.1 muas)
 5. Averaging in bandwidth and time. Refractive noise is wideband..time variation over an hour ~ 0.5 uas. won't do much
+
 \section{Troposphere}
 
 %PR 1 St 2
