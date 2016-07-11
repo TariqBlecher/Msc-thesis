@@ -113,23 +113,83 @@ The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the sca
 %frozen screen
 To evolve the screen in time, we assume a frozen screen i.e. that the velocity of the individual turbulent eddies is dominated by the bulk motion of scattering medium \citep[e.g.][]{Lay_1997}. This allows us to treat the screen as frozen but advected over the observer by a constant motion. Hence time variability can be easily incorporated by the relative motion between source, scattering screen and observer.
 
+\section{Interstellar medium scattering}
+%PR 1 St 2
 
-\section{ISM scattering}
-%PR 1 St 3
+%observational history of scattering towards GC  (Backer 1978, Lo 1998, Lu 2011)
+Electron density inhomogeneities in the interstellar medium (ISM) scatter the radio emission from the Galactic centre.  Radio interferometric observations of Sgr~A$^\star$ have characterised the properties of the scattering medium over a broad range of wavelengths. The dominant observational effect of the scattering is to convolve the intrinsic source structure by an elliptical gaussian.  The guassian convolution appears to scale with a $\lambda^2$ dependence \cite{Backer_1978}. The angular size $1.31 \times 0.64$~mas cm$^-2$, oriented $78^\circ$ east of north. 
 
-%observations - history of scattering towards GC - blurring. start with (Bower 2003)
-% Fig. angular size of sgra* as a function of frequency
-Scattering in the interstellar medium has been a key factor in the move of VLBI to short millimeter wavelengths as the blurring effect. This scatter-broadening is associated with diffractive case. - derive angular size from diffractive scale. link to scattering intro.
+\begin{figure*}
+\begin{center}
+\includegraphics[width=1.\columnwidth]{Images/scattering_law}
+\caption{Reproduced from \citet{Psaltis_2015} 
+}
+\end{center}
+\end{figure*}
+
+
+%tie to theory
+As discussed in the previous section this falls into the strong scattering regime. 
+
+
+In order to determine the scattering properties, one has to observe at wavelengths where the angular size of scattering effects is much larger than the expected source size and substructure.
+
+To determine the scattering kernel properties, have to observed at wavelengths where the kernel is much larger than the expected source size and substructure, at least 10-20 cm, then we extrapolate to mm, which means minor uncertainties at 10cm turn to huge systematics when scaled 2 orders of magnitude (Psaltis,2015)The origin of the anisotropy
+is widely believed to be related to large-scale magnetic fields in
+the turbulent interstellar medium, the statistical properties of
+which determine both the axis ratio of the scattering ellipse and
+its orientation (see, e.g., Chandran & Backer 2002). T. These two
+quantities may not remain constant, as is currently assumed,
+when the wavelength changes by over two orders of
+magnitude. A theoretical investigation of this issue is necessary
+to make progress but is beyond the scope of the present work.
+
+Derivation of the diffraction length from from size.
+1.31 × 0.64 mas cm −2 at 78 o east of
+north
+The uncertainties in these values are ±0.03 mas
+in major axis size, +0.04 and −0.05 mas in minor axis
+size and ±1 o in position angle. At 3.5 mm, this law
+gives scattering sizes of 159.2 ± 3.6 μas and 77.8 +4.9
+−6.1 μas
+for major and minor axis, respectively
+ Hence to reveal intrinsic structure, scattering in the interstellar medium has been a key factor in the move of VLBI to short millimeter wavelengths as the blurring effect.
+However, Psaltis et al. (2015) have also analyzed the set
+of measured sizes of Sgr A ∗ and suggest that there are
+large systematic errors in the minor axis size. Indeed,
+our comparison of self-calibration and closure-only re-
+sults reinforces the suspicion that uncertainties derived
+in previous experiments may be systematically low.
+
+
+%separating dependence on screen and source  Shen 2005, Bower 2006, Lu 2011
+Going to shorter wavelengths, we can fit a intrinsic source power law. This has enabled the constraint of various theoretical models, excluding advection-dominated accretion flows (ADAF) \cite{Narayan_1998}, Bondi-Hoyle accretion \cite(Melia_1994}. 
+
+
 %Locating the scattering screen
 
-%- evidence of refractive substructure towards GC
-{Fig. Gwinn 2014 image of refractive scattering}
+%evidence of refractive substructure towards GC
+%{Fig. Gwinn 2014 image of refractive scattering}
 
 %Foundational scattering theory papers had predicted refractive substructure Goodman, Narayan 1989
-Scattering in the ISM falls in the regime of strong scattering (Narayan, 1992) as $r_{diff} < r_{FR} < r_{ref} $. 
+
+
  %Johnson (2015) extension of refractive substructure scattering calculation & simulation in the average regime
 %derive final expression eq11 in johnson
-%{Fig closure phases at 3mm Ortiz 2016}                         
+%{Fig closure phases at 3mm Ortiz 2016}      
+
+ have been 
+
+
+
+
+Se
+
+ This scatter-broadening is associated with diffractive case. - derive angular size from diffractive scale. link to scattering intro.
+
+
+Scattering in the ISM falls in the regime of strong scattering (Narayan, 1992) as $r_{diff} < r_{FR} < r_{ref} $. 
+                   
 
 1. We are in the average image regime due to source size.
 2. Code moves pixels arounds by ~ refractive scale ~10 uas..proportional to phase gradient 

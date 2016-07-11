@@ -1,4 +1,9 @@
 
+
+
+Fortunately atmospheric transmission has been widely studied over a broad range of scientific and engineering disciplines. Within millimeter wave interferometry, a simulation package called  Atmospheric Transmission at Microwaves (ATM) (Pardo et al, 2001) is used in the ALMA community (Curtis et al., 2009; Nikolic et al., 2013).  ATM is a C++ package which performs radiative transfer using a detailed model of the atmospheric spectrum. ATM forms a key component of the tropospheric module and is used to calculate mean values for the opacity, sky temperature and time delay. A summary of the theory here but read the original paper for the full description. \\
+
+
 There are measured opacities for each site but this is usually taken in optimal conditions and would not be applicable generally. Official measurements of time delay and sky noise are never published. Theory demands that the three effects to simulated consistently and experiment demands that the simulations be carried out over a range of possible weather conditions. 
 
 
