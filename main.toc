@@ -1,17 +1,38 @@
-\contentsline {chapter}{\numberline {1}Theoretical background}{1}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}Radio Interferometry}{1}{subsection.1.0.1}
-\contentsline {subsubsection}{Measurement Equation}{1}{section*.2}
-\contentsline {subsubsection}{mm-VLBI observables and data products}{1}{section*.3}
-\contentsline {subsubsection}{Variability and the static source assumption}{2}{section*.4}
-\contentsline {section}{\numberline {1.1}Signal Corruptions}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Scattering basics}{3}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Interstellar medium scattering}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Troposphere}{8}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Propagation through a linear medium}{8}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Average atmosphere}{9}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Turbulent atmosphere}{11}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Instrumental}{12}{subsection.1.3.4}
-\contentsline {subsubsection}{Thermal Noise}{12}{section*.5}
-\contentsline {subsubsection}{Antenna Pointing}{13}{section*.6}
-\contentsline {subsubsection}{Polarisation}{14}{section*.7}
-\contentsline {chapter}{Bibliography}{14}{section*.7}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {subsection}{\numberline {1.0.1}Science with increasing resolution}{1}{subsection.1.0.1}
+\contentsline {subsection}{\numberline {1.0.2}Very Long Baseline Interferometry}{1}{subsection.1.0.2}
+\contentsline {subsection}{\numberline {1.0.3}The Event Horizon Telescope (EHT)}{3}{subsection.1.0.3}
+\contentsline {subsection}{\numberline {1.0.4}Scientific opportunities with the EHT}{3}{subsection.1.0.4}
+\contentsline {subsubsection}{Strong gravity and black hole spacetime}{4}{section*.2}
+\contentsline {subsubsection}{AGN accretion and jet launch astrophysics}{4}{section*.3}
+\contentsline {subsection}{\numberline {1.0.5}Challenges and obstacles in mm-VLBI observations}{5}{subsection.1.0.5}
+\contentsline {subsection}{\numberline {1.0.6}Science extraction : parameter estimation and imaging}{5}{subsection.1.0.6}
+\contentsline {subsection}{\numberline {1.0.7}A realistic mm-VLBI simulator}{5}{subsection.1.0.7}
+\contentsline {chapter}{\numberline {2}Theoretical background}{8}{chapter.2}
+\contentsline {subsection}{\numberline {2.0.8}Radio Interferometry}{8}{subsection.2.0.8}
+\contentsline {subsubsection}{Measurement Equation}{8}{section*.4}
+\contentsline {subsubsection}{mm-VLBI observables and data products}{8}{section*.5}
+\contentsline {subsubsection}{Variability and the static source assumption}{9}{section*.6}
+\contentsline {section}{\numberline {2.1}Signal Corruptions}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Scattering basics}{10}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Interstellar medium scattering}{12}{section.2.2}
+\contentsline {section}{\numberline {2.3}Troposphere}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Propagation through a linear medium}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Average atmosphere}{16}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Turbulent atmosphere}{18}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Instrumental}{19}{subsection.2.3.4}
+\contentsline {subsubsection}{Thermal Noise}{19}{section*.7}
+\contentsline {subsubsection}{Antenna Pointing}{19}{section*.8}
+\contentsline {subsubsection}{Polarisation}{21}{section*.9}
+\contentsline {chapter}{\numberline {3}Software architecture and implementation}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}Simulator}{22}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}ScatterBrane}{23}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Atmospheric}{24}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Pointing}{25}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}RODRIGUES interface}{26}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Parameter estimation}{26}{section.3.2}
+\contentsline {chapter}{\numberline {4}Results and analysis}{27}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Canonical simulations}{27}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.2}Parameter estimation}{32}{subsection.4.0.2}
+\contentsline {chapter}{\numberline {5}Conclusion}{33}{chapter.5}
+\contentsline {chapter}{Bibliography}{33}{chapter.5}

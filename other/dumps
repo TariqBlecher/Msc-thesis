@@ -1,0 +1,90 @@
+
+
+We can describe not only the differential fluctuations between two antennas but also the temporal fluctuations at a single antenna. Using the frozen screen assumption, that the timescale for distribution to evolve is much smaller than wind speed. The structure function becomes  $D(R)=D(t)|_{R=v \tau}$ where v is windspeed. In the case of VLBI, the distances between antennas are much larger than the correlation length of the turbulence, so in order to generate turbulence we generate a time series for each antenna. This is essentially a phase screen per antenna as the tropospheric corruption is constant across the field of view. A time series actually evades some  
+
+Also assume a(l) constant until L.
+
+One can write the variance of the phase $\sigma_\phi^2$ as a function of the structure function assuming that the observation is integrated over a time, T, (see Treuhaft and Lanyi (1986) appendix B for derivation)
+
+\begin{equation}
+\sigma^2_{\phi}(\tau) = (1/T)^2 \int_{0}^{T} (T-t) D_{\phi}(t) dt
+\end{equation}
+
+Writing the structure function, equation \ref{kolmogorov}, in terms of phase,
+\begin{equation}
+D_{\phi}(d)=a\left( \sec\theta \frac{2 \pi}{\lambda} d^{\beta} \right)^2  ,
+\end{equation}
+where a is a numerical constant depending on the site and the airmass is included. Performing the integration
+
+\begin{equation}
+\sigma_\phi (T)=\left[\frac{\sec\theta}{\beta^2 +3\beta +2}\right]( \frac{2 \pi}{\lambda}) a (v T)^{\beta}.
+\end{equation}\\
+
+Note that the power law index, $\beta$ falls off with increasing d and beyond a certain distance phases will become completely incoherent. Treuhaft and Lanyi (1986) show that in theory when $d<<L$, $\beta \approx 5/6$ and if $d>>L$,  $\beta \sim 1/3$ , varying continously and beyond a certain distance $\beta \to 0$.  \\
+\\
+
+
+Fortunately atmospheric transmission has been widely studied over a broad range of scientific and engineering disciplines. Within millimeter wave interferometry, a simulation package called  Atmospheric Transmission at Microwaves (ATM) (Pardo et al, 2001) is used in the ALMA community (Curtis et al., 2009; Nikolic et al., 2013).  ATM is a C++ package which performs radiative transfer using a detailed model of the atmospheric spectrum. ATM forms a key component of the tropospheric module and is used to calculate mean values for the opacity, sky temperature and time delay. A summary of the theory here but read the original paper for the full description. \\
+
+
+There are measured opacities for each site but this is usually taken in optimal conditions and would not be applicable generally. Official measurements of time delay and sky noise are never published. Theory demands that the three effects to simulated consistently and experiment demands that the simulations be carried out over a range of possible weather conditions. 
+
+
+Because the electric field is causal, $n_R$ and $n_I$ contain the same information and can be interchanged via the Kramers-Kronig relations. The time delay, $\delta t$ and optical depth $\tau$ can be calculated in a cylindrical coordinate system as  
+\begin{equation}
+\delta t + i \tau = (\sec\theta/c) \int_{0}^{L} dz\  (n(\theta, \phi, z, \nu) -1),
+\end{equation}
+where L is the height of the troposphere and $\sec\theta$ is approximately the airmass. The phase difference for a baseline where antenna 1 is the reference will be
+\begin{equation}
+\Delta \phi_\nu = (\delta t_1 - \delta t_2)/\nu.
+\end{equation}
+
+Hence the delay causes a phase slope across the bandwidth which can wrap multiple times. \\
+
+*********************
+
+
+The driver script, azishe.py. 
+
+Separable components of the simular havebeen modularized, parameter\_work, table\_work etc. This keeps the logic separate, makes it easy to follow and debug.
+Controlling input, station dependent variables read from a separate txt file (whose name is in the main parameter dictionary)
+MS creation with the simms task, https://github.com/radio-astro/simms.
+
+turbo-sim with Meqtrees
+
+make images for checking at various steps, useful for debugging and judging qualitative impact
+
+Construction of a new class object which handles the more detailed tropospheric corruption. 
+
+attenuation, noise and phase fluctuation.
+
+plot uv coverage
+
+timing the run time is important as well as isolating which parts of the code are slowest.
+Inputs - 
+station text file
+Json parameter dictionary, prefixes and filtering
+
+Through the ever useful Python module structure we make abundant use of Numerical Python, NumPY,  
+
+MeqTrees (Smirnov, ) performs the FFT and UV sampling. Meqtrees is used with a python-like API called pyxis. 
+
+PyFITS for the handling of FITS files, 
+
+NumPY for all numerical operations, numpy broadcasting, numpy functionality. The setup of matricies for broadcasting.
+
+pyrap + casapy is a python API for Measurement Set(MS) format. MS is user friendly data format.
+
+
+
+\begin{equation}
+\sigma \sim \sqrt((sefd_ant(t, \nu) * sefd_ant(t,  \nu) /(tint * \delta \nu )),
+\end{equation}
+
+where the SEFD's are functions of receiver temperature, elevation and frequency dependence of opacity \& sky temperature.
+\begin{equation}
+ sefd = 2 * k / A * (T_R + 1e26*T_sky *(1. - np.exp(-1.0 * self.opacity /sin(elevation)))
+\end{equation}
+where k is the Boltzmann constant.
+
+

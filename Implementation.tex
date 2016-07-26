@@ -1,6 +1,8 @@
-\chapter{Implementation}
+\chapter{Software architecture and implementation}
+%Can put pseduocode in for main steps
+%put the details of the examples in results and analysis chapter
 
-\section{Simulation}\label{sec:sim}
+\section{Simulator}\label{sec:sim}
 %Pr 1 St 2
  %software architechure
 \textsc{MeqSilhouette} is an observation and signal corruption simulator written in \textsc{Python} and {\sc MeqTrees} using the  {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html}  data format. A flow diagram of the simulator is shown in Fig.~\ref{flow}. Input to the simulator is a sky model and configuration file. The former is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. The configuration file specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc) and which signal corruption implementation should be employed. The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or cleaned image. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed.  The rest of this section is devoted to describing the implementation of each signal corruption module.
@@ -20,21 +22,14 @@ from source variability: To test these effects, we include time variability for 
 \end{figure*}
 
 
-
-
 \subsection{ScatterBrane}
 %Pr 1 St 2
 %link back to theory
 %Implementation in ScatterBrane : Python, the key algorithmic steps
 %Integration of Scatterbrane
-%Examples
-Scattering in the ISM at millimetre wavelengths falls into the strong scattering regime, which has been quantitatively described in the literature \citep*{Narayan_1989,Goodman_1989} and implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane/current} package, based on \citet*{Johnson_2015a}. This approach extends the turbulent model described in section~\ref{sec:basic_scat} to regimes where the inner and outer turbulent scales as well as the anisotropy of scattering kernel are considered. The distance to the screen is taken from the best-fit solution from \citet{Bower_2013} and is located, not at the Galactic Centre, but rather in the Scutum spiral arm at a distance $D_{\rm os}=5.8 \pm 0.3$~kpc. 
+The turbulent phase screen $\phi(\mathbf{x})$ can generated from the phase spatial power spectrum (see Appendix C \citet*{Johnson_2015a}). 
 
-The turbulent phase screen $\phi(\mathbf{x})$ is generated from the phase spatial power spectrum (see Appendix C \citet*{Johnson_2015a}) and the scattered image $I_{\rm ss}$ is approximated by 'reshuffling' of the source image $I_{\rm src}$
-\begin{equation}
-I_{\rm ss}(\mathbf{x}) \approx I_{\rm src}\left(\mathbf{x} + r_{\rm F}^2 \nabla \phi(\mathbf{x})\right),
-\end{equation}
-where $\nabla$ is the directional derivative. Even though $\phi(\mathbf{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\mathbf{x})$ remains spatially coherent over much larger scales which results in the presence of large scale refractive substructure in the scattered image. 
+Scattering in the ISM at millimetre wavelengths falls into the strong scattering regime, which has been quantitatively described in the literature \citep*{Narayan_1989,Goodman_1989} and implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane/current} package, based on \citet*{Johnson_2015a}. This approach extends the turbulent model described in section~\ref{sec:basic_scat} to regimes where the inner and outer turbulent scales as well as the anisotropy of scattering kernel are considered. The distance to the screen is taken from the best-fit solution from \citet{Bower_2013} and is located, not at the Galactic Centre, but rather in the Scutum spiral arm at a distance $D_{\rm os}=5.8 \pm 0.3$~kpc. 
 
 
 We aim to place this description of ISM scattering, which has already yielded an important context for mm-VLBI observation \citep[e.g.][]{2016arXiv160106571O}, into a broader simulation framework. Our ISM module uses the public \textsc{Scatterbrane} code together with an interfacing task which ensures adequate time resolution for sampling ISM variability. If the time resolutions chosen to sample the source variability $\Delta t_{\rm src}$ and screen variability $\Delta t_{\rm ism}$ are unequal, we set  
@@ -51,7 +46,6 @@ where $R$ rounds the fraction to the nearest integer.
 %Pr 1 St 2
 %Implementation details of ATM:numerical integration, inputs, outputs, tests, previous use cases
 %average/turbulent split
-%average examples
 The problem of radiative transfer through a static atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) package \citep{Pardo_2001}. \textsc{atm} has been incorporated into \textsc{MeqSilhouette} to provide a fast and sophisticated procedure to calculate average opacities, sky brightness temperatures and time delays. Here we provide a brief summary of the theory underpinning the package but see the original paper for further detail. \textsc{atm} is commonly used in the ALMA community \citep{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
 
 
@@ -59,13 +53,7 @@ The goal is to integrate this equation over the signal path which requires $\kap
 
 Typical opacities and sky brightness temperatures for ALMA, Submillimeter Array (SMA) and SPT  are shown in Fig.~\ref{fig:mean_atm}. A typical PWV range \cite{Lane_1998}, ground pressure and temperature were assumed for each site. Note that both the opacity and brightness temperature are inversely proportional to the ground temperature and proportional to ground pressure.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=1.\columnwidth]{Images/opacity_c}
-\caption{Best fit opacity (red) and sky brightness temperature (blue) line solutions at $\nu =230$~GHz as a function of precipitable water vapour (PWV) for three indicative ground pressures and temperatures which approximately represent the sites of SPT (solid), ALMA (diamond) and SMA (dashed). The legend shows the estimated input ground (pressure, temperature) parameters for each site.\label{fig:mean_atm}%
-}
-\end{center}
-\end{figure}
+
 
 %the turbulent scattering model
 
@@ -97,14 +85,6 @@ Assuming power-law turbulence and integrating yields,
 
 Phase fluctuations $\delta\phi(t)$ can also simulated by taking the inverse Fourier transform of the spatial phase power spectrum. However this approach is much more computationally expensive, e.g. for an observation length $t_{\rm obs}$ involving $N_{\rm ant}=8$ independent antennae with dish radii $r_{\rm dish}=15$~m, wind speed $v=10$~m\,s$^{-1}$ and pixel size equal to $r_{\rm F}$, the number of pixels $N_{\rm pix} \approx N_{\rm ant} t_{\rm obs} r_{\rm dish}^2/(v r_{\rm F}^3)  \sim 10^8$. Additionally, due to fractal nature of ideal Kolmogorov turbulence, the power spectrum becomes unbounded as the wavenumber approaches zero which makes it difficult to determine the sampling interval of the spatial power spectrum \cite{Lane_1992}. 
 
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=1.\columnwidth]{figures/images1/delays}
-\caption{Simulation of the total delay (left) and the turbulent atmospheric delay (right) for SMA (blue) and ALMA (green) sites towards Sgr~A$^\star$. Ground pressures and temperatures are the same as Fig.~\ref{fig:mean_atm}, precipitable water vapour above each station is set to $w=2$~mm, and the instantaneous zenith coherence time is set $T_0=10$~s for both stations. Note that all tropospheric parameters are, however, independently set. The conversion from time delay to phase at 230~GHz is $1$~rad~$=0.7$~ps.\label{delay_plots}%
-}
-\end{center}
-\end{figure}
 
 
 \subsection{Pointing}

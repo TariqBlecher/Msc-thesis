@@ -1,0 +1,31 @@
+\documentclass[a4paper,10pt,openany]{book}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{latexsym}
+\usepackage{longtable}
+\usepackage{multirow,booktabs}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\title{MeqSilhouette : A mm-VLBI observation and signal corruption simulator}
+\author{Tariq Blecher, Roger Deane, Gianni Bernardi, Oleg Smirnov}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\mainmatter
+\input{Introduction}
+\input{Theory}
+\input{Implementation}
+\input{Results}
+\input{Conclusion}
+\bibliography{bibfile}
+\bibliographystyle{thesis}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}

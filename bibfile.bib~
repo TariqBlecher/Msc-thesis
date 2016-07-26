@@ -1,24 +1,13 @@
 
-
 @article{brogan_2015,
-  author={ALMA Partnership and C. L. Brogan and L. M. Pérez and T. R. Hunter and W. R. F. Dent and A. S. Hales and R. E. Hills and S.
-Corder and E. B. Fomalont and C. Vlahakis and Y. Asaki and D. Barkats and A. Hirota and J. A. Hodge and C. M. V. Impellizzeri and R.
-Kneissl and E. Liuzzo and R. Lucas and N. Marcelino and S. Matsushita and K. Nakanishi and N. Phillips and A. M. S. Richards and I.
-Toledo and R. Aladro and D. Broguiere and J. R. Cortes and P. C. Cortes and D. Espada and F. Galarza and D. Garcia- Appadoo and L.
-Guzman- Ramirez and E. M. Humphreys and T. Jung and S. Kameno and R. A. Laing and S. Leon and G. Marconi and A. Mignano and B.
-Nikolic and L.-A. Nyman and M. Radiszcz and A. Remijan and J. A. Rodón and T. Sawada and S. Takahashi and R. P. J. Tilanus and B.
-Vila Vilaro and L. C. Watson and T. Wiklind and E. Akiyama and E. Chapillon and I. de Gregorio- Monsalvo and J. Di
-Francesco and F. Gueth and A. Kawamura and C.-F. Lee and Q. Nguyen Luong and J. Mangum and V. Pietu and P. Sanhueza and K. Saigo and S.
-Takakuwa and C. Ubach and T. van Kempen and A. Wootten and A. Castro- Carrizo and H. Francke and J. Gallardo and J. Garcia and S.
-Gonzalez and T. Hill and T. Kaminski and Y. Kurono and H.-Y. Liu and C. Lopez and F. Morales and K. Plarre and G. Schieven and L.
-Testi and L. Videla and E. Villard and P. Andreani and J. E. Hibbard and K. Tatematsu},
-  title={The 2014 ALMA Long Baseline Campaign: First Results from High Angular Resolution Observations toward the HL Tau Region},
+  title={THE 2014 ALMA LONG BASELINE CAMPAIGN: FIRST RESULTS FROM HIGH ANGULAR RESOLUTION OBSERVATIONS TOWARD THE HL TAU REGIONThis article is part of the ALMA Long Baseline Campaign collection. An introduction and the full list of articles can be found at http://iopscience. iop. org/2041-8205/page/Focus\_on\_the\_ALMA\_Long\_Baseline\_Campaign.},
+  author={Brogan, CL and P{\'e}rez, LM and Hunter, TR and Dent, WRF and Hales, AS and Hills, RE and Corder, S and Fomalont, EB and Vlahakis, C and Asaki, Y and others},
   journal={The Astrophysical Journal Letters},
   volume={808},
   number={1},
   pages={L3},
-  url={http://stacks.iop.org/2041-8205/808/i=1/a=L3},
   year={2015},
+  publisher={IOP Publishing}
 }
 
 @INPROCEEDINGS{Radford_1998,
