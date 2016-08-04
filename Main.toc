@@ -21,7 +21,7 @@
 \contentsline {section}{\numberline {2.2}Interstellar medium scattering}{13}{section.2.2}
 \contentsline {section}{\numberline {2.3}Troposphere}{17}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Propagation through a linear medium}{17}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Average atmosphere}{17}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Average atmosphere}{18}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Turbulent atmosphere}{20}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Instrumental}{21}{subsection.2.3.4}
 \contentsline {subsubsection}{Thermal Noise}{21}{section*.12}
@@ -38,4 +38,4 @@
 \contentsline {subsection}{\numberline {4.0.1}Canonical simulations}{29}{subsection.4.0.1}
 \contentsline {subsection}{\numberline {4.0.2}Parameter estimation}{34}{subsection.4.0.2}
 \contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}
-\contentsline {chapter}{Bibliography}{35}{chapter.5}
+\contentsline {chapter}{Bibliography}{40}{chapter*.15}
