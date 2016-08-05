@@ -1,14 +1,12 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-White space in argument---line 70 of file Main.aux
+White space in argument---line 31 of file Main.aux
  : \citation{Genzel_2003;
  :                        Belanger_2006}
 I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: bibfile.bib
-Warning--I didn't find a database entry for "Ortiz_2016"
-Warning--I didn't find a database entry for "Psaltis_2015"
 Warning--I didn't find a database entry for "Fish_2009"
 Warning--I didn't find a database entry for "Baganoff_2001"
 Warning--I didn't find a database entry for "Genzel_2003"
@@ -21,51 +19,54 @@ Warning--I didn't find a database entry for "Lu_2016"
 Warning--I didn't find a database entry for "Backer_1978"
 Warning--I didn't find a database entry for "Shen_2005"
 Warning--I didn't find a database entry for "Lu_2011"
+Warning--I didn't find a database entry for "Psaltis_2015"
 Warning--I didn't find a database entry for "Gwinn_2012"
 Warning--I didn't find a database entry for "johnson_dissertation"
+Warning--I didn't find a database entry for "Ortiz_2016"
 Warning--I didn't find a database entry for "Narayan_1998"
 Warning--I didn't find a database entry for "Melia_1994"
 Warning--I didn't find a database entry for "Macquart_2006"
+Warning--I didn't find a database entry for "Bower_2004"
 Warning--empty publisher in Thompson_2001
-You've used 46 entries,
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            861 strings with 17597 characters,
-and the built_in function-call counts, 22541 in all, are:
-= -- 1955
-> -- 1896
-< -- 7
-+ -- 751
-- -- 705
-* -- 2157
-:= -- 3995
-add.period$ -- 139
-call.type$ -- 46
-change.case$ -- 487
+            764 strings with 12221 characters,
+and the built_in function-call counts, 13876 in all, are:
+= -- 1252
+> -- 1043
+< -- 5
++ -- 413
+- -- 383
+* -- 1288
+:= -- 2412
+add.period$ -- 91
+call.type$ -- 30
+change.case$ -- 280
 chr.to.int$ -- 0
-cite$ -- 47
-duplicate$ -- 552
-empty$ -- 1175
-format.name$ -- 705
-if$ -- 4285
+cite$ -- 31
+duplicate$ -- 365
+empty$ -- 800
+format.name$ -- 383
+if$ -- 2681
 int.to.chr$ -- 0
-int.to.str$ -- 46
-missing$ -- 47
-newline$ -- 233
-num.names$ -- 96
-pop$ -- 428
+int.to.str$ -- 30
+missing$ -- 31
+newline$ -- 153
+num.names$ -- 62
+pop$ -- 245
 preamble$ -- 1
-purify$ -- 442
+purify$ -- 251
 quote$ -- 0
-skip$ -- 380
+skip$ -- 252
 stack$ -- 0
-substring$ -- 975
-swap$ -- 88
-text.length$ -- 7
+substring$ -- 737
+swap$ -- 60
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 182
+type$ -- 118
 warning$ -- 1
-while$ -- 159
-width$ -- 48
-write$ -- 506
+while$ -- 110
+width$ -- 32
+write$ -- 331
 (There was 1 error message)

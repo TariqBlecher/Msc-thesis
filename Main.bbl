@@ -10,49 +10,11 @@ Max Born and Emil Wolf.
 \newblock {{FOUNDATIONS} {OF} {GEOMETRICAL} {OPTICS}}.
 \newblock In {\em Principles of Optics}, pages 109--132. Elsevier {BV}, 1980.
 
-\bibitem{2015arXiv151201413B}
-K.~L. {Bouman}, M.~D. {Johnson}, D.~{Zoran}, V.~L. {Fish}, S.~S. {Doeleman},
-  and W.~T. {Freeman}.
-\newblock {Computational Imaging for VLBI Image Reconstruction}.
-\newblock {\em ArXiv e-prints}, dec 2015.
-
-\bibitem{Bower_2013}
-Geoffrey~C. Bower, Adam Deller, Paul Demorest, Andreas Brunthaler, Ralph
-  Eatough, Heino Falcke, Michael Kramer, K.~J. Lee, and Laura Spitler.
-\newblock {{THE} {ANGULAR} {BROADENING} {OF} {THE} {GALACTIC} {CENTER} {PULSAR}
-  {SGR} J1745-29: A {NEW} {CONSTRAINT} {ON} {THE} {SCATTERING} {MEDIUM}}.
-\newblock {\em {ApJ}}, 780(1):L2, dec 2013.
-
 \bibitem{Bower_2006}
 Geoffrey~C. Bower, W.~M. Goss, Heino Falcke, Donald~C. Backer, and Yoram
   Lithwick.
 \newblock {The Intrinsic Size of Sagittarius A{$\ast$} from 0.35 to 6 cm}.
 \newblock {\em {ApJ}}, 648(2):L127--L130, aug 2006.
-
-\bibitem{Broderick_2016}
-Avery~E. Broderick, Vincent~L. Fish, Michael~D. Johnson, Katherine Rosenfeld,
-  Carlos Wang, Sheperd~S. Doeleman, Kazunori Akiyama, Tim Johannsen, and
-  Alan~L. Roy.
-\newblock {{MODELING} {SEVEN} {YEARS} {OF} {EVENT} {HORIZON} {TELESCOPE}
-  {OBSERVATIONS} {WITH} {RADIATIVELY} {INEFFICIENT} {ACCRETION} {FLOW}
-  {MODELS}}.
-\newblock {\em {ApJ}}, 820(2):137, mar 2016.
-
-\bibitem{Broderick_2014}
-Avery~E. Broderick, Tim Johannsen, Abraham Loeb, and Dimitrios Psaltis.
-\newblock {{TESTING} {THE} {NO}-{HAIR} {THEOREM} {WITH} {EVENT} {HORIZON}
-  {TELESCOPE} {OBSERVATIONS} {OF} {SAGITTARIUS} A{$\ast$}}.
-\newblock {\em {ApJ}}, 784(1):7, feb 2014.
-
-\bibitem{brogan_2015}
-CL~Brogan, LM~P{\'e}rez, TR~Hunter, WRF Dent, AS~Hales, RE~Hills, S~Corder,
-  EB~Fomalont, C~Vlahakis, Y~Asaki, et~al.
-\newblock The 2014 alma long baseline campaign: First results from high angular
-  resolution observations toward the hl tau regionthis article is part of the
-  alma long baseline campaign collection. an introduction and the full list of
-  articles can be found at http://iopscience. iop.
-  org/2041-8205/page/focus\_on\_the\_alma\_long\_baseline\_campaign.
-\newblock {\em The Astrophysical Journal Letters}, 808(1):L3, 2015.
 
 \bibitem{Carilli_1999}
 C.~L. Carilli and M.~A. Holdaway.
@@ -117,28 +79,6 @@ Vincent~L. Fish, Sheperd~S. Doeleman, Christopher Beaudoin, Ray Blundell,
   {OF} {TIME}-{VARIABLE} {EMISSION} {ON} {EVENT} {HORIZON} {SCALES}}.
 \newblock {\em {ApJ}}, 727(2):L36, jan 2011.
 
-\bibitem{Fish_2016}
-Vincent~L. Fish, Michael~D. Johnson, Sheperd~S. Doeleman, Avery~E. Broderick,
-  Dimitrios Psaltis, Ru-Sen Lu, Kazunori Akiyama, Walter Alef, Juan~Carlos
-  Algaba, Keiichi Asada, Christopher Beaudoin, Alessandra Bertarini, Lindy
-  Blackburn, Ray Blundell, Geoffrey~C. Bower, Christiaan Brinkerink, Roger
-  Cappallo, Andrew~A. Chael, Richard Chamberlin, Chi-Kwan Chan, Geoffrey~B.
-  Crew, Jason Dexter, Matt Dexter, Sergio~A. Dzib, Heino Falcke, Robert Freund,
-  Per Friberg, Christopher~H. Greer, Mark~A. Gurwell, Paul T.~P. Ho, Mareki
-  Honma, Makoto Inoue, Tim Johannsen, Junhan Kim, Thomas~P. Krichbaum, James
-  Lamb, Jonathan Le{\'{o}}n-Tavares, Abraham Loeb, Laurent Loinard, David
-  MacMahon, Daniel~P. Marrone, James~M. Moran, Monika Mo{\'{s}}cibrodzka,
-  Gisela~N. Ortiz-Le{\'{o}}n, Tomoaki Oyama, Feryal Özel, Richard~L. Plambeck,
-  Nicolas Pradel, Rurik~A. Primiani, Alan E.~E. Rogers, Katherine Rosenfeld,
-  Helge Rottmann, Alan~L. Roy, Chester Ruszczyk, Daniel~L. Smythe, Jason
-  SooHoo, Justin Spilker, Jordan Stone, Peter Strittmatter, Remo P.~J. Tilanus,
-  Michael Titus, Laura Vertatschitsch, Jan Wagner, John F.~C. Wardle, Jonathan
-  Weintroub, David Woody, Melvyn Wright, Paul Yamaguchi, Andr{\'{e}} Young,
-  Ken~H. Young, J.~Anton Zensus, and Lucy~M. Ziurys.
-\newblock {{PERSISTENT} {ASYMMETRIC} {STRUCTURE} {OF} {SAGITTARIUS} A{$\ast$}
-  {ON} {EVENT} {HORIZON} {SCALES}}.
-\newblock {\em {ApJ}}, 820(2):90, mar 2016.
-
 \bibitem{Fish_2014}
 Vincent~L. Fish, Michael~D. Johnson, Ru-Sen Lu, Sheperd~S. Doeleman,
   Katherine~L. Bouman, Daniel Zoran, William~T. Freeman, Dimitrios Psaltis,
@@ -160,12 +100,6 @@ C.~R. Gwinn, Y.~Y. Kovalev, M.~D. Johnson, and V.~A. Soglasnov.
 \newblock {{DISCOVERY} {OF} {SUBSTRUCTURE} {IN} {THE} {SCATTER}-{BROADENED}
   {IMAGE} {OF} {SGR} A{$\ast$}}.
 \newblock {\em {ApJ}}, 794(1):L14, sep 2014.
-
-\bibitem{Hamaker_1996}
-J.~P. Hamaker, J.~D. Bregman, and R.~J. Sault.
-\newblock {Understanding radio polarimetry. I. Mathematical foundations}.
-\newblock {\em Astronomy and Astrophysics Supplement Series}, 117(1):137--147,
-  may 1996.
 
 \bibitem{hogg_1981}
 DC~Hogg, FO~Guiraud, and MT~Decker.
@@ -193,13 +127,6 @@ Michael~D. Johnson and Carl~R. Gwinn.
   {RESOLVED} {SCATTER}-{BROADENED} {IMAGES}}.
 \newblock {\em {ApJ}}, 805(2):180, jun 2015.
 
-\bibitem{Lane_1998}
-A.~P. {Lane}.
-\newblock {Submillimeter Transmission at South Pole}.
-\newblock In G.~{Novak} and R.~{Landsberg}, editors, {\em Astrophysics From
-  Antarctica}, volume 141 of {\em Astronomical Society of the Pacific
-  Conference Series}, pages 289--295, 1998.
-
 \bibitem{Lane_1992}
 R~G Lane, A~Glindemann, and J~C Dainty.
 \newblock {Simulation of a Kolmogorov phase screen}.
@@ -211,13 +138,6 @@ O.~P. Lay.
   vapor}.
 \newblock {\em Astronomy and Astrophysics Supplement Series}, 122(3):535--545,
   may 1997.
-
-\bibitem{Lu_2014}
-Ru-Sen Lu, Avery~E. Broderick, Fabien Baron, John~D. Monnier, Vincent~L. Fish,
-  Sheperd~S. Doeleman, and Victor Pankratius.
-\newblock {{IMAGING} {THE} {SUPERMASSIVE} {BLACK} {HOLE} {SHADOW} {AND} {JET}
-  {BASE} {OF} M87 {WITH} {THE} {EVENT} {HORIZON} {TELESCOPE}}.
-\newblock {\em {ApJ}}, 788(2):120, may 2014.
 
 \bibitem{Masson_1994}
 COLIN~R Masson.
@@ -243,28 +163,6 @@ R.~Narayan and J.~Goodman.
 \newblock {\em Monthly Notices of the Royal Astronomical Society},
   238(3):963--994, jun 1989.
 
-\bibitem{Nikolic_2013}
-Bojan Nikolic, Rosie~C Bolton, Sarah~F Graves, Richard~E Hills, and John~S
-  Richer.
-\newblock {Phase correction for ALMA with 183 GHz water vapour radiometers}.
-\newblock {\em Astronomy \& Astrophysics}, 552:A104, 2013.
-
-\bibitem{Noordam_2010}
-J.~E. Noordam and O.~M. Smirnov.
-\newblock {The {MeqTrees} software system and its use for third-generation
-  calibration of radio interferometers}.
-\newblock {\em Astronomy {\&} Astrophysics}, 524:A61, nov 2010.
-
-\bibitem{2016arXiv160106571O}
-G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
-  V.~L. {Fish}, L.~{Loinard}, M.~J. {Reid}, E.~{Castillo}, A.~A. {Chael},
-  A.~{Hern{\'a}ndez-G{\'o}mez}, D.~{Hughes}, J.~{Le{\'o}n-Tavares}, R.-S. {Lu},
-  A.~{Monta{\~n}a}, G.~{Narayanan}, K.~{Rosenfeld}, D.~{S{\'a}nchez}, F.~P.
-  {Schloerb}, Z.-q. {Shen}, H.~{Shiokawa}, J.~{SooHoo}, and
-  L.~{Vertatschitsch}.
-\newblock {The Intrinsic Shape of Sagittarius A* at 3.5-mm Wavelength}.
-\newblock {\em ArXiv e-prints}, jan 2016.
-
 \bibitem{Pardo_2001}
 J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
 \newblock {Atmospheric transmission at microwaves ({ATM}): an improved model
@@ -275,13 +173,6 @@ J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
 A.~Popping and R.~Braun.
 \newblock {The standing wave phenomenon in radio telescopes}.
 \newblock {\em Astronomy and Astrophysiscs}, 479(3):903--913, mar 2008.
-
-\bibitem{Psaltis_2016}
-Dimitrios Psaltis, Norbert Wex, and Michael Kramer.
-\newblock {A {QUANTITATIVE} {TEST} {OF} {THE} {NO}-{HAIR} {THEOREM} {WITH} Sgr
-  A{$\ast$} {USING} {STARS} {PULSARS} {AND} {THE} {EVENT} {HORIZON}
-  {TELESCOPE}}.
-\newblock {\em {ApJ}}, 818(2):121, feb 2016.
 
 \bibitem{Radford_1998}
 S.~J. {Radford} and M.~A. {Holdaway}.
@@ -295,22 +186,6 @@ S.~J. {Radford} and M.~A. {Holdaway}.
 Alan E.~E. Rogers, Sheperd~S. Doeleman, and James~M. Moran.
 \newblock {Fringe detection methods for very long baseline arrays}.
 \newblock {\em The Astronomical Journal}, 109:1391, mar 1995.
-
-\bibitem{Serabyn_1998}
-E.~Serabyn, E.~W. Weisstein, D.~C. Lis, and J.~R. Pardo.
-\newblock {Submillimeter Fourier-transform spectrometer measurements of
-  atmospheric opacity above Mauna Kea}.
-\newblock {\em Appl. Opt.}, 37(12):2185, apr 1998.
-
-\bibitem{Smirnov_2011a}
-O.~M. Smirnov.
-\newblock {Revisiting the radio interferometer measurement equation}.
-\newblock {\em A&A}, 527:A106, 2011.
-
-\bibitem{Smirnov_2011b}
-O.~M. Smirnov.
-\newblock {Revisiting the radio interferometer measurement equation}.
-\newblock {\em A&A}, 527:A107, 2011.
 
 \bibitem{Smirnov_2011c}
 O.~M. Smirnov.

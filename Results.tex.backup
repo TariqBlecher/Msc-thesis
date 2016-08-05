@@ -48,7 +48,7 @@
 
 
 {\bf Tropospheric induced closure phase errors}
-!!A bug which came from adding the noise and then applying station based corruptions!!! ??
+!!A bug which came from averaging
  
  
 In this paper, we present the first release of the \textsc{MeqSilhouette} synthetic data simulation package. The pipeline is optimised towards mm-VLBI, taking into account user-specified stages of the signal propagation path, which enables the quantification of a range of systematic effects. Focus has been placed on modeling the effects of signal transmission through the ISM and troposphere as well as instrumental errors (i.e. pointing error and thermal noise). Time variability in all relevant domains (source, array, ISM, troposphere) is implemented. The run time for a typical simulation with a realistic instrumental setup is on the order of minutes.  Implementation of polarisation effects is intended in the next release. 
