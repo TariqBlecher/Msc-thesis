@@ -117,10 +117,10 @@ order=5
 
 [item:Theory.tex]
 archive=true
-column=570
+column=18
 encoding=UTF-8
 highlight=LaTeX
-line=375
+line=271
 mode=LaTeX
 open=true
 order=1
@@ -176,10 +176,10 @@ JumpList=
 ViMarks=.,4,0,[,4,0,],4,0
 
 [view-settings,view=0,item:Theory.tex]
-CursorColumn=570
-CursorLine=375
+CursorColumn=18
+CursorLine=271
 JumpList=
-ViMarks=.,375,570,[,375,570,],375,570
+ViMarks=.,277,166,[,277,166,],277,166
 
 [view-settings,view=0,item:preamble.tex]
 CursorColumn=40

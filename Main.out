@@ -1,9 +1,10 @@
 \BOOKMARK [0][-]{chapter.1}{Theoretical background}{}% 1
-\BOOKMARK [1][-]{subsection.1.0.1}{Radio Interferometry}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.1}{Signal Corruptions}{chapter.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.1}{Scattering basics}{section.1.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Interstellar medium scattering}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Troposphere}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.3.1}{Average atmosphere}{section.1.3}% 7
-\BOOKMARK [2][-]{subsection.1.3.2}{Turbulent atmosphere}{section.1.3}% 8
-\BOOKMARK [2][-]{subsection.1.3.3}{Instrumental}{section.1.3}% 9
+\BOOKMARK [1][-]{section.1.1}{Radio Interferometry}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Measurement Equation}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{mm-VLBI observables and data products}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Variability and the static source assumption}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Signal Corruptions}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Scattering basics}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Interstellar medium scattering}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Troposphere}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.4}{Instrumental}{section.1.2}% 10

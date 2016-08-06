@@ -4,7 +4,7 @@ Our goal, is to add the final steps in the theory chain which transforms the GRM
 %The plan for the chapter? PR 3 St 2
 The signal corruptions which we have identified as the most prominent occurs in the troposphere, interstellar medium (ISM) and within the stations themselves. First I will review some EM wave fundamental and introduce scattering theory, which is applicable to both the radiative process occuring in the troposphere and ISM. Following the general introduction I will explore each specific case.
 
-\subsection{Radio Interferometry}
+\section{Radio Interferometry}
 %PR 2 St 3 Define basic radio interferometry concepts. Reference Thompson, Smirnov
 
 %Visibility, the interferometric measurement i.e. measuring electric field covariance (smirnov_1)
@@ -18,14 +18,14 @@ The signal corruptions which we have identified as the most prominent occurs in 
 %van-citterlike theorem
 %\end{equation}•
 
-\subsubsection{Measurement Equation}
+\subsection{Measurement Equation}
 %PR 2 St 3, reference smirnov
 %Follow Smirnov, first RIME paper , Introduce Jones formalism
 
 
 %DDE vs DIE.. + diagram?
 
-\subsubsection{mm-VLBI observables and data products}
+\subsection{mm-VLBI observables and data products}
 %PR 2 St 2
 
 %Visibility amplitudes, closure quantities, polarisation ratios, and images.
@@ -49,7 +49,7 @@ s_{ij}=|V_{ij}| \sqrt{\frac{ \tau \Delta \nu}{SEFD_i SEFD_j}},
 \end{equation}
 where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $|V_{ij}|$ is the visibility amplitude and $SEFD$ is the system equivalent flux density. The result that closure phase is entirely immune to station based effects breaks down however when time averaging in the presence of baseline dependent effects like thermal noise as illustrated in section~\ref{closure_errors}.
  
- \subsubsection{Variability and the static source assumption}
+\subsection{Variability and the static source assumption}
 %PR 1 St 1
 
 %the assumption and how it breaks the image-vis fourier transform relation
@@ -112,7 +112,7 @@ The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the sca
 %frozen screen
 To evolve the screen in time, we assume a frozen screen i.e. that the velocity of the individual turbulent eddies is dominated by the bulk motion of scattering medium \citep[e.g.][]{Lay_1997}. This allows us to treat the screen as frozen but advected over the observer by a constant motion. Hence time variability can be easily incorporated by the relative motion between source, scattering screen and observer.
 
-\section{Interstellar medium scattering}
+\subsection{Interstellar medium scattering}
 %PR 1 St 1.1 
 
 %introduction and plan
@@ -237,107 +237,89 @@ a robust and rapid mechanism for quantifying refractive effects.
 
 
 
-\section{Troposphere}
+\subsection{Troposphere}
 
 %Remember: No implementation should be included
 
 %PR 1 St 2
 
 %Introduction - Troposphere is a problem. Define troposphere.
-The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption in the mm-VLBI regime. 
+The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case. 
 
 
 %propagation fundamentals and the relationship between delay-absorption-noise
+\subsubsection{Propagation fundamentals}
+
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
-E(x,t) = E_0 \exp^{i(knx - 2\pi\nu t)},
+E_\nu(x,t) = E_0 \exp^{i(kn_\nu x - 2\pi\nu t)},
 \end{equation}		
-where k is the propagation constant in free space equal to $2\pi \nu/c$ and $n$ is the complex index of refraction, $n= n_R + j n_I$. If $n_I$ is nonzero the wave will decay exponentially. The linear absorption coefficient or fraction of power absorbed per unit length traversing the medium is defined as 
+where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R} + j n_{\rm I}$ is the complex index of refraction. Note that we will omit the frequency dependence of $n$ and related quantities to simplify the notation. If $n_{\rm I}$ is nonzero, the electric flux $I$ will decay exponentially
 \begin{equation}
-\kappa_\nu = 4\pi \nu n_I/c.
+I = EE^\ast = E_0^2 \exp(-\tau),
 \end{equation}
-
-
-The phase velocity of light slows according to the refractive index, $v_p = c/n_R$, which results in a time delay.  Because the electric field is causal, $n_R$ and $n_I$ contain the same information and can be interchanged via the Kramers-Kronig relations. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
+where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient $\kappa = 4\pi \nu n_I/c$ via $d\tau = \kappa dx$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
 \begin{equation}\label{timedelay}
-\delta t + i \tau =1/c \int_{medium} d^3\mathbf{x}\  (n(\mathbf{x}, \nu) -1),
+\delta t + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
 \end{equation}
-where the integral is over the total path through the medium.
+
+
+Opacity and time delays are often viewed independently, however the electric field is real and causal and this imposes restrictions on the complex refractive index. Specificially $n_{\rm R}$ and $n_{\rm I}$ contain the same information and can be interchanged via the Kramers-Kronig relations. 
 
 
 Absorption is accompanied by emission and for a medium in local thermodynamic equilibrium, Kirchoff's law states that 
 \begin{equation}\label{kirchoff}
 \frac{\epsilon_\nu}{\kappa_\nu}=B_\nu(T),
 \end{equation}
-where $\epsilon_\nu = dI_\nu/dx$ is the macroscopic emission coefficient and $B_\nu(T)$ is the Planck function. Hence the absorbing molecules are also emitters, increasing system noise. Hence theory demands that the three effects to simulated consistently.
+where $\epsilon_\nu = dI_\nu/dx$ is the emission coefficient and $B_\nu(T)$ is the Planck function. Hence the absorbing molecules are also emitters, increasing system noise. Therefore opacity, time delay and atmospheric noise are interrelated and should be simulated consistently. On a side note this opens up the possibilities for phase calibration using measurements of sky emission via Water Vapour Radiometry (WVR).
 
+\subsubsection{Atmospheric corruptions in the (sub-)mm regime}
 
 %Absorption in the GHz regime
-The absorption spectrum in the GHz range (Fig.~\ref{fig:absorption}) is dominated by transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the far wings of a multitude of broadened water vapour lines above 1~THz \citep{Carilli_1999}.  
+An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorption}), shows that it is dominated by transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the cumulative effect of the far wings of a multitude of broadened water vapour lines above 1~THz \citep{Carilli_1999}. At 230~GHz the absorption is typically $5-10$\% at the best sites, during good weather. 
 
 %Fig Absorption spectrum in the GHz 
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/absorption}
-\caption{Recorded zenith absorption spectrum in the GHz range, taken on Mauna Kea at an altitude of $\sim 4000$~m. The data is labeled in the figure and all the other curves show different components of a fit using the \textsc{atm} code, with the bottom panel showing the residuals. Here 'dry' refers to all atmospheric constituents except $\rm H_20$. Reproduced from \citet{Pardo_2001} \label{fig:absorption}
+\caption{Recorded zenith absorption spectrum in the $160-520$~GHz range, taken on Mauna Kea at an altitude of $\sim 4000$~m. The data has been fit to a sum of $\rm H_20$ lines, an $\rm H_20$ pseudo-continuum and dry absorption lines. The model has been generated using the \textsc{atm} code, with the bottom panel showing the residuals. Here 'dry' refers to all atmospheric constituents except $\rm H_20$. Reproduced from \citet{Pardo_2001} \label{fig:absorption}
 }
 \end{center}
 \end{figure*}
 
 %Phase variability in the GHz 
-In contrast to the other atmospheric chemical components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the measured visibility phase at short wavelengths. The water vapour column density is measured as the depth of the column when converted to the liquid phase and is referred to as the precipitable water vapour (PWV). The PWV is, via the real component of the refractive index, directly proportional to phase offset, 
+In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\delta t_\nu$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
+\begin{equation}
+\delta \phi(t, \nu) = (\delta t_2(t) - \delta t_1(t))/\nu.
+\end{equation}
+The water vapour column density is measured as the depth of the column when converted to the liquid phase and is referred to as the precipitable water vapour (PWV). PWV is directly proportional to the time delay and hence the phase delay, 
 \begin{equation}
 \delta\phi \approx \frac{12.6\pi}{\lambda} \times w, 
 \end{equation}\label{eq:phi-pwv}
 
-\noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \citep{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm. This sensitive dependence of phase coherence on atmospheric stability is aggravated by typically low antenna observation elevation angles, uncorrelated atmospheric variations between stations, and observing with a sparse VLBI array.
-The phase error for a baseline where antenna 1 is the reference will be
-\begin{equation}
-\delta \phi_\nu = (\delta t_1 - \delta t_2)/\nu.
-\end{equation}
+\noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \citep{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm. 
+
+
+
+This sensitive dependence of phase coherence on atmospheric stability is aggravated by typically low antenna observation elevation angles as the atmospheric path length is increased; uncorrelated atmospheric variations between stations, and observing with a sparse VLBI array.
+
 Hence a delay constant across the bandwidth causes a phase slope across the bandwidth which can wrap multiple times.
 
-%propagation fundamentals and the relationship between delay-absorption-noise
-
-Considering a quasi-monochromatic wave passing through a linear medium,
-\begin{equation}
-E(x,t) = E_0 \exp^{i(knx - 2\pi\nu t)},
-\end{equation}		
-where k is the propagation constant in free space equal to $2\pi \nu/c$ and $n$ is the complex index of refraction, $n= n_R + j n_I$. If $n_I$ is nonzero the wave will decay exponentially. The linear absorption coefficient or fraction of power absorbed per unit length traversing the medium is defined as 
-\begin{equation}
-\kappa_\nu = 4\pi \nu n_I/c.
-\end{equation}
-~\\
-The phase velocity of light slows according to the refractive index, $v_p = c/n_R$, which results in a time delay.  Because the electric field is causal, $n_R$ and $n_I$ contain the same information and can be interchanged via the Kramers-Kronig relations. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
-\begin{equation}\label{timedelay}
-\delta t + i \tau =1/c \int_{medium} d^3\mathbf{x}\  (n(\mathbf{x}, \nu) -1),
-\end{equation}
-where the integral is over the total path through the medium.
-~\\
-Absorption is accompanied by emission and for a medium in local thermodynamic equilibrium, Kirchoff's law states that 
-\begin{equation}\label{kirchoff}
-\frac{\epsilon_\nu}{\kappa_\nu}=B_\nu(T),
-\end{equation}
-where $\epsilon_\nu = dI_\nu/dx$ is the macroscopic emission coefficient and $B_\nu(T)$ is the Planck function. Hence the absorbing molecules are also emitters, increasing system noise.\\
-
-%Separate into average and turbulent - or maybe just consider radiative transfer in a static medium
-
-\subsection{Average atmosphere}
+\subsubsection{Radiative transfer}
 %St 2
 
 %Radiative transfer, how solving it will give observables in a self-consistent manner
 
 We start from the unpolarised radiative transfer equation, which is unidirectional in the absence of scattering,
-\begin{equation}
+\begin{equation}\label{eq:rad_trans}
 \frac{dI_\nu (s) }{ds} = \epsilon_\nu(s) -\kappa_\nu(s)  I_\nu (s),
-\end{equation}\label{eq:rad_trans}
+\end{equation}
 where $s$ is the coordinate along the signal path through the atmosphere, $I_\nu(s)$ is the specific intensity, $\epsilon_\nu$ is the macroscopic emission coefficient and $\kappa_\nu$ is the macroscopic absorption coefficient.  The assumption of local thermodynamic equilibrium (LTE) holds as the collisional timescale is much smaller than the time for spontaneous emission up to altitudes $\ge 80$ km after which there is only $\sim 0.001\%$ of mass left. (Pardo et al., ibid) Using Kirchoff's law, equation \ref{kirchoff}, multiplying by $\exp(-\tau_\nu)$ and integrating yields, 
 \begin{equation}
 I_\nu(s) = I_\nu(0) e^{-\tau_\nu (0,s) }+ \int_0^s B_\nu(s')e^{-\tau_\nu (s',s) }\kappa_\nu(s')ds'
 \end{equation}
 where  s' is a dummy variable in the same direction as s and $\tau_\nu (0,s) = \int_0^{s} k_\nu(s')ds'$. $I_\nu(0)$ is taken as the radiance from the cosmic background.\\
-The above equation will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. Note again that  $\epsilon$ can easily be calculated from $\kappa$, and vice-versa, using Kirchoff's law.  The mean time delay can be calculated using the Kramers-Kronig relations. The fluctuations in time delay will be given in section \ref{turb} .
-
+The above equation will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. Note again that  $\epsilon$ can easily be calculated from $\kappa$, and vice-versa, using Kirchoff's law.  The mean time delay can be calculated using the Kramers-Kronig relations. 
 
 
 %deriving the absorption coefficient
@@ -376,7 +358,7 @@ Transition lines at radio wavelengths result from rotational state transitions. 
 Far wing broadening of $H_2O$ lines $> 1.2$ THz extends to lower frequencies and is not completely represented by the VVW profile. This is believed to be due to self-self collisions of water molecules. Additionally there are terms from the dry atmosphere related to transient dipoles and Debye absorption which are not represented in the lineshape. To correct for these effects two pseudocontina are used. This takes the form of a power law dependence on $\nu$,$T$, and the molecular densities. The parameters involved in the pseudocontina as well as a subset of the rotational constants are based on Fourier transform spectroscopy measurements on Mauna Kea which was used to refine and test the model.\\
  ~\\
 
-\subsection{Turbulent atmosphere} 
+\subsubsection{Turbulent phase fluctuations} 
 %PR 1 St 2
 
 Visibility phase instability  $\delta \phi(t)$ due to tropospheric turbulence is a fundamental limitation to producing high fidelity, science-quality maps with a mm-VLBI array \citep{Thompson_2001}. The coherence time-scale is typically too rapid ($\lesssim10$~s) for fast switching calibration, so other calibration procedures (e.g. water vapour radiometry, paired antennas, and/or self-calibration) must be performed. Self-calibration is the most commonly used but is limited by the integration time needed to obtain adequate SNR to fringe fit. Phase decoherence often leads to the use of closure quantities to perform model fitting \citep{Doeleman_2001,Bower_2004, Shen_2005}.
