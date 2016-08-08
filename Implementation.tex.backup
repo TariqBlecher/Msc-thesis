@@ -1,17 +1,37 @@
 \chapter{Software architecture and implementation}
-%Can put pseduocode in for main steps
+%Can put pseudocode in for main steps
 %put the details of the examples in results and analysis chapter
 
 \section{Simulator}\label{sec:sim}
 %Pr 1 St 2
- %software architechure
-\textsc{MeqSilhouette} is an observation and signal corruption simulator written in \textsc{Python} and {\sc MeqTrees} using the  {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html}  data format. A flow diagram of the simulator is shown in Fig.~\ref{flow}. Input to the simulator is a sky model and configuration file. The former is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. The configuration file specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc) and which signal corruption implementation should be employed. The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or cleaned image. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed.  The rest of this section is devoted to describing the implementation of each signal corruption module.
+%software architechure
+\subsection{Design objectives}
 
-This section details the software architechure used for the simulation code as well as the RODRIGUES online interface. It will refer back to the signal corruption and simulation theory sections as well as the code itself. Futhermore the code has been written with the intention of being readable, hence minimum comments needed. This has hopefully been achieved through keeping to the logical flow underlying the code and explanatory names .  The highest level or driver script is written in Python which interfaces easily with other systems.  The bulk of the computational load is called through other programs, written in C++ which are faster. The CASA Measurement Set(MS) is data format of choice, although in the mm-VLBI field other formats are currently still more popular i.e. UVFITS or HOPS but with the rise of ALMA, the MS format will inevitably become the next generator data format and already is used at JIVE. \\
-~\\
+%Review design objectives
+The primary objective of this work is to explore calibration, imaging and parameter estimation algorithms and systematic errors through synthetic data simulation. In order to address the many questions within the wide scope of this objective, one must be able to setup and run a diversity of experiments easily within the simulation framework. The major requirement which this puts on the architechure, is that it is easily flexible and extendable.  
 
+
+\subsection{Architechure and Work flow}
+
+%overall architechure
+In order to meet the design criteria, the simulator has been written in \textsc{Python} and {\sc MeqTrees} uses the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html}  data format. \textsc{Python} is known for it's readability and has a wide user base in the astronomy community. The {\sc measurement set} is data format of choice as it is the provides direct access to data, although in the mm-VLBI field other formats are currently still more popular i.e. UVFITS or HOPS but with the rise of ALMA, the MS format will inevitably become the next generator data format and already is used at JIVE.
+
+
+The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or cleaned image. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed. 
+The highest level or driver script is written in Python which interfaces easily with other systems.  The bulk of the computational load is called through other programs, written in C++ which are faster. 
+
+%back end
+
+
+%front end
 
 from source variability: To test these effects, we include time variability for source in meqs. A discussion of calibration and interpretation of time variability, including separating out time-variable and quiescent structure is outside the scope of this thesis, but hopefully mm-VLBI can use some techniques from other time-variable domains of interferometry like pulsar searches or scintillation analyses.
+
+%work flow
+A flow diagram of the simulator is shown in Fig.~\ref{flow}. Input to the simulator is a sky model and configuration file. The former is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. The configuration file specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc) and which signal corruption implementation should be employed.
+
+
+
 
 \begin{figure*}
 \begin{center}
@@ -27,6 +47,8 @@ from source variability: To test these effects, we include time variability for 
 %link back to theory
 %Implementation in ScatterBrane : Python, the key algorithmic steps
 %Integration of Scatterbrane
+The turbulent phase screen $\phi(\mathbf{x})$ can generated from the phase spatial power spectrum (see Appendix C \citet*{Johnson_2015a}). 
+
 Scattering in the ISM at millimetre wavelengths falls into the strong scattering regime, which has been quantitatively described in the literature \citep*{Narayan_1989,Goodman_1989} and implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane/current} package, based on \citet*{Johnson_2015a}. This approach extends the turbulent model described in section~\ref{sec:basic_scat} to regimes where the inner and outer turbulent scales as well as the anisotropy of scattering kernel are considered. The distance to the screen is taken from the best-fit solution from \citet{Bower_2013} and is located, not at the Galactic Centre, but rather in the Scutum spiral arm at a distance $D_{\rm os}=5.8 \pm 0.3$~kpc. 
 
 
@@ -40,7 +62,7 @@ where $R$ rounds the fraction to the nearest integer.
 
 
 
-\subsection{Atmospheric}
+\subsection{Atmospheric corruption simulator}
 %Pr 1 St 2
 %Implementation details of ATM:numerical integration, inputs, outputs, tests, previous use cases
 %average/turbulent split
@@ -52,6 +74,15 @@ The goal is to integrate this equation over the signal path which requires $\kap
 Typical opacities and sky brightness temperatures for ALMA, Submillimeter Array (SMA) and SPT  are shown in Fig.~\ref{fig:mean_atm}. A typical PWV range \cite{Lane_1998}, ground pressure and temperature were assumed for each site. Note that both the opacity and brightness temperature are inversely proportional to the ground temperature and proportional to ground pressure.
 
 
+To perform the numerical integration in \ref{eq:rad_trans2}, the atmosphere is discretised into layers of variable thickness with an accuracy $\sim0.1$~K. Temperature \& density profiles are calculated based on several station dependent inputs to the API, namely, ground temperature \& pressure, precipital water vapor content (PWV), altitude scale height of water vapour and the troposphere lapse rate.
+
+
+Radiative transfer is applied to each absorption line through a sum over each atmospheric layer, chemical species and transition line, 
+\begin{equation}
+\tau_\nu = \sum_{i(layers)} \left[ \sum_{j(molec.)} \left( \sum_{k(lines)} \kappa_{\nu, k} \right)_j \right]_i \cdot \Delta s_i
+\end{equation}
+where $\Delta s_i$ is the path through the homogenous ith layer.\\
+~\\
 
 %the turbulent scattering model
 
@@ -85,7 +116,7 @@ Phase fluctuations $\delta\phi(t)$ can also simulated by taking the inverse Four
 
 
 
-\subsection{Pointing}
+\subsection{Pointing error simulator}
 %Pr 1 St 2
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
 We investigate the effect of pointing errors on the 50~m (i.e. fully illuminated) LMT dish configured in an eight station VLBI array. The LMT has been measured to have an absolute pointing accuracy of $\sigma_{\rm abs} = 1-3$~arcsec, where smaller offsets occur when observing sources closer to zenith, and a tracking pointing accuracy $\sigma_{\rm track} < 1$~arcsec \footnote{http://www.lmtgtm.org/telescope/telescope-description/}. We explore the observational effect of these errors through three different pointing error models which explore different instructive and plausible scenarios. The LMT has been singled out as this may well serve as a reference station for the EHT array given its sensitivity and central geographic location. The source used is a circular Gaussian of characteristic size $\Theta_{\rm src}=50$ $\mu$-arcsec, located at the phase centre. For this investigation, as long as $\Theta_{\rm src} \ll \theta_{\rm PB}$, the exact structure of the source is unimportant. We approximate the LMT beam profile using an analytic WSRT beam model \citep{Popping_2008} with a factor of 2 increase in the beam factor $C$ to take into account the increased dish size

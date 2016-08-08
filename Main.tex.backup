@@ -24,6 +24,6 @@
 %\input{Conclusion}
 \bibliography{bibfile}
 \bibliographystyle{plain}
-\addcontentsline{toc}{chapter}{Bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
 
 \end{document}
