@@ -54,6 +54,15 @@ The goal is to integrate this equation over the signal path which requires $\kap
 Typical opacities and sky brightness temperatures for ALMA, Submillimeter Array (SMA) and SPT  are shown in Fig.~\ref{fig:mean_atm}. A typical PWV range \cite{Lane_1998}, ground pressure and temperature were assumed for each site. Note that both the opacity and brightness temperature are inversely proportional to the ground temperature and proportional to ground pressure.
 
 
+To perform the numerical integration in \ref{eq:rad_trans2}, the atmosphere is discretised into layers of variable thickness with an accuracy $\sim0.1$~K. Temperature \& density profiles are calculated based on several station dependent inputs to the API, namely, ground temperature \& pressure, precipital water vapor content (PWV), altitude scale height of water vapour and the troposphere lapse rate.
+
+
+Radiative transfer is applied to each absorption line through a sum over each atmospheric layer, chemical species and transition line, 
+\begin{equation}
+\tau_\nu = \sum_{i(layers)} \left[ \sum_{j(molec.)} \left( \sum_{k(lines)} \kappa_{\nu, k} \right)_j \right]_i \cdot \Delta s_i
+\end{equation}
+where $\Delta s_i$ is the path through the homogenous ith layer.\\
+~\\
 
 %the turbulent scattering model
 
