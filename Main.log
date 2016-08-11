@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  11 AUG 2016 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  11 AUG 2016 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,16 +705,16 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 LaTeX Warning: Reference `sec:RIME' on page 1 undefined on input line 24.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 26.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 28.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -722,23 +722,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<Images/flow_full.png, id=54, 512.14961pt x 293.06339pt>
+<Images/flow_full.png, id=52, 512.14961pt x 293.06339pt>
 File: Images/flow_full.png Graphic file (type png)
 
 <use Images/flow_full.png>
-Package pdftex.def Info: Images/flow_full.png used on input line 54.
+Package pdftex.def Info: Images/flow_full.png used on input line 40.
 (pdftex.def)             Requested size: 345.0pt x 197.42467pt.
+ [2 <./Images/flow_full.png
 
-Overfull \hbox (0.63942pt too wide) in paragraph at lines 71--72
+pdfTeX warning: /usr/bin/pdflatex (file ./Images/flow_full.png): large interlac
+ed PNG might cause out of memory (use non-interlaced PNG to fix this)
+>]
+Overfull \hbox (0.63942pt too wide) in paragraph at lines 60--61
 []\OT1/cmr/m/n/10 The third MS-related class is the Sim-Co-or-di-na-tor class, 
 a child of the TropMS
  []
 
-[2] [3 <./Images/flow_full.png
 
-pdfTeX warning: /usr/bin/pdflatex (file ./Images/flow_full.png): large interlac
-ed PNG might cause out of memory (use non-interlaced PNG to fix this)
->]) (./Main.bbl [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3])
+(./Main.bbl [4]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
@@ -757,19 +761,16 @@ Package rerunfilecheck Info: File `Main.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 29.
  ) 
 Here is how much of TeX's memory you used:
  6878 strings out of 494506
  96726 string characters out of 6172963
- 184489 words of memory out of 5000000
+ 183489 words of memory out of 5000000
  10154 multiletter control sequences out of 15000+600000
  13000 words of font info for 52 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 36i,8n,28p,905b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,28p,911b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -781,7 +782,7 @@ ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb>
-Output written on Main.pdf (5 pages, 666470 bytes).
+Output written on Main.pdf (5 pages, 668565 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  105 compressed objects within 2 object streams

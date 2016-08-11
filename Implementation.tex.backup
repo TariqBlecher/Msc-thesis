@@ -21,33 +21,19 @@ Our primary aim is to test and research mm-VLBI calibration, imaging and paramet
 \subsection{Architechure and Workflow}
 %Pr 1 st 2
 %Intro and plan
-In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME (see section~\ref{sec:RIME}) formalism, and where this is not possible, to fit those particular signal corruptions into the casually correct position in the trans. In the implementation of each signal corruption is described in the following subsections. The remaining objectives fall more into the realm of software design and will be discussed in this subsection.
+In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME (see section~\ref{sec:RIME}) formalism, and where this is not possible, to fit those particular signal corruptions into the casually correct position in the signal transmission chain. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection.
+
+
 %Language and data format choice
-At the highest level, we have chosen to write the simulator using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base (including astronomers). Specifically \textsc{Python} interfaces well with the {\sc MeqTrees} package, as well as our data formats of choice: {\sc fits} for image cubes and the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html} (MS) for visibilities. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load (MS and visibility generation) is called through other programs, which are written in the faster {\sc C++} language. 
-The {\sc measurement set} (MS) is data format of choice as it is directly accessible via the {\sc pyrap} library and is the format of choice for {\sc MeqTrees} which is used for computing the RIME. Although in the mm-VLBI subfield other data formats are currently still more popular than the MS i.e. {\sc UVFITS} and/or {\sc HOPS}, with the completion of ALMA, the MS format will inevitably become the next generator data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
+We have chosen to write the simulator using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base (including astronomers). Specifically \textsc{Python} interfaces well with a modern interferometric toolbox, {\sc MeqTrees}, as well as our data formats of choice: {\sc fits} for image cubes and the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html} (MS) for visibilities. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load (MS and visibility generation) is called through lower level programs, which are written in the faster {\sc C++} language. 
+The MS is our data format of choice as it is directly accessible via the {\sc pyrap} library and is the format of choice for {\sc MeqTrees} which is used for computing the RIME. Although in the mm-VLBI subfield other data formats are currently still more popular than the MS i.e. {\sc UVFITS} and/or {\sc HOPS}, with the completion of ALMA, the MS format will inevitably become the next generator data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
+
 
 %Conceptual workflow - What are the essentials ins, outs and calculations 
 
 %workflow fig
-A conceptual flow diagram of the simulator is shown in Fig.~\ref{flow}. 
-%inputs
-%Work flow 1 : Inputs & front end 
 
-Highest level -> parameter dictionary and driver (azishe) script
-
-parameter dictionary and standard driver script have set structure. Are highly mutable, especially the azishe scripts, e.g. the ISM calculation. Parameter dictionary contains pointers to other inputs : fits folder which details source model, station information which details weather and sefd, antenna table which details telescope positions, names and dish sizes..this is essential for the MS creation.
-
-Input to the simulator is a sky model and configuration file. The former is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. The configuration file specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc) and which signal corruption implementation should be employed.
-
-
-
-
- %ms creation & uv sampling
- The MS is created using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool.
- 
- The RIME is evaluated using the MeqTrees : turbo-sim script which visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
- 
- The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired). 
+A conceptual flow diagram of a {\sc MeqSilhouette} simulation pipeline is shown in Fig.~\ref{flow}. The framework is not restricted to this sequence of operations and allows for the exact pipeline to be quite general. This flexibility is made possible through the use of \emph{Object-Orientation}, which will be elaborated on later.
 
 \begin{figure*}
 \begin{center}
@@ -58,17 +44,31 @@ Input to the simulator is a sky model and configuration file. The former is typi
 \end{figure*}
 
 
+%Inputs & driver script 
+At highest level of the framework is the driver script and parameter dictionary. The driver script determines the major sequence of steps in the pipeline whereas the parameter dictionary specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model is located. The sky model is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images.
 
 
+%ms creation 
+The first major step in the pipeline is to create the MS. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use interface to construct general MS, given an appropriate antenna table. This includes multiple scans, bands and channels. 
 
-%Work flow 2 : Calculation and & back end & object orientation
-Calculation is object oriented, we have should to create several classes containing Measurement Set and FITS file. The classes are separated as a way of modularisation, separating different level tasks. Makes it easier to debug.
+% Calculation and & back end & object orientation
+In order to make the framework as `clean' and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and derived attributes and methods as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures. Hence this class contains only the original MS and derived attributes, e.g. visibility data and station positions, and methods, e.g. functions to calculate station elevations and closure phases.
 
-First class is \emph{SimpleMS} which contains only the original measurement set and derivative quantities e.g. calculated station elevations and closure phases. This class serves to make the often used attributes and functions associated with the basic MS easy to access. A key feature of SimpleMS is it specifies a function which is the only way that we have allowed data to be saved into the measurement set (aside from the meqtrees sim). 
 
-The second MS-related class is TropMS which handles all troposphere and thermal noise related corruptions. This class is a child of SimpleMS, hence it has all the attributes and functions of SimpleMS. It also has also the functions and attributes related to the tropospheric corruption - mostly taken from the station information input file.
+The second MS-related class is \emph{TropMS} which handles all troposphere and thermal noise related corruptions. This class is a child of {\it SimpleMS}, hence it has all the attributes and functions of SimpleMS. It also has also the functions and attributes related to the tropospheric corruption - mostly taken from the station information input file.
 
 The third MS-related class is the SimCoordinator class, a child of the TropMS class. SimCoordinator is designed to make various simulations very easy to construct and run. SimCoordinator is set-up and called in the driver script. Along with the functionality and attributes of its parents, SimCoordinator also knows about the input source model and has functionality of the MeqTrees and ISM scattering simulation scripts. Once constructed, SimCoordinator can run ISM scatter, interferometric simulations, tropospheric and instrumental corruptions, thereby presents high level functionality to the user.
+
+
+
+ 
+ The RIME is evaluated using the MeqTrees : turbo-sim script which visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
+ 
+ The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired). 
+
+
+
+
 
 
 %Work flow 3 : Outputs and Data products

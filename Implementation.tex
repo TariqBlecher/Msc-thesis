@@ -26,7 +26,7 @@ In this section, we will review how the architechural design and workflow of the
 
 %Language and data format choice
 We have chosen to write the simulator using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base (including astronomers). Specifically \textsc{Python} interfaces well with a modern interferometric toolbox, {\sc MeqTrees}, as well as our data formats of choice: {\sc fits} for image cubes and the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html} (MS) for visibilities. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load (MS and visibility generation) is called through lower level programs, which are written in the faster {\sc C++} language. 
-The {\sc measurement set} (MS) is data format of choice as it is directly accessible via the {\sc pyrap} library and is the format of choice for {\sc MeqTrees} which is used for computing the RIME. Although in the mm-VLBI subfield other data formats are currently still more popular than the MS i.e. {\sc UVFITS} and/or {\sc HOPS}, with the completion of ALMA, the MS format will inevitably become the next generator data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
+The MS is our data format of choice as it is directly accessible via the {\sc pyrap} library and is the format of choice for {\sc MeqTrees} which is used for computing the RIME. Although in the mm-VLBI subfield other data formats are currently still more popular than the MS i.e. {\sc UVFITS} and/or {\sc HOPS}, with the completion of ALMA, the MS format will inevitably become the next generator data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
 
 
 %Conceptual workflow - What are the essentials ins, outs and calculations 
@@ -44,12 +44,21 @@ A conceptual flow diagram of a {\sc MeqSilhouette} simulation pipeline is shown 
 \end{figure*}
 
 
-%Work flow 1 : Inputs & driver script 
+%Inputs & driver script 
 At highest level of the framework is the driver script and parameter dictionary. The driver script determines the major sequence of steps in the pipeline whereas the parameter dictionary specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model is located. The sky model is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images.
 
 
 %ms creation 
 The first major step in the pipeline is to create the MS. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use interface to construct general MS, given an appropriate antenna table. This includes multiple scans, bands and channels. 
+
+% Calculation and & back end & object orientation
+In order to make the framework as `clean' and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and derived attributes and methods as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures. Hence this class contains only the original MS and derived attributes, e.g. visibility data and station positions, and methods, e.g. functions to calculate station elevations and closure phases.
+
+
+The second MS-related class is \emph{TropMS} which handles all troposphere and thermal noise related corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use whilst being separated from the core MS functionality.
+
+
+The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute. {\it SimCoordinator} the only MS class directy initialised in the driver script. Along with the functionality and attributes of its parents, SimCoordinator also knows about the input source model and has functionality of the MeqTrees and ISM scattering simulation scripts. Once constructed, SimCoordinator can run ISM scatter, interferometric simulations, tropospheric and instrumental corruptions, thereby presents high level functionality to the user.
 
 
 
@@ -61,17 +70,6 @@ The first major step in the pipeline is to create the MS. This is performed usin
 
 
 
-
-
-
-%Work flow 2 : Calculation and & back end & object orientation
-Calculation is object oriented, we have should to create several classes containing Measurement Set and FITS file. The classes are separated as a way of modularisation, separating different level tasks. Makes it easier to debug.
-
-First class is \emph{SimpleMS} which contains only the original measurement set and derivative quantities e.g. calculated station elevations and closure phases. This class serves to make the often used attributes and functions associated with the basic MS easy to access. A key feature of SimpleMS is it specifies a function which is the only way that we have allowed data to be saved into the measurement set (aside from the meqtrees sim). 
-
-The second MS-related class is TropMS which handles all troposphere and thermal noise related corruptions. This class is a child of SimpleMS, hence it has all the attributes and functions of SimpleMS. It also has also the functions and attributes related to the tropospheric corruption - mostly taken from the station information input file.
-
-The third MS-related class is the SimCoordinator class, a child of the TropMS class. SimCoordinator is designed to make various simulations very easy to construct and run. SimCoordinator is set-up and called in the driver script. Along with the functionality and attributes of its parents, SimCoordinator also knows about the input source model and has functionality of the MeqTrees and ISM scattering simulation scripts. Once constructed, SimCoordinator can run ISM scatter, interferometric simulations, tropospheric and instrumental corruptions, thereby presents high level functionality to the user.
 
 
 %Work flow 3 : Outputs and Data products
