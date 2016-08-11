@@ -1,72 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-White space in argument---line 31 of file Main.aux
- : \citation{Genzel_2003;
- :                        Belanger_2006}
-I'm skipping whatever remains of this command
 The style file: plain.bst
+I found no \citation commands---while reading file Main.aux
 Database file #1: bibfile.bib
-Warning--I didn't find a database entry for "Fish_2009"
-Warning--I didn't find a database entry for "Baganoff_2001"
-Warning--I didn't find a database entry for "Genzel_2003"
-Warning--I didn't find a database entry for "Yusef-Zadeh_2006"
-Warning--I didn't find a database entry for "Maronne_2006"
-Warning--I didn't find a database entry for "Meyer_2008"
-Warning--I didn't find a database entry for "Fish_2009b"
-Warning--I didn't find a database entry for "Johnson_2014"
-Warning--I didn't find a database entry for "Lu_2016"
-Warning--I didn't find a database entry for "Backer_1978"
-Warning--I didn't find a database entry for "Shen_2005"
-Warning--I didn't find a database entry for "Lu_2011"
-Warning--I didn't find a database entry for "Psaltis_2015"
-Warning--I didn't find a database entry for "Gwinn_2012"
-Warning--I didn't find a database entry for "johnson_dissertation"
-Warning--I didn't find a database entry for "Ortiz_2016"
-Warning--I didn't find a database entry for "Narayan_1998"
-Warning--I didn't find a database entry for "Melia_1994"
-Warning--I didn't find a database entry for "Macquart_2006"
-Warning--I didn't find a database entry for "Bower_2004"
-Warning--empty publisher in Thompson_2001
-You've used 30 entries,
+You've used 0 entries,
             2118 wiz_defined-function locations,
-            764 strings with 12221 characters,
-and the built_in function-call counts, 13876 in all, are:
-= -- 1252
-> -- 1043
-< -- 5
-+ -- 413
-- -- 383
-* -- 1288
-:= -- 2412
-add.period$ -- 91
-call.type$ -- 30
-change.case$ -- 280
+            497 strings with 3988 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 365
-empty$ -- 800
-format.name$ -- 383
-if$ -- 2681
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 31
-newline$ -- 153
-num.names$ -- 62
-pop$ -- 245
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 251
+purify$ -- 0
 quote$ -- 0
-skip$ -- 252
+skip$ -- 1
 stack$ -- 0
-substring$ -- 737
-swap$ -- 60
-text.length$ -- 5
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
-warning$ -- 1
-while$ -- 110
-width$ -- 32
-write$ -- 331
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
 (There was 1 error message)
