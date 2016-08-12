@@ -5,14 +5,16 @@
 \section{Data simulation}\label{sec:sim}
 \subsection{Design objectives}
 %Pr 1 St 1
-%Review primary design objectives
-%The major requirements which the objective places on architechure: variability + major corruption classes + framework for implementing signal corruptions  
+%objective
 Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diversity of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should 
+
+%The major requirements which the objective places on architechure:
 \begin{itemize}
+%major corruption classes + framework for implementing signal corruptions  
  \item enable the implementation of all relevant classes of signal corruption within a formalism which ensures consistency with the causal signal transmission chain,
- 
+ %grmhd input
  \item be compatible with time-variable GRMHD source models which are to be used as inputs,
- 
+ %modularise+
  \item enable the construction and execution of arbitrary observations,
  
  \item be organised in modularised structure so that it is flexible, extendable and could be incorporated by other interferometric algorithms e.g. a calibration or parameter estimation algorithm.
@@ -20,7 +22,7 @@ Our primary aim is to test and research mm-VLBI calibration, imaging and paramet
 
 \subsection{Architechure and Workflow}
 %Pr 1 st 2
-%Intro and plan
+%Intro and plan, How will the objectives be fulfilled
 In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME (see section~\ref{sec:RIME}) formalism, and where this is not possible, to fit those particular signal corruptions into the casually correct position in the signal transmission chain. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection.
 
 
@@ -29,10 +31,9 @@ We have chosen to write the simulator using the \textsc{Python} language. \texts
 The MS is our data format of choice as it is directly accessible via the {\sc pyrap} library and is the format of choice for {\sc MeqTrees} which is used for computing the RIME. Although in the mm-VLBI subfield other data formats are currently still more popular than the MS i.e. {\sc UVFITS} and/or {\sc HOPS}, with the completion of ALMA, the MS format will inevitably become the next generator data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
 
 
-%Conceptual workflow - What are the essentials ins, outs and calculations 
+%Conceptual workflow - the essentials
 
 %workflow fig
-
 A conceptual flow diagram of a {\sc MeqSilhouette} simulation pipeline is shown in Fig.~\ref{flow}. The framework is not restricted to this sequence of operations and allows for the exact pipeline to be quite general. This flexibility is made possible through the use of \emph{Object-Orientation}, which will be elaborated on later.
 
 \begin{figure*}
@@ -52,32 +53,36 @@ At highest level of the framework is the driver script and parameter dictionary.
 The first major step in the pipeline is to create the MS. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use interface to construct general MS, given an appropriate antenna table. This includes multiple scans, bands and channels. 
 
 % Calculation and & back end & object orientation
+%SimpleMS
 In order to make the framework as `clean' and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and derived attributes and methods as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures. Hence this class contains only the original MS and derived attributes, e.g. visibility data and station positions, and methods, e.g. functions to calculate station elevations and closure phases.
 
-
+%TropMS
 The second MS-related class is \emph{TropMS} which handles all troposphere and thermal noise related corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use whilst being separated from the core MS functionality. The details of the tropospheric corruption is provided in a later subsection.
 
-
+%SimCoordinator
 The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (the implementation of which is in the next subsection), and the evaluation of the RIME. The RIME is evaluated using the MeqTrees : turbo-sim script, where the visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
  
- 
- %Work flow 3 : Outputs and Data products
- 
-
-The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed. 
+%Work flow 3 : Outputs and Data products
+The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired. The modular structure of the pipeline allows for imaging and deconvolution algorithms to be employed. There exist {\sc casa} tasks for conversion to UVFITS. As the pipeline is easily flexible other data products can be easily produced as needed e.g. polarisation ratios or time-frequency averaged data.
 
 
-
-\subsection{ScatterBrane}
+\subsubsection{ISM scattering}
 %Pr 1 St 2
 %link back to theory
-%Implementation in ScatterBrane : Python, the key algorithmic steps
+%ScatterBrane intro
+
+An algorithm which approximates implements scattering in the average regime, which is relevant to VLBI observations of Sgr~A$^\star$, has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a} as per  \ref{eq:scatterbrane}.
 %Integration of Scatterbrane
+We include the {\sc ScatterBrane} software, which has already yielded important context for mm-VLBI observations towards Sgr~A$^\star$ \citep[e.g.][]{2016arXiv160106571O}, within the {\sc MeqSilhouette} framework. Our ISM module interfaces the \textsc{Scatterbrane} code within an interferometric simulation pipeline. This module enables simultaneous use of time-variable ISM scattering and time-variable intrinsic source structure within a single framework. The user is able to select a range of options relating to the time-resolution and epoch interpolation/averaging of both. By default, if the time resolution chosen to sample the source variability $\Delta t_{\rm src}$ and screen variability $\Delta t_{\rm ism}$ are unequal, we set  
+\begin{itemize}
+ \setlength\itemsep{1em}
+\item $\Delta t_{\rm ism}=\Delta t_{\rm src}$ \qquad \qquad if \qquad  $\Delta t_{\rm src} < \Delta t_{\rm ism}$
+\item $\Delta t_{\rm ism}=R(\frac{\Delta t_{\rm src}}{\Delta t_{\rm ism}})\Delta t_{\rm src}$ \ if \qquad  $\Delta t_{\rm src} > \Delta t_{\rm ism}$,
+\end{itemize}
+where $R$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.
 
 
-
-
-\subsection{Atmospheric corruption simulator}
+\subsubsection{Atmospheric corruption simulator}
 %Pr 1 St 2
 %Implementation details of ATM:numerical integration, inputs, outputs, tests, previous use cases
 %average/turbulent split
@@ -86,7 +91,7 @@ The primary outputs of the pipeline are an interferometric dataset in {\sc measu
 
 
 
-\subsection{Pointing error simulator}
+\subsubsection{Pointing error simulator}
 %Pr 1 St 2
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
 \subsection{RODRIGUES interface}

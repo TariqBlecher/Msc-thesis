@@ -55,27 +55,16 @@ The first major step in the pipeline is to create the MS. This is performed usin
 In order to make the framework as `clean' and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and derived attributes and methods as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures. Hence this class contains only the original MS and derived attributes, e.g. visibility data and station positions, and methods, e.g. functions to calculate station elevations and closure phases.
 
 
-The second MS-related class is \emph{TropMS} which handles all troposphere and thermal noise related corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use whilst being separated from the core MS functionality.
+The second MS-related class is \emph{TropMS} which handles all troposphere and thermal noise related corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use whilst being separated from the core MS functionality. The details of the tropospheric corruption is provided in a later subsection.
 
 
-The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute. {\it SimCoordinator} the only MS class directy initialised in the driver script. Along with the functionality and attributes of its parents, SimCoordinator also knows about the input source model and has functionality of the MeqTrees and ISM scattering simulation scripts. Once constructed, SimCoordinator can run ISM scatter, interferometric simulations, tropospheric and instrumental corruptions, thereby presents high level functionality to the user.
-
-
-
+The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (the implementation of which is in the next subsection), and the evaluation of the RIME. The RIME is evaluated using the MeqTrees : turbo-sim script, where the visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
  
- The RIME is evaluated using the MeqTrees : turbo-sim script which visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
  
- The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired). 
+ %Work flow 3 : Outputs and Data products
+ 
 
-
-
-
-
-
-%Work flow 3 : Outputs and Data products
-
-
-The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image cube. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed. 
+The primary outputs of the pipeline are an interferometric dataset in {\sc measurement set} format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired. The modular structure of the pipeline allows for multiple imaging and deconvolution algorithms to be employed. 
 
 
 
