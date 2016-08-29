@@ -1,73 +1,84 @@
 \chapter{Software implementation}
-%Can put pseudocode in for main steps
-%put the details of the examples in results and analysis chapter
 
-\section{Data simulation}\label{sec:sim}
-\subsection{Design objectives}
+\section{Design objectives}
 %Pr 1 St 1
-%objectives
+%broad objectives
 Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diversity of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should 
 
-%The major requirements which the objective places on architechure:
+
+%specific objectives
 \begin{itemize}
-%major corruption classes + framework for implementing signal corruptions  
+%framework for consistent implementation of the necessary signal corruptions  
  \item enable the implementation of all relevant classes of signal corruption within a formalism which ensures consistency with the causal signal transmission chain,
  %grmhd input
  \item be compatible with time-variable GRMHD source models which are to be used as inputs,
- %modularise+
- \item enable the construction and execution of arbitrary observations,
- 
- \item be organised in modularised structure so that it is flexible, extendable and could be incorporated by other interferometric algorithms e.g. a calibration or a parameter estimation algorithm.
+ %modularise - extendable
+ \item be organised in modularised structure so that it is flexible, extendable and could be incorporated by other interferometric algorithms e.g. a calibration or a parameter estimation algorithm,
+  %modularise - diverse experiments
+ \item The modular structure should also enable the construction and execution of arbitrary observations.
 \end{itemize}
 
-\subsection{Architechure and Workflow}
+\section{Architechure and Workflow}
 %Pr 1 st 2
-%Intro and plan, How will the objectives be fulfilled
-In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}), and where this is not possible, to fit those particular signal corruptions into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements in the signal transmission path. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection.
+%Intro and plan, How to meet objectives %st 1
+In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}), and where this is not possible, to fit those particular signal corruptions into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements in the signal transmission path. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection. 
 
 
 %Language and data format choice
-We have chosen to write the top level simulation code using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base (including astronomers). Specifically \textsc{Python} interfaces well with a modern interferometric toolbox, {\sc MeqTrees}, as well as our data formats of choice: {\sc fits} for image cubes and the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html} {\sc ms} for visibilities. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load ({\sc ms} and visibility generation) is called through the faster {\sc C++} language. 
+%st : fine + contained %st 1
+We have chosen to write the high level simulation code using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base (including astronomers). Specifically \textsc{Python} interfaces well with a modern interferometric toolbox, {\sc MeqTrees}, as well as our data formats of choice: {\sc fits} for image cubes and the {\sc measurement set}\footnote{https://casa.nrao.edu/Memos/229.html} {\sc ms} for visibilities. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load ({\sc ms} and visibility generation) is called through the faster {\sc C++} language. 
 We use {\sc ms} as our data format as it is directly accessible via the {\sc pyrap} library and is the data format used by {\sc MeqTrees} which performs the visibility generation and pointing error simulation. Although in the mm-VLBI subfield other data formats are currently still more popular than the {\sc ms}, i.e. {\sc UVFITS} or {\sc IOFITS}, with the completion of ALMA, the MS format should become the next modern data format and already is used at the Joint Institute for VLBI in Europe (JIVE). 
 
 
-%Conceptual workflow - the essentials
+%Highest level architechure : Distinction between framework and driver and how they link %st 1
+To create a flexible and modular structure necessary to be able to run a diversity of experiments, the software implementation is divided into 2 components:
+\begin{itemize}
+ \item an object-oriented framework into which is programmed the logic of each individual step in the signal propagation chain,
+ \item a driver script which initialises the most abstract class in the framework with the required inputs and determines the signal propagation chain relevant to that particular pipeline.
+\end{itemize}
+The conceptual flow diagram of one realisation of a {\sc MeqSilhouette} simulation pipeline is shown in Fig.~\ref{flow}. To emphasise, the framework is not restricted to this sequence of operations, allowing the exact pipeline to be quite general. This flexibility is made possible through the use of \emph{Object-Orientation}, which will be elaborated on later. 
 
-%workflow fig
-A conceptual flow diagram of a {\sc MeqSilhouette} simulation pipeline is shown in Fig.~\ref{flow}. Note that the framework is not restricted to this sequence of operations and allows for the exact pipeline to be quite general. This flexibility is made possible through the use of \emph{Object-Orientation}, which will be elaborated on later.
+%Inputs
+All inputs to the simulator are specified by a configuration file, containing a dictionary, which is the sole input to the driver script. This dictionary contains everything needed by the pipeline to determine the particular observation configuration (frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model and antenna table are located in the filesystem. 
+
+The primary accepted sky model is a time-ordered list of {\sc fits} images, where each image represents the source total intensity over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. Currently the pipeline only supports total intensity and the conversion of the pipeline to support full stokes is discussed in section~\ref{sec:discussion}. A variation of the pipeline has also been written which uses a parametric source model consisting of Gaussians or point sources as the sky model which is used as the {\sc MeqTrees} beams do not allow {\sc fits} inputs and so was used for the pointing error simulation.
+
+Antenna table is in the CASA format, and can readily be created or altered using the {\sc pyrap} library using the station coordinates.
+
+
+%Outputs and Data products
+The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired. The modular structure of the pipeline allows for imaging and deconvolution algorithms to be employed. There exists a {\sc casa} task for conversion to UVFITS. As the pipeline is easily flexible other data products can be easily produced as needed e.g. polarisation ratios or time-frequency averaged data.
+
+
+%Overview of the workflow
+
+%workflow fig : example of a pipeline
 
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/flow_full}
-\caption{Flow diagram showing basic sequence of the \textsc{MeqSilhouette} simulation pipeline. The sky model could include (a) a time-ordered list of {\sc fits} images or (b) parametric source model consisting of Gaussians or point sources. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is flexible, allowing any additional, arbitrary Jones matrices to be incorporated. Further details in text.\label{flow}%
+\caption{Flow diagram showing basic sequence of a \textsc{MeqSilhouette} simulation pipeline. The specific sequence is determined by the driver script. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is extendable, allowing any additional, arbitrary Jones matrices to be incorporated.\label{flow}%
 }
 \end{center}
 \end{figure*}
 
-
-%Inputs & driver script 
-At highest level of the framework is a driver script and parameter dictionary. The driver script details the sequence of steps to take place in the pipeline whereas the parameter dictionary specifies all parameters needed by the pipeline to determine the particular observation configuration (array, frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model is located. The sky model is typically a time-ordered list of {\sc fits} images, where each image represents the source total intensity\footnote{Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input.} over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. A typical parameter dictionary is shown in table~\ref{tab:parameter_dictionary}.
-
-
+%Framework - details
 
 %ms creation 
-The first major step in the pipeline is to create a fairly comprehensive MS. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use interface to construct general MS, given an appropriate antenna table, which can be generated using {\sc pyrap}. 
+A major step is to create a comprehensive MS which can handle arbitrary scans lengths and start times as well as arbitrary frequency channelisation and bandwidth. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use interface to construct general MS, given an appropriate antenna table, which can be created manually using the {\sc pyrap} library. 
 
 % Calculation and & back end & object orientation
 %SimpleMS
 In order to make the framework as clean and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and MS-only derived attributes (e.g. visibility data and station positions) and methods (e.g. functions to calculate station elevations and closure phases) as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures which become verbose when used frequently.
 
 %TropMS
-The second MS-related class, \emph{TropMS}, handles the calculations relevant to tropospheric and thermal noise corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use, whilst being separated from, the core MS functionality. The details of the tropospheric corruption is provided in a later subsection.
+The second MS-related class, \emph{TropMS}, handles the calculations relevant to tropospheric and thermal noise corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use, whilst being separated from, the core MS functionality. The details of the tropospheric corruption is provided in subsection\ref{sec:atm_imp}. 
 
 %SimCoordinator
-The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute on a high level. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (the implementation of which is in the next subsection), and the generation of visibilities and simulation of antenna pointing errors using the {\sc MeqTrees : turbo-sim} task, where the visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
+The third MS-related class is the \emph{SimCoordinator}, and it is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute on a high level. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (see subsection~\ref{sec:ism_imp}), and {\sc MeqTrees} functionality. of visibilities and simulation of antenna pointing errors using the {\sc MeqTrees : turbo-sim} task, where the visibilities are calculated through evaluation of the Fourier Transform at each UVW coordinate in the dataset, the time and frequency resolution of which is specified by the user.
  
-%Work flow 3 : Outputs and Data products
-The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties and a dirty and/or deconvolved image (or spectral cube if desired. The modular structure of the pipeline allows for imaging and deconvolution algorithms to be employed. There exists a {\sc casa} task for conversion to UVFITS. As the pipeline is easily flexible other data products can be easily produced as needed e.g. polarisation ratios or time-frequency averaged data.
 
-
-\subsubsection{ISM scattering}
+\subsection{ISM scattering}\label{sec:ism_imp}
 %Pr 1 St 2
 
 %Link back to theory
@@ -90,23 +101,23 @@ We include the {\sc ScatterBrane} software, which has already yielded important 
 where $R$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.
 
 
-\subsubsection{Atmospheric corruption simulator}
+\subsection{Atmospheric corruption simulator}\label{sec:atm_imp}
 %Pr 1 St 2
-
-
-%Implementation details of ATM:numerical integration, inputs, outputs, tests, previous use cases
 %average/turbulent split
+
+%Implementation details of ATM: inputs, outputs
 
 %the turbulent scattering model
 
 
 
-\subsubsection{Pointing error simulator}
+\subsection{Pointing error simulator}
 %Pr 1 St 2
-%The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
-\subsection{RODRIGUES interface}
-%Pr 3 St 3
-For community use, we host the online, RODRIGUES, interface, found at http://rodrigues.meqtrees.net/. Each of the components of the simulator run in Docker containers. **Looks like the infrustructure is going to change, re: discussions with Gijs and Sphe, so going to wait before writing this.
 
-\section{Parameter estimation}
-%Leave for now
+%The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
+
+
+\section{RODRIGUES interface}
+%Pr 3 St 3
+%leave until this is actually done
+For community use, we host the online, RODRIGUES, interface, found at http://rodrigues.meqtrees.net/. Each of the components of the simulator run in Docker containers. **Looks like the infrustructure is going to change, re: discussions with Gijs and Sphe, so going to wait before writing this.

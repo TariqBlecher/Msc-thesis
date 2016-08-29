@@ -1,7 +1,8 @@
 \chapter{Results and analysis}
 
-\subsection{Canonical simulations}
+\section{Canonical simulations}
 %Pr 1 St 2
+
 
 \begin{figure*}
 \begin{center}
@@ -65,7 +66,11 @@ In section~\ref{sec:trop_errors} we explore the observational consequences of ob
 Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations. This offers a tool to enable a more closely-knit and effective interplay between theoretical predictions and observational capabilities. Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.
  
 
-\subsection{Parameter estimation}
-%leave for now
+\section{A comparison to real data}
+
+\section{Calibration and imaging of a time variable source in the presence of the troposphere}
+
+Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) and the simulator in {\sc MeqTrees} already support full stokes logic. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping.   
+
 
 

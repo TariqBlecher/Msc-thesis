@@ -1,73 +1,82 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-White space in argument---line 32 of file Main.aux
+White space in argument---line 59 of file Main.aux
  : \citation{Genzel_2003;
  :                        Belanger_2006}
 I'm skipping whatever remains of this command
 The style file: plain.bst
-Database file #1: bibfile.bib
-Warning--I didn't find a database entry for "Fish_2009"
-Warning--I didn't find a database entry for "Baganoff_2001"
-Warning--I didn't find a database entry for "Genzel_2003"
-Warning--I didn't find a database entry for "Yusef-Zadeh_2006"
+Database file #1: thesis.bib
+Repeated entry---line 123 of file thesis.bib
+ : @article{Fish_2016
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1235 of file thesis.bib
+ : @article{Carilli_1999
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "brogan_2015"
+Warning--I didn't find a database entry for "Broderick_2014"
+Warning--I didn't find a database entry for "2015arXiv151201413B"
+Warning--I didn't find a database entry for "Smirnov_2011a"
+Warning--I didn't find a database entry for "Smirnov_2011b"
+Warning--I didn't find a database entry for "Smirnov_2011c"
 Warning--I didn't find a database entry for "Maronne_2006"
-Warning--I didn't find a database entry for "Meyer_2008"
+Warning--I didn't find a database entry for "Johnson_2015b"
 Warning--I didn't find a database entry for "Fish_2009b"
-Warning--I didn't find a database entry for "Johnson_2014"
-Warning--I didn't find a database entry for "Lu_2016"
+Warning--I didn't find a database entry for "carilli_1997"
+Warning--I didn't find a database entry for "Johnson_2015a"
 Warning--I didn't find a database entry for "Backer_1978"
-Warning--I didn't find a database entry for "Shen_2005"
-Warning--I didn't find a database entry for "Lu_2011"
-Warning--I didn't find a database entry for "Psaltis_2015"
-Warning--I didn't find a database entry for "Gwinn_2012"
 Warning--I didn't find a database entry for "johnson_dissertation"
 Warning--I didn't find a database entry for "Ortiz_2016"
 Warning--I didn't find a database entry for "Narayan_1998"
 Warning--I didn't find a database entry for "Melia_1994"
-Warning--I didn't find a database entry for "Macquart_2006"
-Warning--I didn't find a database entry for "Bower_2004"
-Warning--I didn't find a database entry for "Wrobel_1999"
-Warning--empty publisher in Thompson_2001
-You've used 33 entries,
+Warning--I didn't find a database entry for "Serabyn_1998"
+Warning--I didn't find a database entry for "2016arXiv160106571O"
+Warning--empty journal in BORN_1980
+Warning--empty journal in Masson_1994
+Warning--empty journal in Radford_1998
+Warning--empty journal in Thompson_2001
+Warning--empty journal in Wrobel_1999
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            789 strings with 13264 characters,
-and the built_in function-call counts, 15476 in all, are:
-= -- 1381
-> -- 1207
-< -- 5
-+ -- 478
-- -- 445
-* -- 1448
-:= -- 2709
-add.period$ -- 100
-call.type$ -- 33
-change.case$ -- 320
+            850 strings with 15505 characters,
+and the built_in function-call counts, 19479 in all, are:
+= -- 1722
+> -- 1491
+< -- 0
++ -- 589
+- -- 542
+* -- 1743
+:= -- 3496
+add.period$ -- 141
+call.type$ -- 47
+change.case$ -- 412
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 397
-empty$ -- 864
-format.name$ -- 445
-if$ -- 2973
+cite$ -- 52
+duplicate$ -- 512
+empty$ -- 1112
+format.name$ -- 542
+if$ -- 3762
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 34
-newline$ -- 168
-num.names$ -- 68
-pop$ -- 281
+int.to.str$ -- 47
+missing$ -- 47
+newline$ -- 238
+num.names$ -- 94
+pop$ -- 336
 preamble$ -- 1
-purify$ -- 288
+purify$ -- 365
 quote$ -- 0
-skip$ -- 273
+skip$ -- 339
 stack$ -- 0
-substring$ -- 776
-swap$ -- 63
-text.length$ -- 5
+substring$ -- 919
+swap$ -- 42
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
-warning$ -- 1
-while$ -- 118
-width$ -- 35
-write$ -- 363
-(There was 1 error message)
+type$ -- 188
+warning$ -- 5
+while$ -- 136
+width$ -- 49
+write$ -- 510
+(There were 3 error messages)
