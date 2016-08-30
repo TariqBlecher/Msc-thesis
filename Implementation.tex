@@ -112,13 +112,19 @@ where $R$ rounds the fraction to the nearest integer.  This modification to the 
 %Pr 1 St 2
 
 %average/turbulent split st 1
-Our focus for the atmospheric signal corruptions is to model the three primary, interrelated observables which are the most relevant to mm-VLBI: turbulence-driven fluctuations in the visibility phase $\delta \phi$; signal attenuation due to the atmospheric opacity $\tau$; and the increase in system temperature due to atmospheric emission at a brightness temperature $T_{\rm atm}$. Our approach is to model these observables as being separable into mean and turbulent components which are simulated independently. The mean tropospheric simulation module performs radiative transfer with a detailed model of the electromagnetic spectrum of each atmospheric constituent. The turbulent simulation module takes a scattering approach to account for the decoherence that results from power-law turbulence.
+Our focus in this module is to model the three primary, interrelated (see section~\ref{sec:prop_fund}) observables which are the most relevant to mm-VLBI: turbulence-driven fluctuations in the visibility phase $\delta \phi$; signal attenuation due to the atmospheric opacity $\tau$; and the increase in system temperature due to atmospheric emission at a brightness temperature $T_{\rm atm}$. Our approach is to model these observables as being separable into mean and turbulent components which are simulated independently. The mean tropospheric simulation module performs radiative transfer with a detailed model of the electromagnetic spectrum of each atmospheric constituent. The turbulent simulation module takes a scattering approach to account for the decoherence that results from power-law turbulence.
 
-%Implementation details of ATM: inputs, outputs
-As described in section~\ref{sec:atm_theory}, we use the {\sc atm} package to perform radiative transfer through one realisation of the atmosphere. Inputs to {\sc atm} include Atmospheric temperature and pressure profiles are calculated based on several station dependent inputs, namely, ground temperature and pressure and the precipitable water vapour column depth, water vapour column density altitude. 
+%Implementation details of ATM st 3
+%what it does and how it fits into the broader scheme
+As described in section~\ref{sec:atm_theory}, we use the {\sc atm} package to perform radiative transfer through the realisation of the mean atmosphere. 
+%inputs
+{\sc atm} calculates atmospheric temperature and pressure profiles using several station dependent inputs, namely, ground temperature and pressure and the PWV depth, water vapour scale height and altitude. Although changes in the altitude do not make much difference as  
+%outputs
 
 
-%phase turbulence
+%phase turbulence st 3
+%How it fits into the broader scheme
+%what it does
 Following from section~\ref{sec:turb_theory}, we simulate a equation~\ref{eq:turb_final}
 
 

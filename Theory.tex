@@ -254,7 +254,7 @@ a robust and rapid mechanism for quantifying refractive effects.
 The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case. 
 
 
-\subsubsection{Propagation fundamentals}
+\subsubsection{Propagation fundamentals}\label{sec:prop_fund}
 %propagation fundamentals st 1
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
@@ -264,9 +264,9 @@ where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R}
 \begin{equation}
 I = EE^\ast = E_0^2 \exp(-\tau),
 \end{equation}
-where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient, $d\tau = \kappa dx$ where $\kappa = 4\pi \nu n_I/c$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
+where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient, $d\tau = \kappa dx$ where $\kappa = 4\pi \nu n_I/c$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay due to the troposphere, $\tilde{t}$ and opacity $\tau$ can be calculated simultaneously,
 \begin{equation}\label{timedelay}
-\delta t + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
+\tilde{t} + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
 \end{equation}
 
 %the relationship between delay-absorption-noise st 1
@@ -293,9 +293,9 @@ An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorptio
 \end{figure*}
 
 %Phase variability in the GHz st 1
-In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\delta t (\nu)$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
+In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\tilde{t}$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
 \begin{equation}
-\delta \phi(t, \nu) = (\delta t_2(t, \nu) - \delta t_1(t, \nu))/\nu.
+\delta \phi(t, \nu) = (\tilde{t}_2(t, \nu) - \tilde{t}_1(t, \nu))/\nu.
 \end{equation}
 The water vapour column density is measured as the depth of the column when converted to the liquid phase and is referred to as the precipitable water vapour (PWV). PWV is directly proportional to the time delay and hence the phase delay, 
 \begin{equation}
@@ -323,7 +323,7 @@ where $s$ is the coordinate along the signal path through the atmosphere.  The a
 I_\nu(s) = I_\nu(0) e^{-\tau_\nu (0,s) }+ \int_0^s B_\nu(s')e^{-\tau_\nu (s',s) }\kappa_\nu(s')ds',
 \end{equation}
 where  $s'$ is a dummy variable in the same direction as $s$ and $\tau_\nu (0,s) = \int_0^{s} k_\nu(s')ds'$. $I_\nu(0)$ is normally taken as the radiance from the cosmic background.
-\ref{eq:rad_trans2} will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. The time delay $\delta t$ can be calculated using the Kramers-Kronig relations. 
+\ref{eq:rad_trans2} will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. The time delay $\tilde{t}$ can be calculated using the Kramers-Kronig relations. 
 
 
 %deriving the absorption coefficient st 1
