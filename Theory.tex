@@ -26,6 +26,15 @@ The signal corruptions which we have identified as the most prominent occurs in 
 
 %DDE vs DIE.. + diagram?
 
+\subsection{A primer on self-calibration}
+%Pr 2 St 3
+
+%Why the primer
+
+%calibration in mm-VLBI
+
+%Self-calibration from point of view of RIME
+
 \subsection{mm-VLBI observables and data products}
 %PR 2 St 2
 
@@ -239,18 +248,14 @@ a robust and rapid mechanism for quantifying refractive effects.
 
 
 \subsection{Troposphere}
-
-%Remember: No implementation should be included
-
 %PR 1 St 1
 
-%Introduction - Troposphere is a problem. Define troposphere.
+%Introduction - Troposphere is a problem. Define troposphere. st 1
 The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case. 
 
 
-%propagation fundamentals and the relationship between delay-absorption-noise
 \subsubsection{Propagation fundamentals}
-
+%propagation fundamentals st 1
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
 E_\nu(x,t) = E_0 \exp^{i(kn_\nu x - 2\pi\nu t)},
@@ -259,27 +264,26 @@ where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R}
 \begin{equation}
 I = EE^\ast = E_0^2 \exp(-\tau),
 \end{equation}
-where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient $\kappa = 4\pi \nu n_I/c$ via $d\tau = \kappa dx$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
+where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient, $d\tau = \kappa dx$ where $\kappa = 4\pi \nu n_I/c$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
 \begin{equation}\label{timedelay}
 \delta t + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
 \end{equation}
 
-
-Opacity and time delays are often viewed independently, however the electric field is real and causal and this imposes restrictions on the complex refractive index. Specificially $n_{\rm R}$ and $n_{\rm I}$ contain the same information and can be interchanged via the Kramers-Kronig relations. 
-
+%the relationship between delay-absorption-noise st 1
+In the interferometric context opacity and time delay are often viewed independently. However, the electric field is real and causal which imposes restrictions on the complex refractive index. Specificially $n_{\rm R}$ and $n_{\rm I}$ contain the same information and can be interchanged via the Kramers-Kronig relations. 
 
 Absorption is accompanied by emission and for a medium in local thermodynamic equilibrium, Kirchoff's law states that 
 \begin{equation}\label{kirchoff}
 \frac{\epsilon_\nu}{\kappa_\nu}=B_\nu(T),
 \end{equation}
-where $\epsilon_\nu = dI_\nu/dx$ is the emission coefficient and $B_\nu(T)$ is the Planck function. Hence the absorbing molecules are also emitters, increasing system noise. Therefore opacity, time delay and atmospheric noise are interrelated and should be simulated consistently. On a side note this opens up the possibilities for phase calibration using measurements of sky emission via Water Vapour Radiometry (WVR).
+where $\epsilon_\nu = dI_\nu/dx$ is the emission coefficient and $B_\nu(T)$ is the Planck function. Hence the absorbing molecules are also emitters, increasing system noise. Therefore opacity, time delay and atmospheric noise are interrelated and should be simulated consistently. On a side note these relations allow for phase calibration using measurements of sky emission via Water Vapour Radiometry (WVR) \citep*[e.g.][]{Carilli_1999}.
 
 \subsubsection{Atmospheric corruptions in the (sub-)mm regime}
-
-%Absorption in the GHz regime
+%st 1
+%Absorption in the GHz regime st 1
 An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorption}), shows that it is dominated by transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the cumulative effect of the far wings of a multitude of broadened water vapour lines above 1~THz \citep{Carilli_1999}. At 230~GHz the absorption is typically $5-10$\% at the best sites, during good weather. 
 
-%Fig Absorption spectrum in the GHz 
+%Fig Absorption spectrum in the GHz st 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/absorption}
@@ -288,7 +292,7 @@ An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorptio
 \end{center}
 \end{figure*}
 
-%Phase variability in the GHz 
+%Phase variability in the GHz st 1
 In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\delta t (\nu)$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
 \begin{equation}
 \delta \phi(t, \nu) = (\delta t_2(t, \nu) - \delta t_1(t, \nu))/\nu.
@@ -300,16 +304,16 @@ The water vapour column density is measured as the depth of the column when conv
 
 \noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \citep{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm. 
 
-
 This sensitive dependence of phase coherence on atmospheric stability is aggravated by typically low antenna observation elevation angles as the atmospheric path length is increased; uncorrelated atmospheric variations between stations as correlated atmospheric variations fall away; and observing with a sparse VLBI array as this leads to less redundancy for calibration.
 
 
-\subsubsection{Radiative transfer}
-%St 2
+\subsubsection{Radiative transfer}\label{sec:atm_theory}
+%St 1
 
-%Radiative transfer, how solving it will give observables in a self-consistent manner
-The problem of radiative transfer through a static atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) code \citep{Pardo_2001}. Here we provide a brief summary of the theory underpinning the package but see the original paper for further detail. \textsc{atm} is commonly used in the Atacama Large Millimeter Array (ALMA) community \citep{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
+%Radiative transfer, how solving it will give observables in a self-consistent manner st 1
+The problem of radiative transfer through the Earth's atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) description and code \citep{Pardo_2001}. In this section we provide a brief summary of the theory underpinning the package and we encourage the reader to see the original paper for further detail. The incorporation of {\sc atm} into the {\sc MeqSilhouette} simulator is dealt with in section~\ref{sec:trop_imp}. \textsc{atm} is commonly used in the Atacama Large Millimeter Array (ALMA) community \citep{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
 
+%Radiative transfer st 1
 We start from the unpolarised radiative transfer equation, which is unidirectional in the absence of scattering,
 \begin{equation}\label{eq:rad_trans}
 \frac{dI_\nu (s) }{ds} = \epsilon_\nu(s) -\kappa_\nu(s)  I_\nu (s),
@@ -322,7 +326,7 @@ where  $s'$ is a dummy variable in the same direction as $s$ and $\tau_\nu (0,s)
 \ref{eq:rad_trans2} will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. The time delay $\delta t$ can be calculated using the Kramers-Kronig relations. 
 
 
-%deriving the absorption coefficient
+%deriving the absorption coefficient st 1
 A general equation for the absorption coefficient for a transition between a lower $l$ and upper $u$ states is given in the original paper. Here we merely point out that it should be proportional to the energy of the photon, $h\nu_{l \to u}$, the transition probability or Einstein coefficient, $ B_{l \to u}$, the line-shape, $f(\nu,\nu_{l \to u})$ and the number densities $N$ of electronic populations. Line profiles which describe pressure broadening (perturbations to the Hamiltonian due to the presence of nearby molecules) and Doppler broadening are used. The condition of detailed balance further requires that decays from the upper state are included yielding, $g_u B_{u \to l} =g_l B_{l \to u}$, where $g$ is the degeneracy of the electronic state. Putting this together we find,
 
 \begin{equation}
@@ -340,27 +344,31 @@ The number densities of the two states, $N_u$ and $N_l$ in local thermodynamic e
 \end{equation}
 where Q is the partition function. $Q = \sum_i g_i  \exp{-E_n/kT}$. 
 
-Physically, the lineshape originates from perturbations to the hamiltonian due to proximity to neighbouring molecules, called pressure broadening, and at lower pressures, thermal doppler broadening. A Van Vleck -Weisskopf (VVW) profile is used for pressure broadening. At lower pressures this is convolved with a gaussian which arises from the Maxwellian distribution. 
-
-
-Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation \ref{coefficient}, hamiltonians for linearly symmetric rotors (e.g. $O_2$, $CO$) and asymetric rotors are used. The asymetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
-
-
+%lineshapes and pseudocontina st 1
+Physically, the lineshape originates from perturbations to the hamiltonian due to proximity to neighbouring molecules, called pressure broadening, and at lower pressures, thermal doppler broadening. A Van Vleck -Weisskopf (VVW) profile is used for pressure broadening. At lower pressures this is convolved with a Gaussian which arises from the Maxwellian distribution. 
 Far wing broadening of $H_2O$ lines $> 1.2$ THz extends to lower frequencies and is not completely represented by the VVW profile. This is believed to be due to self-self collisions of water molecules. Additionally there are terms from the dry atmosphere related to transient dipoles and Debye absorption which are not represented in the lineshape. To correct for these effects two pseudocontina are used, which take the form of a power law dependence on frequency, temperature and the molecular densities. 
 
+%inner product st 1
+Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation~\ref{coefficient}, hamiltonians for linearly symmetric rotors (e.g. $O_2$, $CO$) and asymetric rotors are used. The asymetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
+
+
 \subsubsection{Turbulent phase fluctuations} 
-%PR 1 St 2
+%St 1
 
-Visibility phase instability  $\delta \phi(t)$ due to tropospheric turbulence is a fundamental limitation to producing high fidelity, science-quality maps with a mm-VLBI array \citep{Thompson_2001}. The coherence time-scale is typically too rapid ($\lesssim10$~s) for fast switching calibration, so other calibration procedures (e.g. water vapour radiometry, paired antennas, and/or self-calibration) must be performed. Self-calibration is the most commonly used but is limited by the integration time needed to obtain adequate SNR to fringe fit. Phase decoherence often leads to the use of closure quantities to perform model fitting \citep{Doeleman_2001,Bower_2004, Shen_2005}.
+%phase fluctuations as a calibration problem st 1
+Visibility phase instability  $\delta \phi(t)$ due to tropospheric turbulence is a fundamental limitation to producing high fidelity, science-quality maps with a mm-VLBI array \citep{Thompson_2001}. The coherence time-scale is typically too rapid ($\lesssim10$~s) for fast switching calibration, so other calibration procedures (e.g. water vapour radiometry, paired antennas, and/or self-calibration) must be performed. Self-calibration is the most commonly used but is limited by the integration time needed to obtain adequate SNR to fringe fit. Phase decoherence often leads to the use of closure quantities to perform model fitting \citep{Doeleman_2001,Bower_2004, Shen_2005}, and causes a decrease in measured flux due to incoherent complex averaging.
+%plan
+In the section we will review and develop the weak scattering theory introduced earlier which will culminate in a formulation for the simulation of tropospheric phase turbulence seen by a mm-VLBI array. How this formulation is implemented and fits into the broader atmospheric simulation framework will be discussed in section~\ref{sec:trop_imp}. 
 
 
-At centimeter wavelengths and below, water vapour in the troposphere dominates errors in delay rate over hydrogen maser clock errors. Stochastic phase errors lead to a decrease in measured flux due to incoherent vector averaging. This makes it difficult to obtain adequate SNR for calibration. The uncertainty in the phase degrades structural information which makes conventional imaging difficult and hence closure quantities are often used (e.g. Fish et al 2011). Incoherent phases represent a fundamental limit to all types of interferometry. 
-
+%Following from scattering intro, weak scattering model setup st 1
 Following from section~\ref{sec:basic_scat}, we can model the statistics of $\delta \phi(t)$ with a thin, frozen, Kolomogorov-turbulent phase screen moving with a bulk velocity, $v$.  We set the height $h$ of the screen at the water vapour scale height of 2~km above ground. We will show later that the thickness $\Delta h$ of the atmospheric turbulent layer can be neglected in our implementation. At $1.3$~mm, the Fresnel scale is $r_F \approx 0.45$~m and experiments show annual variations of $r_0 \sim 50 - 500$~m above Mauna Kea \citep{Masson_1994} and $r_0 \sim 90 - 700$~m above Chajnantor \citep*{Radford_1998}, where both sites are considered to have excellent atmospheric conditions for millimetre astronomy. As $r_F < r_0$, this is an example of weak scattering. 
 
 
+%simplifying the scattering model st 1
 The required field-of-view (FoV) of a global mm-VLBI array is typically FoV~$< 1$~mas or ~$\sim10~\mu$m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\mathbf{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently.
 
+%structure function formulation st 1
 Our aim then is to produce a phase error time sequence $\left\{\delta \phi(t_i)\right\}$ for each station which is added to the visibility phase. We invoke the frozen screen assumption and write the structure function as a function of time, $D (t) =  D(r)|_{r=vt}$. The temporal structure function $D(t)$ provides an efficient route to sample the variability of the troposphere at the typical integration time of the dataset, $t_{\rm int} \sim 1$~sec. 
 
 The temporal variance of the phase is a function of the temporal structure function, and accounting for time integration yields \citep*[see][B3]{Treuhaft_1987} 
@@ -380,16 +388,17 @@ Assuming power-law turbulence and integrating yields,
 
 
 
-%Fig. Phase variability
+%Fig. Phase variability carilli_1997 st 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/screentransition}
-\caption{RMS visibility phase variations versus baseline length for an observation of  1-Jy celestial calibrator 0748 + 240 with VLA in BnA configuration at 22 GHz for 90 min.The open circles show the rms phase as measured whereas the solid squares show these same values with a constant noise term of 10 subtracted inquadrature.showing $\beta$ changes with distance on the phase screen. Note the three distinct regime but continous variation in betweenThe three regimes of the root phase structure function as predicted by Kolomogorovturbulence theory are indicated. Reproduced from \citet{carilli_1997} \label{fig:screentransition}
+\caption{A log-log plot of RMS visibility phase versus baseline length for an observation of 1~Jy source 0748~+~240 with VLA at 22~GHz over a 90~min duration. The open circles show RMS phase as measured whereas the solid squares show the same values with a constant thermal noise contribution of $10^\circ$ subtracted in quadrature. Note that the measured and theoretical Kolmogorov turbulent exponent $\beta$ changes with distance on the phase screen as the viewing configuration transitions from a thick screen ($\beta_{\rm theory} = 5/3$) to a thin screen ($\beta{\rm theory = 2/3$) at $r \approx 1.2$~km and from a thin screen to completely uncorrelated regime ($\beta = 0$) beyond the outer scale at $r \approx 6$~km. Although these regimes appear distinct, there is continous variation between them. Reproduced from \citet{Carilli_1997} \label{fig:screentransition}
 }
 \end{center}
 \end{figure*}
 
 
+%A comparison to the phase screen approach st 1
 Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse Fourier transform of the spatial phase power spectrum. However this approach is much more computationally expensive, e.g. for an observation length $t_{\rm obs}$ involving $N_{\rm ant}=8$ independent antennae with dish radii $r_{\rm dish}=15$~m, wind speed $v=10$~m\,s$^{-1}$ and pixel size equal to $r_{\rm F}$, the number of pixels $N_{\rm pix} \approx N_{\rm ant} t_{\rm obs} r_{\rm dish}^2/(v r_{\rm F}^3)  \sim 10^8$. Additionally, due to fractal nature of ideal Kolmogorov turbulence, the power spectrum becomes unbounded as the wavenumber approaches zero which makes it difficult to determine the sampling interval of the spatial power spectrum \citep{Lane_1992}. 
 
 
@@ -399,8 +408,7 @@ Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse F
 %Pr 1 St 1
 
 %Mild derivation of the thermal noise equation.
-
-The  level of thermal noise in the data will define the sensitivity of the interferometer to detect a source and also to distinguish fine source characteristics. Closure quantities are especially prone to high levels of thermal as multiple visibilities are combined. A derivation of the thermal noise of an interferometer can be made through derivation of the thermal noise of an antenna and then correlating the result \citep*{Wrobel_1999}. The RMS thermal noise of an interferometer $\{i,j\}$ over a bandwidth $\Delta \nu$ and an integration time is given by 
+The  level of thermal noise in the data will define the sensitivity of the interferometer to detect a source and also to distinguish fine source characteristics. Closure quantities are especially prone to high levels of thermal as several visibilities are multiplied. A derivation of the thermal noise of an interferometer can be made through derivation of the thermal noise of an antenna and then correlating the result \citep*{Wrobel_1999}. The RMS thermal noise of an interferometer $\{i,j\}$ over a bandwidth $\Delta \nu$ and an integration time is given by 
 
 \begin{equation}
  \Delta S_{\rm ij} = \frac{1}{\eta_{\rm s}}\sqrt{\frac{SEFD_{\rm i}\ SEFD_{\rm j}}{2 \Delta \nu t_{\rm int}}},  
@@ -434,11 +442,3 @@ An antenna tracking a source will suffer a slow, continuous time-variable pointi
 
 
 Whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with well known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
-
-
-\subsubsection{Polarisation leakage}
-% Leave for now
-
-\section{A primer on calibration and imaging}
-
-
