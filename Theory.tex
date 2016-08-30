@@ -352,7 +352,7 @@ Far wing broadening of $H_2O$ lines $> 1.2$ THz extends to lower frequencies and
 Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation~\ref{coefficient}, hamiltonians for linearly symmetric rotors (e.g. $O_2$, $CO$) and asymetric rotors are used. The asymetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
 
 
-\subsubsection{Turbulent phase fluctuations} 
+\subsubsection{Turbulent phase fluctuations}\label{sec:turb_theory}
 %St 1
 
 %phase fluctuations as a calibration problem st 1
@@ -366,7 +366,7 @@ Following from section~\ref{sec:basic_scat}, we can model the statistics of $\de
 
 
 %simplifying the scattering model st 1
-The required field-of-view (FoV) of a global mm-VLBI array is typically FoV~$< 1$~mas or ~$\sim10~\mu$m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\mathbf{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently.
+The required field-of-view (FoV) of a global mm-VLBI array is typically FoV~$< 1$~mas or ~$\sim10~\mu$m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\mathbf{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently. This assumption only holds for VLBI baselines and the framework needs to be extended to simulate the effects of turbulence on individual phased arrays stations (e.g. SMA) and short ($<10$~km) baselines (e.g. JCMT - SMA). 
 
 %structure function formulation st 1
 Our aim then is to produce a phase error time sequence $\left\{\delta \phi(t_i)\right\}$ for each station which is added to the visibility phase. We invoke the frozen screen assumption and write the structure function as a function of time, $D (t) =  D(r)|_{r=vt}$. The temporal structure function $D(t)$ provides an efficient route to sample the variability of the troposphere at the typical integration time of the dataset, $t_{\rm int} \sim 1$~sec. 
@@ -379,7 +379,7 @@ The temporal variance of the phase is a function of the temporal structure funct
 
 Assuming power-law turbulence and integrating yields, 
 
-\begin{equation}
+\begin{equation}\label{eq:turb_final}
 \sigma^2_\phi (t_{\rm int})=\left[\frac{1}{\sin\theta(\beta^2 +3\beta +2)}\right]\left(\frac{t_{\rm int}}{t_0}\right)^{\beta},
 \end{equation}
 
