@@ -248,13 +248,13 @@ a robust and rapid mechanism for quantifying refractive effects.
 
 
 \subsection{Troposphere}
-%PR 1 St 2
+%PR 1 St 1
 
 %Introduction - Troposphere is a problem. Define troposphere. st 1
 The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case. 
 
 
-\subsubsection{Propagation fundamentals}
+\subsubsection{Propagation fundamentals}\label{sec:prop_fund}
 %propagation fundamentals st 1
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
@@ -264,9 +264,9 @@ where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R}
 \begin{equation}
 I = EE^\ast = E_0^2 \exp(-\tau),
 \end{equation}
-where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient, $d\tau = \kappa dx$ where $\kappa = 4\pi \nu n_I/c$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay, $\delta t$ and opacity $\tau$ can be calculated simultaneously,
+where $\tau$ is called the opacity or optical depth and is related to the absorption coefficient, $d\tau = \kappa dx$ where $\kappa = 4\pi \nu n_I/c$. If $n_{\rm R} > 1 $ the phase velocity of light will decrease, $v_{\rm p} = c/n_{\rm R}$, which results in a time delay. The time delay due to the troposphere, $\tilde{t}$ and opacity $\tau$ can be calculated simultaneously,
 \begin{equation}\label{timedelay}
-\delta t + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
+\tilde{t} + i \tau /4\pi \nu =1/c \int_{path} d\mathbf{s}\  (n_\nu(\mathbf{s}) -1).
 \end{equation}
 
 %the relationship between delay-absorption-noise st 1
@@ -293,9 +293,9 @@ An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorptio
 \end{figure*}
 
 %Phase variability in the GHz st 1
-In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\delta t (\nu)$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
+In contrast to the dry atmospheric components, water vapour mixes poorly and its time-variable spatial distribution induces rapid fluctuations in the time delays $\tilde{t}$ above each station. The phase error for a baseline (1,2) where antenna 1 is the reference will be
 \begin{equation}
-\delta \phi(t, \nu) = (\delta t_2(t, \nu) - \delta t_1(t, \nu))/\nu.
+\delta \phi(t, \nu) = (\tilde{t}_2(t, \nu) - \tilde{t}_1(t, \nu))/\nu.
 \end{equation}
 The water vapour column density is measured as the depth of the column when converted to the liquid phase and is referred to as the precipitable water vapour (PWV). PWV is directly proportional to the time delay and hence the phase delay, 
 \begin{equation}
@@ -323,7 +323,7 @@ where $s$ is the coordinate along the signal path through the atmosphere.  The a
 I_\nu(s) = I_\nu(0) e^{-\tau_\nu (0,s) }+ \int_0^s B_\nu(s')e^{-\tau_\nu (s',s) }\kappa_\nu(s')ds',
 \end{equation}
 where  $s'$ is a dummy variable in the same direction as $s$ and $\tau_\nu (0,s) = \int_0^{s} k_\nu(s')ds'$. $I_\nu(0)$ is normally taken as the radiance from the cosmic background.
-\ref{eq:rad_trans2} will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. The time delay $\delta t$ can be calculated using the Kramers-Kronig relations. 
+\ref{eq:rad_trans2} will allow us to calculate the noise temperature of the atmosphere by converting the output radiance at the ground $I_\nu(s)$ to  the equivalent blackbody temperature through inversion the Planck function. To calculate the opacity and complete the above integral, $\kappa_\nu$ needs to be calculated over the frequency range. The time delay $\tilde{t}$ can be calculated using the Kramers-Kronig relations. 
 
 
 %deriving the absorption coefficient st 1
@@ -352,7 +352,7 @@ Far wing broadening of $H_2O$ lines $> 1.2$ THz extends to lower frequencies and
 Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation~\ref{coefficient}, hamiltonians for linearly symmetric rotors (e.g. $O_2$, $CO$) and asymetric rotors are used. The asymetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
 
 
-\subsubsection{Turbulent phase fluctuations} 
+\subsubsection{Turbulent phase fluctuations}\label{sec:turb_theory}
 %St 1
 
 %phase fluctuations as a calibration problem st 1
@@ -366,7 +366,7 @@ Following from section~\ref{sec:basic_scat}, we can model the statistics of $\de
 
 
 %simplifying the scattering model st 1
-The required field-of-view (FoV) of a global mm-VLBI array is typically FoV~$< 1$~mas or ~$\sim10~\mu$m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\mathbf{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently.
+The required field-of-view (FoV) of a global mm-VLBI array is typically FoV~$< 1$~mas or ~$\sim10~\mu$m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\mathbf{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently. This assumption only holds for VLBI baselines and the framework needs to be extended to simulate the effects of turbulence on individual phased arrays stations (e.g. SMA) and short ($<10$~km) baselines (e.g. JCMT - SMA). 
 
 %structure function formulation st 1
 Our aim then is to produce a phase error time sequence $\left\{\delta \phi(t_i)\right\}$ for each station which is added to the visibility phase. We invoke the frozen screen assumption and write the structure function as a function of time, $D (t) =  D(r)|_{r=vt}$. The temporal structure function $D(t)$ provides an efficient route to sample the variability of the troposphere at the typical integration time of the dataset, $t_{\rm int} \sim 1$~sec. 
@@ -379,7 +379,7 @@ The temporal variance of the phase is a function of the temporal structure funct
 
 Assuming power-law turbulence and integrating yields, 
 
-\begin{equation}
+\begin{equation}\label{eq:turb_final}
 \sigma^2_\phi (t_{\rm int})=\left[\frac{1}{\sin\theta(\beta^2 +3\beta +2)}\right]\left(\frac{t_{\rm int}}{t_0}\right)^{\beta},
 \end{equation}
 
@@ -408,8 +408,7 @@ Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse F
 %Pr 1 St 1
 
 %Mild derivation of the thermal noise equation.
-
-The  level of thermal noise in the data will define the sensitivity of the interferometer to detect a source and also to distinguish fine source characteristics. Closure quantities are especially prone to high levels of thermal as multiple visibilities are combined. A derivation of the thermal noise of an interferometer can be made through derivation of the thermal noise of an antenna and then correlating the result \citep*{Wrobel_1999}. The RMS thermal noise of an interferometer $\{i,j\}$ over a bandwidth $\Delta \nu$ and an integration time is given by 
+The  level of thermal noise in the data will define the sensitivity of the interferometer to detect a source and also to distinguish fine source characteristics. Closure quantities are especially prone to high levels of thermal as several visibilities are multiplied. A derivation of the thermal noise of an interferometer can be made through derivation of the thermal noise of an antenna and then correlating the result \citep*{Wrobel_1999}. The RMS thermal noise of an interferometer $\{i,j\}$ over a bandwidth $\Delta \nu$ and an integration time is given by 
 
 \begin{equation}
  \Delta S_{\rm ij} = \frac{1}{\eta_{\rm s}}\sqrt{\frac{SEFD_{\rm i}\ SEFD_{\rm j}}{2 \Delta \nu t_{\rm int}}},  
@@ -431,23 +430,10 @@ All antennas suffer pointing errors to some degree due to a variety of factors i
 where $\delta l_p, \delta m_p$ correspond to the directional cosine offsets.
 %Motivation, why this could be a problem for mm observations
 This could be a problem for millimetre observations as the primary beam is significant, e.g. for a 30~m dish at 1.3~mm, $\theta_{\rm PB} \sim 10$~arcsec, compared to the pointing error which is on the order of arcseconds.
-%beam shape
-A standard beam model which we will make use of later is the analytic WSRT beam model \citep{Popping_2008} 
-\begin{equation}
-E(l, m) = \cos^3(C\nu \rho),\qquad   \rho = \sqrt{\delta l_p^2 + \delta m_p^2}
-\end{equation}
-where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$. 
+
 % Different categories of pointing error i.e. tracking vs slew
 
 An antenna tracking a source will suffer a slow, continuous time-variable pointing error associated with the tracking error $\sigma_{\rm track}$. Physically this could be attributed to changes in wind, thermal and gravitational loading which all change with telescope pointing direction and over the course of a typical few hour observation. Using the MeqTrees software package, such behaviour has been demonstrated to occur with the Westerbork Synthesis Radio Telescope (WSRT, \cite{Smirnov_2011c})\footnote{See also https://indico.skatelescope.org/event/\\171/session/9/contribution/20}.
 
 
 Whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with well known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
-
-
-\subsubsection{Polarisation leakage}
-% Leave for now
-
-
-
-
