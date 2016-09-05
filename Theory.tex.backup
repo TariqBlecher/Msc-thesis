@@ -1,8 +1,6 @@
 \chapter{Theory}
-%PR 3 St 2. Some intro recap motivation
-Our goal, is to add the final steps in the theory chain which transforms the GRMHD simulations into interferometric observables. For this to be achieved and for the theory higher up in the chain to be maximally useful in data interpretation, realistic signal corruptions need to be considered. Hence, the purpose of this module is to further the sophistication of the interplay between theory and observation in the field.
-%The plan for the chapter? PR 3 St 2
-The signal corruptions which we have identified as the most prominent occurs in the troposphere, interstellar medium (ISM) and within the stations themselves. First I will review some EM wave fundamental and introduce scattering theory, which is applicable to both the radiative process occuring in the troposphere and ISM. Following the general introduction I will explore each specific case.
+%plan
+The signal corruptions which we have identified as the most prominent occurs in the troposphere, interstellar medium (ISM) and within the stations themselves. First I will review some EM wave fundamental and introduce scattering theory, which is applicable to both the radiative process occuring in the troposphere and ISM. Following the general introduction, each specific case will be explored.
 
 \section{Radio Interferometry}
 %PR 2 St 3 Define basic radio interferometry concepts. Reference Thompson, Smirnov
@@ -19,7 +17,7 @@ The signal corruptions which we have identified as the most prominent occurs in 
 
 \subsection{Measurement Equation}\label{sec:RIME}
 %PR 2 St 3, reference smirnov
-%iniyan has paper coming out with a clear succint explanation
+%iniyan's two papers 
 
 %Follow Smirnov, first RIME paper , Introduce Jones formalism
 
@@ -123,7 +121,7 @@ The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the sca
 To evolve the screen in time, we assume a frozen screen i.e. that the velocity of the individual turbulent eddies is dominated by the bulk motion of scattering medium \citep[e.g.][]{Lay_1997}. This allows us to treat the screen as frozen but advected over the observer by a constant motion. Hence time variability can be easily incorporated by the relative motion between source, scattering screen and observer.
 
 \subsection{Interstellar medium scattering}
-%PR 1 St 1.1 
+%PR 1 St 1 
 
 %introduction and plan
 Electron density inhomogeneities in the interstellar medium (ISM) plasma scatter the radio emission from the Galactic centre. Radio interferometric observations of Sgr~A$^\star$ have characterised the basic properties of the intervening plasma matrial, however extensive developments in scattering theory and simulations have proved essential to the interpretation of more subtle scattering phenomena. This section begins with the early observational results which studied the Gaussian blurring effect of the scattering; we then expand on the scattering theory introduced in Sec.~\ref{sec:basic_scat} to review the latest theoretical developments which explore the presence of scattering-induced substructure; finally we review recent observational results which account for scattering substructure in their data interpretation. 
@@ -194,7 +192,7 @@ I_{\rm ss}(\mathbf{x}) \approx I_{\rm src}\left(\mathbf{x} + r_{\rm F}^2 \nabla 
 \end{equation}
 where $\nabla$ is the directional derivative. Here we have used the same two-dimensional coordinate system, indexed by $\mathbf{x}$ to describe the source, screen and observer planes which are considered to be aligned along the vertical axis. The scattered image $I_{\rm ss}$ is approximated by a 'reshuffling' of the source image $I_{\rm src}$. As $|\nabla\phi| \sim 1/r_0$, the magnitude of the translation of points on $I_{\rm src}$ $\sim r_{\rm ref} \sim 10\ \mu$-arcsec in the case of Sgr~A$^\star$. 
 
-%Coherence of the phase slope
+%Coherence of the phase slope - will cut this down a bit, Roger doesn't seem to think I dont need to understand all the details
 Even though $\phi(\mathbf{x})$ is only coherent to $\sim r_{\rm 0}$, the directional phase derivative $\nabla \phi(\mathbf{x})$ remains spatially coherent over much larger scales. Following \citet*{Johnson_2015a}, the autocovariance of phase derivative can be related to the structure function
 \begin{align}
 \langle [ \partial_x \phi(\mathbf{x_0})] [ \partial_x \phi(\mathbf{x_0}+\mathbf{x})] \rangle &=\
@@ -221,10 +219,8 @@ Hence We are interested in the case $r /gg r_{\rm in}$
 
 Therefore in the Kolmogorov regime $\beta = 5/3$, the coherence of image shift relative to the refractive scale $\propto (r/r_0)^{-1/3}$. Inner scale extends coherence and outer scale cuts it off.
 
-%ESTIMATE OF COHERENCE .. awaiting discussion with roger 
 
-If $\nabla \phi(\mathbf{x})$ was incoherent between patches of size $\sim r_0$, this would effectively be convolution with Gaussian of size $r_{\rm ref}$. 
-)
+Even though $\phi(\mathbf{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\mathbf{x})$ remains spatially coherent over much larger scales, leading to the presence of refractive substructure \citep*{Johnson_2015a}. 
 
 %Observations of substructure
 
@@ -433,7 +429,7 @@ This could be a problem for millimetre observations as the primary beam is signi
 
 % Different categories of pointing error i.e. tracking vs slew
 
-An antenna tracking a source will suffer a slow, continuous time-variable pointing error associated with the tracking error $\sigma_{\rm track}$. Physically this could be attributed to changes in wind, thermal and gravitational loading which all change with telescope pointing direction and over the course of a typical few hour observation. Using the MeqTrees software package, such behaviour has been demonstrated to occur with the Westerbork Synthesis Radio Telescope (WSRT, \cite{Smirnov_2011c})\footnote{See also https://indico.skatelescope.org/event/\\171/session/9/contribution/20}.
+We identify two main classes of pointing error. Firstly an antenna tracking a source will suffer a slow, continuous time-variable pointing error associated with the tracking error $\sigma_{\rm track}$. Physically this could be attributed to changes in wind, thermal and gravitational loading which all change with telescope pointing direction and over the course of a typical few hour observation. Using the MeqTrees software package, such behaviour has been demonstrated to occur with the Westerbork Synthesis Radio Telescope (WSRT, \cite{Smirnov_2011c})\footnote{See also https://indico.skatelescope.org/event/\\171/session/9/contribution/20}.
 
 
-Whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with well known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
+Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with well known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
