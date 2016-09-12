@@ -1,23 +1,49 @@
 \chapter{Theory}
-%plan
+%plan st 2
+% RadioInt
+In this chapter we focus on the development of theoretical models to represent the signal transmission process from cosmic source to data product. We begin with 
+%SigCor
 The signal corruptions which we have identified as the most prominent occurs in the troposphere, interstellar medium (ISM) and within the stations themselves. First I will review some EM wave fundamental and introduce scattering theory, which is applicable to both the radiative process occuring in the troposphere and ISM. Following the general introduction, each specific case will be explored.
 
 \section{Radio Interferometry}
-%PR 2 St 3 Define basic radio interferometry concepts. Reference Thompson, Smirnov
+%PR 2 St 3 Define basic radio interferometry concepts. Reference Thompson, Smirnov reference smirnov..iniyan's two papers 
 %Visibility, the interferometric measurement i.e. measuring electric field covariance (smirnov_1)
 % Define the correlations measured
 
-%UV Sampling, Earth rotation synthesis
+%UV Sampling, Earth rotation synthesis?
 
-% van-citterlike theorem a relationship between the image of the sky and it's fourier transform.
+% van-citterlike theorem a relationship between the image of the sky and it's fourier transform.?
+
 
 %\begin{equation}\label{eq:vis_im}
 %van-citterlike theorem
 %\end{equation}•
-
 \subsection{Measurement Equation}\label{sec:RIME}
-%PR 2 St 3, reference smirnov
-%iniyan's two papers 
+%PR 2 St 3
+
+%RIME purpose
+The RIME unifies the Stokes parameter representation and radio interferometry in a single mathematical formalism. Application of Jones matricies. I.e. Linear algebra.
+
+%short RIME derivation
+
+Following \ref{Smirnov_2011a}, consider an quasi-monochromatic electric field propagating in the $z$ direction, the complex valued electric field vector $\mathbf{E}$ can be decomposed into
+\begin{equation*}
+\mathbf{E} = \left(
+\begin{array}{c}
+E_x \\
+E_y \\
+\end{array} \right)
+\end{equation*}
+
+All linear transformations of the above electric field can be written by application of 2x2 matricies called {\emph Jones}-matricies.
+\begin{equation*}
+\mathbf{E'} = \mathbf{J\ e}
+\end{equation*}
+
+Multiple effects then can be represented by multiplication of various Jones matricies.
+\begin{equation*}
+\mathbf{E'} = \mathbf{J_2 J_1\ e}
+\end{equation*}
 
 %Follow Smirnov, first RIME paper , Introduce Jones formalism
 

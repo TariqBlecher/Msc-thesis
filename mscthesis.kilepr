@@ -97,10 +97,10 @@ order=3
 
 [item:Main.tex]
 archive=true
-column=0
+column=1
 encoding=UTF-8
 highlight=LaTeX
-line=29
+line=24
 mode=LaTeX
 open=true
 order=3
@@ -120,7 +120,7 @@ archive=true
 column=13
 encoding=UTF-8
 highlight=LaTeX
-line=25
+line=27
 mode=LaTeX
 open=true
 order=0
@@ -164,10 +164,10 @@ JumpList=
 ViMarks=.,146,2184,[,146,2184,],146,2184
 
 [view-settings,view=0,item:Main.tex]
-CursorColumn=0
-CursorLine=29
+CursorColumn=1
+CursorLine=24
 JumpList=
-ViMarks=.,23,16,[,23,7,],23,16
+ViMarks=.,24,0,[,24,0,],24,0
 
 [view-settings,view=0,item:Results.tex]
 CursorColumn=482
@@ -177,9 +177,9 @@ ViMarks=.,2,481,[,2,460,],2,481
 
 [view-settings,view=0,item:Theory.tex]
 CursorColumn=13
-CursorLine=25
+CursorLine=27
 JumpList=
-ViMarks=.,25,12,[,25,1,],25,12
+ViMarks=.,22,45,[,22,45,],22,45
 
 [view-settings,view=0,item:preamble.tex]
 CursorColumn=0
