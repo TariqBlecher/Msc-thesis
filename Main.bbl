@@ -31,13 +31,6 @@ G.~C. {Bower}, W.~M. {Goss}, H.~{Falcke}, D.~C. {Backer}, and Y.~{Lithwick}.
 \newblock {The Intrinsic Size of Sagittarius A* from 0.35 to 6 cm}.
 \newblock {\em \apjl}, 648:L127--L130, September 2006.
 
-\bibitem{Broderick_2016}
-A.~E. {Broderick}, V.~L. {Fish}, M.~D. {Johnson}, K.~{Rosenfeld}, C.~{Wang},
-  S.~S. {Doeleman}, K.~{Akiyama}, T.~{Johannsen}, and A.~L. {Roy}.
-\newblock {Modeling Seven Years of Event Horizon Telescope Observations with
-  Radiatively Inefficient Accretion Flow Models}.
-\newblock {\em \apj}, 820:137, April 2016.
-
 \bibitem{Carilli_1999}
 C.~L. {Carilli} and M.~A. {Holdaway}.
 \newblock {Tropospheric phase calibration in millimeter interferometry}.
@@ -78,14 +71,6 @@ S.~S. {Doeleman}, J.~{Weintroub}, A.~E.~E. {Rogers}, R.~{Plambeck},
 \newblock {Event-horizon-scale structure in the supermassive black hole
   candidate at the Galactic Centre}.
 \newblock {\em \nat}, 455:78--80, September 2008.
-
-\bibitem{Fish_2016}
-V.~L. {Fish}, K.~{Akiyama}, K.~L. {Bouman}, A.~A. {Chael}, M.~D. {Johnson},
-  S.~S. {Doeleman}, L.~{Blackburn}, J.~F.~C. {Wardle}, W.~T. {Freeman}, and
-  {the Event Horizon Telescope Collaboration}.
-\newblock {Observing---and Imaging---Active Galactic Nuclei with the Event
-  Horizon Telescope}.
-\newblock {\em ArXiv e-prints}, July 2016.
 
 \bibitem{Fish_2011}
 V.~L. {Fish}, S.~S. {Doeleman}, C.~{Beaudoin}, R.~{Blundell}, D.~E. {Bolin},
@@ -139,11 +124,6 @@ C.~R. {Gwinn}, Y.~Y. {Kovalev}, M.~D. {Johnson}, and V.~A. {Soglasnov}.
 \newblock {Discovery of Substructure in the Scatter-broadened Image of Sgr A*}.
 \newblock {\em \apjl}, 794:L14, October 2014.
 
-\bibitem{Hamaker_1996}
-J.~P. {Hamaker}, J.~D. {Bregman}, and R.~J. {Sault}.
-\newblock {Understanding radio polarimetry. I. Mathematical foundations.}
-\newblock {\em \aaps}, 117:137--147, May 1996.
-
 \bibitem{hogg_1981}
 D.~C. {Hogg}, F.~O. {Guiraud}, and M.~T. {Decker}.
 \newblock {Measurement of excess radio transmission length on earth-space
@@ -167,13 +147,6 @@ O.~P. {Lay}.
 \newblock {The temporal power spectrum of atmospheric fluctuations due to water
   vapor}.
 \newblock {\em \aaps}, 122, May 1997.
-
-\bibitem{Lu_2014}
-R.-S. {Lu}, A.~E. {Broderick}, F.~{Baron}, J.~D. {Monnier}, V.~L. {Fish}, S.~S.
-  {Doeleman}, and V.~{Pankratius}.
-\newblock {Imaging the Supermassive Black Hole Shadow and Jet Base of M87 with
-  the Event Horizon Telescope}.
-\newblock {\em \apj}, 788:120, June 2014.
 
 \bibitem{Lu_2011}
 R.-S. {Lu}, T.~P. {Krichbaum}, A.~{Eckart}, S.~{K{\"o}nig}, D.~{Kunneriath},
@@ -227,12 +200,6 @@ B.~{Nikolic}, R.~C. {Bolton}, S.~F. {Graves}, R.~E. {Hills}, and J.~S.
 \newblock {Phase correction for ALMA with 183 GHz water vapour radiometers}.
 \newblock {\em \aap}, 552:A104, April 2013.
 
-\bibitem{Noordam_2010}
-J.~E. {Noordam} and O.~M. {Smirnov}.
-\newblock {The MeqTrees software system and its use for third-generation
-  calibration of radio interferometers}.
-\newblock {\em \aap}, 524:A61, December 2010.
-
 \bibitem{Pardo_2001}
 J.~R. {Pardo}, J.~{Cernicharo}, and E.~{Serabyn}.
 \newblock {Atmospheric transmission at microwaves (ATM): an improved model for
@@ -240,23 +207,11 @@ J.~R. {Pardo}, J.~{Cernicharo}, and E.~{Serabyn}.
 \newblock {\em IEEE Transactions on Antennas and Propagation}, 49:1683--1694,
   December 2001.
 
-\bibitem{Popping_2008}
-A.~{Popping} and R.~{Braun}.
-\newblock {The standing wave phenomenon in radio telescopes. Frequency
-  modulation of the WSRT primary beam}.
-\newblock {\em \aap}, 479:903--913, March 2008.
-
 \bibitem{Psaltis_2015}
 D.~{Psaltis}, F.~{{\"O}zel}, C.-K. {Chan}, and D.~P. {Marrone}.
 \newblock {A General Relativistic Null Hypothesis Test with Event Horizon
   Telescope Observations of the Black Hole Shadow in Sgr A*}.
 \newblock {\em \apj}, 814:115, December 2015.
-
-\bibitem{Psaltis_2016}
-D.~{Psaltis}, N.~{Wex}, and M.~{Kramer}.
-\newblock {A Quantitative Test of the No-hair Theorem with Sgr A* Using Stars,
-  Pulsars, and the Event Horizon Telescope}.
-\newblock {\em \apj}, 818:121, February 2016.
 
 \bibitem{Radford_1998}
 S.~J. {Radford} and M.~A. {Holdaway}.
