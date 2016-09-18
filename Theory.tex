@@ -1,20 +1,22 @@
 \chapter{Theory}
 %plan st 1
-In this chapter we review and develop the theory required to model signal transmission from cosmic source to data product. The first half of this chapter is a broad section centred around radio interferometric concepts while the second half is focused specificially on describing several signal corruptions. 
+In this chapter we review and develop the theory required to model signal transmission from cosmic source to data product. The first half of this chapter is a broad section centred around radio interferometric concepts while the second half is focused specificially on describing several key signal corruptions. 
 
 \section{Radio Interferometry}
 %PR 2 St 3
 
 %plan st 1
-We introduce radio interferometric theory using the RIME formalism, which serves as a guiding framework for the construction of the {\sc MeqSilhouette} simulator. Following this, we review the technique of self-calibration which is important as it's effects are strongly linked with the signal corruptions, particularly those associated with the troposphere. We then discuss typical mm-VLBI data products and the consequences of breaking the static source assumption.
+This section is structured as follows: first radio interferometry is introduced using the Radio Interferometric Measurement Equation (RIME) formalism, which serves as a guiding framework for the construction of the {\sc MeqSilhouette} simulator; following on, we review the technique of self-calibration which is important as it's effects are strongly linked with the signal corruptions, particularly those associated with the troposphere; we then discuss typical mm-VLBI data products and the consequences of breaking the static source assumption.
 
 \subsection{Measurement Equation}\label{sec:RIME}
 %PR 2 St 3
 
 %RIME intro and purpose
-The Radio Interferometric Measurement Equation (RIME) provides the notation and formalism to model the signal transmission path as a sequence of linear operations. Specificially, it takes into account polarisation, correlation and the correct time-ordering of signal transmission path in an intuitive way. This calculus will also enable a more intuitive view on the phrasing of the relation between calibration and signal corruptions. Here we offer a short derivation and explanation of the RIME following \citet{Smirnov_2011a}.
-%Visibility from E-field
-Consider an quasi-monochromatic complex valued electric field vector $\bm{E}$, which can be decomposed into an arbitrary two dimensional orthogonal basis in the plane perpendicular to the direction of propagation,
+The RIME provides the notation and formalism to model the signal transmission path as a sequence of linear operations. Specificially, it takes into account polarisation, correlation and the correct time-ordering of signal transmission path in an intuitive and efficient way. This calculus will also enable a more informative phrasing of the relation between calibration and signal corruptions.
+
+
+%Linear transformations of E-field
+Here we offer a short derivation and explanation of the RIME following \citet{Smirnov_2011a}.Consider a quasi-monochromatic complex valued electric field vector $\bm{E}$, which can be decomposed into an arbitrary two dimensional orthogonal basis in the plane perpendicular to the direction of propagation,
 
 \begin{equation*}
 \bm{E} = \left(
@@ -24,22 +26,28 @@ E_b \\
 \end{array} \right).
 \end{equation*}
 
-
-The choice of basis represents the polarisation state of the field. All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix known as a \emph{Jones} matrix,
+where this choice represents the basis in which the polarisation is measured.All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix, termed a \emph{Jones} matrix $\bm{J}$,
 \begin{equation}
 \bm{E'} = \bm{J E}.
 \end{equation}
-For example the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate Jones matrix. Multiple effects then can be represented by multiplication of various Jones matricies.
+For example the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies.
 \begin{equation}
 \bm{E'} = \bm{J}_n \ldots \bm{J}_1\ \bm{E}
 \end{equation}
-An interferometer measures the correlation of the voltages from two antennae. This quantity is known as the \emph{visibility}, 
+
+%More on Jones matricies: commutivity and order, DDE vs DIE. phenomenological vs. physical
+The order of the Jones matricies should obey the casual order of the signal transmission path. However the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everthing, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can parameterised in different ways. For example during calibration, one could contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical} processes which could be encoded by several commuting Jones matricies. The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be distingushed anyway. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on physics.
+
+
+%visibility definition
+An interferometer measures the correlation of the voltages from an antenna pair. This quantity is known as the \emph{visibility}, 
 \begin{equation}
 \bm{V}_{pq} = \langle {\bm v}_p  {\bm v}_q^H \rangle,
 \end{equation}
-where $p$, $q$ are refer to the two antennae. Hence the visibility can be related to the electric fields by  Key to the formulation of the RIME is that it is equivalent to the Stokes polarisation formulation, for example in an XY basis,
+where $p$, $q$ are refer to the two antennae. As $\bm{V}_{pq}$ can be related to $\bm{E}_{p,q}$, it is equivalent to the Stokes polarisation formulation, for example in an XY basis,
 
 
+%Connection to stokes parameters and polarisation
 \begin{eqnarray}
 \bm{V}_{pq} &= & \bm{J}_p \langle {\bm E}_p  {\bm E}_q^H \rangle \bm{J}_q^H \\
 &=&  \bm{J}_p\left(
@@ -54,17 +62,25 @@ where $p$, $q$ are refer to the two antennae. Hence the visibility can be relate
 I+Q & U +iV\\
 U-iV & I-Q \\
 \end{array}
-\right)\bm{J}_q^H
+\right)\bm{J}_q^H,
 \end{eqnarray}
+where $I$ is the coherence of the total flux, $V$ is the coherence of the circularly polarised flux, $Q$ and $U$ relate to coherence of the linear polarisation. Note that the Jones matricies are assumed to be constant over the averaging interval.
 
-%Connection to polarisation
-Note that to properly take into smearing and decoherence, the Jones matricies should also be integrated over the frequency and time averaging interval. Also this description is for a noise-free measurement. Noise can be included by additive contribution to the visibility.
-
+%example Jones matrix, Complex time-variable antenna gain
+An example of a Jones matrix, for two independent linear dipoles, is the complex time-variable antenna gain. 
+\begin{equation}\label{eq:G_jones}
+\bm{G}(t) =
+\left(
+\begin{array}{cc}
+g_x (t)&0\\
+0 & g_y (t) \\
+\end{array}
+\right)
+\end{equation}
 
 % Example RIME and re-derivation of van-citterlike
 The RIME for a single uncorrupted point source is then.. Phase centre, phase differences
-
-\begin{equation}
+\begin{equation}\label{eq:van-citterlike}
 \bm{V}_{pq} = K_p \bm{B} K_q^H
 \end{equation}
 
@@ -73,37 +89,25 @@ where
 \begin{equation}
  K_p = 2\pi \lambda^{-1} (u_pl +v_pm +w_p(n-1)),
 \end{equation}
-where $l$, $m$, $n = \sqrt{1-l^2-m^2}$ are the direction cosines and $\lambda$ is the signal wavelength.
-
-
-
-
-%More on Jones matricies: commutivity and order, DDE vs DIE. phenomenological vs. physical
-
-The rules of commutivity of matricies allows us flexibility in the model and correction of signal corruptions, in particular, we know that scalar matrices commute with everything; Diagonal matrices commute among themselves and Rotation matrices commute among themselves.
-
-G-Jones, E-jones
-
-Direction independent Jones terms, for two independent linear dipoles. 
-\begin{equation}
-\bm{G} =
-\left(
-\begin{array}{cc}
-g_x&0\\
-0 & g_y \\
-\end{array}
-\right)
-\end{equation}
+where $l$, $m$, $n = \sqrt{1-l^2-m^2}$ are the direction cosines and $\lambda$ is the signal wavelength. Which amounts to a re-derivation of van-citterlike fourier transform relation between visibility domain and image domain. 
 
 
 \subsection{A primer on self-calibration}
 %Pr 2 St 3
 
-%Why the primer
-Self-calibration is a primary method for the estimation of station gains as a function of time and frequency. The interaction of this calibration procedure with variable sources and tropospheric and instrumental signal corruption is of interest. A basic Self-cal will always be applied, typically averaging over 10~s, approximately the coherence time of the atmosphere.
+%Motivation
+Self-calibration is the primary method for the estimation of station gains. The interaction of this calibration procedure with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation. 
 
-%Self-calibration from point of view of RIME
-From the point of view of the RIME, estimate the station based G-Jones terms.
+
+%RIME formulation
+sestimate the station based G-Jones terms.
+i.e. a diagonal Jones matrix.
+equation~\ref{eq:G_jones}
+
+%fringe fitting vs self cal
+In mm-VLBI calibration, self-calibration is applied under slightly different formulations, firstly the procedure termed \emph{fringe fitting}, solves for station gains with linear time and frequency dependence and then self calibration with no time or frequency dependence over the solution interval. 
+
+
 
 
 %Need a basic sky model
@@ -140,23 +144,23 @@ Alternatively, assuming Gaussian errors the uncertainty on the closure phase ove
 %PR 1 St 1
 
 %the assumption and how it breaks the image-vis fourier transform relation
-Implicit in our description of interferometry above, we assumed that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is time-variable),  the visibilities measured over the course of an observation can no longer be related to a single image and if they are, the resulting image would appear smeared out as it is averaged over many realisations. 
-
-
+Implicit in our description of interferometry above (e.g. equation~\ref{eq:van-citterlike}), we assumed that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is time-variable), the visibilities measured over the course of an observation can no longer be related to a single image.
 %explicitly defining variability as any intrinsic source variability
-Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Most commonly variability is refers to changes in source flux (visibility amplitude) but I include changes in source structure and position (visibility phase) and source polarisation. Practically it is difficult to separate source and instrumental variability without accurate models and measurements for all non-source signal propagation effects. 
+Note that I am using the term `variability' in a general sense which refers to changes in any source observables. 'Variability' is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
+%expectation & calim
+We expect that an image of a variable source would appear smeared out as it is averaged over many realisations and that ghosts should arise during the calibration/deconvolution procedure {\bf [citations? trienko's papers?]} . One of the objectives of this thesis will be to characterise the errors which emerge when a variable source is self-calibrated in the presence of troposheric-induced errors. Practically it is difficult to separate source and instrumental variability without accurate models for both. 
 
 
 %Observed variability from SgrA
-Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the radio (including in EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.  Signatures of periodic variability at NIR and x-ray \citep{Genzel_2003; Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrain through the detection periodic orbital features. However a longer light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. These observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating the presence of highly variable magnetic fields.
+Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.  Signatures of periodic variability at NIR and x-ray \citep{Genzel_2003; Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating that the magnetic fields structure is highly dynamic.
 
 
 %Light crossing analysis
-In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the maximally rotating realisation to about half an hour for a non-rotating BH. The ISCO period for M87 is longer on the order of day scales. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, which corresponds to scales of  $15 R_{\rm Sch}$, further evidence of emission areas close the event horizon.
+In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~A* at $D_{\rm src} = 8.3$~kpc (Gillessen, 2009), a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $15 R_{\rm Sch}$. Such analyses gave early evidence for an emission area on event horizon scales.
 
 
 %There are some ways to track/mitigate variability but this is beyond scope
-If a flare is dominated by a localised variable structure, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track flaring structures with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios which could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no fringe-fitting errors.
+In the case of a highly localised flare, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios. This could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no tropospheric-induced calibration errors.
 
 \section{Signal Corruptions}
 
@@ -491,6 +495,8 @@ Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse F
 
 \subsubsection{Thermal Noise}
 %Pr 1 St 1
+
+%! Link to RIME -> additive matrix
 
 %Mild derivation of the thermal noise equation.
 The  level of thermal noise in the data will define the sensitivity of the interferometer to detect a source and also to distinguish fine source characteristics. Closure quantities are especially prone to high levels of thermal as several visibilities are multiplied. A derivation of the thermal noise of an interferometer can be made through derivation of the thermal noise of an antenna and then correlating the result \citep*{Wrobel_1999}. The RMS thermal noise of an interferometer $\{i,j\}$ over a bandwidth $\Delta \nu$ and an integration time is given by 
