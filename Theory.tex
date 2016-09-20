@@ -302,39 +302,23 @@ I_{\rm ss}(\bm{x}) \approx I_{\rm src}\left(\bm{x} + r_{\rm F}^2 \nabla \phi(\bm
 \end{equation}
 where $\nabla$ is the directional derivative. Here we have used the same two-dimensional coordinate system, indexed by $\bm{x}$ to describe the source, screen and observer planes which are considered to be aligned along the vertical axis. The scattered image $I_{\rm ss}$ is approximated by a `reshuffling' of the source image $I_{\rm src}$. As $|\nabla\phi| \sim 1/r_0$, the magnitude of the translation of points on $I_{\rm src}$ $\sim r_{\rm ref} \sim 10\ \mu$-arcsec in the case of Sgr~A$^\star$. 
 
-%Coherence of the phase slope - will cut this down a bit, Roger doesn't seem to think I dont need to understand all the details
-Even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales. Following \citet*{Johnson_2015a}, the autocovariance of phase derivative can be related to the structure function
-\begin{align}
-\langle [ \partial_x \phi(\bm{x_0})] [ \partial_x \phi(\bm{x_0}+\bm{x})] \rangle &=\
--\partial^2_x \langle \phi(\bm{x_0}) \phi(\bm{x_0}+\bm{x}) \rangle \\
-&= \partial_x^2 D_\phi(\bm{x}).
-\end{align}
-
-as $\langle \phi(\bm{x})^2 \rangle = 0$
-
-Using a typical structure function \citep{johnson_dissertation},We are interested in the case $r_{\rm in} \gg r_0$, the structure function becomes \citep{johnson_dissertation}
-\begin{equation*}
-D_\phi =
-\begin{cases}
-\left( \frac{r}{r_0}\right)^2 & \text{if } r \ll r_{\rm in},\\
-\frac{2}{\beta}\left( \frac{r_{\rm in}}{r_0}\right)^{2-\beta} \left( \frac{r}{r_0}\right)^\beta & \text{if } r \gg r_{\rm in}.
-\end{cases}
-\end{equation*}
-
-Note that the structure function is quadratic at small scales as fluctuations are smooth andthen kolmogorov then constant (Tatarskii, 1971).
-Hence We are interested in the case $r /gg r_{\rm in}$
-\begin{equation}
-\partial_x^2 D_\phi(\bm{x})= \left(\frac{r_{\rm in}}{r_0}\right)^{2-\beta}  2(\beta -1)  \frac{r^{\beta-2}}{r_0^\beta}
+%Coherence of the phase slope 
+Even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales. The autocovariance of phase derivative can be related to the structure function \citep*{Johnson_2015a}
+\begin{equation} 
+\langle [ \partial_x \phi(\bm{x_0})] [ \partial_x \phi(\bm{x_0}+\bm{x})] \rangle = \partial_x^2 D_\phi(\bm{x}).
 \end{equation}
 
-Therefore in the Kolmogorov regime $\beta = 5/3$, the coherence of image shift relative to the refractive scale $\propto (r/r_0)^{-1/3}$. Inner scale extends coherence and outer scale cuts it off.
 
+A generalised structure function \citep{Tatarskii_1971, Narayan_1989} is quadratic ($r^2$) at small scales ($r<< r_{\rm in}$), Kolmogorov in the range $r_{\rm in}<r<r_{\rm out}$ and constant for $r>r_{\rm out}$. Taking the simplifying case of $r_{\rm in} \gg r_0$ and $r_{\rm in}<r<r_{\rm out}$ $D_\phi$ becomes\citep{johnson_dissertation},
+\begin{equation}
+D_\phi = \frac{2}{\beta}\left( \frac{r_{\rm in}}{r_0}\right)^{2-\beta} \left( \frac{r}{r_0}\right)^\beta 
+\end{equation}
 
-Even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales, leading to the presence of refractive substructure \citep*{Johnson_2015a}. 
+Hence, $\partial_r^2 D_\phi(\bm{r}) \propto r^{\beta-2}$. Therefore in the Kolmogorov regime ($\beta = 5/3$), the coherence of image shift relative to the refractive scale $\propto (r/r_0)^{-1/3}$. Note that a large inner scale extends coherence of $\nabla\phi$, whereas as $r \to r_{\rm out}$ the coherence falls quickly. Therefore, even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales, leading to the presence of refractive substructure \citep*{Johnson_2015a}. 
 
 %Observations of substructure
 
-A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~ref{fig:substructure2}][]{Ortiz_2016} show that the closure phase measured is consistent with refractive scintillation. Another observation at 1.3~cm shows flux modulation due to scattering substructure $\sim 10$~mJy \citep{Gwinn_2014} and other predictions show $\sim 60$~mJy for long East-West baselines and $\sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of $FWHM=40\ \mu$-arcsec.
+A recent observation and analysis of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~ref{fig:substructure2}][]{Ortiz_2016} indicates that closure phase measured is consistent with expectation refractive scintillation assuming a source of . Another observation at 1.3~cm shows flux modulation due to scattering substructure $\sim 10$~mJy \citep{Gwinn_2014} and other predictions show $\sim 60$~mJy for long East-West baselines and $\sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of FWHM~$=40\ \mu$-arcsec.
 
 \begin{figure*}
 \begin{center}
