@@ -31,6 +31,17 @@ G.~C. {Bower}, W.~M. {Goss}, H.~{Falcke}, D.~C. {Backer}, and Y.~{Lithwick}.
 \newblock {The Intrinsic Size of Sagittarius A* from 0.35 to 6 cm}.
 \newblock {\em \apjl}, 648:L127--L130, September 2006.
 
+\bibitem{Brinkerink_2016}
+C.~D. {Brinkerink}, C.~{M{\"u}ller}, H.~{Falcke}, G.~C. {Bower}, T.~P.
+  {Krichbaum}, E.~{Castillo}, A.~T. {Deller}, S.~S. {Doeleman},
+  R.~{Fraga-Encinas}, C.~{Goddi}, A.~{Hern{\'a}ndez-G{\'o}mez}, D.~H. {Hughes},
+  M.~{Kramer}, J.~{L{\'e}on-Tavares}, L.~{Loinard}, A.~{Monta{\~n}a},
+  M.~{Mo{\'s}cibrodzka}, G.~N. {Ortiz-Le{\'o}n}, D.~{Sanchez-Arguelles},
+  R.~P.~J. {Tilanus}, G.~W. {Wilson}, and J.~A. {Zensus}.
+\newblock {Asymmetric structure in Sgr A* at 3 mm from closure phase
+  measurements with VLBA, GBT and LMT}.
+\newblock {\em \mnras}, 462:1382--1392, October 2016.
+
 \bibitem{Carilli_1999}
 C.~L. {Carilli} and M.~A. {Holdaway}.
 \newblock {Tropospheric phase calibration in millimeter interferometry}.
@@ -206,6 +217,12 @@ J.~R. {Pardo}, J.~{Cernicharo}, and E.~{Serabyn}.
   millimeter/submillimeter applications}.
 \newblock {\em IEEE Transactions on Antennas and Propagation}, 49:1683--1694,
   December 2001.
+
+\bibitem{Popping_2008}
+A.~{Popping} and R.~{Braun}.
+\newblock {The standing wave phenomenon in radio telescopes. Frequency
+  modulation of the WSRT primary beam}.
+\newblock {\em \aap}, 479:903--913, March 2008.
 
 \bibitem{Psaltis_2015}
 D.~{Psaltis}, F.~{{\"O}zel}, C.-K. {Chan}, and D.~P. {Marrone}.

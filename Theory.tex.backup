@@ -26,25 +26,25 @@ E_b \\
 \end{array} \right).
 \end{equation*}
 
-where this choice represents the basis in which the polarisation is measured.All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix, termed a \emph{Jones} matrix $\bm{J}$,
+where this choice represents the basis in which the polarisation is measured. All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix, termed a \emph{Jones} matrix ,
 \begin{equation}
 \bm{E'} = \bm{J E}.
 \end{equation}
-For example the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies.
+For example the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies, forming a Jones chain,
 \begin{equation}
-\bm{E'} = \bm{J}_n \ldots \bm{J}_1\ \bm{E}
+\bm{E'} = \bm{J}_n \ldots \bm{J}_1\ \bm{E}.
 \end{equation}
 
 %More on Jones matricies: commutivity and order, DDE vs DIE. phenomenological vs. physical
-The order of the Jones matricies should obey the casual order of the signal transmission path. However the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everthing, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can parameterised in different ways. For example during calibration, one could contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical} processes which could be encoded by several commuting Jones matricies. The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be distingushed anyway. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on physics.
+The order of the Jones matricies should obey the casual order of the signal transmission path. However the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everything, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can parameterised in different ways. For example during calibration, one could contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical} commuting processes/matricies. The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be distingushed anyway. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on physics.
 
 
 %visibility definition
-An interferometer measures the correlation of the voltages from an antenna pair. This quantity is known as the \emph{visibility}, 
+An interferometer measures the correlation of the voltages from an antenna pair or \emph{baseline}. The correlator output is termed the \emph{visibility}, 
 \begin{equation}
 \bm{V}_{pq} = \langle {\bm v}_p  {\bm v}_q^H \rangle,
 \end{equation}
-where $p$, $q$ are refer to the two antennae. As $\bm{V}_{pq}$ can be related to $\bm{E}_{p,q}$, it is equivalent to the Stokes polarisation formulation, for example in an XY basis,
+where $p$, $q$ are refer to the two antennae. The representation of  $\bm{V}_{pq}$ as a 2~x~2 matrix is equivalent to the Stokes polarisation formulation, for example in an XY basis,
 
 
 %Connection to stokes parameters and polarisation
@@ -66,10 +66,33 @@ U-iV & I-Q \\
 \end{eqnarray}
 where $I$ is the coherence of the total flux, $V$ is the coherence of the circularly polarised flux, $Q$ and $U$ relate to coherence of the linear polarisation. Note that the Jones matricies are assumed to be constant over the averaging interval.
 
-%example Jones matrix, Complex time-variable antenna gain
-An example of a Jones matrix, for two independent linear dipoles, is the complex time-variable antenna gain. 
+% Example RIME and re-derivation of van-citterlike
+We now review the RIME for a single, uncorrupted, unpolarised point source, which will illustrate the Fourier transform relation between the measured visibility and a section of approximately flat sky.
+%phase diff
+Considering that there are no signal corruptions (including station gains), the only Jones matrix to consider is the effect of the phase difference of the electric fields measured at the two antennae. This is due to the difference in propagation path length. 
+%coordinate systems
+Consider the vector $\bm{\sigma}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector $\bm{u} = (u,v,w)$ with the w-axis in the direction of $\bm{\sigma}$. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\bm{\sigma}$, also called the \emph{phase centre}. The phase difference is therefore
+\begin{equation}
+ \delta \phi = 2\pi (\bm{u}/\lambda \cdot \bm{\sigma})
+\end{equation}
+
+Considering only a small approximately planar component of the sky (i.e. $l^2 +m^2 \ll 1$),
+\begin{equation}
+ \delta \phi = 2\pi \lambda^{-1} (u_pl +v_pm).
+\end{equation}
+Denoting the brightness matrix $\bm{B} = \langle {\bm E}_p  {\bm E}_q^H \rangle$ and setting the delay of antenna $q$ as the reference, the RIME for our simplified model becomes
+\begin{eqnarray}\label{eq:van-citterlike}
+\bm{V}_{pq} &=& K_p \bm{B} K_q^H \\
+&=&  \exp (2\pi i \lambda^{-1} (ul +vm)) \bm{B} (1)
+\end{eqnarray}
+
+where $K$ was the Jones matrix used to apply the phase difference to each antenna. This is a Fourier Transform relation between visibility domain $(u,v)$ and image domain $(l,m)$. This derivation can be easily to extended sources (e.g. see \citep{Smirnov_2011a}). The quantity  $K_p \bm{B} K_q^H$ is often denoted as $\bm{X}_{pq}$ and is termed the coherency matrix.
+
+
+%example signal corruption, Complex time-variable antenna gain
+An example of a Jones matrix representing a signal corruption is the complex time-variable antenna gain. Considering two independent linear dipoles,  for antenna p
 \begin{equation}\label{eq:G_jones}
-\bm{G}(t) =
+\bm{G}_p(t) =
 \left(
 \begin{array}{cc}
 g_x (t)&0\\
@@ -77,40 +100,34 @@ g_x (t)&0\\
 \end{array}
 \right)
 \end{equation}
-
-% Example RIME and re-derivation of van-citterlike
-The RIME for a single uncorrupted point source is then.. Phase centre, phase differences
-\begin{equation}\label{eq:van-citterlike}
-\bm{V}_{pq} = K_p \bm{B} K_q^H
+Hence the RIME becomes,
+\begin{equation}\label{eq:G_rime}
+\bm{V}_{pq} = \bm G_p \bm{X}_{pq} \bm G_q^H
 \end{equation}
-
-where
-
-\begin{equation}
- K_p = 2\pi \lambda^{-1} (u_pl +v_pm +w_p(n-1)),
-\end{equation}
-where $l$, $m$, $n = \sqrt{1-l^2-m^2}$ are the direction cosines and $\lambda$ is the signal wavelength. Which amounts to a re-derivation of van-citterlike fourier transform relation between visibility domain and image domain. 
-
 
 \subsection{A primer on self-calibration}
 %Pr 2 St 3
 
-%Motivation
-Self-calibration is the primary method for the estimation of station gains. The interaction of this calibration procedure with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation. 
+%fringe fitting
+Self-calibration, as the name suggests, uses the target itself as a calibrator to estimate station gains whilst iteratively building the sky model.
+In mm-VLBI calibration, self-calibration is applied under two different formulations, the first is a procedure termed \emph{fringe fitting}. From the point of view of the RIME, fringe-fitting solves a linearised version of equation~\ref{eq:G_rime} for each solution interval 
+%need to install package
+\begin{IEEEeqnarray}{rCl}
+\bm{V}_{pq}(t_0,dt,\nu_0,d\nu)& = & |G_p||G_q| \bm{X}_{pq} \exp(i[\phi_p(t_0,\nu_0)  + \partial_t \phi_p(t,\nu_0)dt \nonumber\\
+&& \negmedspace {} + \partial_\nu \phi_p(t_0,\nu)d\nu  -\phi_q(t_0,\nu_0) -  \nonumber\\
+&& \negmedspace {} \partial_q \phi_p(t,\nu_0)dt - \partial_\nu \phi_q(t_0,\nu)d\nu])
+\end{IEEEeqnarray}\label{eq:fringe_fit}
+
+This is essentially a blind search for the station gain amplitude and phase and the first partial derivative of station phase with respect to frequency and time. The station gain amplitude will often be calibrated separately, reducing the number of parameters to solve for. The sky model used is typically just a point source at the centre of the field. 
 
 
-%RIME formulation
-sestimate the station based G-Jones terms.
-i.e. a diagonal Jones matrix.
-equation~\ref{eq:G_jones}
-
-%fringe fitting vs self cal
-In mm-VLBI calibration, self-calibration is applied under slightly different formulations, firstly the procedure termed \emph{fringe fitting}, solves for station gains with linear time and frequency dependence and then self calibration with no time or frequency dependence over the solution interval. 
+%Self-calibration proper
+From the point of view of the RIME, self-calibration solves equation~\ref{eq:G_rime}, However the procedure for finding sources is non-linear Naturally then, this procedures has to be given an initial sky model to start with. 
 
 
+iteratively, at each point adding new components to the source model. 
+The interaction of this calibration procedure with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation.
 
-
-%Need a basic sky model
 
 \subsection{mm-VLBI observables and data products}
 %PR 2 St 2
@@ -156,24 +173,24 @@ Although the static source assumption holds for most interferometric observation
 
 
 %Light crossing analysis
-In principle, the variability timescale can be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the maximally rotating realisation to about half an hour for a non-rotating BH. The ISCO period for M87 is longer on the order of day scales. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~$^\star$ at a distance of $8.3$~kpc (Gillessen, 2009), for a flare of duration $ \Delta t_{\rm cross} =10$~min, which corresponds to scales of  $15 R_{\rm Sch}$, further evidence of emission areas close the event horizon.
+In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~A* at $D_{\rm src} = 8.3$~kpc (Gillessen, 2009), a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $15 R_{\rm Sch}$. Such analyses gave early evidence for an emission area on event horizon scales.
 
 
 %There are some ways to track/mitigate variability but this is beyond scope
-If a flare is dominated by a localised variable structure, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track flaring structures with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios which could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no fringe-fitting errors.
+In the case of a highly localised flare, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios. This could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no tropospheric-induced calibration errors.
 
 \section{Signal Corruptions}
-
-The signal corruptions which we have identified as the most prominent occurs in the troposphere, interstellar medium (ISM) and within the stations themselves. First I will review some EM wave fundamental and introduce scattering theory, which is applicable to both the radiative process occuring in the troposphere and ISM. Following the general introduction, each specific case will be explored.
+%plan
+We begin with an introduction to scattering theory, which is applicable to the radiative processes occuring in both the troposphere and ISM. Following this we explore signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections in detail. 
 
 \subsection{Scattering basics}\label{sec:basic_scat}
 %PR 1 St 1
 
 %motivation
-Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the interstellar medium (ISM) (\citealt{Bower_2006}, \citealt{Gwinn_2014}), while the second is due to poorly-mixed water vapour in the Earth's troposphere (\citealt*{Carilli_1999}, \citealt*{Lay_1997}). It is essential that the effects of the scattering phenomena are understood for a rigorous calibration and interpretation of data.  Towards this end, simulation modules approximating scattering in both media are implemented in \textsc{MeqSilhouette}. As an introduction to the separate descriptions of each, we review a simple scattering model.
+Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the ISM \citep[e.g.][]{Bower_2006,Gwinn_2014}, while the second is due to poorly-mixed water vapour in the Earth's troposphere \citep*[e.g.][]{Carilli_1999, Lay_1997}. It is essential that the effects of the scattering phenomena are understood for accurate calibration and robust inference of the intrinsic source properties.  To this end, simulation modules approximating scattering in both media are implemented in \textsc{MeqSilhouette}. As an introduction to the separate descriptions of each, we review a simple scattering model.
 
 %description of the model
-An electro-magnetic wave is scattered when it passes through a medium with refractive index inhomogeneities. Following \citet{Narayan_1992}, this effect can be modeled as a thin screen, located between source and observer planes and orientated perpendicular to the line-of-sight. The screen, indexed by coordinate vector $\bm{x}$, adds a stochastic phase $\phi(\bm{x})$ to the incoming wave at each point on the screen, yielding a corrugated, outgoing wavefront. We define the Fresnel scale as  $r_{\rm F} = \sqrt{\lambda D_{\rm os}/2\pi}$, where $D_{\rm os}$ is the observer-scatterer distance, or the distance where the geometrical path difference $\frac{2\pi}{\lambda} (D_{\rm os} - \sqrt{D_{\rm os}^2 + r_{\rm F}^2}) =\frac{1}{2}$~rad.
+An electro-magnetic wave is scattered when it passes through a medium with refractive index inhomogeneities. Following \citet{Narayan_1992}, this effect can be modeled as a thin screen, located between source and observer planes and orientated perpendicular to the line-of-sight. The screen, indexed by coordinate vector $\mathbf{x}$, adds a stochastic phase $\phi(\mathbf{x})$ to the incoming wave at each point on the screen, yielding a corrugated, outgoing wavefront. We define the Fresnel scale as  $r_{\rm F} = \sqrt{\lambda D_{\rm os}/2\pi}$, where $D_{\rm os}$ is the observer-scatterer distance, or the distance where the geometrical path difference $\frac{2\pi}{\lambda} (D_{\rm os} - \sqrt{D_{\rm os}^2 + r_{\rm F}^2}) =\frac{1}{2}$~rad.
 
 %example calculation
 To determine the resultant electric field at a point in the plane of the observer, indexed by coordinate vector $\bm{X}$, one has to take into account all possible ray paths from the screen to $\bm{X}$. To illustrate the model, a calculation of the scalar electric field generated by a point source, $\psi(\bm{X})$ yields the Fresnel-Kirchoff integral \citep*{BORN_1980}
@@ -183,15 +200,15 @@ To determine the resultant electric field at a point in the plane of the observe
 where C is a numerical constant.
 
 %define structure function
-The statistics of $\phi(\bm{x})$ can be described by a power spectrum or equivalently the phase structure function,
+The statistical properties of $\phi(\mathbf{x})$ can be described by a power spectrum or equivalently the phase structure function,
 \begin{equation}\label{eq:D_phi}
-D_\phi (\bm{x},\bm{x'}) = < \left[ \phi(\bm{x} +\bm{x'}) - \phi(\bm{x})\right]^2 >,
+D_\phi (\mathbf{x},\mathbf{x'}) = \langle \left[ \phi(\mathbf{x} +\mathbf{x'}) - \phi(\mathbf{x})\right]^2 \rangle,
 \end{equation}
-where $\bm{x}$ and $\bm{x'} $ represent two points on the screen and $<>$ denotes the ensemble average. 
+where $\mathbf{x}$ and $\mathbf{x'} $ represent two points on the screen and $\langle .. \rangle$ denotes the ensemble average. 
 
 There is evidence that $D_\phi$ can be reasonably approximated by a power law dependence on the absolute distance $r$ between points on the screen  \citep{Armstrong_1995,carilli_1997}
 \begin{equation}
-D_\phi (r) =  (r/r_0)^\beta,\qquad r^2 = \bm{x}^2 - \bm{x'}^2
+D_\phi (r) =  (r/r_0)^\beta,\qquad r^2 = (\mathbf{x} - \mathbf{x'})^2
 \label{kolmogorov}
 \end{equation}
 where $r_{\rm 0}$ is the phase coherence length scale defined such that $D_\phi(r_{\rm 0}) = 1$~rad. 
@@ -199,7 +216,7 @@ where $r_{\rm 0}$ is the phase coherence length scale defined such that $D_\phi(
 Kolmogorov turbulence, which describes how kinetic energy injected at an outer length scale $r_{\rm out}$ cascades to increasingly smaller scales until finally dissipated at an inner length scale $r_{\rm in}$, predicts $\beta = 5/3$ in the domain ${r_{\rm in}<<r<<r_{\rm out}}$. This scaling has been demonstrated to be a reasonable approximation for the ISM over scales $r \sim 10^2$~km to $>1$~AU \citep*{Johnson_2015a}, and also for the troposphere with $r< \Delta h$, where $\Delta h$ is the thickness of the turbulent layer \cite{Coulman_1985}. The specifics of the tropospheric model will be explored further in later sections.
 
 %Weak and strong
-The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the scattering which is split into the strong and weak regimes, Fig.~ref{fig:scatter}. In weak scattering, $ r_{\rm 0} \gg r_{\rm F}$ and hence by equation\ ~\ref{kolmogorov}, $D_{\phi}(r_{\rm F}) \ll 1$. This implies that most of the radiative power measured on a point $\bm{X}$ will originate from a screen area $A_{\rm weak} \approx \pi r_{\rm F}^2$. Whereas in the regime of \emph{strong scattering}, $ r_{\rm 0} \ll r_{\rm F}$ yielding  $D_{\phi}(r_{\rm F}) \gg 1$. This  results in coherent signal propagation onto the point $\bm{X}$ from multiple disconnected zones each of area $A_{strong} \approx \pi r_{\rm 0}^2$ \citep{Narayan_1992}. Scattering in the troposphere and ISM fall into the regimes of weak and strong scattering respectively.
+The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the scattering which is split into the strong and weak regimes, Fig.~\ref{fig:scatter}. In weak scattering, $ r_{\rm 0} \gg r_{\rm F}$ and hence by equation\ ~\ref{kolmogorov}, $D_{\phi}(r_{\rm F}) \ll 1$. This implies that most of the radiative power measured on a point $\bm{X}$ will originate from a screen area $A_{\rm weak} \approx \pi r_{\rm F}^2$. Whereas in the regime of \emph{strong scattering}, $ r_{\rm 0} \ll r_{\rm F}$ yielding  $D_{\phi}(r_{\rm F}) \gg 1$. This  results in coherent signal propagation onto the point $\bm{X}$ from multiple disconnected zones each of area $A_{strong} \approx \pi r_{\rm 0}^2$ \citep{Narayan_1992}. Scattering in the troposphere and ISM in the direction of the Galactic Centre fall into the regimes of weak and strong scattering respectively.
 
 %Weak and strong fig
 \begin{figure*}
@@ -230,7 +247,7 @@ An accurate extrapolation of scattering kernel to 1.3~mm is important for the EH
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{Images/scattering_law}
-\caption{The $\lambda^2$ dependence of scattering kernel size is shown by the solid line. This has been derived from measurements made at $\lambda > 17$~cm \cite{Bower_2006}. The dotted line shows the derived intrinsic source size which scales as $\lambda^1.44$. This was derived from measurements in the wavelength range, 2~cm~$< \lambda < 1.3$~mm. The red circles show major-axis observed sizes of Sgr~A$^\star$  and the green points show the derived intrinsic major-axis size. This plot was reproduced from \citet{Doeleman_2008}.\label{fig:scattering_law}
+\caption{The $\lambda^2$ dependence of scattering kernel size is shown by the solid line. This has been derived from measurements made at $\lambda > 17$~cm \protect\cite{Bower_2006}. The dotted line shows the derived intrinsic source size which scales as $\lambda^1.44$. This was derived from measurements in the wavelength range, 2~cm~$< \lambda < 1.3$~mm. The red circles show major-axis observed sizes of Sgr~A$^\star$  and the green points show the derived intrinsic major-axis size. This plot was reproduced from \protect\citet{Doeleman_2008}.\label{fig:scattering_law}
 }
 \end{center}
 \end{figure*}
@@ -322,7 +339,7 @@ A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/ism_cp}
-\caption{Closure phases recorded in a VLBA + LMT observation of  Sgr~A$^\star$ at $\lambda = 3.5$~mm \cite{Ortiz_2016}. The data points are shown as red circles and blue squares and are only distinguished by the calibrator used. The green envelopes show the $1\sigma$ closure phase prediction induced by scattering-induced substructure. Reproduced from \citet{Ortiz_2016} \label{fig:substructure2}
+\caption{Closure phases recorded in a VLBA + LMT observation of  Sgr~A$^\star$ at $\lambda = 3.5$~mm \protect\cite{Ortiz_2016}. The data points are shown as red circles and blue squares and are only distinguished by the calibrator used. The green envelopes show the $1\sigma$ closure phase prediction induced by scattering-induced substructure. Reproduced from \protect\citet{Ortiz_2016}. \label{fig:substructure2}
 }
 \end{center}
 \end{figure*}
