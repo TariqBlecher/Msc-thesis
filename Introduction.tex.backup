@@ -1,69 +1,37 @@
 \chapter{Introduction}
+%St : 1
 
-%Pr: 3. St : 2
+%Increasing resolution -> motivation and difficulties, cite two short examples (hubble + alma) st 1
+Throughout the history of astronomy, there have always been celestial sources which appear point-like (or unresolved) with the available instrumentation. To study these sources in sufficient detail as to clarify their nature, ever more sophisticated instruments are developed. In principle, a diffraction-limited aperture can obtain an angular resolution $\theta_{\rm res}$ of,
 
-%The structure of the introduction is to be altered considerably to be made more succient and clear. At the moment, I'm looking at basing the structure on Ben's Intro. This would entail moving the meat of the VLBI and EHT sections to the theoretical background. I think I will get to EHT far quicker - maybe with 1 paragraph on high resolution science, 1 paragraph on VLBI, 1 paragraph introducing EHT... 
+\begin{equation}\label{eq:ang_res}
+ \theta_{\rm res} \approx 1.22 D / \lambda.
+\end{equation}
+where $D$ diameter of the aperture and $\lambda$ is the observing wavelength. However, various effects can lead to instrument being unable to reach the diffraction limit. Among these are blurring and absorption by Earth's atmosphere and infeasibility of building massive dish apertures. To overcome these difficulties, a variety of new technologies have been developed, including space-based observatories which bypass the Earth's atmosphere completely, interferometric arrays which eliminate the need to build extremely large apertures, as well as mitigation strategies like adaptive optics and water vapour radiometery which account for atmospheric turbulence in real time.  
 
 
-
-%TO BE CUT TO 1 paragraph-probably no figures..why go to high  resolution -> several examples (bh relations - HST, HL TAU-ALMA, bullet cluster - chandra??) of how an increase in resolution has lead to new physical insights. 
-
-Throughout the history of astronomy, we see celestial sources which appear point-like or unresolved with the instrumentation available at the time. To study these sources in enough detail to clarify their nature, ever more sophiscated instruments have to be developed. 
-
-These instruments span the electromagnetic spectrum, and here I recall several notable examples which illustrate the discovery potential of an increase in resolution.
-
-At optical wavelengths, the Hubble Space Telescope was able to resolve the gravitational sphere of influence of the central supermassive black hole (SMBH) in nearby galaxies. These measurements uncovered the fundamental relations between black hole mass and both stellar bulge luminosities and velocity dispersions (Ferrasse and Merritt (2000), Gebhardt et al. (2000)) which has been a foundation for extra-galactic astronomy ever since. 
-
-A more recent example is a 2014 science verification result with the Atacama Large Millimetre Array (ALMA) \cite{brogan_2015} which resolves the molecular dust disk surrounding the young protostellar system, HL Tau Fig.~\ref{fig:hl_tau}. This observation showed, in unique detail, the orbit cleared out by forming planets which was suprising given that the stellar system was so young. The clarity of the image surpasses all previous work on the subject and provides an strong science case for conducting observations of similiar systems with ALMA. 
-
-\begin{figure*}
-\begin{center}
-
-\includegraphics[width=\columnwidth]{Images/hl_tau}
-\caption{The young stellar system HL Tau, observed at 223 GHz by ALMA. The orbits of forming planets appear as dark rings cut out of the disk. The presence of these bodies are suprising given that host star is still very young. The detail in this image was made possible by the milliarcsec resolution acheivable with ALMA. \label{fig:hl_tau}}
-
-\end{center}
-\end{figure*}
-
-X-ray wavelengths with Chandra, we see the bullet cluster (Clowe 2004, )
-
-The technique which acheives the highest resolution is Very Long Baseline Interferometry (VLBI)
-
-%Very Long Baseline Interferometry
-%Pr : 3 St :3
-
-%to be cut to 1 paragraph, no heading
-
-% brief historical context of vlbi 
-
-VLBI is  network 
-
-The development of VLBI, originated in the late 1960's with observations of compact, highly-variable objects, now known as quasars. Teams using VLBI discovered that these objects consist of core-jet systems. Also the presence of super-luminal jet motion. \textit{TMS copy, paste : By using local
-oscillators at each antenna that are controlled by high-precision frequency stan-
-dards, it is possible to preserve the coherence of the signals for time intervals
-long enough to measure interference fringes. The received signals are converted
-to an intermediate frequency low enough that they can be recorded directly on
-magnetic tape, and the tapes are subsequently brought together and played into
-a correlator.}
-
-% examples of arrays, with their specs
-
-Examples of Arrays : Very Long Baseline Array (VLBA) : 1.4 - 87 GHz, European VLBI Network (EVN), African VLBI Network (AVN).  
+%Very Long Baseline Interferometry -> the highest resolution st 1
+The astronomical observatory which typically achieves the highest angular resolution is Very Long Baseline Interferometry (VLBI). Interferometry  refers to the technique of measuring the electric field correlations between separated antennae pairs (referred to as `baselines'). The electric field correlations can be related to Fourier components on the sky and hence an approximate image of sky can be reconstructed through the inverse Fourier transform. With this method, the distance between the antennae effectively replaces $D$ in equation~\ref{eq:ang_res}, yielding much higher angular resolution. This technique is primarily used at radio frequencies as the phase of the electric field becomes unstable at shorter wavelengths. VLBI then is simply radio interferometry with antennae separated by large distances across the Earth and or in Earth's orbit. The technique has seen several noteworthy achievements since its inception in the late 1960's, including resolution of the extra-galactic, compact, highly-variable objects, now known as quasars into core-jet systems, and the mapping of maser motion around the Supermassive Black Holes (SMBH) in the cores of nearby galaxies.
 
 \section{The Event Horizon Telescope (EHT)}
-%Pr : 3, St: 3
-This thesis is centred around such a class of emerging early 21st century instrumentation, known as Very Long Baseline Interferometry at millimetre wavelengths (mm-VLBI). This technique enables angular resolution on the order of $\sim 10\ \mu$-arcsec by maximising both antenna separation and observing frequency. The sub-field is being led by the Event Horizon Telescope consortium (EHT), an international project whose primary objective is to resolve the supermassive black holes  (SMBH) located at the centre on our Galaxy, known as Saggittarius~A$^\star$ (Sgr~A$^\star$), and M87 on angular scales comparable to the black hole event horizon. This thesis aims to contribute to the EHT objectives through algorthimic development of data simulation and parameter estimation pipelines, which are particularly relevant given the significant calibration challenges faced by the project.
+% St: 3
+
+% EHT -> intro st 2
+In the last few decades there has been a push towards building VLBI capabilities at sub-millimetre wavelengths. By maximising both antenna separation and frequency, this enables angular resolution on the order of $\sim 10\ \mu$-arcsec. The sub-field is being led by the Event Horizon Telescope consortium (EHT), an international project whose primary objective is to spatially resolve the gravitationally-lensed photon ring (or `silhouette') of a SMBH \citep{Doeleman_2010}. The two primary targets are Sgr~A$^\star$ and M87, which are expected to have gravitationally-lensed photon rings with apparent angular diameters of $\theta_{\rm pr} \sim 50$ and $\sim 20-40\ \mu$-arcsec \citep*{Falcke_2013,Broderick_2009} respectively.  The extreme angular resolution required by, blurring effects due to scattering by the interstellar medium \citep[ISM; e.g.][]{Fish_2014}, and the transition to an optically thin inner accretion flow at (sub)mm-wavelengths \citep{Serabyn_1997,Falcke_1998}, necessitates that the EHT be comprised of antennas separated by thousands of kilometres that operate at high radio frequency ($\nu>200$~GHz).
 
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/eht_globe}
-\caption{(Image credit: Remo Tilanius) Event Horizon Telescope uses \textbf{Earth-diameter baselines} to attain \textbf{resolution} \boldmath$\sim 10$ $\mu$arcsec. \label{fig:eht_globe}%
+\caption{(Image credit: Remo Tilanius) Event Horizon Telescope uses Earth-diameter baselines to attain resolution $\sim 10$ $\mu$arcsec. \label{fig:eht_globe}%
 }
 \end{center}
 \end{figure*}
 
 \subsection{Scientific opportunities}
-%Pr : 3,  St:3
+% Pr:3, St:3
+
+% The point is to provide the scientific motivation for the project.
+
 To constrain the physics near a black hole, the observation needs to be sensitive to scales comparable to the event horizon. For the case of a non-spinning or Schwarschild black hole, the event horizon is spherically symmetric with a radius, $R_{\rm Sch} = 2 G M_{\rm BH} /c^2$,  where $M_{\rm BH}$ is the black hole mass, $G$ is the gravitational constant and $c$ is the speed of light. The angular size of such an event horizon in the far field approximation is $\theta_{\rm Sch} = R_{\rm Sch} / D \approx 0.02$~nanoarcsec~($M_{\rm BH}/M_\odot$)(kpc/$D$) where $D$ is the distance from observer to source. For SMBH's Sgr~A$^\star$ and M87, this results in $\theta_{\rm Sch} \sim 5-10\ \mu$-arcsec. The event horizon telescope will have baseline lengths $|b| \sim 10^3$~km and is currently observing at $\nu =230$~GHz, yielding a diffraction-limited angular resolution of $\theta_{\rm EHT} = 1.22 \nu/ |b| \approx $. Hence EHT will be able to resolve these objects on the scale of the event horizon/gravitational radius. 
 
 Equally important to  that the millimetre emission is optically thin and therefore probes inner emission region. The power spectrum of Sgr~A$^\star$ peaks in sub-mm bump. Synchtron emission. Lensed emission. the interferometric technique also filters out smooth mm emission.[Read Falke 1998]
@@ -71,15 +39,15 @@ Equally important to  that the millimetre emission is optically thin and therefo
 {\bf FIG. basic grmhd image of black hole shadow, scale indicating resolution and eht beam size}\\
 
 
-%Strong gravity and black hole spacetime
-%Pr : 3, St: 3
+%Probing strong gravity and black hole spacetime
+%Pr : 3,St: 3
 Gravity as described by General Relativity (GR) has flawlessly agreed with all observational experiments, however GR has conceptual weaknesses, especially as it is not compatible with the quantum description of reality. Various alternatives to GR have been theorised which do not assume a purely classical description of matter. To test GR against it's numerous alternatives, we have to observe gravity in the regime where we expect the largest observational deviations a GR prediction would have if it were only an approximate theory of gravity.  The spacetime close to a SMBH is an ideal candidate, as the gravitational effects are very strong. Lensed emission of the gravitational lensed photon ring.  The exact sizes and shapes of which indicate different spacetime and theories of gravity. Note that even in this regime, the deviation from GR is small. We can also explore black hole physics by testing the no-hair theorem or that black holes are only described by their mass, spin and charge by constraining the quadrapole moment of the black hole.deviations
 from the Kerr metric
 
 {\bf FIG. Plot of analytic shapes and sizes of the bh shadow from the predictions of different theories of gravity}\\
 ~\\
-%AGN accretion and jet launch astrophysics
-
+%Probing  AGN accretion and jet launch astrophysics
+%Pr : 3,St: 3
 {\bf [AGN jet basics.]}
 
 Astrophysical jets were first discovered over a century ago, accretion onto a black hole was first postulated to power these jet by .. .However a century later, the mechanism of accretion and jet launching ifrom SMBH are still highly debated. 
@@ -100,26 +68,18 @@ In M87, where the jet is dominant, micro-arcsecond scale astrometry, capable wit
 Performing Very Long Baseline Interometry (VLBI) at mm-wavelengths presents unique calibration challenges, including very short atmospheric coherence times that are typically $\lesssim$10~s \citep{Doeleman_2009}, low calibrator source sky density, complex and variable calibrator source structure, and antenna pointing accuracies that are a non-negligible fraction of the antenna primary beam. Addition These effects may place significant limitations on the sensitivity, image fidelity, and dynamic range that can be achieved with mm-VLBI.  Performing mm-VLBI however, is a difficult task for a variety of reasons. Firstly the arrays are inhomogenous, made up of a collections of different stations working together, Difficult to get time on all the stations. there are a variety of signal corruptions which take place. Briefly introduce signal corruptions, variability, ..etc, how these represent calibration and interpretation challenges.
 
 
-\subsection{Science extraction : parameter estimation and imaging}
-%Leave for now
+% Effect of corruptions on Science extraction : parameter estimation and imaging, %High accuracy needed for science 
 %Pr : 2, St : 3
 
-%High accuracy needed for science 
 we need to measure the fractional
 asymmetry of the shadow shape with respect to its angular size to the few percent
 
-%Briefly discuss imaging, it's difficulties..\\
 
-~\\
-%parameter estimation through robust visibility derivatives
-Estimating the `macro'-parameters of Sgr A*, spin, orientation, position angle through a Bayesian parameter estimation analysis with closure quantities\\
+~Estimating the `macro'-parameters of Sgr A*, spin, orientation, position angle through a Bayesian parameter estimation analysis with closure quantities\\
 Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's many objectives.
 ~\\
 see psaltis 2015 for  some other shadow detection criteria
 \textbf{Fig: A Broderick 2016 posterior probability distribution (?)}
-
-\section{Research questions and aims}
-
 
 
 \section{A realistic mm-VLBI simulator}
@@ -144,7 +104,7 @@ Recently, there has been an increase in the attention given to simulating EHT ob
 
 %the Meqtrees+MS approach
 
-Over the past decade, significant effort has been placed on advanced radio interferometric calibration and imaging algorithms for centimetre and metre-wave facilities in response to the large number of new arrays in construction or design phase (e.g. MeerKAT, ASKAP, SKA, LOFAR, HERA). A leading software package in this pursuit is \textsc{MeqTrees}\footnote{https://ska-sa.github.io/meqtrees/} \citep*{Noordam_2010}, which was developed to simulate, understand and address the calibration issues to be faced with the greatly enhanced sensitivity, instantaneous bandwidth, and field-of-view of such facilities. For example, \textsc{MeqTrees} is rooted in the Measurement Equation mathematical formalism \citep{Hamaker_1996}, which parameterizes the signal path into distinct $2 \times 2$ complex  matrices called Jones matrices. This formalism and applications thereof are laid out in \citep{Smirnov_2011a,Smirnov_2011b,Smirnov_2011c} and are arbitrarily generalized to model any (linear) effect, including undesired signal corruptions that often may have subtle yet systematic effects. \textsc{MeqTrees} has been applied to correct for direction dependent calibration errors to JVLA and WSRT observations, achieving record-breaking high dynamic range images \citep{Smirnov_2011c}. The effectiveness provided by the Measurement Equation formalism in radio interferometric calibration provides a strong motivation to explore its application to challenging goal of imaging a supermassive black hole silhouette with mm-VLBI. To construct this simulator we leverage off metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package which we name, \textsc{MeqSilhouette}.  Use of \textsc{MeqTrees} and \textsc{measurement set} data format lends itself to investigating a range of different techniques that are used in other areas of interferometry (e.g. coh-Jones paper). While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. This technology enables us to understand a wide range of mm-VLBI signal propagation and calibration systematics, quantify their effect on accretion flow and gravitational theoretical model selection, and hence maximise the scientific utility from EHT observations. 
+Over the past decade, significant effort has been placed on advanced radio interferometric calibration and imaging algorithms for centimetre and metre-wave facilities in response to the large number of new arrays in construction or design phase (e.g. MeerKAT, ASKAP, SKA, LOFAR, HERA). A leading software package in this pursuit is \textsc{MeqTrees}\footnote{https://ska-sa.github.io/meqtrees/} \citep*{Noordam_2010}, which was developed to simulate, understand and address the calibration issues to be faced with the greatly enhanced sensitivity, instantaneous bandwidth, and field-of-view of such facilities. For example, \textsc{MeqTrees} is rooted in the Measurement Equation mathematical formalism \citep{Hamaker_1996}, which parameterizes the signal path into distinct $2 \times 2$ complex  matrices called Jones matrices. This formalism and applications thereof are laid out in \citep{Smirnov_2011a,Smirnov_2011b,Smirnov_2011c} and are arbitrarily generalized to model any (linear) effect, including undesired signal corruptions that often may have subtle yet systematic effects. \textsc{MeqTrees} has been applied to correct for direction dependent calibration errors to JVLA and WSRT observations, achieving record-breaking high dynamic range images \citep{Smirnov_2011c}. The effectiveness provided by the Measurement Equation formalism in radio interferometric calibration provides a strong motivation to explore its application to challenging goal of imaging a supermassive black hole silhouette with mm-VLBI. To construct this simulator we leverage off metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package which we name, \textsc{MeqSilhouette}.  Use of \textsc{MeqTrees} and \textsc{measurement set} data format lends itself to investigating a range of different techniques that are used in other areas of interferometry (e.g. coh-Jones paper). While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. This technology enables us to
 
 
 \section{Outline}
