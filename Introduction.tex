@@ -1,5 +1,5 @@
 \chapter{Introduction}
-%St : 3
+%St : 2
 
 %Increasing resolution -> motivation and difficulties st 1
 Throughout the history of astronomy, there have been celestial sources which appear point-like (unresolved) with the available instrumentation. To clarify the nature of these sources, ever more sophisticated instruments are developed. 
@@ -19,18 +19,18 @@ The astronomical observatory which typically achieves the highest angular resolu
 % St: 3
 
 % EHT -> intro to the Array st 1
-In the last few decades there has been a push to enable VLBI capabilities at sub-millimetre wavelengths. This effort is being led by the Event Horizon Telescope consortium (EHT), an international project whose primary objective is to spatially resolve nearby black holes with an angular resolution on the order of their event horizons. In contrast to the previous state of the art high frequency VLBI observatory, the Very Long Baseline Array (VLBA) which has coverage to 87~GHz (3~mm), the EHT is currently observing at 230~GHz (1.3~mm) and will potentially extend till 315~GHz (0.8~mm) in the future. See Fig.~\ref{fig:eht_globe} for an annotated map of the locations of the EHT array. As the EHT will have baseline lengths comparable to the diameter of the earth, $|b| \sim 10^4$~km and is currently observing at 1.3~mm, this yields $\theta_{\rm res} \approx 30\ \mu$-arcsec.
+In the last few decades there has been a push to enable VLBI capabilities at sub-millimetre wavelengths. This effort is being led by the Event Horizon Telescope consortium \citep[(EHT),][]{Doeleman_2010}, an international project whose primary objective is to spatially resolve nearby black holes with an angular resolution on the order of their event horizons. In contrast to competing high frequency VLBI observatories e.g. the Very Long Baseline Array (VLBA) and the European VLBI network (EVN) which have coverage to 87~GHz (3~mm), the EHT is currently observing at 230~GHz (1.3~mm) and will potentially extend till 315~GHz (0.8~mm) in the future. See Fig.~\ref{fig:eht_globe} for an annotated map of the locations of the EHT array. As the EHT will have baseline lengths comparable to the diameter of the earth, $|b| \sim 10^4$~km and is currently observing at 1.3~mm, this yields $\theta_{\rm res} \approx 30\ \mu$-arcsec.
 
 %st 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.8\columnwidth]{Images/eht_globe}
-\caption{(Image credit: Remo Tilanius) The view of the Event Horizon Telescope (EHT) from Sgr~A*. This interferometric array uses Earth-diameter baselines, operating at $230-315$~GHz to attain resolution $\theta_{\rm res} \sim 10$ $\mu$-arcsec. Baselines to ALMA are shown in red, highlighting it's order of magnitude higher sensitivity. Note that the CARMA station has recently been discontinued, a telescope in Greenland is currently being constructed and there is ongoing investigation into a possible site in Southern Africa.\label{fig:eht_globe}%
+\caption{(Image credit: Remo Tilanius) The view of the Event Horizon Telescope (EHT) from Sgr~A*. This interferometric array uses Earth-diameter baselines, operating at $230-315$~GHz to attain resolution on order of $\theta_{\rm res} \sim 10$ $\mu$-arcsec. Baselines to ALMA are shown in red, highlighting it's order of magnitude higher sensitivity. Note that the CARMA station has recently been discontinued, a telescope in Greenland is currently being constructed and there is ongoing investigation into a possible site in Southern Africa.\label{fig:eht_globe}%
 }
 \end{center}
 \end{figure*}
 
-% EHT -> intro to the science : scales 
+% EHT -> intro to the science : scales st 1
 To constrain the physics near a black hole, the observation needs to be sensitive to scales comparable to the event horizon. For a non-spinning (Schwarschild) black hole, the event horizon is spherically symmetric with a radius, 
 \begin{equation}
 R_{\rm Sch} = 2 G M_{\rm BH} /c^2,
@@ -40,71 +40,68 @@ where $M_{\rm BH}$ is the black hole mass, $G$ is the gravitational constant and
 \theta_{\rm Sch} &= R_{\rm Sch} / d_{\rm src}\\
 &\approx 0.02^{\prime \prime} \times 10^{-9} (M_{\rm BH}/M_\odot)({\rm kpc}/d_{\rm src}),
 \end{align}
-where $d_{\rm src}$ is the distance from observer to source. For Sgr~A$^\star$ and M87 [refs..], this results in $\theta_{\rm Sch} \sim 5-10\ \mu$-arcsec.
+where $d_{\rm src}$ is the distance from observer to source. For Sgr~A$^\star$, optical monitoring of Sgr~A* \citep{Gillessen_2009} has yielded $M_{\rm BH} = 4.30 \pm 0.36 \times 10^{6} M_\odot$ and $d_{\rm src}= 8.28 \pm 0.32$~kpc which results in $\theta_{\rm Sch} \approx 10\ \mu$-arcsec. 
 
-%Lensing and the photon ring 
-Fortunately, the innermost emission is gravitationally lensed by the SMBH, which causes it to appear magnified by several times its original size. In theory, the innermost orbit should be inhabited by a ring of photons, the lensed image of which should produce a shadow-like (or `silhouette') feature \citep{Doeleman_2010}. Fig.~\ref{fig:grmhd} shows an image ray-traced from a General Relativistic Magneto-Hydrodyanmic simulation of the accretion disc around Sgr~A* \citep{Moscibrodzka_2014}, with the dark silhouette clearly shown in the centre. The two primary targets Sgr~A$^\star$ and M87 are expected to have gravitationally-lensed photon rings with apparent angular diameters of $\theta_{\rm pr} \sim 50$ and $\sim 20-40\ \mu$-arcsec respectively \citep*{Falcke_2013,Broderick_2009}, and should be resolvable by the EHT. Note that the large range for M87 is due to the current controversy between stellar and dust traces of its mass.
-% Emission and optical depth
-There are two other important reasons why this observation needs to be conducted at sub-millimetre frequencies, as opposed to a longer wavelength orbiting VLBI observation which is possible with the RadioAstron space observatory. Firstly as the power spectrum of Sgr~A$^\star$ peaks in sub-millimetre \citep{Serabyn_1997,Falcke_1998}
+%Lensing and the photon ring  st1
+Fortunately, the innermost emission is gravitationally lensed by the SMBH, which causes it to appear magnified by several times its original size. In theory, the innermost orbit should be dominated by a ring of photons, the lensed image of which should feature a shadow-like (or `silhouette') feature \citep[e.g.][]{Johannsen_2010}. Fig.~\ref{fig:grmhd} shows an image ray-traced from a General Relativistic Magneto-Hydrodynamic simulation of the accretion disc around Sgr~A* \citep{Moscibrodzka_2014} The circular shadow is apparent near the centre. The two primary targets Sgr~A$^\star$ and M87 are expected to have gravitationally-lensed photon rings with apparent angular diameters of $\theta_{\rm pr} \sim 50$ and $\sim 20-40\ \mu$-arcsec respectively \citep*{Falcke_2013,Broderick_2009}, and hence should be resolvable by the EHT. 
 
-it is important for observing the innermost emission is that it must be optically thin. As the power spectrum of Sgr~A$^\star$ peaks in sub-millimetre \citep{Serabyn_1997,Falcke_1998}.The interferometric technique also works to filter out the smooth emission. 
+% Emission and optical depth st 1
+There are other important reasons why this observation needs to be conducted at sub-millimetre frequencies as opposed to a longer wavelength orbiting VLBI mission with the RadioAstron space observatory. Firstly, the power spectrum of Sgr~A$^\star$ peaks in sub-millimetre, which for a self-absorbed synchrotron source implies that it becomes optically thin at these frequencies \citep{Serabyn_1997,Falcke_1998}.
+%ISM blurring st 1
+The second reason is that blurring effects, induced by scattering in the Interstellar Medium (ISM) in the direction of the Galactic Centre \citep[e.g.][]{Fish_2014} fall as $\nu^{-2}$ and become subdominant to intrinsic structure in the submillimetre.
 
-%ISM blurring
-The extreme angular resolution required, blurring effects due to scattering by the interstellar medium \citep[ISM; e.g.][]{Fish_2014} necessitate that the EHT be comprised of antennas separated by at least thousands of kilometres that operate at high radio frequency ($\nu>200$~GHz).  
 
+%st 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.5\columnwidth]{Images/disk30}
-\caption{(Image credit: Monika Moscibrodzka) GR-MHD simulation of an accretion disk inclined at $30^\circ$ around Sgr~A* \citep{Moscibrodzka_2014}. Note the dark area in the centre, known as the black hole shadow which represents the lensed image of the photon ring orbiting the BH. A measurement of it's precise shape is a test of general relativity in the strong field regime. Note that the asymmetry in the image is due to doppler boosting, and we are seeing all sides of the disk through lensing. \label{fig:grmhd}%
+\caption{GR-MHD simulation of an accretion disk inclined at $30^\circ$ around Sgr~A* \citep{Moscibrodzka_2014}. Note the dark area in the centre, known as the black hole shadow which represents the lensed image of the photon ring orbiting the BH. A measurement of it's precise shape is a test of general relativity in the strong field regime. Note that the left-right asymmetry in the image is due to doppler boosting, and that all sides of the accretion disk and photon ring are visible due to lensing. \label{fig:grmhd}%
 }
 \end{center}
 
 \end{figure*}
+\subsubsection{Testing the No-Hair theorem}
+
+%Probing strong gravity and black hole spacetime St 1
+Gravity as described by General Relativity (GR) is consistent with all observational experiments thus far, however GR has conceptual weaknesses, especially as it is not compatible with the quantum description of reality \citep[e.g.][]{Goddi_2016}. Various alternatives to GR have been theorised which do not assume a purely classical description of matter. To compare GR with the alternatives, we have to compare its predictions in the strong field regime where the largest deviations from GR would occur if it were an approximate theory.
+The precise shape of the the photon ring around a SMBH is dependent on the spacetime which in turn is calculated within a theory of gravity \citep{Takahashi_2004}. The No-Hair theorem (based on GR) states that the spacetime should only be determined by the first two moments of the black hole, i.e. it's mass and spin. If the No-Hair theorem is invalid, the ring will distort from a circular profile. In the case of a non-zero quadrapole moment the ring will become either oblate or prolate \citep{Johannsen_2010}, which can potentially be tested by EHT observation \citep{Broderick_2014}.
 
 
-%Probing strong gravity and black hole spacetime St 3
-Gravity as described by General Relativity (GR) is consistent with all observational experiments, however GR has conceptual weaknesses, especially as it is not compatible with the quantum description of reality \citep{Goddi_2016}. Various alternatives to GR have been theorised which do not assume a purely classical description of matter. To test GR against it's numerous alternatives, we have to observe gravity in the regime where we expect the largest observational deviations a GR prediction would have if it were only an approximate theory of gravity. The space-time close to a SMBH is an ideal candidate, as the gravitational effects are very strong. Lensed emission of the gravitational lensed photon ring.  The exact sizes and shapes of which indicate different spacetime and theories of gravity. Note that even in this regime, the deviation from GR is small. We can also explore black hole physics by testing the no-hair theorem or that black holes are only described by their mass, spin and charge by constraining the quadrapole moment of the black hole.deviations
-from the Kerr metric
+\subsubsection{Probing jet launch and accretion physics}
+%st 2
 
-{\bf FIG. Plot of analytic shapes and sizes of the bh shadow from the predictions of different theories of gravity}\\
+%some different models st2
+In addition to probing the strong gravity around black holes, the EHT will also resolve the inner accretion and jet launch sites in unprecedented detail. Radiatively Inefficient Accretion Flow \citep[(RIAF),][]{Yuan_2003} models are the most popular explanation for the highly sub-Eddington luminosity of Sgr~A*. In this model most of the mass-energy content is convected away from the SMBH via outflows possibly in the form of winds or a low powered jet. In constrast, the powerful jet in M87 is thought to be powered by an accretion disc in the Magnetically Arrested Disc \citep[(MAD),][]{Narayan_2003} state. In both cases, however there is still much debate over the exact mechanisms.Distiniguish between accretion disk and innerIn M87, where the jet is dominant, micro-arcsecond scale astrometry, capable with the EHT, can determine the distance from the jet base from the event horizon, as well as the width of the jet base. Opening up new possibilities in explore particle production and other exotic physics occuring at the event horizon.  jet. 
+
+%magnetic fields st2 
+Polarisation as a tracer for magnetic fieldsRelativistic thermal electrons in the innermost accretion flowemission is expected
+to be strongly linearly polarized, ∼70% in the optically thin limit for a highly ordered mag-
+netic field configuration (5), with its direction tracing the underlying magnetic field.
+spectrum and structure of SgrA* by evolving the magnetic fields and plasma surrounding the
+black hole (Noble et al. 2006). Jet models of SgrA* use scaled versions of the more powerful
+jets observed in bright extragalactic AGN (Falcke & Markoff 2000)
+Astrophysical jets were first discovered over a century ago, accretion onto a black hole was first postulated to power these jet by .However a century later, the mechanism of accretion and jet launching ifrom SMBH are still highly debated. 
+pecifically we can map the magnetic field configuration, which is a key aspect using polarimetry and Faraday Rotation. The quiescent and variability structure and also be explore in total intensity. Flaring structure.  Distiniguish between accretion disk and inner jet. Distinguish between the different Jet and Disk models for each bh. Deterimine spin.\\
 ~\\
-
-
-%Probing  AGN accretion and jet launch astrophysics
-%Pr : 3,St: 3
-{\bf [AGN jet basics.]}
-
-Astrophysical jets were first discovered over a century ago, accretion onto a black hole was first postulated to power these jet by .. .However a century later, the mechanism of accretion and jet launching ifrom SMBH are still highly debated. 
-
-\textbf{Fig: Typical AGN jet illustration showing magnetic fields }
-
-Recently an industry of sophiscated General Relativistic Magneto-Hydrodyanmic (GRMHD) simulations has developed yielding important insights but also new questions. Now, mm-VLBI has the opportunity of constrains the mechanisms. Specifically we can map the magnetic field configuration, which is a key aspect using polarimetry and Faraday Rotation. The quiescent and variability structure and also be explore in total intensity. Flaring structure.  Distiniguish between accretion disk and inner jet. Distinguish between the different Jet and Disk models for each bh. Deterimine spin.\\
-~\\
-\textbf{Fig: 2/3 panels of simulated images of disk and jet models of Sgr A*/M87}\\
-
 In M87, where the jet is dominant, micro-arcsecond scale astrometry, capable with the EHT, can determine the distance from the jet base from the event horizon, as well as the width of the jet base. Opening up new possibilities in explore particle production and other exotic physics occuring at the event horizon. 
-
-
-\textbf{Fig: 2/3 panels of simulated polarimetric images of Sgr A*/M87 showing ordered magnetic fields}
 
 \subsection{Challenges and obstacles}
 %Pr : 2, St : 2
+
 %Overview of challenges
 Performing Very Long Baseline Interometry (VLBI) at mm-wavelengths presents unique calibration challenges, including very short atmospheric coherence times that are typically $\lesssim$10~s \citep{Doeleman_2009}, low calibrator source sky density, complex and variable calibrator source structure, and antenna pointing accuracies that are a non-negligible fraction of the antenna primary beam. Addition These effects may place significant limitations on the sensitivity, image fidelity, and dynamic range that can be achieved with mm-VLBI.  Performing mm-VLBI however, is a difficult task for a variety of reasons. Firstly the arrays are inhomogenous, made up of a collections of different stations working together, Difficult to get time on all the stations. there are a variety of signal corruptions which take place. Briefly introduce signal corruptions, variability, ..etc, how these represent calibration and interpretation challenges.
+
+Note that even in this regime, the deviation from GR is small. we need to measure the fractional
+asymmetry of the shadow shape with respect to its angular size to the few percent
 
 
 % Effect of corruptions on Science extraction : parameter estimation and imaging, %High accuracy needed for science 
 %Pr : 2, St : 3
-
-we need to measure the fractional
-asymmetry of the shadow shape with respect to its angular size to the few percent
-
-
+ These effects may place significant limitations on the sensitivity, image fidelity, and dynamic range that can be achieved with mm-VLBI.  Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's many objectives. 
 ~Estimating the `macro'-parameters of Sgr A*, spin, orientation, position angle through a Bayesian parameter estimation analysis with closure quantities\\
 Furthermore, unaccounted for systematic and/or non-Gaussian uncertainties could preclude robust, accurate Bayesian parameter estimation and model selection analyses of accretion flow \citep[e.g.][]{Broderick_2016} and gravitational physics \citep[e.g.][]{Broderick_2014, Psaltis_2016}, two of the EHT's many objectives.
 ~\\
 see psaltis 2015 for  some other shadow detection criteria
-\textbf{Fig: A Broderick 2016 posterior probability distribution (?)}
 
 
 \section{A realistic mm-VLBI simulator}
@@ -134,8 +131,16 @@ Over the past decade, significant effort has been placed on advanced radio inter
 
 \section{Outline}
 
-
-
+This thesis is divided into the following sections:
+\begin{itemize}
+ \item {\bf Chapter 2 : Theory}, gives an overview of interferometry and review and development of theory needed for the simulator.
+ \item {\bf Chapter 3 : Software Implementation} describes the design and construction of the simulator.
+ \item {\bf Chapter 4 : Canonical simulations} shows the basic results of the simulator.
+ \item {\bf Chapter 5 : Data comparison} shows a first order comparison with a real 87~GHz VLBA observation.
+ \item {\bf Chapter 6 : A look at fringe fiting}
+ \item {\bf Chapter 7 : Conclusions and future work}
+ 
+\end{itemize}
 
 
 
