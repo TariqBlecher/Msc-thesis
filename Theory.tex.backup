@@ -1,8 +1,8 @@
-\chapter{Theory}
+\chapter{Theory}\label{chap:theory}
 %plan st 1
 In this chapter we review and develop the theory required to model signal transmission from cosmic source to data product. The first half of this chapter is a broad section centred around radio interferometric concepts while the second half is focused specificially on describing several key signal corruptions. 
 
-\section{Radio Interferometry}
+\section{Radio Interferometry}\label{sec:radio_int}
 %PR 2 St 3
 
 %plan st 1
@@ -170,7 +170,7 @@ Although the static source assumption holds for most interferometric observation
 
 
 %Light crossing analysis
-In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~A* at $D_{\rm src} = 8.3$~kpc (Gillessen, 2009), a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $15 R_{\rm Sch}$. Such analyses gave early evidence for an emission area on event horizon scales.
+In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days [refs]. Considering light crossing times $\Delta t_{\rm cross}$, we can estimate the angular size $\theta$ of the emission region to be of order $\theta \sim \Delta t_{\rm cross} c /D_{\rm src}$, where c is the speed of light and $D_{\rm src}$ is the observer-source distance. Hence for Sgr~A* at $D_{\rm src} = 8.3$~kpc (Gillessen, 2009), a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $15 R_{\rm Sch}$. Such analyses gave early evidence for an emission area on event horizon scales.
 
 
 %There are some ways to track/mitigate variability but this is beyond scope

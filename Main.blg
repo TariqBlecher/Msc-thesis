@@ -1,22 +1,22 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-White space in argument---line 41 of file Main.aux
+White space in argument---line 86 of file Main.aux
  : \citation{Genzel_2003;
  :                        Belanger_2006}
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 135 of file Main.aux
+---line 182 of file Main.aux
  : \citation{Coulman_1985,Treuhaft_1987,Carilli_1997
  :                                                  }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 136 of file Main.aux
+---line 183 of file Main.aux
  : \citation{Carilli_1997
  :                       }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 137 of file Main.aux
+---line 184 of file Main.aux
  : \citation{Carilli_1997
  :                       }
 I'm skipping whatever remains of this command
@@ -25,6 +25,14 @@ Database file #1: thesis.bib
 Repeated entry---line 1008 of file thesis.bib
  : @article{Chael_2016
  :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1023 of file thesis.bib
+ : @article{Broderick_2016
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1094 of file thesis.bib
+ : @article{Psaltis_2016
+ :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1112 of file thesis.bib
  : @article{Lu_2016
@@ -42,9 +50,17 @@ Repeated entry---line 1304 of file thesis.bib
  : @article{Gwinn_2014
  :                    ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1342 of file thesis.bib
+ : @article{Moscibrodzka_2014
+ :                           ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1378 of file thesis.bib
  : @article{Lu_2014
  :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1434 of file thesis.bib
+ : @article{Falcke_2013
+ :                     ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1487 of file thesis.bib
  : @article{Nikolic_2013
@@ -54,13 +70,25 @@ Repeated entry---line 1574 of file thesis.bib
  : @article{Fish_2011
  :                   ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1618 of file thesis.bib
+ : @article{Noordam_2010
+ :                      ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1690 of file thesis.bib
  : @article{Curtis_2009
  :                     ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1740 of file thesis.bib
+ : @article{Broderick_2009
+ :                        ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1756 of file thesis.bib
  : @article{Doeleman_2009
  :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1773 of file thesis.bib
+ : @article{Broderick_2009
+ :                        ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1806 of file thesis.bib
  : @article{Doeleman_2008
@@ -110,9 +138,25 @@ Repeated entry---line 2212 of file thesis.bib
  : @article{Radford_1998
  :                      ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2242 of file thesis.bib
+ : @article{Falcke_1998
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2270 of file thesis.bib
+ : @article{Falcke_1998
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2282 of file thesis.bib
+ : @article{Serabyn_1997
+ :                      ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 2297 of file thesis.bib
  : @article{Lay_1997
  :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2310 of file thesis.bib
+ : @article{Hamaker_1996
+ :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 2323 of file thesis.bib
  : @article{Armstrong_1995
@@ -158,6 +202,11 @@ Repeated entry---line 2496 of file thesis.bib
  : @article{Born_1980
  :                   ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Whitney_1971"
+Warning--I didn't find a database entry for "Miyoshi_1995"
+Warning--I didn't find a database entry for "Narayan_1995"
+Warning--I didn't find a database entry for "Yuan_2003"
+Warning--I didn't find a database entry for "Narayan_2003"
 Warning--I didn't find a database entry for "Maronne_2006"
 Warning--I didn't find a database entry for "Fish_2009b"
 Warning--I didn't find a database entry for "Backer_1978"
@@ -168,45 +217,45 @@ Warning--I didn't find a database entry for "Melia_1994"
 Warning--empty journal in Tatarskii_1971
 Warning--empty publisher in Thompson_2001
 Warning--empty journal in Wrobel_1999
-You've used 53 entries,
+You've used 71 entries,
             2773 wiz_defined-function locations,
-            1040 strings with 20398 characters,
-and the built_in function-call counts, 36046 in all, are:
-= -- 2968
-> -- 3378
-< -- 23
-+ -- 1132
-- -- 1078
-* -- 3578
-:= -- 5908
-add.period$ -- 225
-call.type$ -- 53
-change.case$ -- 517
-chr.to.int$ -- 52
-cite$ -- 109
-duplicate$ -- 1110
-empty$ -- 1993
-format.name$ -- 1153
-if$ -- 7171
-int.to.chr$ -- 2
+            1179 strings with 25976 characters,
+and the built_in function-call counts, 48724 in all, are:
+= -- 3997
+> -- 4607
+< -- 30
++ -- 1544
+- -- 1471
+* -- 4861
+:= -- 7992
+add.period$ -- 302
+call.type$ -- 71
+change.case$ -- 702
+chr.to.int$ -- 69
+cite$ -- 145
+duplicate$ -- 1485
+empty$ -- 2676
+format.name$ -- 1572
+if$ -- 9689
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 54
-newline$ -- 339
-num.names$ -- 214
-pop$ -- 904
+missing$ -- 72
+newline$ -- 452
+num.names$ -- 286
+pop$ -- 1224
 preamble$ -- 1
-purify$ -- 465
+purify$ -- 632
 quote$ -- 0
-skip$ -- 997
+skip$ -- 1335
 stack$ -- 0
-substring$ -- 883
-swap$ -- 115
-text.length$ -- 4
+substring$ -- 1180
+swap$ -- 153
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 578
+type$ -- 776
 warning$ -- 3
-while$ -- 219
+while$ -- 290
 width$ -- 0
-write$ -- 819
-(There were 38 error messages)
+write$ -- 1098
+(There were 49 error messages)
