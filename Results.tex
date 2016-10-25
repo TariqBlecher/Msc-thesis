@@ -7,10 +7,12 @@ We begin this section with canonical results from the simulator, exploring the c
 \section{Canonical simulations}\label{sec:can_sim}
 %Pr 1 St 2
 
-%
+
+\subsection{ISM}
 
 %ISM_sequence 
 To demonstrate the implementation and provide an example of intraday ISM variability, we present the results of a simulated observation of 10 minutes duration at 14:00 UTC on four consecutive days in Fig.~\ref{ISM_sequence}. To compare to published observations, we use the three-station EHT array consisting of the Submillimeter Telescope (SMT) in Arizona, the Combined Array for Research in Millimeter-wave Astronomy (CARMA) in California and the James Clerk Maxwell Telescope (JCMT) on Mauna Kea, Hawaii. The distance to the screen is taken as $D_{\rm os}=5.8 \pm 0.3$~kpc  \citep{Bower_2014}. The relative transverse velocity between the observer and scattering screen is set to $50~\rm{km\,s}^{-1}$ to be consistent with \citet{2016arXiv160106571O}. The source is a circular Gaussian with a $\rm{FHWM}=40$~$\mu$-arcsec, approximately the angular distance that a scattering screen would travel over $\sim 4$~days. The source size has been chosen such that it is consistent with the latest estimate of the size of Sgr~A$^\star$ at $230$~GHz \citep{Fish_2011}.  Closure quantities are model dependent and calculated as specified in \citet{Rogers_1995}, where the thermal noise was added based on the system equivalent flux density (SEFD) table in \citep{Lu_2014}. 
+The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline. Fig.~\ref{ISM_sequence} provides an example of closure phase and flux variability over a 4 day period using a static source. Accurate simulation of the ISM-induced closure phase variation is essential in order to make any inference on asymmetric, event-horizon scale structure \citep[e.g.][]{Fish_2016,2016arXiv160106571O}. This will become even more important as the EHT sensitivity increases by an order of magnitude in the near future. Note that if the source has intrinsic spatial variability as in the case of a hotspot model \cite{Doeleman_2009}, this will increase ISM variability as the relative motion between source, screen and observer is increased. 
 
 \begin{figure*}
 \begin{center}
@@ -19,6 +21,9 @@ To demonstrate the implementation and provide an example of intraday ISM variabi
 }
 \end{center}
 \end{figure*}
+
+
+\subsection{Atmospheric}
 
 %Opacity + Brightness temperature
 Typical opacities and sky brightness temperatures for ALMA, the Submillimeter Array (SMA) and the South Pole Telescope (SPT)  are shown in Fig.~\ref{fig:mean_atm}.  Note that both the opacity and brightness temperature are inversely proportional to the ground temperature and proportional to ground pressure.
@@ -50,6 +55,10 @@ Typical opacities and sky brightness temperatures for ALMA, the Submillimeter Ar
 \end{figure*}
 
 
+In section~\ref{sec:trop_errors} we explore the observational consequences of observing through a turbulent troposphere. In this simulation, we assume a simple point source model and apply increasing levels of turbulence-induced phase fluctuations before imaging using the two dimensional inverse fast Fourier transforms. We note a rapid attenuation in peak flux due to incoherent averaging, slight offsets in the source centroid and the presence of spurious imaging artefacts. Suprisingly, in this configuration, there was no evidence of blurring or a loss of resolution with the uncertainties. In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source. 
+
+\subsection{Pointing}
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/point_Crop}
@@ -59,22 +68,11 @@ Typical opacities and sky brightness temperatures for ALMA, the Submillimeter Ar
 \end{figure}
 
 
-{\bf Tropospheric induced closure phase errors}
-!!A bug which came from averaging
- 
- 
-In this paper, we present the first release of the \textsc{MeqSilhouette} synthetic data simulation package. The pipeline is optimised towards mm-VLBI, taking into account user-specified stages of the signal propagation path, which enables the quantification of a range of systematic effects. Focus has been placed on modeling the effects of signal transmission through the ISM and troposphere as well as instrumental errors (i.e. pointing error and thermal noise). Time variability in all relevant domains (source, array, ISM, troposphere) is implemented. The run time for a typical simulation with a realistic instrumental setup is on the order of minutes.  Implementation of polarisation effects is intended in the next release. 
-
-
-The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline. Fig.~\ref{ISM_sequence} provides an example of closure phase and flux variability over a 4 day period using a static source. Accurate simulation of the ISM-induced closure phase variation is essential in order to make any inference on asymmetric, event-horizon scale structure \citep[e.g.][]{Fish_2016,2016arXiv160106571O}. This will become even more important as the EHT sensitivity increases by an order of magnitude in the near future. Note that if the source has intrinsic spatial variability as in the case of a hotspot model \cite{Doeleman_2009}, this will increase ISM variability as the relative motion between source, screen and observer is increased. 
-
-
 In section~\ref{sec:pointing}, we show how antenna pointing errors of the LMT could introduce fractional RMS amplitude variations $\sigma_{\Delta V/V_0} \le 0.4$ on the timescale of phase centre switching. This would occur if the calibrator is widely separated from the source, as is often the case in mm-VLBI. In contrast tracking errors are less problematic with $\sigma_{\Delta V/V_0} \le 0.05$. If the gain error is non-separable from the calibration model used, it could be interpreted as intrinsic variability, substructure and/or increased noise. If unaccounted for, this effect has the potential to limit the dynamic range of mm-VLBI images. Further tests to constrain the pointing uncertainties of EHT stations will lead to more accurate interferometric simulations and hence the overall impact on black hole shadow parameter estimation. Here we demonstrate the capability to incorporate a range of plausible pointing error effects into a full simulation pipeline.  
 
 
-In section~\ref{sec:trop_errors} we explore the observational consequences of observing through a turbulent troposphere. In this simulation, we assume a simple point source model and apply increasing levels of turbulence-induced phase fluctuations before imaging using the two dimensional inverse fast Fourier transforms. We note a rapid attenuation in peak flux due to incoherent averaging, slight offsets in the source centroid and the presence of spurious imaging artefacts. Suprisingly, in this configuration, there was no evidence of blurring or a loss of resolution with the uncertainties. In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source. 
 
-Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations. This offers a tool to enable a more closely-knit and effective interplay between theoretical predictions and observational capabilities. Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.
+
  
 
 \section{A comparison to real data}
