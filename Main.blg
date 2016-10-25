@@ -83,45 +83,46 @@ Warning--I didn't find a database entry for "Narayan_2003"
 Warning--I didn't find a database entry for "Luminet_1979"
 Warning--I didn't find a database entry for "Whitney_1971"
 Warning--I didn't find a database entry for "Miyoshi_1995"
-You've used 27 entries,
+Warning--I didn't find a database entry for "Smirnov_2015"
+You've used 28 entries,
             2773 wiz_defined-function locations,
-            821 strings with 13449 characters,
-and the built_in function-call counts, 19390 in all, are:
-= -- 1556
-> -- 1936
+            827 strings with 13634 characters,
+and the built_in function-call counts, 19855 in all, are:
+= -- 1593
+> -- 1975
 < -- 9
-+ -- 650
-- -- 621
-* -- 1974
-:= -- 3216
-add.period$ -- 117
-call.type$ -- 27
-change.case$ -- 288
-chr.to.int$ -- 25
-cite$ -- 54
-duplicate$ -- 560
-empty$ -- 1002
-format.name$ -- 656
-if$ -- 3823
++ -- 663
+- -- 633
+* -- 2016
+:= -- 3292
+add.period$ -- 120
+call.type$ -- 28
+change.case$ -- 295
+chr.to.int$ -- 26
+cite$ -- 56
+duplicate$ -- 580
+empty$ -- 1033
+format.name$ -- 669
+if$ -- 3916
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 179
-num.names$ -- 108
-pop$ -- 501
+missing$ -- 28
+newline$ -- 184
+num.names$ -- 112
+pop$ -- 515
 preamble$ -- 1
-purify$ -- 261
+purify$ -- 267
 quote$ -- 0
-skip$ -- 513
+skip$ -- 528
 stack$ -- 0
-substring$ -- 395
-swap$ -- 56
+substring$ -- 397
+swap$ -- 58
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 297
+type$ -- 308
 warning$ -- 0
-while$ -- 106
+while$ -- 109
 width$ -- 0
-write$ -- 427
+write$ -- 439
 (There were 18 error messages)
