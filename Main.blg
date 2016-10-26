@@ -81,12 +81,13 @@ Warning--I didn't find a database entry for "Narayan_1995"
 Warning--I didn't find a database entry for "Yuan_2003"
 Warning--I didn't find a database entry for "Narayan_2003"
 Warning--I didn't find a database entry for "Luminet_1979"
+Warning--I didn't find a database entry for "Kramer_2006"
 Warning--I didn't find a database entry for "Whitney_1971"
 Warning--I didn't find a database entry for "Miyoshi_1995"
 Warning--I didn't find a database entry for "Smirnov_2015"
 You've used 28 entries,
             2773 wiz_defined-function locations,
-            827 strings with 13634 characters,
+            829 strings with 13656 characters,
 and the built_in function-call counts, 19855 in all, are:
 = -- 1593
 > -- 1975

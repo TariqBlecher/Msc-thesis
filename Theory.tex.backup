@@ -154,7 +154,7 @@ where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $
 
 Alternatively, assuming Gaussian errors the uncertainty on the closure phase over a scan $u(\Phi_{ijk})=\sigma(\Phi_{ijk})/\sqrt(n)$  \citep{Brinkerink_2016}.
 
-\subsection{Variability and the static source assumption}
+\subsection{Variability and the static source assumption}\label{sec:variability}
 %PR 1 St 1
 
 %the assumption and how it breaks the image-vis fourier transform relation
@@ -227,7 +227,7 @@ The two length scales, $r_{\rm F}$ and $r_{\rm 0}$, define the nature of the sca
 %frozen screen
 To evolve the screen in time, we assume a frozen screen i.e. that the velocity of the individual turbulent eddies is dominated by the bulk motion of scattering medium \citep[e.g.][]{Lay_1997}. This allows us to treat the screen as frozen but advected over the observer by a constant motion. Hence time variability can be easily incorporated by the relative motion between source, scattering screen and observer.
 
-\subsection{Interstellar medium scattering}
+\subsection{Interstellar medium scattering}\label{sec:ism_scat}
 %PR 1 St 1 
 
 %introduction and plan
