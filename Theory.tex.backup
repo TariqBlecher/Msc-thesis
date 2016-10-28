@@ -1,22 +1,22 @@
 \chapter{Theory}\label{chap:theory}
 %plan st 1
-In this chapter we review and develop the theory required to model signal transmission from cosmic source to data product. The first half of this chapter is a broad section centred around radio interferometric concepts while the second half is focused specificially on describing several key signal corruptions. 
+In this chapter we review and develop the theory required to model signal transmission from cosmic source to uncalibrated (raw) interferometric data. The first half of this chapter provides the necessary introduction to fundamental radio interferometric concepts while the second half is focused specificially on describing several key signal corruptions, relevant to mm-VLBI observations. 
 
 \section{Radio Interferometry}\label{sec:radio_int}
-%PR 2 St 3
+%St 2
 
 %plan st 1
-This section is structured as follows: first radio interferometry is introduced using the Radio Interferometric Measurement Equation (RIME) formalism, which serves as a guiding framework for the construction of the {\sc MeqSilhouette} simulator; following on, we review the technique of self-calibration which is an attempt to mitigate station gain corruptions; we then discuss typical mm-VLBI data products and the consequences of breaking the static source assumption.
+This section is structured as follows: first radio interferometry is introduced using the Radio Interferometric Measurement Equation (RIME) formalism, which serves as a guiding framework for the construction of the {\sc MeqSilhouette} simulator. We then review the technique of self-calibration, typical mm-VLBI data products and the consequences of breaking the static source assumption.
 
 \subsection{Measurement Equation}\label{sec:RIME}
 %PR 2 St 1
 
 %RIME intro and purpose
-The RIME provides the notation and formalism to model the signal transmission path as a sequence of linear operations. It takes into account polarisation, correlation and the correct time-ordering of signal transmission path in an intuitive and efficient way. This calculus will also enable a more informative phrasing of the relation between calibration and signal corruptions.
+The RIME provides the notation and formalism to model the signal transmission path as a sequence of linear operations. It takes into account polarisation, correlation and the correct time-ordering of signal transmission path in an intuitive and efficient way. The formalism also enables a more informative phrasing of the relation between calibration and signal corruptions.
 
 
 %Linear transformations of E-field
-Here we offer a short derivation and explanation of the RIME following \citet{Smirnov_2011a}. Consider a quasi-monochromatic, complex valued electric field vector $\bm{E}$, which can be decomposed into an arbitrary two dimensional orthogonal basis in the plane perpendicular to the direction of propagation,
+Here we offer a short derivation and explanation of the RIME following \citet{Smirnov_2011a}. Consider a quasi-monochromatic, complex-valued electric field vector $\bm{E}$, which can be decomposed into an arbitrary two dimensional orthogonal basis in the plane perpendicular to the direction of propagation,
 
 \begin{equation*}
 \bm{E} = \left(
@@ -25,17 +25,17 @@ E_a \\
 E_b \\
 \end{array} \right),
 \end{equation*}
-\noindent where this choice represents the basis in which the polarisation is measured. All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix, termed a \emph{Jones} matrix,
+\noindent where this choice represents the basis in which the polarisation is measured. All linear transformations of the above electric field can be written by a multiplication with a 2 x 2 complex valued matrix, termed a \emph{Jones} matrix \citep{Jones_1941}[ads was down!],
 \begin{equation}
 \bm{E'} = \bm{J E}.
 \end{equation}
-For example the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies, forming a Jones chain,
+For example, the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies, forming a Jones chain,
 \begin{equation}
 \bm{E'} = \bm{J}_n \ldots \bm{J}_1\ \bm{E}.
 \end{equation}
 
 %More on Jones matricies: commutivity and order, DDE vs DIE. phenomenological vs. physical
-The order of the Jones matricies should obey the casual order of the signal transmission path. However the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everything, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can parameterised in different ways. For example during calibration, it is useful to contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical} commuting processes/matricies. The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be distingushed anyway. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on the exact physical process.
+The order of the Jones matricies should obey the casual order of the signal transmission path (i.e. $\bm{J}_1$ would closest to source, $\bm{J}_n$ closest to antenna). However the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everything, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can parameterised in different ways. For example during calibration, it is useful to contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical} commuting processes/matricies (e.g. ionospheric delay and electronic drift). The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be easily distingushed and/or have the same Jones matrix form. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on the exact physical process.
 
 
 %visibility definition
@@ -63,7 +63,7 @@ U-iV & I-Q \\
 \end{array}
 \right)\bm{J}_q^H,
 \end{eqnarray}
-where $I$ is the coherence of the total flux, $V$ is the coherence of the circularly polarised flux, $Q$ and $U$ relate to coherence of the linear polarisation. Note that the Jones matricies are assumed to be constant over the averaging interval. As this formalism is coordinate system independent we can easily transform any 2~x~2 from a linear to circular basis and vice-versa. 
+where $I$ is the coherence of the total flux, $V$ is the coherence of the circularly polarised flux, $Q$ and $U$ relate to coherence of the linear polarisation. Note that the Jones matricies are assumed to be constant over the time and frequency averaging interval. As this formalism is coordinate system independent, we can easily transform any 2~x~2 from a linear to circular basis and vice-versa. 
 
 % Example RIME and re-derivation of van-citterlike
 We now review the RIME for a single, uncorrupted, unpolarised point source, which will illustrate the Fourier transform relation between the measured visibility and a section of approximately flat sky.
@@ -72,21 +72,21 @@ Considering that there are no signal corruptions, the only Jones matrix to consi
 
 
 %coordinate systems
-Consider the vector $\bm{\sigma}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector $\bm{u} = (u,v,w)$ with the w-axis in the direction of $\bm{\sigma}$. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\bm{\sigma}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antenna is therefore,
+Consider the vector $\bm{\sigma}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector $\bm{u} = (u,v,w)$ with the w-axis in the direction of $\hat{\bm{\sigma}}$. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\bm{\sigma}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antennae is therefore,
 \begin{equation}
  \delta \phi = 2\pi (\bm{u}/\lambda \cdot \bm{\sigma})
 \end{equation}
 
-As we are only interested in a small approximately planar component of the sky (i.e. $l^2 +m^2 \ll 1$),
+As we are only interested in a small, approximately planar component of the sky (i.e. $l^2 +m^2 \ll 1$),
 \begin{equation}
- \delta \phi = 2\pi \lambda^{-1} (u_pl +v_pm).
+ \delta \phi \approx 2\pi \lambda^{-1} (u_pl +v_pm).
 \end{equation}
 Denoting the brightness matrix $\bm{B} = \langle {\bm E}_p  {\bm E}_q^H \rangle$ and setting the delay of antenna $q$ as the reference, the RIME for our simplified model becomes
 \begin{eqnarray}\label{eq:van-citterlike}
 \bm{V}_{pq} &=& K_p \bm{B} K_q^H \\
 &=&  \exp (2\pi i \lambda^{-1} (ul +vm)) \bm{B} (1)
 \end{eqnarray}
-where $K$ was the Jones matrix used to apply the phase difference to each antenna. This is a Fourier Transform relation between visibility domain $(u,v)$ and image domain $(l,m)$. This derivation can be easily to extended sources (e.g. see \citep{Smirnov_2011a}). The quantity  $K_p \bm{B} K_q^H$ is often denoted as $\bm{X}_{pq}$ and is termed the coherency matrix.
+where $K$ was the Jones matrix used to apply the phase difference to each antenna. This is a Fourier Transform relation between visibility domain $(u,v)$ and image domain $(l,m)$. This derivation can be easily broadened to include extended sources (e.g. see \citep{Smirnov_2011a}). The quantity  $K_p \bm{B} K_q^H$ is often denoted as $\bm{X}_{pq}$ and is termed the coherency matrix.
 
 
 %example signal corruption, Complex time-variable antenna gain
@@ -105,13 +105,16 @@ Hence the RIME in this case becomes,
 \bm{V}_{pq} = \bm G_p \bm{X}_{pq} \bm G_q^H
 \end{equation}
 
-\subsection{A primer on self-calibration}
+\subsection{Self-calibration and fringe fitting}\label{sec:self_cal}
 %Pr 2 St 1
+Self-calibration, as the name suggests, uses the target itself as a calibrator to estimate station gains.
+In mm-VLBI calibration, self-calibration is applied under two different formulations. The first is a procedure termed \emph{fringe fitting}.
+%Self-calibration proper
+The second formulation of self-calibration (which I will just refered to as self-calibration) is to iteratively solve for station gains but not their derivatives whilst constructing the sky model. We begin with the initial sky model (typically a point source) as well as the station gains output by the fringe fit. Then we solve equation~\ref{eq:G_rime} using a least squares procedure but without taking into account station gain phase derivatives so that there are fewer free parameters. The resulting dataset is then imaged, deconvolved (i.e. the effect of the synthesised beam is removed) and a source finder is applied on the image to construct a more accurate sky model. This sequence is then repeated with the updated sky model being used when solving for station gains. The loop will terminate when a specified flux threshold is reached.
 
 %fringe fitting
-Self-calibration, as the name suggests, uses the target itself as a calibrator to estimate station gains.
-In mm-VLBI calibration, self-calibration is applied under two different formulations. The first is a procedure termed \emph{fringe fitting}. From the point of view of the RIME, fringe-fitting solves for station gains in equation~\ref{eq:G_rime} over a time interval typically on the order of minutes. Taking a linear expansion in frequency and time of the phase of the station gain yields,
-%need to install package
+ From the point of view of the RIME, fringe-fitting solves for station gains in equation~\ref{eq:G_rime} over a time interval typically on the order of minutes. Taking a linear expansion in frequency and time of the phase of the station gain yields,
+
 \begin{IEEEeqnarray}{rCl}
 \bm{V}_{pq}(t_0,dt,\nu_0,d\nu)& = & |G_p||G_q| \bm{X}_{pq} \exp(i[\phi_p(t_0,\nu_0)  + \partial_t \phi_p(t,\nu_0)dt \nonumber\\
 && \negmedspace {} + \partial_\nu \phi_p(t_0,\nu)d\nu  -\phi_q(t_0,\nu_0) -  \nonumber\\
@@ -121,8 +124,7 @@ In mm-VLBI calibration, self-calibration is applied under two different formulat
 A blind search is then performed for all the station based parameters in the above equation i.e. everything except $\bm X_{pq}$. The station gain amplitude will sometimes be calibrated separately, reducing the number of parameters to solve. The sky model used is typically just a point source at the centre of the field. 
 
 
-%Self-calibration proper
-The second formulation of self-calibration (which I will just refered to as self-calibration) is to iteratively solve for station gains but not their derivatives whilst constructing the sky model. We begin with the initial sky model (typically a point source) as well as the station gains output by the fringe fit. Then we solve equation~\ref{eq:G_rime} using a least squares procedure but without taking into account station gain phase derivatives so that there are fewer free parameters. The resulting dataset is then imaged, deconvolved (i.e. the effect of the synthesised beam is removed) and a source finder is applied on the image to construct a more accurate sky model. This sequence is then repeated with the updated sky model being used when solving for station gains. The loop will terminate when a specified flux threshold is reached.
+
 
 
 The interaction of both fringe fitting and self-calibration with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation.

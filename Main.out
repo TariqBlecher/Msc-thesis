@@ -1,10 +1,12 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Unsolved questions in black hole astrophysics}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Innermost accretion and jet launch mechanisms}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Measuring space-time in strong gravity}{section.1.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Cranking up the angular resolution}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{The Event Horizon Telescope}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.3.1}{Overview}{section.1.3}% 7
-\BOOKMARK [1][-]{section.1.4}{A realistic mm-VLBI simulator}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.5}{Outline}{chapter.1}% 9
-\BOOKMARK [0][-]{chapter*.2}{Bibliography}{}% 10
+\BOOKMARK [0][-]{chapter.1}{Theory}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Radio Interferometry}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Measurement Equation}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{A primer on self-calibration}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{mm-VLBI observables and data products}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Variability and the static source assumption}{section.1.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Signal Corruptions}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.2.1}{Scattering basics}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.2}{Interstellar medium scattering}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.3}{Troposphere}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.4}{Instrumental}{section.1.2}% 11
+\BOOKMARK [0][-]{chapter*.7}{Bibliography}{}% 12
