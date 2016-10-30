@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces A re-analysis of VLBI observations of Sgr\nobreakspace {}A$^\star $ by \citet {Psaltis_2015} has yielded revised estimates of the parameters associated with the Gaussian scattering kernel. Note that the position angle is measured East of North. }}{27}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces A re-analysis of VLBI observations of Sgr\nobreakspace {}A$^\star $ by \citet {Psaltis_2015} has yielded revised estimates of the parameters associated with the Gaussian scattering kernel. Note that the position angle is measured East of North. }}{32}{table.2.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces The list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created). }}{49}{table.3.1}
+\contentsline {table}{\numberline {3.1}{\ignorespaces The list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created). }}{54}{table.3.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -72,19 +72,25 @@ Considering that there are no signal corruptions, the only Jones matrix to consi
 
 
 %coordinate systems
-Consider the vector $\bm{\sigma}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector $\bm{u} = (u,v,w)$ with the w-axis in the direction of $\hat{\bm{\sigma}}$. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\bm{\sigma}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antennae is therefore,
+Consider the unit vector $\hat{\bm{\sigma}}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector in a convienent coordinate system as $\bm{u} = (u,v,w)$,  with the w-axis in the direction of $\hat{\bm{\sigma}}$ as shown in Fig.~\ref{fig:int_ill}. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\hat{\bm{\sigma}}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antennae is therefore,
 \begin{equation}
  \delta \phi = 2\pi (\bm{u}/\lambda \cdot \bm{\sigma})
 \end{equation}
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{Images/int_ill}
+\caption{ \label{fig:int_ill}
+}
+\end{figure}
 
 As we are only interested in a small, approximately planar component of the sky (i.e. $l^2 +m^2 \ll 1$),
 \begin{equation}
  \delta \phi \approx 2\pi \lambda^{-1} (u_pl +v_pm).
 \end{equation}
-Denoting the brightness matrix $\bm{B} = \langle {\bm E}_p  {\bm E}_q^H \rangle$ and setting the delay of antenna $q$ as the reference, the RIME for our simplified model becomes
+Denoting the brightness matrix $\bm{B} = \langle {\bm E}_p  {\bm E}_q^H \rangle = !!Identity Matrix!!? I$ and setting the delay of antenna $q$ as the reference, the RIME for our simplified model becomes
 \begin{eqnarray}\label{eq:van-citterlike}
 \bm{V}_{pq} &=& K_p \bm{B} K_q^H \\
-&=&  \exp (2\pi i \lambda^{-1} (ul +vm)) \bm{B} (1)
+&=&  \left[\exp (2\pi i \lambda^{-1} (ul +vm)\right] \bm{B} \left[1\right]
 \end{eqnarray}
 where $K$ was the Jones matrix used to apply the phase difference to each antenna. This is a Fourier Transform relation between visibility domain $(u,v)$ and image domain $(l,m)$. This derivation can be easily broadened to include extended sources (e.g. see \citep{Smirnov_2011a}). The quantity  $K_p \bm{B} K_q^H$ is often denoted as $\bm{X}_{pq}$ and is termed the coherency matrix.
 
@@ -96,21 +102,26 @@ An example of a Jones matrix representing a signal corruption is the complex tim
 \left(
 \begin{array}{cc}
 g_x (t)&0\\
-0 & g_y (t) \\
+0 & g_y (t). \\
 \end{array}
 \right)
 \end{equation}
 Hence the RIME in this case becomes,
 \begin{equation}\label{eq:G_rime}
-\bm{V}_{pq} = \bm G_p \bm{X}_{pq} \bm G_q^H
+\bm{V}_{pq} = \bm G_p \bm{X}_{pq} \bm G_q^H.
 \end{equation}
 
-\subsection{Self-calibration and fringe fitting}\label{sec:self_cal}
+\subsection{Self-calibration and fringe-fitting}\label{sec:self_cal}
 %Pr 2 St 1
+%intro-motivation & plan
+We now discuss two (similiar) algorithms, self-calibration and fringe-fitting, which are central to VLBI calibration. Our motivation is that we are interested how these algorithms fare in the context of the observational challenges faced by the EHT (see section~\ref{sec:eht_obs}). Crucially, the {\sc meqsilhouette} simulator is able to provide the synthetic datasets on which to run these algorithms, the reconstructions can then be compared to the true signal. 
+
+
+%Self-calibration - possibly break down into point form like in online ipynote
 Self-calibration, as the name suggests, uses the target itself as a calibrator to estimate station gains.
-In mm-VLBI calibration, self-calibration is applied under two different formulations. The first is a procedure termed \emph{fringe fitting}.
-%Self-calibration proper
-The second formulation of self-calibration (which I will just refered to as self-calibration) is to iteratively solve for station gains but not their derivatives whilst constructing the sky model. We begin with the initial sky model (typically a point source) as well as the station gains output by the fringe fit. Then we solve equation~\ref{eq:G_rime} using a least squares procedure but without taking into account station gain phase derivatives so that there are fewer free parameters. The resulting dataset is then imaged, deconvolved (i.e. the effect of the synthesised beam is removed) and a source finder is applied on the image to construct a more accurate sky model. This sequence is then repeated with the updated sky model being used when solving for station gains. The loop will terminate when a specified flux threshold is reached.
+The algorithm consists of the following iteration: iteratively solve for station gains but not their derivatives whilst constructing the sky model. We begin with the initial sky model (typically a point source) as well as the station gains output by the fringe fit. Then we solve equation~\ref{eq:G_rime} using a least squares procedure but without taking into account station gain phase derivatives so that there are fewer free parameters. The resulting dataset is then imaged, deconvolved (i.e. the effect of the synthesised beam is removed) and a source finder is applied on the image to construct a more accurate sky model. This sequence is then repeated with the updated sky model being used when solving for station gains. The loop will terminate when a specified flux threshold is reache
+
+
 
 %fringe fitting
  From the point of view of the RIME, fringe-fitting solves for station gains in equation~\ref{eq:G_rime} over a time interval typically on the order of minutes. Taking a linear expansion in frequency and time of the phase of the station gain yields,
@@ -121,26 +132,30 @@ The second formulation of self-calibration (which I will just refered to as self
 && \negmedspace {} \partial_q \phi_p(t,\nu_0)dt - \partial_\nu \phi_q(t_0,\nu)d\nu]).
 \end{IEEEeqnarray}\label{eq:fringe_fit}
 
-A blind search is then performed for all the station based parameters in the above equation i.e. everything except $\bm X_{pq}$. The station gain amplitude will sometimes be calibrated separately, reducing the number of parameters to solve. The sky model used is typically just a point source at the centre of the field. 
+The above is normally phrased in terms of time delay and the rate of time delay
+
+The terms $\phi(t_0,\nu_0) +\partial_\nu \phi_p(t_0,\nu)d\nu$ is known as the delay (check)
+
+A blind search (iterate through a range of delay and rate values in a user-specified range, maximising the correlation amplitude) is then performed for all the station based parameters in the above equation i.e. everything except $\bm X_{pq}$. The station gain amplitude will sometimes be calibrated separately, reducing the number of parameters to solve. The sky model used is typically just a point source at the centre of the field. 
 
 
 
 
+with the observational  with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation.
 
-The interaction of both fringe fitting and self-calibration with a variable source, tropospheric, ISM and instrumental signal corruptions is of central interest to this investigation.
 
 
 \subsection{mm-VLBI observables and data products}
 %PR 2 St 1
 
 %Visibility amplitudes, closure quantities, polarisation ratios, and images.
-If the visibility phase is highly variable as in the case of a turbulent atmosphere,  conventional calibration and imaging techniques have severely limited (if any) success. However information can still be extracted from the raw visibilities in the form of closure quantities \citep{Monnier_2007} or polarisation ratios \citep{Fish_2009}. Visibility amplitudes are also used although they suffer from systematic errors, a subset of which are dealt with in this work. There also exist imaging algorithms \citep[e.g.][]{Lu_2014,Bouman_2015,Chael_2016} which use closure phase as a regulariser to ensure that miscalibration of station gains do not effect the resulting image, although these unconventional imaging algorithms come with their own uncertainties on fidelity. Closure phase, defined as the sum of 3 visibility phases of a triangle of stations $\left\{i,j,k\right\}$, is a probe of point-asymmetry in source structure,
+If the visibility amplitude and phase are highly variable as in the case of a turbulent atmosphere with non-negligible opacity,  conventional calibration and imaging techniques have severely limited (if any) success. However, information can still be extracted from the raw visibilities in the form of closure quantities \citep{Monnier_2007} or polarisation ratios \citep{Fish_2009}. Visibility amplitudes are also used although they suffer from systematic errors, a subset of which are dealt with in this work. Some imaging algorithms use a technique called `hybrid mapping' \citep[e.g.][]{Lu_2014,Bouman_2015,Chael_2016} which use closure phase as a regulariser to ensure that imperfect calibration of station gains do not affect the resulting image, although these unconventional imaging algorithms come with their own uncertainties on uniqueness and repeatability. Closure phase, defined as the sum of visibility phases of a triangle of stations $\left\{i,j,k\right\}$, is a probe of point-asymmetry in source structure,
 \begin{equation}
 \Phi_{ijk} = \phi_{ij}+\phi_{jk}+\phi_{ki}.
 \end{equation}
 
-\noindent Because most signal corruptions are station based, the gain phase terms $\phi_{ij}=\phi^{\rm true}+ \phi^G_i -\phi^G_j$ for each antenna, assuming constant over the integration time and bandwidth will cancel, yielding a more robust observable.  
-
+\noindent Because many of the dominant signal corruptions are station-based, the gain phase terms $\phi_{ij}=\phi^{\rm true}+ \phi^G_i -\phi^G_j$ for each antenna, assuming they are constant over the integration time and bandwidth, will cancel which yields a more robust observable.  
+%%%%THE BELOW DISCUSSION IS NOT PUT INTO ANY GOOD CONTEXT
 In the literature, the uncertainty on the closure phase is calculated in various ways. One method is model dependent \citep{Rogers_1995} and is given as a function of the SNR $s$ of each baseline 
 
 \begin{equation}\label{eq:ucp}
@@ -152,23 +167,26 @@ u(\Phi_{ijk}) = \frac{\sqrt{4 + (s_{ij}s_{jk})^2 + (s_{jk}s_{ki})^2 + (s_{ij}s_{
 \begin{equation}
 s_{ij}=|V_{ij}| \sqrt{\frac{ \tau \Delta \nu}{SEFD_i SEFD_j}},
 \end{equation}
-where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $|V_{ij}|$ is the visibility amplitude and $SEFD$ is the system equivalent flux density.
+where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $|V_{ij}|$ is the visibility amplitude of the assumed source model and $SEFD$ is the system equivalent flux density.
 
 Alternatively, assuming Gaussian errors the uncertainty on the closure phase over a scan $u(\Phi_{ijk})=\sigma(\Phi_{ijk})/\sqrt(n)$  \citep{Brinkerink_2016}.
 
 \subsection{Variability and the static source assumption}\label{sec:variability}
-%PR 1 St 1
 
 %the assumption and how it breaks the image-vis fourier transform relation
 Implicit in our description of interferometry above (e.g. equation~\ref{eq:van-citterlike}), we assumed that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is time-variable), the visibilities measured over the course of an observation can no longer be related to a single image.
 %explicitly defining variability as any intrinsic source variability
-Note that I am using the term `variability' in a general sense which refers to changes in any source observables. 'Variability' is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
+Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Variability is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
 %expectation & calim
 We expect that an image of a variable source would appear smeared out as it is averaged over many realisations and that ghosts should arise during the calibration/deconvolution procedure {\bf [citations? trienko's papers?]} . One of the objectives of this thesis will be to characterise the errors which emerge when a variable source is self-calibrated in the presence of troposheric-induced errors. Practically it is difficult to separate source and instrumental variability without accurate models for both. 
 
 
 %Observed variability from SgrA
-Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several answers but the origin of the variability is still highly debated. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model (Marrone, 2008) has been presented however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.  Signatures of periodic variability at NIR and x-ray \citep{Genzel_2003; Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating that the magnetic fields structure is highly dynamic.
+Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the high frequency radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several constraints but the origin of the variability is still highly debated.
+
+
+%%Flares
+To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008}[!not sure on ads] has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.  Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. An important mm-VLBI observational result is that variability in the polarisation domain is far more rapid than the total intensity (Johnson 2015b), indicating that the magnetic fields structure is highly dynamic.
 
 
 %Light crossing analysis
@@ -176,20 +194,19 @@ In principle, the variability timescale could be comparable to the period of the
 
 
 %There are some ways to track/mitigate variability but this is beyond scope
-In the case of a highly localised flare, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios. This could help map the spacetime around the BH. Alternatively \citet{Lu_2016} show that a gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would downweight the longest baselines. However all of these approaches assume only gaussian thermal noise, guassian-blurring in the ISM and no tropospheric-induced calibration errors.
+In the case of a highly localised flare, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. This could help map the space-time around the BH. Alternatively \citet{Lu_2016} show that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines. However all of these approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors.
 
 \section{Signal Corruptions}
 %plan
-We begin with an introduction to scattering theory, which is applicable to the radiative processes occuring in both the troposphere and ISM. Following this we explore signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections in detail. 
+In this chapter we explore in detail signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections, in order for these corruptions to be implemented in the {\sc meqsilhouette} simulator. 
 
 \subsection{Scattering basics}\label{sec:basic_scat}
-%PR 1 St 1
 
 %motivation
-Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the ISM \citep[e.g.][]{Bower_2006,Gwinn_2014}, while the second is due to poorly-mixed water vapour in the Earth's troposphere \citep*[e.g.][]{Carilli_1999, Lay_1997}. It is essential that the effects of the scattering phenomena are understood for accurate calibration and robust inference of the intrinsic source properties.  To this end, simulation modules approximating scattering in both media are implemented in \textsc{MeqSilhouette}. As an introduction to the separate descriptions of each, we review a simple scattering model.
+Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the ISM \citep[e.g.][]{Bower_2006,Gwinn_2014}, while the second is due to poorly-mixed water vapour in the Earth's troposphere \citep*[e.g.][]{Lay_1997,Carilli_1999}. It is essential that the effects of the scattering phenomena are understood for accurate calibration and robust inference of the intrinsic source properties. As an introduction to the separate descriptions of each, we review a simple scattering model.
 
 %description of the model
-An electro-magnetic wave is scattered when it passes through a medium with refractive index inhomogeneities. Following \citet{Narayan_1992}, this effect can be modeled as a thin screen, located between source and observer planes and orientated perpendicular to the line-of-sight. The screen, indexed by coordinate vector $\mathbf{x}$, adds a stochastic phase $\phi(\mathbf{x})$ to the incoming wave at each point on the screen, yielding a corrugated, outgoing wavefront. We define the Fresnel scale as  $r_{\rm F} = \sqrt{\lambda D_{\rm os}/2\pi}$, where $D_{\rm os}$ is the observer-scatterer distance, or the distance where the geometrical path difference $\frac{2\pi}{\lambda} (D_{\rm os} - \sqrt{D_{\rm os}^2 + r_{\rm F}^2}) =\frac{1}{2}$~rad.
+An electro-magnetic wave is scattered when it passes through a medium with refractive index inhomogeneities. Following \citet{Narayan_1992}, this effect can be modelled as a thin screen, located between source and observer planes and orientated perpendicular to the line-of-sight. The screen, with 2D coordinates $\mathbf{x}$, adds a stochastic phase $\phi(\mathbf{x})$ to the incoming wave at each point on the screen, yielding a corrugated, outgoing wavefront. We define the Fresnel scale as  $r_{\rm F} = \sqrt{\lambda D_{\rm os}/2\pi}$, where $D_{\rm os}$ is the observer-scatterer distance.  $r_{\rm F}$ represents the distance where the geometrical path difference $\frac{2\pi}{\lambda} (D_{\rm os} - \sqrt{D_{\rm os}^2 + r_{\rm F}^2}) =\frac{1}{2}$~rad.
 
 %example calculation
 To determine the resultant electric field at a point in the plane of the observer, indexed by coordinate vector $\bm{X}$, one has to take into account all possible ray paths from the screen to $\bm{X}$. To illustrate the model, a calculation of the scalar electric field generated by a point source, $\psi(\bm{X})$ yields the Fresnel-Kirchoff integral \citep*{BORN_1980}

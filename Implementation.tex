@@ -1,6 +1,6 @@
-\chapter{Software implementation}
+\chapter{Software implementation}\label{chap:imp}
 
-\section{Design objectives}
+\section{Design objectives}\label{sec:des_obj}
 %Pr 1 St 1
 %broad objectives
 Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diversity of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should 
@@ -18,7 +18,7 @@ Our primary aim is to test and research mm-VLBI calibration, imaging and paramet
  \item The modular structure should also enable the construction and execution of arbitrary observations.
 \end{itemize}
 
-\section{Architechure and Workflow}
+\section{Architechure and Workflow}\label{sec:arch}
 %Pr 1 st 1
 %Intro and plan, How to meet objectives %st 1
 In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}). Where this is not possible, i.e. for processes which can not be described with Jones matrix, to fit those signal corruptions into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements in the signal transmission path. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection. 

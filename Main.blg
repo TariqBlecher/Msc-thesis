@@ -1,30 +1,32 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
-White space in argument---line 47 of file Main.aux
- : \citation{Genzel_2003;
- :                        Belanger_2006}
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 143 of file Main.aux
- : \citation{Coulman_1985,Treuhaft_1987,Carilli_1997
- :                                                  }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 144 of file Main.aux
- : \citation{Carilli_1997
- :                       }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Carilli_1997 and carilli_1997
----line 145 of file Main.aux
- : \citation{Carilli_1997
- :                       }
+Case mismatch error between cite keys carilli_1997 and Carilli_1997
+---line 137 of file Main.aux
+ : \citation{Armstrong_1995,carilli_1997
+ :                                      }
 I'm skipping whatever remains of this command
 The style file: plainnat.bst
 Database file #1: thesis.bib
+Repeated entry---line 944 of file thesis.bib
+ : @article{Fish_2016
+ :                   ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1008 of file thesis.bib
  : @article{Chael_2016
  :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1023 of file thesis.bib
+ : @article{Broderick_2016
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1043 of file thesis.bib
+ : @article{Fish_2016
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1094 of file thesis.bib
+ : @article{Psaltis_2016
+ :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1112 of file thesis.bib
  : @article{Lu_2016
@@ -42,9 +44,21 @@ Repeated entry---line 1304 of file thesis.bib
  : @article{Gwinn_2014
  :                    ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1342 of file thesis.bib
+ : @article{Moscibrodzka_2014
+ :                           ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1378 of file thesis.bib
  : @article{Lu_2014
  :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1397 of file thesis.bib
+ : @article{Bower_2014
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1434 of file thesis.bib
+ : @article{Falcke_2013
+ :                     ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1487 of file thesis.bib
  : @article{Nikolic_2013
@@ -54,17 +68,33 @@ Repeated entry---line 1574 of file thesis.bib
  : @article{Fish_2011
  :                   ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1618 of file thesis.bib
+ : @article{Noordam_2010
+ :                      ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1690 of file thesis.bib
  : @article{Curtis_2009
  :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1740 of file thesis.bib
+ : @article{Broderick_2009
+ :                        ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1756 of file thesis.bib
  : @article{Doeleman_2009
  :                       ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1773 of file thesis.bib
+ : @article{Broderick_2009
+ :                        ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1806 of file thesis.bib
  : @article{Doeleman_2008
  :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1851 of file thesis.bib
+ : @article{Popping_2008
+ :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 1867 of file thesis.bib
  : @article{Monnier_2007
@@ -106,9 +136,29 @@ Repeated entry---line 2212 of file thesis.bib
  : @article{Radford_1998
  :                      ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2242 of file thesis.bib
+ : @article{Falcke_1998
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2257 of file thesis.bib
+ : @article{Lane_1998
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2270 of file thesis.bib
+ : @article{Falcke_1998
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2282 of file thesis.bib
+ : @article{Serabyn_1997
+ :                      ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 2297 of file thesis.bib
  : @article{Lay_1997
  :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2310 of file thesis.bib
+ : @article{Hamaker_1996
+ :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 2323 of file thesis.bib
  : @article{Armstrong_1995
@@ -154,56 +204,70 @@ Repeated entry---line 2496 of file thesis.bib
  : @article{Born_1980
  :                   ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Luminet_1979"
+Warning--I didn't find a database entry for "Ortiz_2016"
+Warning--I didn't find a database entry for "Narayan_2013"
+Warning--I didn't find a database entry for "Kormendy_1995"
+Warning--I didn't find a database entry for "Magorrian_1998"
+Warning--I didn't find a database entry for "Gebhardt_2000"
+Warning--I didn't find a database entry for "Volonteri_2003"
+Warning--I didn't find a database entry for "Hawley_presentation"
+Warning--I didn't find a database entry for "Narayan_1995"
+Warning--I didn't find a database entry for "Yuan_2003"
+Warning--I didn't find a database entry for "Narayan_2003"
+Warning--I didn't find a database entry for "Kramer_2006"
+Warning--I didn't find a database entry for "Whitney_1971"
+Warning--I didn't find a database entry for "Miyoshi_1995"
+Warning--I didn't find a database entry for "Smirnov_2015"
 Warning--I didn't find a database entry for "Jones_1941"
 Warning--I didn't find a database entry for "Maronne_2006"
 Warning--I didn't find a database entry for "Fish_2009b"
 Warning--I didn't find a database entry for "Backer_1978"
 Warning--I didn't find a database entry for "johnson_dissertation"
-Warning--I didn't find a database entry for "Ortiz_2016"
 Warning--I didn't find a database entry for "Narayan_1998"
 Warning--I didn't find a database entry for "Melia_1994"
 Warning--empty journal in Tatarskii_1971
 Warning--empty publisher in Thompson_2001
 Warning--empty journal in Wrobel_1999
-You've used 51 entries,
+You've used 77 entries,
             2773 wiz_defined-function locations,
-            1030 strings with 19685 characters,
-and the built_in function-call counts, 34195 in all, are:
-= -- 2827
-> -- 3156
-< -- 22
-+ -- 1058
-- -- 1006
-* -- 3385
-:= -- 5596
-add.period$ -- 217
-call.type$ -- 51
-change.case$ -- 487
-chr.to.int$ -- 50
-cite$ -- 105
-duplicate$ -- 1070
-empty$ -- 1922
-format.name$ -- 1077
-if$ -- 6814
-int.to.chr$ -- 2
+            1241 strings with 29187 characters,
+and the built_in function-call counts, 56166 in all, are:
+= -- 4520
+> -- 5603
+< -- 33
++ -- 1876
+- -- 1797
+* -- 5666
+:= -- 9260
+add.period$ -- 324
+call.type$ -- 77
+change.case$ -- 828
+chr.to.int$ -- 75
+cite$ -- 157
+duplicate$ -- 1622
+empty$ -- 2906
+format.name$ -- 1904
+if$ -- 11115
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 52
-newline$ -- 327
-num.names$ -- 206
-pop$ -- 848
+missing$ -- 78
+newline$ -- 486
+num.names$ -- 312
+pop$ -- 1467
 preamble$ -- 1
-purify$ -- 437
+purify$ -- 752
 quote$ -- 0
-skip$ -- 949
+skip$ -- 1525
 stack$ -- 0
-substring$ -- 854
-swap$ -- 111
-text.length$ -- 4
+substring$ -- 1253
+swap$ -- 175
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 556
+type$ -- 842
 warning$ -- 3
-while$ -- 211
+while$ -- 314
 width$ -- 0
-write$ -- 790
-(There were 37 error messages)
+write$ -- 1184
+(There were 50 error messages)
