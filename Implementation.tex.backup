@@ -1,6 +1,6 @@
-\chapter{Software implementation}
+\chapter{Software implementation}\label{chap:imp}
 
-\section{Design objectives}
+\section{Design objectives}\label{sec:des_obj}
 %Pr 1 St 1
 %broad objectives
 Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diversity of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should 
@@ -18,7 +18,7 @@ Our primary aim is to test and research mm-VLBI calibration, imaging and paramet
  \item The modular structure should also enable the construction and execution of arbitrary observations.
 \end{itemize}
 
-\section{Architechure and Workflow}
+\section{Architechure and Workflow}\label{sec:arch}
 %Pr 1 st 1
 %Intro and plan, How to meet objectives %st 1
 In this section, we will review how the architechural design and workflow of the simulator architechure has been designed to meet the above objectives. To fulfill the first objective, we try to cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}). Where this is not possible, i.e. for processes which can not be described with Jones matrix, to fit those signal corruptions into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements in the signal transmission path. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection. 
@@ -121,9 +121,9 @@ As described in section~\ref{sec:atm_theory}, we use the {\sc atm} package to pe
 %inputs
 In order to calculate atmospheric temperature and pressure profiles, {\sc atm} is input several station dependent parameters, namely, ground temperature and pressure, PWV depth, water vapour scale height, tropospheric lapse rate  and altitude. The lapse rate refers to the linear relation at which temperature decreases with height. Through experimentation, we have found that the first 3 variables most significantly effect the results of the simulation and opt to keep the latter variables at their default values which were set for application to ALMA. 
 %outputs
-The outputs, relevant to our application is the opacity, time delay and atmospheric brightness temperature. Both opacity and time delay are separated into wet (water) and dry components. These outputs are calculated for a input list of frequencies.
+The outputs of this procedure are mean values for opacity, time delay and atmospheric brightness temperature at each station. Both opacity and time delay are separated into wet (water) and dry components. Additionally each of the two constitents are further subdivided into dispersive and non-disperive.[check with what i said for theory, that i cited that dispersion paper.] These outputs are calculated for a list of frequencies.
 %interface details
-We perform this calculation using representative climate conditions taken from the literature, where the calculation is repeated for each station. This final step is to account for elevation effects by multiplying by the airmass. 
+We perform this calculation using representative climate conditions taken from the literature. This final step is to account for elevation effects by multiplying by the airmass $1/\sin\theta$. 
 
 %phase turbulence st 1
 %what it does and How it fits into the broader scheme
@@ -133,11 +133,11 @@ Following from section~\ref{sec:turb_theory}, we derive a weak scattering formal
 %Pr 1 St 1
 
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
-To simulate pointing errors, we use the implementation built into the {\sc MeqTrees} turbo-sim task. This functionality includes a station primary beam models into the RIME which can be a sinc or Gaussian function or the analytic WSRT beam model. The standard beam model which we will make use of later is the analytic WSRT beam model \citep{Popping_2008} 
+To simulate pointing errors, we use the implementation built into the {\sc MeqTrees} turbo-sim task. This functionality includes the capability to convolve station primary beams with the sky model. The beam models available through this function are sinc, Gaussian and the analytic WSRT beam model, however there is not much difference between the different beam models up until the first null. The standard beam model which we will make use  is the analytic WSRT beam model \citep{Popping_2008} 
 \begin{equation}
 E(l, m) = \cos^3(C\nu \rho),\qquad   \rho = \sqrt{\delta l_p^2 + \delta m_p^2}
 \end{equation}
-where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz. However there is not much difference between the different beam models up until the first null. One drawback of the {\sc MeqTrees} implementation is that it is incompatible with the {\sc fits} format and so we are limited to point and Gaussian parameteric sources for the pointing error simulations. However this is not a big issue as the pointing error should be constant across the FOV and hence source structure observable with mm-VLBI is unimportant to any pointing error analyis.
+where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.  One drawback of the {\sc MeqTrees} implementation is that it is incompatible with the {\sc fits} format and so we are limited to point and Gaussian parameteric sources for the pointing error simulations. However this is not a significant issue as the pointing error should be constant across the FOV and hence source structure observable with mm-VLBI is unimportant to any pointing error analysis.
 
 Furthermore turbo-sim allows constant offset or time variable primary beam, where the time variability can be either an up-to-third order polynomial or a sinusoidal function. We have opted to incorporate only the sinusoidal variability for simplicity. To simulate stochastic variability i.e. pointing error due to slew between calibrator and source, we use a constant offset which is resampled per user-specified time interval. In section~\ref{sec:can_sim} we demonstrate the effect of constant, sinusoidally variable and stochastically variable pointing errors on the LMT which is the EHT station with the most narrow beam, and could be used as a referenced station due to its centrality the array.
 

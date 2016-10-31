@@ -121,7 +121,7 @@ As described in section~\ref{sec:atm_theory}, we use the {\sc atm} package to pe
 %inputs
 In order to calculate atmospheric temperature and pressure profiles, {\sc atm} is input several station dependent parameters, namely, ground temperature and pressure, PWV depth, water vapour scale height, tropospheric lapse rate  and altitude. The lapse rate refers to the linear relation at which temperature decreases with height. Through experimentation, we have found that the first 3 variables most significantly effect the results of the simulation and opt to keep the latter variables at their default values which were set for application to ALMA. 
 %outputs
-The outputs of this procedure are mean values for opacity, time delay and atmospheric brightness temperature at each station. Both opacity and time delay are separated into wet (water) and dry components. These outputs are calculated for a list of frequencies.
+The outputs of this procedure are mean values for opacity, time delay and atmospheric brightness temperature at each station. Both opacity and time delay are separated into wet (water) and dry components. Additionally each of the two constitents are further subdivided into dispersive and non-disperive.[check with what i said for theory, that i cited that dispersion paper.] These outputs are calculated for a list of frequencies.
 %interface details
 We perform this calculation using representative climate conditions taken from the literature. This final step is to account for elevation effects by multiplying by the airmass $1/\sin\theta$. 
 
@@ -129,7 +129,7 @@ We perform this calculation using representative climate conditions taken from t
 %what it does and How it fits into the broader scheme
 Following from section~\ref{sec:turb_theory}, we derive a weak scattering formalism to calculate station dependent visibilities phase variations which result from observing through a turbulent troposphere. Specifically we simulate random walks in visibility phase with variance given by equation~\ref{eq:turb_final} for each antenna. These phase-time series are combined to form a multiplicative complex gain corruption, with amplitude of unity i.e. a diagonal Jones matrix. In section~\ref{sec:can_sim} we explore the effect of the mean and turbulent atmosphere on observables.
 
-\subsection{Pointing error simulator}\label{sec:point_imp}
+\subsection{Antenna pointing error simulator}\label{sec:point_imp}
 %Pr 1 St 1
 
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
