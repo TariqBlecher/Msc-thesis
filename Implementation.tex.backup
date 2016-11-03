@@ -129,7 +129,7 @@ We perform this calculation using representative climate conditions taken from t
 %what it does and How it fits into the broader scheme
 Following from section~\ref{sec:turb_theory}, we derive a weak scattering formalism to calculate station dependent visibilities phase variations which result from observing through a turbulent troposphere. Specifically we simulate random walks in visibility phase with variance given by equation~\ref{eq:turb_final} for each antenna. These phase-time series are combined to form a multiplicative complex gain corruption, with amplitude of unity i.e. a diagonal Jones matrix. In section~\ref{sec:can_sim} we explore the effect of the mean and turbulent atmosphere on observables.
 
-\subsection{Pointing error simulator}\label{sec:point_imp}
+\subsection{Antenna pointing error simulator}\label{sec:point_imp}
 %Pr 1 St 1
 
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error

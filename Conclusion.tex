@@ -1,5 +1,40 @@
 \chapter{Conclusion}
+
+\section{Suggested future improvements and applications}
+
+
+
+
+Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon
+\citep[e.g.][]{Zanna_2007,Etienne_2010,Dexter_2013,Moscibrodzka_2014, McKinney_2014}. As the sensitivity of the EHT stands to dramatically increase, these theoretical efforts must be complemented by advances in interferometric simulations. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations.  Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.
+
+\subsection{Full Stokes}
+
+Later versions of {\sc MeqSilhouette} will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) and the simulator in {\sc MeqTrees} already support full stokes logic. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping. 
+polarisation leakage in the RIME.
+
+
+\subsection{Rodrigues}
+
+\subsection{GPU acceleration}
+
+
+%Probably take this out
+\subsection{Opacity and atmospheric brightness temperature fluctuations}
+
+Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations possibly by fluctuating the input climate parameters., but this might be unfeasible.
+
 %Leave till the end
 
+\section{Summary}
+
+%link to design objectives
+Apparent in these results is the realisation of the design objectives laid out in \ref{sec:des_obj}.
+%summary
+In section~\ref{sec:sim} we have described the layout of \textsc{MeqSilhouette} synthetic data simulation framework. A wide range of signal propagation effects can be implemented using the Measurement Equation formalism, with tropospheric scattering and antenna pointing errors given as illustrative examples. The framework is sufficiently general and flexible so that time variability in all relevant domains (source, array, ISM, troposphere) can be incorporated. The run time for a typical simulation with a realistic instrumental setup is on the order of minutes.  Implementation of polarisation effects is intended in the next version. 
 
 In light of the science objectives of mm-VLBI observations and software advances in the broader radio interferometry community, a mm-VLBI data simulator has been developed. An important feature is that this simulation pipeline is performed using the {\sc Measurement Set} format, in line with ALMA and future VLBI data formats. The focus has been placed on simulating realistic data given an arbitrary theoretical sky model. To this end, the simulator includes signal corruptions in the interstellar medium (ISM), troposphere and instrumentation. Examples of typical corruptions have been demonstrated, which show that each corruption can significantly affect the inferred scientific parameters. Particular focus has been placed on EHT observations, however, the pipeline is completely general with respect to observation configuration and source structure. Time variability in all domains (source, array, ISM, troposphere) is implemented.  Future releases of \textsc{MeqSilhouette} will include polarisation dependent corruptions. The creation of a close interface between sophisticated theoretical and interferometric mm-VLBI simulations will enhance the scientific opportunities possible with the EHT.
+
+The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline.
+
+

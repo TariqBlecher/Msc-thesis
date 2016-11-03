@@ -134,7 +134,7 @@ Following from section~\ref{sec:turb_theory}, we derive a weak scattering formal
 
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
 To simulate pointing errors, we use the implementation built into the {\sc MeqTrees} turbo-sim task. This functionality includes the capability to convolve station primary beams with the sky model. The beam models available through this function are sinc, Gaussian and the analytic WSRT beam model, however there is not much difference between the different beam models up until the first null. The standard beam model which we will make use  is the analytic WSRT beam model \citep{Popping_2008} 
-\begin{equation}
+\begin{equation}\label{eq:wsrt_beam}
 E(l, m) = \cos^3(C\nu \rho),\qquad   \rho = \sqrt{\delta l_p^2 + \delta m_p^2}
 \end{equation}
 where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.  One drawback of the {\sc MeqTrees} implementation is that it is incompatible with the {\sc fits} format and so we are limited to point and Gaussian parameteric sources for the pointing error simulations. However this is not a significant issue as the pointing error should be constant across the FOV and hence source structure observable with mm-VLBI is unimportant to any pointing error analysis.

@@ -3,129 +3,74 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
 The style file: plainnat.bst
 Database file #1: thesis.bib
-Repeated entry---line 1008 of file thesis.bib
- : @article{Chael_2016
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1023 of file thesis.bib
- : @article{Broderick_2016
- :                        ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1094 of file thesis.bib
- : @article{Psaltis_2016
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1112 of file thesis.bib
- : @article{Lu_2016
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1131 of file thesis.bib
- : @article{Bouman_2015
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1283 of file thesis.bib
- : @article{Fish_2014
+Repeated entry---line 988 of file thesis.bib
+ : @article{Fish_2016
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1342 of file thesis.bib
- : @article{Moscibrodzka_2014
- :                           ,
+Repeated entry---line 1050 of file thesis.bib
+ : @article{Fish_2016
+ :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1378 of file thesis.bib
+Repeated entry---line 1431 of file thesis.bib
  : @article{Lu_2014
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1434 of file thesis.bib
- : @article{Falcke_2013
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1618 of file thesis.bib
- : @article{Noordam_2010
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1740 of file thesis.bib
- : @article{Broderick_2009
- :                        ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1756 of file thesis.bib
+Repeated entry---line 1840 of file thesis.bib
  : @article{Doeleman_2009
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1773 of file thesis.bib
- : @article{Broderick_2009
- :                        ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1806 of file thesis.bib
- : @article{Doeleman_2008
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2242 of file thesis.bib
- : @article{Falcke_1998
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2270 of file thesis.bib
- : @article{Falcke_1998
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 2282 of file thesis.bib
- : @article{Serabyn_1997
+Repeated entry---line 1923 of file thesis.bib
+ : @article{Popping_2008
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2310 of file thesis.bib
- : @article{Hamaker_1996
- :                      ,
+Repeated entry---line 2458 of file thesis.bib
+ : @article{Lane_1998
+ :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Narayan_2013"
-Warning--I didn't find a database entry for "Kormendy_1995"
-Warning--I didn't find a database entry for "Magorrian_1998"
-Warning--I didn't find a database entry for "Gebhardt_2000"
-Warning--I didn't find a database entry for "Narayan_1995"
-Warning--I didn't find a database entry for "Yuan_2003"
-Warning--I didn't find a database entry for "Narayan_2003"
-Warning--I didn't find a database entry for "Kramer_2006"
-Warning--I didn't find a database entry for "Luminet_1979"
-Warning--I didn't find a database entry for "Whitney_1971"
-Warning--I didn't find a database entry for "Miyoshi_1995"
-Warning--I didn't find a database entry for "Smirnov_2015"
-You've used 28 entries,
+Repeated entry---line 2556 of file thesis.bib
+ : @article{Rogers_1995
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "2016arXiv160106571O"
+You've used 9 entries,
             2773 wiz_defined-function locations,
-            833 strings with 13710 characters,
-and the built_in function-call counts, 19855 in all, are:
-= -- 1593
-> -- 1975
-< -- 9
-+ -- 663
-- -- 633
-* -- 2016
-:= -- 3292
-add.period$ -- 120
-call.type$ -- 28
-change.case$ -- 295
-chr.to.int$ -- 26
-cite$ -- 56
-duplicate$ -- 580
-empty$ -- 1033
-format.name$ -- 669
-if$ -- 3916
-int.to.chr$ -- 3
+            677 strings with 9238 characters,
+and the built_in function-call counts, 10424 in all, are:
+= -- 754
+> -- 1347
+< -- 4
++ -- 449
+- -- 440
+* -- 1125
+:= -- 1780
+add.period$ -- 39
+call.type$ -- 9
+change.case$ -- 173
+chr.to.int$ -- 9
+cite$ -- 18
+duplicate$ -- 199
+empty$ -- 339
+format.name$ -- 451
+if$ -- 1996
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 28
-newline$ -- 184
-num.names$ -- 112
-pop$ -- 515
+missing$ -- 9
+newline$ -- 65
+num.names$ -- 38
+pop$ -- 323
 preamble$ -- 1
-purify$ -- 267
+purify$ -- 164
 quote$ -- 0
-skip$ -- 528
+skip$ -- 263
 stack$ -- 0
-substring$ -- 397
-swap$ -- 58
-text.length$ -- 1
+substring$ -- 113
+swap$ -- 29
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 308
+type$ -- 99
 warning$ -- 0
-while$ -- 109
+while$ -- 36
 width$ -- 0
-write$ -- 439
-(There were 18 error messages)
+write$ -- 148
+(There were 7 error messages)
