@@ -19,6 +19,10 @@ Repeated entry---line 1840 of file thesis.bib
  : @article{Doeleman_2009
  :                       ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2205 of file thesis.bib
+ : @article{Pardo_2001
+ :                    ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 2458 of file thesis.bib
  : @article{Lane_1998
  :                   ,
@@ -27,47 +31,51 @@ Repeated entry---line 2556 of file thesis.bib
  : @article{Rogers_1995
  :                     ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2608 of file thesis.bib
+ : @article{Narayan_1992
+ :                      ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Balbus_1991"
 Warning--I didn't find a database entry for "Brink_2015"
-You've used 9 entries,
+You've used 11 entries,
             2773 wiz_defined-function locations,
-            675 strings with 9335 characters,
-and the built_in function-call counts, 10525 in all, are:
-= -- 751
-> -- 1383
-< -- 3
-+ -- 461
-- -- 452
-* -- 1141
-:= -- 1804
-add.period$ -- 38
-call.type$ -- 9
-change.case$ -- 177
-chr.to.int$ -- 9
-cite$ -- 18
-duplicate$ -- 200
-empty$ -- 331
-format.name$ -- 461
-if$ -- 2010
+            699 strings with 9932 characters,
+and the built_in function-call counts, 11498 in all, are:
+= -- 849
+> -- 1423
+< -- 4
++ -- 475
+- -- 464
+* -- 1230
+:= -- 1954
+add.period$ -- 48
+call.type$ -- 11
+change.case$ -- 187
+chr.to.int$ -- 11
+cite$ -- 22
+duplicate$ -- 241
+empty$ -- 414
+format.name$ -- 475
+if$ -- 2212
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 9
-newline$ -- 64
-num.names$ -- 38
-pop$ -- 332
+missing$ -- 11
+newline$ -- 78
+num.names$ -- 46
+pop$ -- 345
 preamble$ -- 1
-purify$ -- 168
+purify$ -- 176
 quote$ -- 0
-skip$ -- 265
+skip$ -- 292
 stack$ -- 0
-substring$ -- 88
-swap$ -- 29
+substring$ -- 148
+swap$ -- 32
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 99
+type$ -- 121
 warning$ -- 0
-while$ -- 34
+while$ -- 44
 width$ -- 0
-write$ -- 146
-(There were 6 error messages)
+write$ -- 180
+(There were 8 error messages)

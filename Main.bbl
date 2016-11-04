@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -97,6 +97,15 @@ Ru-Sen Lu, Avery~E. Broderick, Fabien Baron, John~D. Monnier, Vincent~L. Fish,
 \newblock \doi{10.1088/0004-637x/788/2/120}.
 \newblock URL \url{http://dx.doi.org/10.1088/0004-637x/788/2/120}.
 
+\bibitem[Narayan(1992)]{Narayan_1992}
+R.~Narayan.
+\newblock {The Physics of Pulsar Scintillation}.
+\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical
+  Physical and Engineering Sciences}, 341\penalty0 (1660):\penalty0 151--165,
+  oct 1992.
+\newblock \doi{10.1098/rsta.1992.0090}.
+\newblock URL \url{http://dx.doi.org/10.1098/rsta.1992.0090}.
+
 \bibitem[{Ortiz-Le{\'o}n} et~al.(2016){Ortiz-Le{\'o}n}, {Johnson}, {Doeleman},
   {Blackburn}, {Fish}, {Loinard}, {Reid}, {Castillo}, {Chael},
   {Hern{\'a}ndez-G{\'o}mez}, {Hughes}, {Le{\'o}n-Tavares}, {Lu}, {Monta{\~n}a},
@@ -111,6 +120,15 @@ G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
 \newblock {The Intrinsic Shape of Sagittarius A* at 3.5 mm Wavelength}.
 \newblock \emph{\apj}, 824:\penalty0 40, June 2016.
 \newblock \doi{10.3847/0004-637X/824/1/40}.
+
+\bibitem[Pardo et~al.(2001)Pardo, Cernicharo, and Serabyn]{Pardo_2001}
+J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
+\newblock {Atmospheric transmission at microwaves ({ATM}): an improved model
+  for millimeter/submillimeter applications}.
+\newblock \emph{{IEEE} Trans. Antennas Propagat.}, 49\penalty0 (12):\penalty0
+  1683--1694, 2001.
+\newblock \doi{10.1109/8.982447}.
+\newblock URL \url{http://dx.doi.org/10.1109/8.982447}.
 
 \bibitem[Rogers et~al.(1995)Rogers, Doeleman, and Moran]{Rogers_1995}
 Alan E.~E. Rogers, Sheperd~S. Doeleman, and James~M. Moran.
