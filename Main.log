@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  2 NOV 2016 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  4 NOV 2016 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -755,154 +755,132 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
- []
+LaTeX Warning: Reference `sec:variability' on page 2 undefined on input line 27
+.
 
-[2] <Images/ism.png, id=70, 1108.14pt x 707.7642pt>
+
+Package natbib Warning: Citation `Balbus_1991' on page 2 undefined on input lin
+e 27.
+
+
+Package natbib Warning: Citation `Brink_2015' on page 2 undefined on input line
+ 27.
+
+
+Package natbib Warning: Citation `Brink_2015' on page 2 undefined on input line
+ 27.
+
+
+Package natbib Warning: Citation `Johnson_2014' on page 2 undefined on input li
+ne 29.
+
+[2] <Images/ism.png, id=71, 1108.14pt x 707.7642pt>
 File: Images/ism.png Graphic file (type png)
  <use Images/ism.png>
-Package pdftex.def Info: Images/ism.png used on input line 34.
+Package pdftex.def Info: Images/ism.png used on input line 35.
 (pdftex.def)             Requested size: 390.0pt x 249.09273pt.
 
 
-LaTeX Warning: Reference `sec:trop_imp' on page 3 undefined on input line 45.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 4779) has occurred while \output is active []
+LaTeX Warning: Reference `sec:trop_imp' on page 3 undefined on input line 43.
 
- [3 <./Images/ism.png>] <Images/opacity.png, id=85, 848.57025pt x 467.94826pt>
+[3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./Images/ism.png>] <Images/opacity.png, id=93, 848.57025pt x 467.94826pt>
 File: Images/opacity.png Graphic file (type png)
 
 <use Images/opacity.png>
 Package pdftex.def Info: Images/opacity.png used on input line 50.
 (pdftex.def)             Requested size: 390.0pt x 215.06602pt.
- [4 <./Images/opacity.png>]
-<Images/delays.png, id=104, 1505.625pt x 600.2425pt>
+ [5 <./Images/opacity.png>]
+<Images/delays.png, id=109, 1505.625pt x 600.2425pt>
 File: Images/delays.png Graphic file (type png)
  <use Images/delays.png>
-Package pdftex.def Info: Images/delays.png used on input line 60.
+Package pdftex.def Info: Images/delays.png used on input line 66.
 (pdftex.def)             Requested size: 390.0pt x 155.48235pt.
 
-<Images/trop_images.png, id=113, 1505.625pt x 1123.19624pt>
+[6 <./Images/delays.png>]
+<Images/trop_images.png, id=124, 1505.625pt x 1123.19624pt>
 File: Images/trop_images.png Graphic file (type png)
 
 <use Images/trop_images.png>
-Package pdftex.def Info: Images/trop_images.png used on input line 70.
+Package pdftex.def Info: Images/trop_images.png used on input line 81.
 (pdftex.def)             Requested size: 390.0pt x 290.9444pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (5.34451pt too wide) in paragraph at lines 76--77
-[]\OT1/cmr/m/n/12 ``In Fig. []1.4[] we ex-plore the ob-ser-va-tional con-se-que
-nces of ob-serv-ing through
- []
+LaTeX Warning: Reference `eq:wsrt_beam' on page 7 undefined on input line 111.
 
-[5 <./Images/delays.png>]
-Underfull \vbox (badness 1675) has occurred while \output is active []
+[7]
 
- [6]
-<Images/point_Crop.png, id=141, 1328.965pt x 843.15pt>
+LaTeX Warning: Text page 8 contains only floats.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./Images/trop_images.png>] <Images/point_Crop.png, id=149, 1328.965pt x 84
+3.15pt>
 File: Images/point_Crop.png Graphic file (type png)
 
 <use Images/point_Crop.png>
-Package pdftex.def Info: Images/point_Crop.png used on input line 106.
+Package pdftex.def Info: Images/point_Crop.png used on input line 128.
 (pdftex.def)             Requested size: 390.0pt x 247.42769pt.
+ [9] [10 <./Images/point_Crop.png>]) (./Main.bbl
+[11] [12
 
+] [13])
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package natbib Warning: There were undefined citations.
 
-
-LaTeX Warning: Reference `sec:pointing' on page 7 undefined on input line 112.
-
-[7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.131 ... model error is a simple scale matrix [e^
-                                                  -\phi, 0, e^-\phi, 0]). Ou...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.132 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (282.40836pt too wide) in paragraph at lines 131--132
-\OT1/cmr/m/n/12 [e$[]\OML/cmm/m/it/12 ^^^; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; 
-e[]^^^; \OT1/cmr/m/n/12 0])\OML/cmm/m/it/12 :Ourintentionhereistodemonstratesom
-eofthekeyfeaturesofMeqSilhouetteanditspotentialtoproviderealisticmm \OMS/cmsy/m
-/n/12 ^^@
- []
-
-
-Overfull \hbox (948.7711pt too wide) in paragraph at lines 131--132
-\OML/cmm/m/it/12 VLBIsimulationsforsystmaticstudiesthatwillbereportedinfuturepa
-pers:Atpresent; weusethesamemodelforasingledishandphasedarray; wehavenowinclude
-dadiscussionontheimplicationforphasedarraysinboththeturbulenttropospherepointin
-gerrorsections:$ 
- []
-
-[9]) (./Main.bbl [10] [11 <./Images/trop_images.png>] [12 <./Images/point_Crop.
-png>] [13
-
-] [14])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
- [15]
+[14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./Main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: F22DAD8976477E76810AAF3599768B39;235.
+(rerunfilecheck)             Checksum: 3107AB89633C03536E06B5461D670D17;170.
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
  7451 strings out of 494506
- 106823 string characters out of 6172963
- 205579 words of memory out of 5000000
- 10700 multiletter control sequences out of 15000+600000
+ 106834 string characters out of 6172963
+ 202927 words of memory out of 5000000
+ 10703 multiletter control sequences out of 15000+600000
  13308 words of font info for 55 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 36i,8n,28p,1393b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,28p,1613b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Main.pdf (15 pages, 5659628 bytes).
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Main.pdf (14 pages, 5646442 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
- 39 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 50 words of extra memory for PDF output out of 10000 (max. 10000000)
 

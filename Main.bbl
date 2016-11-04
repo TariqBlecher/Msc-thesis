@@ -71,6 +71,15 @@ Vincent~L. Fish, Michael~D. Johnson, Sheperd~S. Doeleman, Avery~E. Broderick,
 \newblock \doi{10.3847/0004-637x/820/2/90}.
 \newblock URL \url{http://dx.doi.org/10.3847/0004-637x/820/2/90}.
 
+\bibitem[{Johnson} et~al.(2014){Johnson}, {Fish}, {Doeleman}, {Broderick},
+  {Wardle}, and {Marrone}]{Johnson_2014}
+M.~D. {Johnson}, V.~L. {Fish}, S.~S. {Doeleman}, A.~E. {Broderick}, J.~F.~C.
+  {Wardle}, and D.~P. {Marrone}.
+\newblock {Relative Astrometry of Compact Flaring Structures in Sgr A* with
+  Polarimetric Very Long Baseline Interferometry}.
+\newblock \emph{\apj}, 794:\penalty0 150, October 2014.
+\newblock \doi{10.1088/0004-637X/794/2/150}.
+
 \bibitem[{Lane}(1998)]{Lane_1998}
 A.~P. {Lane}.
 \newblock {Submillimeter Transmission at South Pole}.
@@ -102,13 +111,6 @@ G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
 \newblock {The Intrinsic Shape of Sagittarius A* at 3.5 mm Wavelength}.
 \newblock \emph{\apj}, 824:\penalty0 40, June 2016.
 \newblock \doi{10.3847/0004-637X/824/1/40}.
-
-\bibitem[Popping and Braun(2008)]{Popping_2008}
-A.~Popping and R.~Braun.
-\newblock {The standing wave phenomenon in radio telescopes}.
-\newblock \emph{\aap}, 479\penalty0 (3):\penalty0 903--913, mar 2008.
-\newblock \doi{10.1051/0004-6361:20079122}.
-\newblock URL \url{http://dx.doi.org/10.1051/0004-6361:20079122}.
 
 \bibitem[Rogers et~al.(1995)Rogers, Doeleman, and Moran]{Rogers_1995}
 Alan E.~E. Rogers, Sheperd~S. Doeleman, and James~M. Moran.
