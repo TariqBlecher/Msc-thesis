@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  4 NOV 2016 17:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  6 NOV 2016 17:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -664,7 +664,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 16.
- (./Main.aux)
+ (./Main.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `flow' multiply defined.
+
+)
 \openout1 = `Main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -681,8 +688,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count128
 \scratchdimen=\dimen149
@@ -729,172 +735,242 @@ LaTeX Info: Redefining \nameref on input line 22.
 \@outlinefile=\write3
 \openout3 = `Main.out'.
 
- (./Results.tex
+ (./Implementation.tex
 Chapter 1.
-
-LaTeX Warning: Reference `fig:substructure2' on page 1 undefined on input line 
-12.
-
-
-LaTeX Warning: Reference `sec:ism_scat' on page 1 undefined on input line 15.
-
-[1
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+ [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+lasy on input line 18.
 
+LaTeX Warning: Reference `sec:RIME' on page 2 undefined on input line 24.
+
+
+Overfull \hbox (15.41179pt too wide) in paragraph at lines 31--33
+[]\OT1/cmr/m/n/12 We use an in-ter-fer-o-met-ric tool-box, \OT1/cmr/m/sc/12 Meq
+Trees\OT1/cmr/m/n/12 , which is writ-ten in \OT1/cmr/m/sc/12 Python\OT1/cmr/m/n
+/12 .
+ []
+
+LaTeX Font Info:    Try loading font information for U+lasy on input line 36.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [2]
 
-LaTeX Warning: Reference `sec:variability' on page 2 undefined on input line 33
-.
-
-
-Package natbib Warning: Citation `Balbus_1991' on page 2 undefined on input lin
-e 33.
+LaTeX Warning: Reference `sec:discussion' on page 3 undefined on input line 49.
 
 
-Package natbib Warning: Citation `Brink_2015' on page 2 undefined on input line
- 33.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 52.
+
+! Undefined control sequence.
+\\->\let \reserved@e 
+                     \relax \let \reserved@f \relax \@ifstar {\let \reserved...
+l.53 ...converted into several subdictionaries.\\}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\\->\let \reserved@e \relax \let \reserved@f 
+                                             \relax \@ifstar {\let \reserved...
+l.53 ...converted into several subdictionaries.\\}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \Hy@tempa has an extra }.
+<inserted text> 
+                \par 
+l.53 ...converted into several subdictionaries.\\}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\def \reserved@a *{\let \reserved@e \vadjust \let \reserved@f \ETC.
+! Paragraph ended before \Hy@tempa was complete.
+<to be read again> 
+                   \par 
+l.53 ...converted into several subdictionaries.\\}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
 
-Package natbib Warning: Citation `Brink_2015' on page 2 undefined on input line
- 33.
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 
-[2] <Images/ism.png, id=71, 1108.14pt x 707.7642pt>
-File: Images/ism.png Graphic file (type png)
- <use Images/ism.png>
-Package pdftex.def Info: Images/ism.png used on input line 43.
-(pdftex.def)             Requested size: 390.0pt x 249.09273pt.
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 78.
 
 
-LaTeX Warning: Reference `sec:trop_imp' on page 3 undefined on input line 51.
+Overfull \hbox (19.09096pt too wide) in paragraph at lines 81--84
+[][] 
+ []
 
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[3] [4] <Images/Class_module_structure.png, id=74, 935.495pt x 242.9075pt>
+File: Images/Class_module_structure.png Graphic file (type png)
 
- [4 <./Images/ism.png>] <Images/opacity.png, id=95, 848.57025pt x 467.94826pt>
-File: Images/opacity.png Graphic file (type png)
+<use Images/Class_module_structure.png>
+Package pdftex.def Info: Images/Class_module_structure.png used on input line 9
+7.
+(pdftex.def)             Requested size: 390.0pt x 101.26804pt.
 
-<use Images/opacity.png>
-Package pdftex.def Info: Images/opacity.png used on input line 59.
-(pdftex.def)             Requested size: 390.0pt x 215.06602pt.
+<Images/flow_full.png, id=75, 512.14961pt x 293.06339pt>
+File: Images/flow_full.png Graphic file (type png)
 
+<use Images/flow_full.png>
+Package pdftex.def Info: Images/flow_full.png used on input line 103.
+(pdftex.def)             Requested size: 390.0pt x 223.17319pt.
+ [5 <./Images/Class_module_structure.png (PNG copy)>] [6 <./Images/flow_full.pn
+g
 
-Package natbib Warning: Citation `Pardo_2001' on page 5 undefined on input line
- 65.
+pdfTeX warning: /usr/bin/pdflatex (file ./Images/flow_full.png): large interlac
+ed PNG might cause out of memory (use non-interlaced PNG to fix this)
+>]
 
-[5 <./Images/opacity.png>]
-<Images/delays.png, id=112, 1505.625pt x 600.2425pt>
-File: Images/delays.png Graphic file (type png)
- <use Images/delays.png>
-Package pdftex.def Info: Images/delays.png used on input line 75.
-(pdftex.def)             Requested size: 390.0pt x 155.48235pt.
-
-[6 <./Images/delays.png>]
-<Images/trop_images.png, id=127, 1505.625pt x 1123.19624pt>
-File: Images/trop_images.png Graphic file (type png)
-
-<use Images/trop_images.png>
-Package pdftex.def Info: Images/trop_images.png used on input line 90.
-(pdftex.def)             Requested size: 390.0pt x 290.9444pt.
+LaTeX Warning: Reference `sec:ism' on page 7 undefined on input line 130.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `eq:scatterbrane' on page 7 undefined on input line 13
+0.
+
+
+LaTeX Warning: Reference `eq:scatterbrane' on page 7 undefined on input line 13
+0.
 
 [7]
 
-LaTeX Warning: Text page 8 contains only floats.
+Package natbib Warning: Citation `2016arXiv160106571O' on page 8 undefined on i
+nput line 150.
+
+[8]
+
+LaTeX Warning: Reference `sec:prop_fund' on page 9 undefined on input line 163.
+
+
+
+LaTeX Warning: Reference `sec:atm_theory' on page 9 undefined on input line 167
+.
+
+[9]
+
+LaTeX Warning: Reference `sec:turb_theory' on page 10 undefined on input line 1
+77.
+
+
+LaTeX Warning: Reference `eq:turb_final' on page 10 undefined on input line 177
+.
+
+
+LaTeX Warning: Reference `sec:can_sim' on page 10 undefined on input line 177.
+
+
+Overfull \hbox (18.47821pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/12 To sim-u-late point-ing er-rors, we use the im-ple-men-ta-tion 
+built into the \OT1/cmr/m/sc/12 MeqTrees
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./Images/trop_images.png>]
+ [10]
 
-LaTeX Warning: Reference `eq:wsrt_beam' on page 9 undefined on input line 123.
+LaTeX Warning: Reference `sec:can_sim' on page 11 undefined on input line 189.
 
-[9] <Images/point_Crop.png, id=162, 1328.965pt x 843.15pt>
-File: Images/point_Crop.png Graphic file (type png)
+) (./Main.bbl [11]
+Underfull \hbox (badness 2020) in paragraph at lines 9--15
+\OT1/cmr/m/n/12 OF RE-FRAC-TIVE SUB-STRUC-TURE IN RE-SOLVED SCATTER-
+ []
 
-<use Images/point_Crop.png>
-Package pdftex.def Info: Images/point_Crop.png used on input line 140.
-(pdftex.def)             Requested size: 390.0pt x 247.42769pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./Images/point_Crop.png>]) (./Main.bbl [12] [13
-
-] [14])
+)
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
-[15]
+[12
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
- (./Main.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./Main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 3107AB89633C03536E06B5461D670D17;170.
+(rerunfilecheck)             Checksum: 812501AC3F253900B133761B8690B5AD;617.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 7459 strings out of 494506
- 106973 string characters out of 6172963
- 202019 words of memory out of 5000000
- 10708 multiletter control sequences out of 15000+600000
- 13308 words of font info for 55 fonts, out of 8000000 for 9000
+ 7441 strings out of 494506
+ 106683 string characters out of 6172963
+ 198576 words of memory out of 5000000
+ 10693 multiletter control sequences out of 15000+600000
+ 13913 words of font info for 57 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 36i,8n,28p,1606b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+ 36i,10n,28p,1508b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Main.pdf (15 pages, 5649980 bytes).
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Main.pdf (12 pages, 729150 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 39 named destinations out of 1000 (max. 500000)
- 50 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

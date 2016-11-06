@@ -1,140 +1,23 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{2}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[{Blecher} et~al.(2016){Blecher}, {Deane}, {Bernardi}, and
-  {Smirnov}]{Blecher_2016}
-T.~{Blecher}, R.~{Deane}, G.~{Bernardi}, and O.~{Smirnov}.
-\newblock {MeqSilhouette : A mm-VLBI observation and signal corruption
-  simulator}.
-\newblock \emph{\mnras}, September 2016.
-\newblock \doi{10.1093/mnras/stw2311}.
+\bibitem[Johnson and Gwinn(2015)]{Johnson_2015a}
+Michael~D. Johnson and Carl~R. Gwinn.
+\newblock {{THEORY} {AND} {SIMULATIONS} {OF} {REFRACTIVE} {SUBSTRUCTURE} {IN}
+  {RESOLVED} {SCATTER}-{BROADENED} {IMAGES}}.
+\newblock \emph{{ApJ}}, 805\penalty0 (2):\penalty0 180, jun 2015.
+\newblock \doi{10.1088/0004-637x/805/2/180}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/805/2/180}.
 
-\bibitem[{Doeleman} et~al.(2009){Doeleman}, {Fish}, {Broderick}, {Loeb}, and
-  {Rogers}]{Doeleman_2009}
-S.~S. {Doeleman}, V.~L. {Fish}, A.~E. {Broderick}, A.~{Loeb}, and A.~E.~E.
-  {Rogers}.
-\newblock {Detecting Flaring Structures in Sagittarius A* with High-Frequency
-  VLBI}.
-\newblock \emph{\apj}, 695:\penalty0 59--74, April 2009.
-\newblock \doi{10.1088/0004-637X/695/1/59}.
-
-\bibitem[{Fish} et~al.(2011){Fish}, {Doeleman}, {Beaudoin}, {Blundell},
-  {Bolin}, {Bower}, {Chamberlin}, {Freund}, {Friberg}, {Gurwell}, {Honma},
-  {Inoue}, {Krichbaum}, {Lamb}, {Marrone}, {Moran}, {Oyama}, {Plambeck},
-  {Primiani}, {Rogers}, {Smythe}, {SooHoo}, {Strittmatter}, {Tilanus}, {Titus},
-  {Weintroub}, {Wright}, {Woody}, {Young}, and {Ziurys}]{Fish_2011}
-V.~L. {Fish}, S.~S. {Doeleman}, C.~{Beaudoin}, R.~{Blundell}, D.~E. {Bolin},
-  G.~C. {Bower}, R.~{Chamberlin}, R.~{Freund}, P.~{Friberg}, M.~A. {Gurwell},
-  M.~{Honma}, M.~{Inoue}, T.~P. {Krichbaum}, J.~{Lamb}, D.~P. {Marrone}, J.~M.
-  {Moran}, T.~{Oyama}, R.~{Plambeck}, R.~{Primiani}, A.~E.~E. {Rogers}, D.~L.
-  {Smythe}, J.~{SooHoo}, P.~{Strittmatter}, R.~P.~J. {Tilanus}, M.~{Titus},
-  J.~{Weintroub}, M.~{Wright}, D.~{Woody}, K.~H. {Young}, and L.~M. {Ziurys}.
-\newblock {1.3 mm Wavelength VLBI of Sagittarius A*: Detection of Time-variable
-  Emission on Event Horizon Scales}.
-\newblock \emph{\apjl}, 727:\penalty0 L36, February 2011.
-\newblock \doi{10.1088/2041-8205/727/2/L36}.
-
-\bibitem[Fish et~al.(2016)Fish, Johnson, Doeleman, Broderick, Psaltis, Lu,
-  Akiyama, Alef, Algaba, Asada, Beaudoin, Bertarini, Blackburn, Blundell,
-  Bower, Brinkerink, Cappallo, Chael, Chamberlin, Chan, Crew, Dexter, Dexter,
-  Dzib, Falcke, Freund, Friberg, Greer, Gurwell, Ho, Honma, Inoue, Johannsen,
-  Kim, Krichbaum, Lamb, Le{\'{o}}n-Tavares, Loeb, Loinard, MacMahon, Marrone,
-  Moran, Mo{\'{s}}cibrodzka, Ortiz-Le{\'{o}}n, Oyama, Özel, Plambeck, Pradel,
-  Primiani, Rogers, Rosenfeld, Rottmann, Roy, Ruszczyk, Smythe, SooHoo,
-  Spilker, Stone, Strittmatter, Tilanus, Titus, Vertatschitsch, Wagner, Wardle,
-  Weintroub, Woody, Wright, Yamaguchi, Young, Young, Zensus, and
-  Ziurys]{Fish_2016}
-Vincent~L. Fish, Michael~D. Johnson, Sheperd~S. Doeleman, Avery~E. Broderick,
-  Dimitrios Psaltis, Ru-Sen Lu, Kazunori Akiyama, Walter Alef, Juan~Carlos
-  Algaba, Keiichi Asada, Christopher Beaudoin, Alessandra Bertarini, Lindy
-  Blackburn, Ray Blundell, Geoffrey~C. Bower, Christiaan Brinkerink, Roger
-  Cappallo, Andrew~A. Chael, Richard Chamberlin, Chi-Kwan Chan, Geoffrey~B.
-  Crew, Jason Dexter, Matt Dexter, Sergio~A. Dzib, Heino Falcke, Robert Freund,
-  Per Friberg, Christopher~H. Greer, Mark~A. Gurwell, Paul T.~P. Ho, Mareki
-  Honma, Makoto Inoue, Tim Johannsen, Junhan Kim, Thomas~P. Krichbaum, James
-  Lamb, Jonathan Le{\'{o}}n-Tavares, Abraham Loeb, Laurent Loinard, David
-  MacMahon, Daniel~P. Marrone, James~M. Moran, Monika Mo{\'{s}}cibrodzka,
-  Gisela~N. Ortiz-Le{\'{o}}n, Tomoaki Oyama, Feryal Özel, Richard~L. Plambeck,
-  Nicolas Pradel, Rurik~A. Primiani, Alan E.~E. Rogers, Katherine Rosenfeld,
-  Helge Rottmann, Alan~L. Roy, Chester Ruszczyk, Daniel~L. Smythe, Jason
-  SooHoo, Justin Spilker, Jordan Stone, Peter Strittmatter, Remo P.~J. Tilanus,
-  Michael Titus, Laura Vertatschitsch, Jan Wagner, John F.~C. Wardle, Jonathan
-  Weintroub, David Woody, Melvyn Wright, Paul Yamaguchi, Andr{\'{e}} Young,
-  Ken~H. Young, J.~Anton Zensus, and Lucy~M. Ziurys.
-\newblock {{PERSISTENT} {ASYMMETRIC} {STRUCTURE} {OF} {SAGITTARIUS} A* {ON}
-  {EVENT} {HORIZON} {SCALES}}.
-\newblock \emph{{ApJ}}, 820\penalty0 (2):\penalty0 90, mar 2016.
-\newblock \doi{10.3847/0004-637x/820/2/90}.
-\newblock URL \url{http://dx.doi.org/10.3847/0004-637x/820/2/90}.
-
-\bibitem[{Johnson} et~al.(2014){Johnson}, {Fish}, {Doeleman}, {Broderick},
-  {Wardle}, and {Marrone}]{Johnson_2014}
-M.~D. {Johnson}, V.~L. {Fish}, S.~S. {Doeleman}, A.~E. {Broderick}, J.~F.~C.
-  {Wardle}, and D.~P. {Marrone}.
-\newblock {Relative Astrometry of Compact Flaring Structures in Sgr A* with
-  Polarimetric Very Long Baseline Interferometry}.
-\newblock \emph{\apj}, 794:\penalty0 150, October 2014.
-\newblock \doi{10.1088/0004-637X/794/2/150}.
-
-\bibitem[{Lane}(1998)]{Lane_1998}
-A.~P. {Lane}.
-\newblock {Submillimeter Transmission at South Pole}.
-\newblock In G.~{Novak} and R.~{Landsberg}, editors, \emph{Astrophysics From
-  Antarctica}, volume 141 of \emph{Astronomical Society of the Pacific
-  Conference Series}, pages 289--295, 1998.
-
-\bibitem[Lu et~al.(2014)Lu, Broderick, Baron, Monnier, Fish, Doeleman, and
-  Pankratius]{Lu_2014}
-Ru-Sen Lu, Avery~E. Broderick, Fabien Baron, John~D. Monnier, Vincent~L. Fish,
-  Sheperd~S. Doeleman, and Victor Pankratius.
-\newblock {{IMAGING} {THE} {SUPERMASSIVE} {BLACK} {HOLE} {SHADOW} {AND} {JET}
-  {BASE} {OF} M87 {WITH} {THE} {EVENT} {HORIZON} {TELESCOPE}}.
-\newblock \emph{{ApJ}}, 788\penalty0 (2):\penalty0 120, may 2014.
-\newblock \doi{10.1088/0004-637x/788/2/120}.
-\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/788/2/120}.
-
-\bibitem[Narayan(1992)]{Narayan_1992}
-R.~Narayan.
-\newblock {The Physics of Pulsar Scintillation}.
-\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical
-  Physical and Engineering Sciences}, 341\penalty0 (1660):\penalty0 151--165,
-  oct 1992.
-\newblock \doi{10.1098/rsta.1992.0090}.
-\newblock URL \url{http://dx.doi.org/10.1098/rsta.1992.0090}.
-
-\bibitem[{Ortiz-Le{\'o}n} et~al.(2016){Ortiz-Le{\'o}n}, {Johnson}, {Doeleman},
-  {Blackburn}, {Fish}, {Loinard}, {Reid}, {Castillo}, {Chael},
-  {Hern{\'a}ndez-G{\'o}mez}, {Hughes}, {Le{\'o}n-Tavares}, {Lu}, {Monta{\~n}a},
-  {Narayanan}, {Rosenfeld}, {S{\'a}nchez}, {Schloerb}, {Shen}, {Shiokawa},
-  {SooHoo}, and {Vertatschitsch}]{Ortiz_2016}
-G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
-  V.~L. {Fish}, L.~{Loinard}, M.~J. {Reid}, E.~{Castillo}, A.~A. {Chael},
-  A.~{Hern{\'a}ndez-G{\'o}mez}, D.~H. {Hughes}, J.~{Le{\'o}n-Tavares}, R.-S.
-  {Lu}, A.~{Monta{\~n}a}, G.~{Narayanan}, K.~{Rosenfeld}, D.~{S{\'a}nchez},
-  F.~P. {Schloerb}, Z.-q. {Shen}, H.~{Shiokawa}, J.~{SooHoo}, and
-  L.~{Vertatschitsch}.
-\newblock {The Intrinsic Shape of Sagittarius A* at 3.5 mm Wavelength}.
-\newblock \emph{\apj}, 824:\penalty0 40, June 2016.
-\newblock \doi{10.3847/0004-637X/824/1/40}.
-
-\bibitem[Pardo et~al.(2001)Pardo, Cernicharo, and Serabyn]{Pardo_2001}
-J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
-\newblock {Atmospheric transmission at microwaves ({ATM}): an improved model
-  for millimeter/submillimeter applications}.
-\newblock \emph{{IEEE} Trans. Antennas Propagat.}, 49\penalty0 (12):\penalty0
-  1683--1694, 2001.
-\newblock \doi{10.1109/8.982447}.
-\newblock URL \url{http://dx.doi.org/10.1109/8.982447}.
-
-\bibitem[Rogers et~al.(1995)Rogers, Doeleman, and Moran]{Rogers_1995}
-Alan E.~E. Rogers, Sheperd~S. Doeleman, and James~M. Moran.
-\newblock {Fringe detection methods for very long baseline arrays}.
-\newblock \emph{\aj}, 109:\penalty0 1391, mar 1995.
-\newblock \doi{10.1086/117371}.
-\newblock URL \url{http://dx.doi.org/10.1086/117371}.
+\bibitem[Popping and Braun(2008)]{Popping_2008}
+A.~Popping and R.~Braun.
+\newblock {The standing wave phenomenon in radio telescopes}.
+\newblock \emph{\aap}, 479\penalty0 (3):\penalty0 903--913, mar 2008.
+\newblock \doi{10.1051/0004-6361:20079122}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361:20079122}.
 
 \end{thebibliography}

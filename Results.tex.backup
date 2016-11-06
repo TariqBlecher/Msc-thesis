@@ -107,8 +107,9 @@ Furthermore, there are slight offsets in the central peak flux from the original
 The residual calibration errors also distort the interferometric artifacts (as seen in the uncorrupted image), which result from inadequate sampling of the Fourier domain before imaging. This distortion causes a breakdown in image-plane deconvolution and source finding algorithms as the Point Spread Function (PSF) is difficult to subtract and the interferometric artefacts are difficult to distinguish from source structure. This further weakens the ability of such source finding algorithms to extract, with high fidelity, the BH shadow feature.
 
 
-%Absence of blurring st 2
-There was no evidence of blurring or a loss of resolution in the simulated images. Blurring can result if the decoherence is considered as a function of baseline length, longer baseline would be more decoherent and their visibility amplitudes are effectively downweighted. For the EHT, as different stations experience independent different turbulent intensities, the baseline length for the VLBI baselines will not be correlated with the magnitude of the decoherence. Alternatively, the blurring effect known to optical telescopes as 'seeing', which is induced by the overlaying of many speckled images of the source \citep{Narayan_1992} across the scattering disc, does not seem to occur in the interferometric image reconstruction. We suspect that this is due to the cancellation of the offset 'speckles' as the Fourier reconstructed components include negative values
+%Absence of blurring st 1 - but last sentence is dodgy, will change it in due course
+There was no evidence of blurring or a loss of resolution in the simulated images. Blurring can result if the decoherence is considered as a function of baseline length, because longer baselines would be more decoherent and so their visibility amplitudes are effectively downweighted. For the EHT, as different stations experience completely independent phase fluctuations, the baseline length of the VLBI baselines will not be correlated with the magnitude of the decoherence. Alternatively, the blurring effect known to optical telescopes as 'seeing', which is induced by the overlaying of many speckled images of the source \citep{Narayan_1992} across the scattering disc, does not seem to occur in the interferometric image reconstruction. We suspect that this is due to destructive interference in the image domain from symmetrically distributed `speckles'.
+
 
 %Incoherent closure phases.. This section is needed to link up to the discussion on closure phase uncertainty in the mm-VLBI section. Yep worth mentioning. but leave this 
 
@@ -116,37 +117,40 @@ There was no evidence of blurring or a loss of resolution in the simulated image
 %Non-closing errors due to incoherent averaging - "no conjugates for triples" - possibly comes down to how one defines SNR. In the definition used in the literature we followed, they assumed only gaussian noise, which was not the case..A better definition would be to look at the distribution of a number of samples 
 %maybe just a mention of how the closure phase uncertainty could change.
 
-\subsubsection{Pointing}
+\subsubsection{Antenna pointing offset}
 
-%st 2 - to read through and check with other sections
+%mild intro
+
+
+
 \begin{quotation}
-``We investigate the effect of pointing errors on the 50~m (i.e. fully illuminated) Large Millimeter Array (LMT) dish configured in an eight station VLBI array. The LMT has been measured to have an absolute pointing accuracy of $\sigma_{\rm abs} = 1-3$~arcsec, where smaller offsets occur when observing sources closer to zenith, and a tracking pointing accuracy $\sigma_{\rm track} < 1$~arcsec\footnote{http://www.lmtgtm.org/telescope/telescope-description/}. We investigate the observational effect of these errors through three different pointing error models which explore different instructive and plausible scenarios. The LMT has been singled out as this may well serve as a reference station for the EHT array given its sensitivity and central geographic location. The source used is a circular Gaussian of characteristic size $\Theta_{\rm src}=50$ $\mu$-arcsec, located at the phase centre. For this investigation, as long as $\Theta_{\rm src} \ll \theta_{\rm PB}$, the exact structure of the source is unimportant. We approximate the LMT beam profile using an analytic WSRT beam model (equation~\ref{eq:wsrt_beam}) with a factor of two increase in the beam factor $C$ to take into account the increased dish size.''\\
-\citep{Blecher_2016}
-\end{quotation}
-
-[!! TO check C - is this fWHM for LMT or WSRT?? - also repeated in imp]
-where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz. 
+``We investigate the effect of pointing errors on the 50~m (i.e. fully illuminated) Large Millimeter Array (LMT) dish configured in an eight station VLBI array. The LMT has been measured to have an absolute pointing accuracy of $\sigma_{\rm abs} = 1-3$~arcsec, where smaller offsets occur when observing sources closer to zenith, and a tracking pointing accuracy $\sigma_{\rm track} < 1$~arcsec\footnote{http://www.lmtgtm.org/telescope/telescope-description/}. We investigate the observational effect of these errors through three different pointing error models which explore different instructive and plausible scenarios. The LMT has been singled out as this may well serve as a reference station for the EHT array given its sensitivity and central geographic location. The source used is a circular Gaussian of characteristic size $\Theta_{\rm src}=50$ $\mu$-arcsec, located at the phase centre. For this investigation, as long as $\Theta_{\rm src} \ll \theta_{\rm PB}$, the exact structure of the source is unimportant. We approximate the LMT beam profile using an analytic WSRT beam model (equation~\ref{eq:wsrt_beam}) with a factor of two increase in the beam factor $C$ to take into account the increased dish size. [Hence] $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.
 
 
 We make use of the RMS fractional visibility amplitude error $\sigma_{\Delta V/V_0}$, where $V_{\rm PE}$ and $V_{0}$ are the visibility amplitudes with and without pointing errors respectively, and  $\Delta V = V_{\rm PE} - V_{0}$ . In Fig.~\ref{fig:pointing}, $\sigma_{\Delta V/V_0}$ is plotted against pointing error $\rho$ over the range $0 \le \rho \le 4.5$~arcsec.
+\\
+\citep{Blecher_2016}
+\end{quotation}
 
+%rewrite - the different pointing models - based on what was described earlier
 In the first case we assume a \emph{constant} pointing error. This simulation is meant to be instructive as to the typical amplitude error in the simplest possible scenario.
 
-''
-[to be merged with the previous quotation]
-In this simulation, we only consider LMT pointing errors due to its narrow primary beam and potential to be used as a reference station. However, the capability to simulate independent pointing errors for each station is available. In the case of a phased array, a pointing error simulation could be used to investigate the contribution of the pointing error to a variable phasing efficiency, which can be reasonably approximated by a scalar Jones matrix.''
-''
+
+\begin{quotation}
+``In this simulation, we only consider LMT pointing errors due to its narrow primary beam and potential to be used as a reference station. However, the capability to simulate independent pointing errors for each station is available. In the case of a phased array, a pointing error simulation could be used to investigate the contribution of the pointing error to a variable phasing efficiency, which can be reasonably approximated by a scalar Jones matrix.''\\
+\citep{Blecher_2016}
+\end{quotation}
+
+
 \begin{figure}[h!]
 \includegraphics[width=\columnwidth]{Images/point_Crop}
 \caption{``RMS relative amplitude error induced by pointing error with the 50~m (i.e. fully illuminated) LMT antenna as a function of pointing error offset $\rho$ at 230~GHz. We assume that these errors are degenerate or non-separable from the self-calibration/fringe-fitting model used. See text for the description of the three models used. This simulation capability enables constraints on the magnitude of pointing-induced errors given a particular pointing calibration strategy.''(Image and caption reproduced from \citet{Blecher_2016})\label{fig:pointing}%
 }
 \end{figure}
+\
 
 \begin{quotation}
-``Visibility amplitude errors due to antenna pointing error has been investigated for the $50$~m  LMT dish operating at $230$~GHz. In Fig.~\ref{fig:pointing}, we show that pointing errors associated with frequent phase centre switching (stochastic variability) could introduce a RMS fractional amplitude error $\sigma_{\Delta V/V_0} \sim 0.1 - 0.4$ for an absolute pointing accuracy  $\sigma_{\rm abs} \sim 1-3$~arcsec. In contrast, tracking errors are less problematic with $\sigma_{\Delta V/V_0} \le 0.05$ for a tracking accuracy  $\sigma_{\rm track}<1$~arcsec. The case of a constant error pointing model is comparable to that of the `slow variability' case. If the gain error is non-separable from the alcibration model used, it could be interpreted as intrinsic variability, substructure and/or increased noise. If unaccounted for, this effect has the potential to limit the dynamic range of mm-VLBI images. Further tests to constrain the pointing uncertainties of EHT stations will lead to more accurate interferometric simulations and hence the overall impact on black hole shadow parameter estimation. Here we demonstrate the capability to incorporate a range of plausible pointing error effects into a full simulation pipeline. For future observations at 345~GHz, these effects will be even more pronounced, given the narrower primary beam.
-
-[..]
-\\
+``Visibility amplitude errors due to antenna pointing error has been investigated for the $50$~m  LMT dish operating at $230$~GHz. In Fig.~\ref{fig:pointing}, we show that pointing errors associated with frequent phase centre switching (stochastic variability) could introduce a RMS fractional amplitude error $\sigma_{\Delta V/V_0} \sim 0.1 - 0.4$ for an absolute pointing accuracy  $\sigma_{\rm abs} \sim 1-3$~arcsec. In contrast, tracking errors are less problematic with $\sigma_{\Delta V/V_0} \le 0.05$ for a tracking accuracy  $\sigma_{\rm track}<1$~arcsec. The case of a constant error pointing model is comparable to that of the `slow variability' case. If the gain error is non-separable from the calibration model used, it could be interpreted as intrinsic variability, substructure and/or increased noise. If unaccounted for, this effect has the potential to limit the dynamic range of mm-VLBI images. Further tests to constrain the pointing uncertainties of EHT stations will lead to more accurate interferometric simulations and hence the overall impact on black hole shadow parameter estimation. Here we demonstrate the capability to incorporate a range of plausible pointing error effects into a full simulation pipeline. For future observations at 345~GHz, these effects will be even more pronounced, given the narrower primary beam.\\
 \citep{Blecher_2016}
 \end{quotation}
 
@@ -160,12 +164,9 @@ In this simulation, we only consider LMT pointing errors due to its narrow prima
 % In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
 
 
-%additional discussion
+\subsubsection{}
 
-% Include this q&a -> not sure which chapter is best though...maybe intro and theory to prevent a reader sitting with the question for so long
-%-The authors list a couple of observational challenges and claim that pointing errors, as they have implemented in the simulator, are non-negligible instrumental errors. I think there are more “subtle” instrumental effects that need to be taken into account or should be pointed out to give a full story to the reader. Without an estimate of these effects, I am not sure if you can simply ignore them. A related question: does the simulator have a different treatment of instrumental model for single dish and phased array?
-
-%>>True, there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.). The point of this first paper is to demonstrate the mm-VLBI framework that enables more sophisticated interferometric simulations. As such, we have focused on capabilties not present in other mm-VLBI simulations and represent different Jones Matrix implmentations (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement. As we state in the manuscript, the MeqSilhouette framework, rooted in the Measurement Equation formalism, enables any arbitary error to be incorporated as a Jones Matrix (e.g. correlator model error is a simple scale matrix [e^-\phi, 0, e^-\phi, 0]). Our intention here is to demonstrate some of the key features of MeqSilhouette and its potential to provide realistic mm-VLBI simulations for systmatic studies that will be reported in future papers. At present, we use the same model for a single dish and phased array, we have now included a discussion on the implication for phased arrays in both the turbulent troposphere pointing error sections.
+Whilst there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.). The point of this investigation has been to demonstrate a mm-VLBI framework that enables more sophisticated interferometric simulations. As such, we have focused on capabilties not present in other mm-VLBI simulations and represent different Jones Matrix implmentations (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement. As we state in the manuscript, the MeqSilhouette framework, rooted in the Measurement Equation formalism, enables any arbitary error to be incorporated as a Jones Matrix (e.g. correlator model error is a simple scalar matrix. Our intention here is to demonstrate some of the key features of MeqSilhouette and its potential to provide realistic mm-VLBI simulations for systematic studies.
 
 
 %Maybe jnust provide a brief note in the implementation
