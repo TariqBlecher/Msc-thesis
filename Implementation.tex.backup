@@ -19,16 +19,19 @@ Our primary aim is to test and research mm-VLBI calibration, imaging and paramet
 \end{itemize}
 
 \section{Architechure and Workflow}\label{sec:arch}
-%st 1
 %Intro and plan, How to meet objectives %st 1
-In this section, we will review how the architechural design and workflow of the simulator has been designed to meet the above objectives. To fulfill the first objective, we cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}). Although, this is not possible in the case of ISM-scattering, we fit this corruption into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements. The only  The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection. 
+In this section, we will review how the architechural design and workflow of the simulator has been designed to meet the above objectives. To fulfill the first objective, we cast signal corruptions in the RIME formalism (see section~\ref{sec:RIME}). Although, this is not possible in the case of ISM-scattering, we fit this corruption into the casually correct position in the signal transmission chain, with proper consider given to non-communitivity of elements. The implementation of each signal corruption is described in the following subsections. The remaining objectives fall into the realm of software design and will be discussed in this subsection. 
+
 
 %Language
 We have chosen to write the high level simulation code using the \textsc{Python} language. \textsc{Python} is a general purpose language, is geared towards readability, and is well supported by a comprehensive library and wide user base, particularly within astronomy. 
 
 
 %Meqtrees
-We use an interferometric toolbox, {\sc MeqTrees}, which is written in {\sc Python}. Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load ({\sc ms} and visibility generation) is called through subroutines which are written in the more computationally efficient {\sc C++} language.   which performs the visibility generation and pointing error simulation
+We make use of the interferometric toolbox, {\sc MeqTrees}, which performs the Fourier transform for visibility generation as well as primary beam and antenna pointing error simulation. {\sc MeqTrees} provides a way to construct the RIME using a tree
+
+
+Although the higher level functionality is written in \textsc{Python}, the bulk of the computational load ({\sc ms} and visibility generation) is called through subroutines which are written in the more computationally efficient {\sc C++} language.  
 %expand on visibility generation
 
 
@@ -46,14 +49,16 @@ The conceptual flow diagram of one realisation of a {\sc meqsilhouette} simulati
 
 
 %Inputs %st 1
-All inputs to the simulator are specified by a configuration file, containing a dictionary, which is the sole input to the driver script. This dictionary contains everything needed by the pipeline to determine the particular observation configuration (frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model and antenna table are located in the filesystem. The antenna table is in the CASA format, and can readily be created or altered using the {\sc pyrap} library using the station coordinates. The primary sky model used is a time-ordered list of {\sc fits} images, where each image represents the source total intensity over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. Currently the pipeline only supports total intensity and the conversion of the pipeline to support full stokes is discussed in section~\ref{sec:discussion}. A variation of the pipeline has also been written which uses a parametric source model consisting of Gaussians or point sources as the sky model. This functionality was needed for the simulation of pointing errors as the {\sc MeqTrees} beams model does not support the {\sc fits} sky model.
+All inputs to the simulator are specified by a configuration file, containing a dictionary (see table~\ref{tab:parameters} as an example), which is the sole input to the driver script. This dictionary contains everything needed by the pipeline to determine the particular observation configuration (frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model and antenna table are located in the filesystem. The antenna table is in the {\sc ms} format, and can readily be created or altered using the {\sc pyrap} library using the station coordinates. The primary sky model used is a time-ordered list of {\sc fits} images, where each image represents the source total intensity over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images. Currently the pipeline only supports total intensity and the conversion of the pipeline to support full stokes is discussed in section~\ref{sec:discussion}. A variation of the pipeline has also been written which uses a parametric source model consisting of Gaussians or point sources as the sky model. This functionality was needed for the simulation of pointing errors as the {\sc MeqTrees} beams model does not support the {\sc fits} sky model.
+
 
 \begin{table}[]
-\caption{My caption}
-\label{my-label}
+\caption{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filter into several subdictionaries which can be easily passed to functions or classes. {\bf Bottom section:} the first row of station table .\\}
+\label{tab:parameters}
 \begin{tabular}{ll}
+\hline
 input fits folder path&antenna table path\\
-station info path&integration time\\
+station information path&integration time\\
 start time&channel width\\
 no. scan&scan lag\\
 elevation limit&no. channels\\
@@ -64,10 +69,13 @@ apply atmospheric attentuation?&add thermal noise?\\
 apply atmospheric thermal noise?&apply tropospheric phase noise?\\
 apply mean atmospheric time delays?&percentage tropospheric phase \\
 output image pixel size&output image ${\rm N_{pix}}$\\
+\hline
+\hline
+station&coherence time\\
+sefd&pvw\\
+ground pressure&ground temperature\\
 \end{tabular} 
 \end{table}
-
-
 
 %Outputs and Data products %st 1
 The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases (including uncertainties) and a dirty and/or deconvolved image. The modular structure of the pipeline allows for additional imaging and deconvolution algorithms to be easily appended to the final data processing steps. Noting that there are other data formats widely used in mm-VLBI, we make use of the {\sc casa} task for conversion to {\sc uvfits}. Similiarly other data products can be easily produced as needed e.g. polarisation ratios.
@@ -81,7 +89,7 @@ The primary outputs of the pipeline are an interferometric dataset in MS format 
 
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Images/Class_module_structure}
-\caption{Basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module.\label{flow}%
+\caption{The basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module. The \emph{SimCoordinator} class is initialised in the driver script. \label{class_struc}%
 }
 \end{figure*}
 
@@ -98,13 +106,13 @@ An important step to reproduce realistic observations is to be able create a com
 %%Class diagram
 % Calculation and & back end & object orientation
 %SimpleMS
-In order to make the framework as clean and  modular as possible we have made extensive use of object orientation. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and MS-only derived attributes (e.g. visibility data and station positions) and methods (e.g. functions to calculate station elevations and closure phases) as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures which become verbose when used frequently. This is especially useful when accessing baseline-indexed quantities. 
+In order to make the framework as clean and  modular as possible we have made extensive use of object orientation, see Fig.~\ref{class_struc} for a basic overview. The first major class, \emph{SimpleMS}, was intended to abstract and modularise the MS and MS-only derived attributes (e.g. visibility data and station positions) and methods (e.g. functions to calculate station elevations and closure phases) as well as expose these attributes and methods more efficiently than following {\sc pyrap} procedures which become verbose when used frequently. This is especially useful when accessing baseline-indexed quantities. 
 
 %TropMS
-The second MS-related class, \emph{TropMS}, handles the calculations relevant to tropospheric and thermal noise corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use, whilst being separated from, the core MS functionality. The details of the tropospheric corruption is provided in section~\ref{sec:trop_imp}. 
+The second MS-related class, \emph{TropMS}, handles the calculations relevant to tropospheric and thermal noise corruptions. This class is a child of {\it SimpleMS} and is initialised with weather and station information. Note that a child contains all the methods and attributes of its parent. This allows the tropospheric corruption implementation to use, whilst being separated from, the core MS functionality. The details of the tropospheric corruption are provided in section~\ref{sec:trop_imp}. 
 
 %SimCoordinator
-The third MS-related class, \emph{SimCoordinator}, is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make arbitrary simulations easy and efficient to construct and execute on a high level. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (see subsection~\ref{sec:ism_imp}), and {\sc MeqTrees} simulation functionality.
+The third MS-related class, \emph{SimCoordinator}, is a child of the {\it TropMS} class. {\it SimCoordinator} is designed to make a simulation, with an arbitrary experimental setup, easy and efficient to construct and execute on a high level. It is the only MS class directly initialised in the driver script and hence the low level functionality and attributes of its parents are abstracted from the user. In addition to inherited functionality, {\it SimCoordinator} can call the ISM-scattering task (see subsection~\ref{sec:ism_imp}), and {\sc MeqTrees} simulation functionality.
 %MeqTrees
 Specifically within {\sc MeqTrees} we make use of the {\it turbo-sim} script which evaluates the RIME to generate visibilities and to simulate antenna pointing errors(see section~\ref{sec:point_imp}), where the visibilities are calculated through direct evaluation of the Fourier Transform at each UVW coordinate in the dataset. {\sc MeqTrees} allows its tasks to be called by a {\sc Python} function and so is naturally included in the pipeline.
  
@@ -113,7 +121,7 @@ Specifically within {\sc MeqTrees} we make use of the {\it turbo-sim} script whi
 %Pr 1 St 1
 
 %Link back to theory %st 1
-As described in section~\ref{sec:ism} observations of Sgr~A$^\star$ at sub(mm) is subject to ISM scattering in the strong scattering regime. Due to the size of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation in all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen which is essential as aspects of the scattering towards the galactic centre are still unconstrained.
+As described in section~\ref{sec:ism}, observations of Sgr~A$^\star$ at sub(mm) wavelengths is subject to ISM scattering in the strong scattering regime. Due to the size of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation in all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
 
 %scatterbrane inputs and generality %st 1
 \begin{table}\label{tab:parm_ism}
@@ -133,20 +141,20 @@ screen resolution &
 
 
 %Integration of Scatterbrane %st 1
-We include the {\sc ScatterBrane} software, which has already yielded important context for mm-VLBI observations towards Sgr~A$^\star$ \citep[e.g.][]{2016arXiv160106571O}, within the {\sc meqsilhouette} framework. Our ISM module interfaces the \textsc{Scatterbrane} code within an interferometric simulation pipeline. This module enables simultaneous use of time-variable ISM scattering and time-variable intrinsic source structure within a single framework. The user is able to select a range of options relating to the time-resolution and epoch interpolation/averaging of both. By default, if the time resolution chosen to sample the source variability $\Delta t_{\rm src}$ and screen variability $\Delta t_{\rm ism}$ are unequal, we set  
+We include the {\sc ScatterBrane} software, which has already yielded important context for mm-VLBI observations towards Sgr~A$^\star$ \citep[e.g.][]{Ortiz_2016}, within the {\sc meqsilhouette} framework. Our ISM module interfaces the \textsc{Scatterbrane} code within an interferometric simulation pipeline. This module enables simultaneous use of time-variable ISM scattering and time-variable intrinsic source structure within a single framework. The user is able to select a range of options relating to the time-resolution and epoch interpolation/averaging of both. By default, if the time resolution chosen to sample the source variability $\Delta t_{\rm src}$ and screen variability $\Delta t_{\rm ism}$ are unequal, we set  
 \begin{itemize}
  \setlength\itemsep{1em}
 \item $\Delta t_{\rm ism}=\Delta t_{\rm src}$ \qquad \qquad if \qquad  $\Delta t_{\rm src} < \Delta t_{\rm ism}$
-\item $\Delta t_{\rm ism}=R(\frac{\Delta t_{\rm src}}{\Delta t_{\rm ism}})\Delta t_{\rm src}$ \ if \qquad  $\Delta t_{\rm src} > \Delta t_{\rm ism}$,
+\item $\Delta t_{\rm ism}={\rm R}(\frac{\Delta t_{\rm src}}{\Delta t_{\rm ism}})\Delta t_{\rm src}$ \ if \qquad  $\Delta t_{\rm src} > \Delta t_{\rm ism}$,
 \end{itemize}
-where $R$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.
+where ${\rm R}$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.
 
 
 \subsection{Atmospheric corruption simulator}\label{sec:trop_imp}
 %Pr 1 St 1
 
 %average/turbulent split st 1
-Our focus in this module is to model the three primary, interrelated (see section~\ref{sec:prop_fund}) observables which are the most relevant to mm-VLBI: turbulence-driven fluctuations in the visibility phase $\delta \phi$; signal attenuation due to the atmospheric opacity $\tau$; and the increase in system temperature due to atmospheric emission at a brightness temperature $T_{\rm atm}$. Our approach is to model these observables as being separable into mean and turbulent components which are simulated independently. The mean tropospheric simulation module performs radiative transfer with a detailed model of the electromagnetic spectrum of each atmospheric constituent. The turbulent simulation module takes a scattering approach to account for the decoherence that results from power-law turbulence.
+Our focus in this module is to model the three primary, interrelated (see section~\ref{sec:prop_fund}) observables which are the most relevant to mm-VLBI: turbulence-driven fluctuations in the visibility phase $\delta \phi$; signal attenuation due to the atmospheric opacity $\tau$; and the increase in system temperature due to atmospheric emission at a brightness temperature $T_{\rm atm}$ due to non-zero opacity. Our approach is to model these observables as being separable into mean and turbulent components which are simulated independently \citep{Blecher_2016}. The mean tropospheric simulation module performs radiative transfer with a detailed model of the electromagnetic spectrum of each atmospheric constituent. The turbulent simulation module takes a scattering approach to account for the decoherence that results from power-law turbulence.
 
 %Implementation details of ATM st 1
 %what it does and how it fits into the broader scheme
@@ -154,7 +162,7 @@ As described in section~\ref{sec:atm_theory}, we use the {\sc atm} package to pe
 %inputs
 In order to calculate atmospheric temperature and pressure profiles, {\sc atm} is input several station dependent parameters, namely, ground temperature and pressure, PWV depth, water vapour scale height, tropospheric lapse rate  and altitude. The lapse rate refers to the linear relation at which temperature decreases with height. Through experimentation, we have found that the first 3 variables most significantly effect the results of the simulation and opt to keep the latter variables at their default values which were set for application to ALMA. 
 %outputs
-The outputs of this procedure are mean values for opacity, time delay and atmospheric brightness temperature at each station. Both opacity and time delay are separated into wet (water) and dry components. Additionally each of the two constitents are further subdivided into dispersive and non-disperive.[check with what i said for theory, that i cited that dispersion paper.] These outputs are calculated for a list of frequencies.
+The outputs of this procedure are mean values for opacity, time delay and atmospheric brightness temperature at each station at zenith. Both opacity and time delay are separated into wet (water vapour) and dry (other) components. Furthermore, Tte time delay is subdivided into dispersive and non-dispersive  components. These outputs are calculated for a list of frequencies, each representing central channel frequency. Hence, the non-dispersive component of the mean atmosphere is accounted for.
 %interface details
 We perform this calculation using representative climate conditions taken from the literature. This final step is to account for elevation effects by multiplying by the airmass $1/\sin\theta$. 
 
@@ -165,19 +173,27 @@ Following from section~\ref{sec:turb_theory}, we derive a weak scattering formal
 \subsection{Antenna pointing error simulator}\label{sec:point_imp}
 %Pr 1 St 1
 
+
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
-To simulate pointing errors, we use the implementation built into the {\sc MeqTrees} turbo-sim task. This functionality includes the capability to convolve station primary beams with the sky model. The beam models available through this function are sinc, Gaussian and the analytic WSRT beam model, however there is not much difference between the different beam models up until the first null. The standard beam model which we will make use  is the analytic WSRT beam model \citep{Popping_2008} 
+To simulate pointing errors, we use the implementation built into the {\sc MeqTrees} ``turbo-sim'' task. This functionality includes the capability to convolve station primary beams with the sky model. This is implemented as a an E-Jones matrix.
+
+
+
+The beam models available through this function are sinc, Gaussian and the analytic WSRT beam model, however there is not much difference between the different beam models up until the first null. The standard beam model which we will make use is the analytic WSRT beam model \citep{Popping_2008} 
 \begin{equation}\label{eq:wsrt_beam}
 E(l, m) = \cos^3(C\nu \rho),\qquad   \rho = \sqrt{\delta l_p^2 + \delta m_p^2}
 \end{equation}
 where $C$ is a constant, with value $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.  One drawback of the {\sc MeqTrees} implementation is that it is incompatible with the {\sc fits} format and so we are limited to point and Gaussian parameteric sources for the pointing error simulations. However this is not a significant issue as the pointing error should be constant across the FOV and hence source structure observable with mm-VLBI is unimportant to any pointing error analysis.
 
-Furthermore turbo-sim allows constant offset or time variable primary beam, where the time variability can be either an up-to-third order polynomial or a sinusoidal function. We have opted to incorporate only the sinusoidal variability for simplicity. To simulate stochastic variability i.e. pointing error due to slew between calibrator and source, we use a constant offset which is resampled per user-specified time interval. In section~\ref{sec:can_sim} we demonstrate the effect of constant, sinusoidally variable and stochastically variable pointing errors on the LMT which is the EHT station with the most narrow beam, and could be used as a referenced station due to its centrality the array.
+Furthermore, ``turbo-sim'' allows constant offset or time variable primary beam, where the time variability can be either an up-to-third order polynomial or a sinusoidal function. We have opted to incorporate only the sinusoidal variability for simplicity. To simulate stochastic variability i.e. pointing error due to slew between calibrator and source, we use a constant offset which is resampled per user-specified time interval. In section~\ref{sec:can_sim} we demonstrate the effect of constant, sinusoidally variable and stochastically variable pointing errors on the LMT which is the EHT station with the most narrow beam, and could be used as a referenced station due to its centrality the array.
 
 
 \subsection{Jones matrix summary??}
 
-\section{RODRIGUES interface}
-%Pr 3 St 3
-%leave until this is actually done
-For community use, we host the online, RODRIGUES, interface, found at http://rodrigues.meqtrees.net/. Each of the components of the simulator run in Docker containers. **Looks like the infrustructure is going to change, re: discussions with Gijs and Sphe, so going to wait before writing this.
+\section{A public online interface}
+
+Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of a GUI interface which would provide the user with the capability to run a standard simulations without having to delve into code. The capability to run such a simulation would be useful to both theorists and observers in the broader SMBH/mm-VLBI community. For this reason we experimented with such an interface at the Leiden 2015 mm_VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015}, where we used a early version of the simulator. This was well received by the community present, however we have yet to convert the latest version of the pipeline, also waiting on status.
+
+%briefly the implementation used What was 
+
+

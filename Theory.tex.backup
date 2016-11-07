@@ -6,7 +6,7 @@ In this chapter we review and develop the theory required to model signal transm
 %St 2
 
 %plan st 1
-This section is structured as follows: first radio interferometry is introduced using the Radio Interferometric Measurement Equation (RIME) formalism, which serves as a guiding framework for the construction of the {\sc MeqSilhouette} simulator. We then review the technique of self-calibration, typical mm-VLBI data products and the consequences of breaking the static source assumption.
+This section is structured as follows: first radio interferometry is introduced using the Radio Interferometric Measurement Equation (RIME) formalism, which serves as a guiding framework for the construction of the {\sc meqsilhouette} simulator. We then review the technique of self-calibration, typical mm-VLBI data products and the consequences of breaking the static source assumption.
 
 \subsection{Measurement Equation}\label{sec:RIME}
 %PR 2 St 1
