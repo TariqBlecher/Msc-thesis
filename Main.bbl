@@ -1,9 +1,25 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Blecher} et~al.(2016){Blecher}, {Deane}, {Bernardi}, and
+  {Smirnov}]{Blecher_2016}
+T.~{Blecher}, R.~{Deane}, G.~{Bernardi}, and O.~{Smirnov}.
+\newblock {MeqSilhouette : A mm-VLBI observation and signal corruption
+  simulator}.
+\newblock \emph{\mnras}, September 2016.
+\newblock \doi{10.1093/mnras/stw2311}.
+
+\bibitem[Gwinn et~al.(2014)Gwinn, Kovalev, Johnson, and Soglasnov]{Gwinn_2014}
+C.~R. Gwinn, Y.~Y. Kovalev, M.~D. Johnson, and V.~A. Soglasnov.
+\newblock {{DISCOVERY} {OF} {SUBSTRUCTURE} {IN} {THE} {SCATTER}-{BROADENED}
+  {IMAGE} {OF} {SGR} A*}.
+\newblock \emph{{ApJ}}, 794\penalty0 (1):\penalty0 L14, sep 2014.
+\newblock \doi{10.1088/2041-8205/794/1/l14}.
+\newblock URL \url{http://dx.doi.org/10.1088/2041-8205/794/1/l14}.
 
 \bibitem[Johnson and Gwinn(2015)]{Johnson_2015a}
 Michael~D. Johnson and Carl~R. Gwinn.
@@ -13,11 +29,50 @@ Michael~D. Johnson and Carl~R. Gwinn.
 \newblock \doi{10.1088/0004-637x/805/2/180}.
 \newblock URL \url{http://dx.doi.org/10.1088/0004-637x/805/2/180}.
 
+\bibitem[Noordam and Smirnov(2010)]{Noordam_2010}
+J.~E. Noordam and O.~M. Smirnov.
+\newblock {The {MeqTrees} software system and its use for third-generation
+  calibration of radio interferometers}.
+\newblock \emph{\aap}, 524:\penalty0 A61, nov 2010.
+\newblock \doi{10.1051/0004-6361/201015013}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201015013}.
+
+\bibitem[{Ortiz-Le{\'o}n} et~al.(2016){Ortiz-Le{\'o}n}, {Johnson}, {Doeleman},
+  {Blackburn}, {Fish}, {Loinard}, {Reid}, {Castillo}, {Chael},
+  {Hern{\'a}ndez-G{\'o}mez}, {Hughes}, {Le{\'o}n-Tavares}, {Lu}, {Monta{\~n}a},
+  {Narayanan}, {Rosenfeld}, {S{\'a}nchez}, {Schloerb}, {Shen}, {Shiokawa},
+  {SooHoo}, and {Vertatschitsch}]{Ortiz_2016}
+G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
+  V.~L. {Fish}, L.~{Loinard}, M.~J. {Reid}, E.~{Castillo}, A.~A. {Chael},
+  A.~{Hern{\'a}ndez-G{\'o}mez}, D.~H. {Hughes}, J.~{Le{\'o}n-Tavares}, R.-S.
+  {Lu}, A.~{Monta{\~n}a}, G.~{Narayanan}, K.~{Rosenfeld}, D.~{S{\'a}nchez},
+  F.~P. {Schloerb}, Z.-q. {Shen}, H.~{Shiokawa}, J.~{SooHoo}, and
+  L.~{Vertatschitsch}.
+\newblock {The Intrinsic Shape of Sagittarius A* at 3.5 mm Wavelength}.
+\newblock \emph{\apj}, 824:\penalty0 40, June 2016.
+\newblock \doi{10.3847/0004-637X/824/1/40}.
+
 \bibitem[Popping and Braun(2008)]{Popping_2008}
 A.~Popping and R.~Braun.
 \newblock {The standing wave phenomenon in radio telescopes}.
 \newblock \emph{\aap}, 479\penalty0 (3):\penalty0 903--913, mar 2008.
 \newblock \doi{10.1051/0004-6361:20079122}.
 \newblock URL \url{http://dx.doi.org/10.1051/0004-6361:20079122}.
+
+\bibitem[Smirnov(2011{\natexlab{a}})]{Smirnov_2011c}
+O.~M. Smirnov.
+\newblock {Revisiting the radio interferometer measurement equation}.
+\newblock \emph{A&A}, 527:\penalty0 A108, 2011{\natexlab{a}}.
+\newblock \doi{10.1051/0004-6361/201116435}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201116435}.
+
+\bibitem[Smirnov(2011{\natexlab{b}})]{Smirnov_Calim_2011}
+O.M. Smirnov.
+\newblock {presentation at `SKA CALIM workshop : Solving for primary beams,
+  pointing errors, and The Westerbork Wobble', Manchester, 25-29 July 2011.},
+  June 2011{\natexlab{b}}.
+\newblock URL
+  \url{https://indico.skatelescope.org/event/171/session/9/contribution/20}.
+\newblock (accessed June 13, 2016).
 
 \end{thebibliography}

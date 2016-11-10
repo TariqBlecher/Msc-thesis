@@ -107,8 +107,8 @@ Furthermore, there are slight offsets in the central peak flux from the original
 The residual calibration errors also distort the interferometric artifacts (as seen in the uncorrupted image), which result from inadequate sampling of the Fourier domain before imaging. This distortion causes a breakdown in image-plane deconvolution and source finding algorithms as the Point Spread Function (PSF) is difficult to subtract and the interferometric artefacts are difficult to distinguish from source structure. This further weakens the ability of such source finding algorithms to extract, with high fidelity, the BH shadow feature.
 
 
-%Absence of blurring st 1 - but last sentence is dodgy, will change it in due course
-There was no evidence of blurring or a loss of resolution in the simulated images. Blurring can result if the decoherence is considered as a function of baseline length, because longer baselines would be more decoherent and so their visibility amplitudes are effectively downweighted. For the EHT, as different stations experience completely independent phase fluctuations, the baseline length of the VLBI baselines will not be correlated with the magnitude of the decoherence. Alternatively, the blurring effect known to optical telescopes as 'seeing', which is induced by the overlaying of many speckled images of the source \citep{Narayan_1992} across the scattering disc, does not seem to occur in the interferometric image reconstruction. We suspect that this is due to destructive interference in the image domain from symmetrically distributed `speckles'.
+%Absence of blurring st 1
+There was no evidence of blurring or a loss of resolution in the simulated images of Fig.~\ref{fig:trop_images}. Blurring can result if the decoherence is considered proportional to baseline length, as longer baselines would be less coherent and so their visibility amplitudes are effectively downweighted. For the EHT, as different stations experience completely independent phase fluctuations, the baseline length of the VLBI baselines will not be correlated with the magnitude of the decoherence. Alternatively, the blurring consequence, characteristic in optical single dish telescopes as 'seeing', is induced by the overlaying of many speckled images of the source \citep{Narayan_1992} across the scattering disc. This does not seem to occur in the interferometric image reconstruction with the inverse fourier transform. The reason being that the phase noise of each fourier mode is Gaussian, and so positional deviations of each Fourier mode from zero phase noise effectively cancel in the image domain. Hence attentuation but no blurring.
 
 
 %Incoherent closure phases.. This section is needed to link up to the discussion on closure phase uncertainty in the mm-VLBI section. Yep worth mentioning. but leave this 
@@ -122,22 +122,23 @@ There was no evidence of blurring or a loss of resolution in the simulated image
 %mild intro
 
 
-
 \begin{quotation}
-``We investigate the effect of pointing errors on the 50~m (i.e. fully illuminated) Large Millimeter Array (LMT) dish configured in an eight station VLBI array. The LMT has been measured to have an absolute pointing accuracy of $\sigma_{\rm abs} = 1-3$~arcsec, where smaller offsets occur when observing sources closer to zenith, and a tracking pointing accuracy $\sigma_{\rm track} < 1$~arcsec\footnote{http://www.lmtgtm.org/telescope/telescope-description/}. We investigate the observational effect of these errors through three different pointing error models which explore different instructive and plausible scenarios. The LMT has been singled out as this may well serve as a reference station for the EHT array given its sensitivity and central geographic location. The source used is a circular Gaussian of characteristic size $\Theta_{\rm src}=50$ $\mu$-arcsec, located at the phase centre. For this investigation, as long as $\Theta_{\rm src} \ll \theta_{\rm PB}$, the exact structure of the source is unimportant. We approximate the LMT beam profile using an analytic WSRT beam model (equation~\ref{eq:wsrt_beam}) with a factor of two increase in the beam factor $C$ to take into account the increased dish size. [Hence] $C \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.
+``We investigate the effect of pointing errors on the 50~m (i.e. fully illuminated) Large Millimeter Array (LMT) dish configured in an eight station VLBI array. The LMT has been measured to have an absolute pointing accuracy of $\sigma_{\rm abs} = 1-3$~arcsec, where smaller offsets occur when observing sources closer to zenith, and a tracking pointing accuracy $\sigma_{\rm track} < 1$~arcsec\footnote{http://www.lmtgtm.org/telescope/telescope-description/}. We investigate the observational effect of these errors through three different pointing error models which explore different instructive and plausible scenarios. The LMT has been singled out due to its narrow primary beam and that it may serve as a reference station for the EHT array given its sensitivity and central geographic location. 
+
+The source used is a circular Gaussian of characteristic size $\Theta_{\rm src}=50$ $\mu$-arcsec, located at the phase centre. For this investigation, as long as $\Theta_{\rm src} \ll \theta_{\rm PB}$, the exact structure of the source is unimportant. We approximate the LMT beam profile using an analytic WSRT beam model (equation~\ref{eq:wsrt_beam}) with a factor of two increase in the beam factor $C$ to take into account the increased dish size of the LMT. [Hence] $C_{\rm LMT} \approx 130$~GHz$^{-1}$. Note that the power beam $EE^H$ becomes $\cos^6$, resulting in a $\rm{FWHM} = 6.5 $~arcsec at 230 GHz.
 
 
-We make use of the RMS fractional visibility amplitude error $\sigma_{\Delta V/V_0}$, where $V_{\rm PE}$ and $V_{0}$ are the visibility amplitudes with and without pointing errors respectively, and  $\Delta V = V_{\rm PE} - V_{0}$ . In Fig.~\ref{fig:pointing}, $\sigma_{\Delta V/V_0}$ is plotted against pointing error $\rho$ over the range $0 \le \rho \le 4.5$~arcsec.
+We make use of the RMS fractional visibility amplitude error $\sigma_{\Delta V/V_0}$, where $V_{\rm PE}$ and $V_{0}$ are the visibility amplitudes with and without pointing errors respectively, and  $\Delta V = V_{\rm PE} - V_{0}$.
 \\
 \citep{Blecher_2016}
 \end{quotation}
 
 %the different pointing models
-In the first case we simulate, the most simple pointing model, a \emph{constant} pointing offset. For the second case, we simulate a smooth, \emph{sinusoidal} pointing error to replicate a tracking error. In the third case, we simulate \emph{stochastic} variability which replicates slewing from source to source/calibrator.  ''We simulate this \emph{stochastic variability} by re-sampling the pointing error every 10 minutes from a Gaussian of characteristic width equal to the quoted pointing error. We perform 50 realisations of the simulation for each pointing offset to generate reasonable uncertainties.''ees software package, such behaviour has been demonstrated to occur with the WSRT \citep{Smirnov_Calim_2011,Smirnov_2011c}. This is modeled as \emph{sinusoidal variability} with period sampled from a uniform distribution between 0.5 and 6 hours, and a peak amplitude $A_{\rho} = \sqrt{2} \sigma_{\rho}$ , where the factor $\sqrt{2}$ relates the peak amplitude to the RMS of a sinusoidal, zero-mean waveform. ''
+For this simulation we use three different pointing error models, as introduced in section~\ref{sec:pointing_theory}. Firstly, we simulate a simple \emph{constant} pointing offset. For the second case, we simulate a smooth, \emph{sinusoidal} pointing error to replicate a tracking error. The period of the sinusoid is sampled from a uniform distribution between 0.5 and 6 hours, and a peak amplitude $A_{\rho} = \sqrt{2} \sigma_{\rho}$ , where the factor $\sqrt{2}$ relates the peak amplitude to the RMS of a sinusoidal, zero-mean waveform.  In the third case, we simulate \emph{stochastic} variability which replicates slewing from source/calibrator to source/calibrator, where the pointing error is re-sampled every 10 minutes from a Gaussian of characteristic width equal to the quoted pointing error. This simulation is repeated for 50 realisations for each pointing offset to generate reasonable uncertainties \citep{Blecher_2016}. In Fig.~\ref{fig:pointing}, $\sigma_{\Delta V/V_0}$ is plotted against pointing error $\rho$ over the range $0 \le \rho \le 4.5$~arcsec for the three classes of error. Note that although plotted on the same set of axes, $\rho$ represents slightly different quantities for each of the three simulations.
 
-
+%analysis : why LMT, and phased array
 \begin{quotation}
-``In this simulation, we only consider LMT pointing errors due to its narrow primary beam and potential to be used as a reference station. However, the capability to simulate independent pointing errors for each station is available. In the case of a phased array, a pointing error simulation could be used to investigate the contribution of the pointing error to a variable phasing efficiency, which can be reasonably approximated by a scalar Jones matrix.''\\
+``We only consider LMT pointing errors due to its narrow primary beam and potential to be used as a reference station. However, the capability to simulate independent pointing errors for each station is available. In the case of a phased array, a pointing error simulation could be used to investigate the contribution of the pointing error to a variable phasing efficiency, which can be reasonably approximated by a scalar Jones matrix.''\\
 \citep{Blecher_2016}
 \end{quotation}
 
@@ -155,8 +156,11 @@ In the first case we simulate, the most simple pointing model, a \emph{constant}
 \end{quotation}
 
 
+
 %\subsubsection{Performance?}
 %Performance/speed
+
+
 
 %\section{Fringe-fitting test}
 %leave until done

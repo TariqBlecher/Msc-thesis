@@ -1,0 +1,50 @@
+\contentsline {chapter}{Abstract}{2}{chapter*.1}
+\contentsline {chapter}{Acknowledgements}{3}{chapter*.2}
+\contentsline {chapter}{Plagiarism}{4}{chapter*.3}
+\contentsline {chapter}{\numberline {1}Introduction}{15}{chapter.1}
+\contentsline {section}{\numberline {1.1}Unsolved questions in black hole astrophysics}{16}{section.1.1}
+\contentsline {subsubsection}{Innermost accretion and jet launch physics}{17}{section*.7}
+\contentsline {subsubsection}{Measuring the black hole shadow}{18}{section*.8}
+\contentsline {section}{\numberline {1.2}Cranking up the angular resolution}{20}{section.1.2}
+\contentsline {section}{\numberline {1.3}The Event Horizon Telescope}{21}{section.1.3}
+\contentsline {subsubsection}{Overview}{21}{section*.11}
+\contentsline {subsubsection}{Instrumentation and observational challenges}{23}{section*.13}
+\contentsline {section}{\numberline {1.4}A realistic mm-VLBI simulator}{25}{section.1.4}
+\contentsline {section}{\numberline {1.5}Outline}{28}{section.1.5}
+\contentsline {chapter}{\numberline {2}Theory}{30}{chapter.2}
+\contentsline {section}{\numberline {2.1}Radio Interferometry}{30}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Measurement Equation}{30}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Self-calibration and fringe-fitting}{35}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}mm-VLBI observables and data products}{36}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Variability and the static source assumption}{37}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Signal Corruptions}{39}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Scattering basics}{40}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Interstellar medium scattering}{43}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Troposphere}{49}{subsection.2.2.3}
+\contentsline {subsubsection}{Propagation fundamentals}{50}{section*.19}
+\contentsline {subsubsection}{Atmospheric corruptions in the (sub-)mm regime}{51}{section*.20}
+\contentsline {subsubsection}{Radiative transfer}{53}{section*.22}
+\contentsline {subsubsection}{Turbulent phase fluctuations}{55}{section*.23}
+\contentsline {subsection}{\numberline {2.2.4}Instrumental}{59}{subsection.2.2.4}
+\contentsline {subsubsection}{Thermal Noise}{59}{section*.25}
+\contentsline {subsubsection}{Antenna Pointing}{60}{section*.26}
+\contentsline {chapter}{\numberline {3}Software implementation}{62}{chapter.3}
+\contentsline {section}{\numberline {3.1}Design objectives}{62}{section.3.1}
+\contentsline {section}{\numberline {3.2}Architechure and Workflow}{63}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}ISM scattering}{68}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Atmospheric corruption simulator}{70}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Antenna pointing error simulator}{71}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Results and analysis}{73}{chapter.4}
+\contentsline {section}{\numberline {4.1}Canonical simulations}{73}{section.4.1}
+\contentsline {subsubsection}{ISM variability and substructure}{73}{section*.31}
+\contentsline {subsubsection}{Atmospheric transmission and scattering}{75}{section*.33}
+\contentsline {subsubsection}{Antenna pointing offset}{81}{section*.37}
+\contentsline {chapter}{\numberline {5}Conclusion}{85}{chapter.5}
+\contentsline {section}{\numberline {5.1}Suggested future improvements and applications}{85}{section.5.1}
+\contentsline {section}{\numberline {5.2}A public online interface}{85}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Full Stokes}{86}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Rodrigues}{87}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}GPU acceleration}{87}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Opacity and atmospheric brightness temperature fluctuations}{87}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Summary}{87}{section.5.3}
+\contentsline {chapter}{Bibliography}{90}{chapter*.39}

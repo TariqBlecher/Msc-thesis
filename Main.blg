@@ -3,50 +3,59 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Main.aux
 The style file: plainnat.bst
 Database file #1: thesis.bib
+Warning--I'm ignoring Smirnov_Calim_2011's extra "year" field
+--line 134 of file thesis.bib
+Repeated entry---line 1357 of file thesis.bib
+ : @article{Gwinn_2014
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1671 of file thesis.bib
+ : @article{Noordam_2010
+ :                      ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 1923 of file thesis.bib
  : @article{Popping_2008
  :                      ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "2016arXiv160106571O"
-You've used 2 entries,
+You've used 8 entries,
             2773 wiz_defined-function locations,
-            616 strings with 5339 characters,
-and the built_in function-call counts, 956 in all, are:
-= -- 92
-> -- 42
-< -- 2
-+ -- 14
-- -- 12
-* -- 83
-:= -- 153
-add.period$ -- 10
-call.type$ -- 2
-change.case$ -- 10
-chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 40
-empty$ -- 77
-format.name$ -- 18
-if$ -- 195
-int.to.chr$ -- 1
+            663 strings with 7027 characters,
+and the built_in function-call counts, 4477 in all, are:
+= -- 381
+> -- 362
+< -- 5
++ -- 123
+- -- 114
+* -- 419
+:= -- 738
+add.period$ -- 37
+call.type$ -- 8
+change.case$ -- 62
+chr.to.int$ -- 7
+cite$ -- 16
+duplicate$ -- 157
+empty$ -- 280
+format.name$ -- 128
+if$ -- 896
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 22
-num.names$ -- 8
-pop$ -- 12
+missing$ -- 7
+newline$ -- 61
+num.names$ -- 32
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 54
 quote$ -- 0
-skip$ -- 31
+skip$ -- 131
 stack$ -- 0
-substring$ -- 38
-swap$ -- 4
+substring$ -- 80
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
+type$ -- 88
 warning$ -- 0
-while$ -- 9
+while$ -- 30
 width$ -- 0
-write$ -- 41
-(There was 1 error message)
+write$ -- 135
+(There were 3 error messages)
