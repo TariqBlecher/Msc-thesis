@@ -167,3 +167,57 @@ For this simulation we use three different pointing error models, as introduced 
 %First we fringe fit and image a stationary point source and compare to the result in Fig.~\ref{fig:trop_images}. 
 % In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
 
+
+
+
+\section{Suggested applications}
+
+%Testing and development of calibration, imaging and parameter estimation pipelines
+The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the truth source and the results are compared post-facto. This is especially useful with algorithms which have many hand-tuned parameters and difficulties with repeatability, uniqueness and fidelity. Alternatively one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source.
+
+
+With the current work on automated fringe-fitters, there arises the possibility is an end-to-end simulation pipeline from theory to calibrated data product in the medium term future. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymetry). This will also allow weak points in the calibration/analysis to be identified and subsequently improved and which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
+
+\\
+~\\
+
+
+QUANTITATIVE
+%Data interpretation
+help scientically formulate plausible scenarios. 
+QUANTITATIVE
+
+%Connecting theory to data
+\begin{quotation}
+``Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon
+\citep[e.g.][]{Zanna_2007,Etienne_2010,Dexter_2013,Moscibrodzka_2014, McKinney_2014}. As the sensitivity of the EHT stands to dramatically increase, these theoretical efforts must be complemented by advances in interferometric simulations. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations.  Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.''\\
+\citep{Blecher_2016}
+\end{quotation}
+
+%site upgrades + new site selection
+
+
+
+
+\subsubsection{A public online interface}
+%st 1
+Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of an online GUI interface which would provide the user with the capability to run standard simulations without having to delve into code. The capability to run such simulations would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. 
+
+
+For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015} with an early version of the {\sc meqsilhouette} simulator, which was well received by the researchers present. We are, however, yet to convert the latest version of the pipeline \citep{Blecher_2016} into such an interface, but hopefully this implementation will be made available in the future when matters relating to public/propriety status of the codebase are cleared up.
+
+\section{Suggested improvements}
+
+\subsubsection{Full Stokes}
+One of the key observables for the EHT is polarisation dependent quantities \citep[e.g.][]{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping. 
+polarisation leakage in the RIME.
+
+\subsubsection{Opacity and atmospheric brightness temperature fluctuations}
+% basically you could make the atmospheric contribution even more physical if you needed to
+In addition to tropospheric turbulence-induced phase errors, the turbulent contribution to variations in opacity is also a challenge to calibration and imaging. Opacity fluctuations could be confused with s 
+Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations possibly by fluctuating the input climate parameters., but this might be unfeasible.
+
+
+
+\subsubsection{GPU acceleration}
+

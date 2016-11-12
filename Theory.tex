@@ -218,6 +218,8 @@ These effects could limit image fidelity and DR, but could also cause systematic
 \section{Signal Corruptions}
 %plan
 In this chapter we explore in detail signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections, in order for these corruptions to be implemented in the {\sc meqsilhouette} simulator. 
+%why these corruptions
+Whilst there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.). The point of this investigation is to demonstrate a mm-VLBI framework that enables more sophisticated interferometric simulations. As such, we have focused on capabilties not present in other mm-VLBI simulations and those which represent different implementation forms (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement and present the biggest calibration and parameter estimation and imaging challenges. The {\sc meqsilhouette} framework, rooted in the Measurement Equation formalism, enables any arbitary error to be incorporated as a Jones Matrix (e.g. correlator model error is a simple scalar matrix). Our intention here is to demonstrate some of the key features of {\sc meqsilhouette} and its potential to provide realistic mm-VLBI simulations for systematic studies.
 
 \subsection{Scattering basics}\label{sec:basic_scat}
 
