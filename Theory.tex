@@ -178,7 +178,8 @@ where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $
 Some imaging algorithms use a technique called `hybrid mapping' \citep[e.g.][]{Skilling_1984,Bouman_2015,Chael_2016} which use closure phase as a regulariser to ensure that imperfect calibration of station gains do not affect the resulting image, although these unconventional imaging algorithms come with their own uncertainties on uniqueness and repeatability. 
 
 \subsection{Variability and the static source assumption}\label{sec:variability}
-%the assumption and how it breaks the image-vis fourier transform relation st 1
+%Variability - why it's an important consideration and challenge for the EHT, hence importance in simulations
+%static src assumption and how it breaks the image-vis fourier transform relation st 1
 Implicit in our description of interferometry above (see equation~\ref{eq:van-citterlike}), we assumed that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is time-variable), the visibilities measured over the course of an observation can no longer be related to a single image. 
 %explicitly defining variability as any intrinsic source variability st 1
 Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Variability is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
@@ -187,24 +188,28 @@ Note that I am using the term `variability' in a general sense which refers to c
 %Observed variability from SgrA
 %intro - Phenomenology st 1
 Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the high frequency radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several constraints but the origin of the variability is still highly debated.
-%relation between frequency and size of emission as introduced in the introduction (i.e the $\tau \sim 1$ surface) st3
 
 
 %ISCO - Light crossing analysis st 1
 In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days. Considering light crossing times $\Delta t_{\rm cross}$, we estimate the intrinsic size $\Delta x$ of the emission region to be of order $\Delta x \sim \Delta t_{\rm cross} c$, where c is the speed of light. Hence a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $\Delta x < 15 R_{\rm Sch}$. Such analyses of Sgr~A* gave early evidence for an emission area on event horizon scales.
 
-%Phenomenology - main these sections need to be grouped and motivated in a more general way
-%polarisation
-A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic fields structure is highly dynamic.
+
+%Phenomenology : main, motivation
+The phenomenology of variability associated with Sgr~A* is complicated due to the plethora of possible variable emission mechanisms. We will discuss several possible physical causes of variability which demonstrate the challenge which variability brings to data analysis and interpretation. Following this, we outline the role of {\sc meqsilhouette} in this scenario.
 
 
 %orbits
 Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008}. 
 
 
+%polarisation
+A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic fields structure is highly dynamic, see section~\ref{sec:unsolved_qs}.  
+
+
 %%Flares The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. 
 
 To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.
+%relation between frequency and size of emission as introduced in the introduction (i.e the $\tau \sim 1$ surface) st3
 
 
 %mitigation + tracking variability - previous sims
@@ -212,8 +217,7 @@ In the case of an compact, unresolved flare, several approaches \citep{Doeleman_
  
 
 %calibration
-{\sc meqsilhouette} could help characterise the errors which emerge when a variable source is fringe-fit/self-calibrated in the presence of troposheric-induced errors.%ism
-These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry).
+As stated eariler, the standard mm-VLBI calibration techniques like fringe-fitting assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. {\sc meqsilhouette} could help characterise the errors which emerge when a variable source is fringe-fit/self-calibrated in the presence of troposheric-induced errors. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry).
 
 \section{Signal Corruptions}
 %plan
@@ -323,18 +327,18 @@ The location of the scattering medium was originally thought to be in the Galact
 
 
 %shift to looking at refractive effects,theory, 3 regimes of scattering
-Recent EHT and space-VLBI observations have shifted focus away from the well-studied Gaussian convolution effect of ISM scattering and onto the presence of stochastic scattering-induced substructure \citep[e.g.][]{Johnson_2016}. To understand this phenomenon, we must first develop the theory to be sensitivity to the averaging effects of the observation. 
+Recent EHT and space-VLBI observations have been extending their focus past well-studied Gaussian convolution effect of ISM scattering and onto the presence of stochastic scattering-induced substructure \citep[e.g.][]{Fish_2016, Johnson_2016}. To understand this phenomenon, we must first develop the theory to be sensitive to averaging over time, frequency and extended structure. 
 
 Strong scattering can be further subdivided into \emph{snapshot}, \emph{average} and \emph{ensemble-average} regimes \citep*{Narayan_1989,Goodman_1989}. To understand the different regimes, remember that for each point on the source, the observer sees emission from coherent patches of area $A_{\rm strong} \sim \pi r_0^2$ over a total area $A_{\rm ref} \sim \pi r_{\rm ref}^2$. The diffraction cones from each of the patches will interfere, resulting in a \emph{diffractive scintillation} pattern, analagous to the classic multi-slit experiment. 
 
 %snapshot regime
-In the \emph{snapshot regime}, a compact source is observed with a narrow bandwidth and over a short time integration. This yields a single realisation of the diffractive scintillation pattern. By averaging over many snapshots, diffractive scintillation is quenched. This occurs if the source size $\theta_{\rm src}$ is much larger than the diffractive scale $\theta_{\rm src} \gg r_0/D_{\rm os}$; if the fractional bandwidth $\delta \nu/\nu$ is much larger than the decorrelation bandwidth $\delta \nu/\nu \gg \delta \nu_{\rm dc}/\nu \approx (r_0/r_{\rm F})^2$ \citep{Narayan_1992}; or if the integration time $t_{\rm int}$ is much larger the diffractive timescale $t_{\rm int} \gg t_{\rm 0} = r_0/v$, where $v$ is the relative velocity between screen, source and observer. This regime is hence only accessible through observations of compact objects like pulsars. On a side note, observations in this regime can be used to probe the source with angular resolution $\sim \lambda /r_{\rm ref}$ \citep[e.g.][]{Gwinn_2012}. This is because the scattering screen is essentially a lens of diameter $\approx r_{\rm ref}$.
+In the \emph{snapshot regime}, a compact source is observed with a narrow bandwidth and over a short time integration. This yields a single realisation of the diffractive scintillation pattern. By averaging over many snapshots, diffractive scintillation is quenched. This occurs if the source size $\theta_{\rm src}$ is much larger than the diffractive scale $\theta_{\rm src} \gg r_0/D_{\rm os}$; if the fractional bandwidth $\delta \nu/\nu$ is much larger than the decorrelation bandwidth $\delta \nu/\nu \gg \delta \nu_{\rm dc}/\nu \approx (r_0/r_{\rm F})^2$ \citep{Narayan_1992}; or if the integration time $t_{\rm int}$ is much larger the diffractive timescale $t_{\rm int} \gg t_{\rm 0} = r_0/v$, where $v$ is the relative velocity between screen, source and observer. This regime is hence only accessible through observations of compact objects like pulsars. This regime is also reached when stars are viewed with the naked eye, hence the appearance of `twinkling'. On a side note, observations in this regime can be used to probe the source with angular resolution $\sim \lambda /r_{\rm ref}$ \citep[e.g.][]{Gwinn_2012}. This is because the scattering screen is essentially a lens of diameter $\approx r_{\rm ref}$.
 
 %average regime 
-In the \emph{average regime}, diffractive scintillation has been averaged over, however there still exists scintillation over scales comparable to the size of the scattered image of a point source $\sim r_{\rm ref}$, termed \emph{refractive scintillation}. Phase fluctuations on this scale act like a weak lens to focus or defocus the $\lambda/ r_0$ scale diffraction cones in the direction of the observer. For a point source this would lead to weak flux variations in the total flux \citep{Narayan_1992}. We will show later that refractive scintillation leads to the presence of substructure for a resolved scatter-broadened source. In contrast to diffractive scintillation, refractive scintillation is much more difficult to average over. Typically the refractive time scale $t_{\rm ref} = r_{\rm ref}/v$ is on the order of weeks to months for scattering towards the Galactic Centre i.e. longer than an observation campaign; the fractional decorrelation bandwidth is on the order of unity $\delta \nu_{\rm dc}/\nu \sim 1$ (c.f. EHT $\sim 1-10$\%; and the source has to be much larger than the image of a scattered point source $\theta_{\rm src} \gg \theta_{\rm scatt} \sim 10 \mu$-arcsec at $\lambda = 230$~GHz. 
+In the \emph{average regime}, diffractive scintillation has been averaged over, however there still exists scintillation over scales comparable to the size of the scattered image of a point source $\sim r_{\rm ref}$, termed \emph{refractive scintillation}. Phase fluctuations on this scale act like a weak lens to focus or defocus the $\lambda/ r_0$ scale diffraction cones in the direction of the observer. For a point source this would lead to weak flux variations in the total flux \citep{Narayan_1992}. We will show later that refractive scintillation leads to the presence of substructure for a resolved scatter-broadened source. In contrast to diffractive scintillation, refractive scintillation is much more difficult to average over. Typically the refractive time scale $t_{\rm ref} = r_{\rm ref}/v$ is on the order of weeks to months for scattering towards the Galactic Centre i.e. longer than an observation campaign; the fractional decorrelation bandwidth is on the order of unity $\delta \nu_{\rm dc}/\nu \sim 1$ (c.f. EHT $\sim 1-10$\%; and the source has to be much larger than the image of a scattered point source $\theta_{\rm src} \gg \theta_{\rm scatt} \sim 10 \mu$-arcsec at $\lambda = 230$~GHz. Continuing the analogy with viewing the sky with the naked eye, this regime is reach when planets are viewed, hence the diminished variability (`twinkling'). 
 
 %ensemble average
-In the \emph{ensemble-average regime}, both diffractive and refractive scintillation have been averaged over. It is in this regime when  the scattering is equivalent to Gaussian convolution which is deterministic and not time variable. 
+In the \emph{ensemble-average regime}, both diffractive and refractive scintillation have been averaged over. It is in this regime when the scattering is equivalent to Gaussian convolution which is deterministic and not time variable. 
 
 
 %approximation of the scattered image by Johnson 2015
@@ -484,9 +488,7 @@ Transition lines at radio wavelengths result from rotational state transitions. 
 Far wing broadening of ${\rm H_2O}$ lines~$> 1.2$ THz extends to lower frequencies and is not completely represented by the line-shape used. This is believed to be due to self-self collisions of water molecules. Additionally there are terms from the dry atmosphere related to transient dipoles and Debye absorption which are not represented in the line-shape. To correct for these effects, two pseudocontina are used. These are modelled as a power law dependence on frequency, temperature and the molecular densities. 
 
 %summarise radiative transfer and constrast to other approaches () basically Phenomenology  - gaussian
-The treatment of radiative transfer in {\sc atm}, and hence {\sc meqsilhouette}, is aimed at being as physical as possible, which .   
-
-
+The treatment of radiative transfer in {\sc atm}, and hence {\sc meqsilhouette}, aims to be as physical as possible whilst still being able to describe key phenomenological features e.g. the pseudocontinum opacity. The efficacy of the accuracy provided by this implementation is in the ability to contribute to a quantitative determination of the uncertainties inherent in mm-VLBI.
 \subsubsection{Turbulent phase fluctuations}\label{sec:turb_theory}
 %St 1
 
@@ -554,11 +556,16 @@ Assuming power-law turbulence and integrating yields,
 \end{equation}
 
 
-\noindent where $t_0 = r_0/v$ is the coherence time when observing at zenith and $1/\sin\theta$ is the approximate airmass which arises as $D_\phi \propto w$. As $r \ll \Delta h$, where $\Delta h$ is the thickness of the turbulent layer, an thin screen exponent of $\beta = 5/3$ is justified \citep*{Treuhaft_1987}. The phase error time-series takes the form of a Gaussian random walk per antenna. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth.
+\noindent where $t_0 = r_0/v$ is the coherence time when observing at zenith and $1/\sin\theta$ is the approximate airmass which arises as $D_\phi \propto w$. As $r \ll \Delta h$, where $\Delta h$ is the thickness of the turbulent layer, an thin screen exponent of $\beta = 5/3$ is justified \citep*{Treuhaft_1987}.''\\
+\citep{Blecher_2016}
+\end{quotation}
 
 
+Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk for each antenna, as this is essentially a random walk on the phase screen. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth, however note that phase dispersion is taken into account in the mean atmospheric component.
+
+\begin{quotation}
 %A comparison to the phase screen approach st 1
-Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse Fourier transform of the spatial phase power spectrum. However this approach is much more computationally expensive, e.g. for an observation length $t_{\rm obs}$ involving $N_{\rm ant}=8$ independent antennae with dish radii $r_{\rm dish}=15$~m, wind speed $v=10$~m\,s$^{-1}$ and pixel size equal to $r_{\rm F}$, the number of pixels $N_{\rm pix} \approx N_{\rm ant} t_{\rm obs} r_{\rm dish}^2/(v r_{\rm F}^3)  \sim 10^8$. Additionally, due to fractal nature of ideal Kolmogorov turbulence, the power spectrum becomes unbounded as the wavenumber approaches zero which makes it difficult to determine the sampling interval of the spatial power spectrum \citep{Lane_1992}.''\\
+``Phase fluctuations $\delta\phi(t)$ can also be simulated by taking the inverse Fourier transform of the spatial phase power spectrum. However this approach is much more computationally expensive, e.g. for an observation length $t_{\rm obs}$ involving $N_{\rm ant}=8$ independent antennae with dish radii $r_{\rm dish}=15$~m, wind speed $v=10$~m\,s$^{-1}$ and pixel size equal to $r_{\rm F}$, the number of pixels $N_{\rm pix} \approx N_{\rm ant} t_{\rm obs} r_{\rm dish}^2/(v r_{\rm F}^3)  \sim 10^8$. Additionally, due to fractal nature of ideal Kolmogorov turbulence, the power spectrum becomes unbounded as the wavenumber approaches zero which makes it difficult to determine the sampling interval of the spatial power spectrum \citep{Lane_1992}.''\\
 \citep{Blecher_2016}
 \end{quotation}
 
@@ -597,9 +604,6 @@ where each component of $N_{pq}$ is sampled from a complex-valued Gaussian distr
 \subsubsection{Antenna Pointing}\label{sec:point_theory}
 %Pr 1 St 1
 
-
-%A bit more info on E-Jones terms - put it in the RIME
-
 %Intro
 \begin{quotation}
 ``All antennas suffer pointing errors to some degree due to a variety of factors including dish flexure due to gravity, wind and thermal loading, as well as drive mechanics. This corresponds to an offset primary beam, which should only translate to minor amplitude errors if the pointing error $\theta_{\rm PE}$ is significantly smaller than the primary beam (i.e. $\theta_{\rm PE} \ll \theta_{\rm PB}$). In the Measurement Equation formalism, this offset can be represented by a modified (shifted) primary beam pattern in the {\bf \it E}-Jones term \citep[see][]{Smirnov_2011a}
@@ -611,7 +615,7 @@ where $\delta l_p, \delta m_p$ correspond to the directional cosine offsets.''\\
 \end{quotation}
 
 %Motivation, why this could be a problem for mm observations
-This could be a problem for millimetre observations as the primary beam is narrow. For example, at an observing frequency of 230~GHz, the primary beam of a 30~m dish is $\theta_{\rm PB} \sim 10$~arcsec. The typical pointing budget for millimetre stations are $\theta_{\rm PE} \sim 1$~arcsec.
+This could be a problem for millimetre observations as the primary beam is narrow. For example, at an observing frequency of 230~GHz, the primary beam of a 30~m dish is $\theta_{\rm PB} \sim 10$~arcsec. The typical pointing budget for millimetre stations are $\theta_{\rm PE} \sim 1$~arcsec. Hence we have chosen to investigate the effect which pointing errors could have on mm-VLBI observables. 
 
 % Different categories of pointing error i.e. tracking vs slew
 
@@ -619,3 +623,6 @@ We identify two main classes of pointing error. Firstly, an antenna tracking a s
 
 
 Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with relatively well-known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
+
+
+

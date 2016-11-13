@@ -30,7 +30,7 @@ We have chosen to write the high level simulation code using the \textsc{Python}
 %Meqtrees-description
 We use the interferometric toolbox, {\sc MeqTrees} \citep{Noordam_2010}, which can simulate and calibrate radio interferometic data through evaluation of a user-defined RIME. The evaluation draws on directed-acyclic-graphs (or compute trees) where each element of the graph can process a multi-dimensional grid of values (typically specified along axes of $\nu$ and $t$).
 %our usuage of it
-Although we have decided to construct a large portion of our RIME outside of {\sc MeqTrees}, we call prebuilt {\sc MeqTrees} RIMEs to augment our pipeline in two ways. Firstly to perform the Fourier transform  to generate visibilities from the input sky model (FFT for fits files; DFT for parametric sources), where degridding and interpolation steps are also called when the FFT is used. The second is to simulate the primary beam and antenna pointing error, which will be discussed later in this chapter.  
+Although we have decided to construct a large portion of our RIME outside of {\sc MeqTrees}, we call prebuilt {\sc MeqTrees} RIMEs to augment our pipeline in two ways. Firstly to perform the Fourier transform  to generate visibilities from the input sky model (FFT for fits files; DFT for parametric sources), where degridding and interpolation steps are also called when the FFT is used. The second is to simulate the primary beam and antenna pointing error, which will be discussed later in this chapter. On a side note, use of \textsc{MeqTrees} and \textsc{measurement set} also lends itself to investigating a range of different techniques that are used in other areas of interferometry \citep*[e.g.][]{Smirnov_2015}.
 
 
 %data format choice

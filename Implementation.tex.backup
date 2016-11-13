@@ -165,7 +165,7 @@ We perform this calculation using representative climate conditions taken from t
 Following from section~\ref{sec:turb_theory}, we derive a weak scattering formalism to calculate station dependent visibilities phase variations which result from observing through a turbulent troposphere. Specifically we simulate random walks in visibility phase with variance given by equation~\ref{eq:turb_final} for each antenna. These phase-time series are combined to form a multiplicative complex gain corruption, with amplitude of unity i.e. a diagonal Jones matrix. In section~\ref{sec:can_sim} we explore the effect of the mean and turbulent atmosphere on observables.
 
 \subsection{Antenna pointing error simulator}\label{sec:point_imp}
-%St2
+%St1
 
 %The pointing implementation in MeqTrees, WSRT beams, approximating the LMT error
 To simulate pointing errors, we use the implementation built into the {\sc MeqTrees}. This functionality includes the capability to convolve station primary beams with the sky model, which is implemented as an E-Jones matrix in the RIME, see section~\ref{sec:point_theory}. The beam models available through this function are sinc, Gaussian and the analytic WSRT beam model. The standard beam model which we will make use of is the analytic WSRT beam model \citep{Popping_2008} 
@@ -177,25 +177,4 @@ where $C$ is a constant, with value $C \approx 65$~GHz$^{-1}$ for a dish diamete
 
 %pointing models
 Furthermore, {\sc Meqtrees} allows a constant offset or time-variable primary beam, where the time variability can be either a polynomial (up to third order) or a sinusoid. We have opted to use only the sinusoidal variability for simplicity. To simulate stochastic variability i.e. pointing error due to slew between calibrator and source, we use a constant offset which is resampled per user-specified time interval. In section~\ref{sec:can_sim} we demonstrate the effect of constant, sinusoidally variable and stochastically variable pointing errors on the Large Millimeter Telescope (LMT) within the context of the EHT array.
-
-
-\section{A public online interface}
-
-Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of a GUI interface which would provide the user with the capability to run a standard simulations without having to delve into code. The capability to run such a simulation would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. For this reason we experimented with such an interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015}, where we trialed an early version of the simulator. This was well received by the researchers present. We have yet to convert the latest version of the pipeline into such an interface, as this is also waiting on public/privacy status.
-
-%briefly the implementation used What was 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

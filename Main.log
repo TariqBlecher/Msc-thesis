@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  12 NOV 2016 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  13 NOV 2016 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,15 +752,19 @@ LaTeX Info: Redefining \nameref on input line 23.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./Conclusion.tex
+ (./Introduction.tex
 Chapter 1.
 
-LaTeX Warning: Reference `sec:des_obj' on page 1 undefined on input line 7.
+Package natbib Warning: Citation `Narayan_2013' on page 1 undefined on input li
+ne 3.
 
-[1
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Main.bbl [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for U+lasy on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
@@ -776,11 +780,310 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+Package natbib Warning: Citation `Falcke_2013' on page 2 undefined on input lin
+e 14.
+
+
+Package natbib Warning: Citation `Kormendy_1995' on page 2 undefined on input l
+ine 14.
+
+
+Package natbib Warning: Citation `Magorrian_1998' on page 2 undefined on input 
+line 14.
+
+
+Package natbib Warning: Citation `Gebhardt_2000' on page 2 undefined on input l
+ine 14.
+
+
+Underfull \vbox (badness 6348) has occurred while \output is active []
+
+ [2]
+
+Package natbib Warning: Citation `Gillessen_2009' on page 3 undefined on input 
+line 30.
+
+
+Overfull \hbox (36.11823pt too wide) in paragraph at lines 30--30
+\OT1/cmr/m/n/12 cal/infrared mon-i-tor-ing of or-bit-ing stars [\OT1/cmr/bx/n/1
+2 ?\OT1/cmr/m/n/12 ] has yielded $[]$
+ []
+
+
+Package natbib Warning: Citation `Serabyn_1997' on page 3 undefined on input li
+ne 38.
+
+
+Package natbib Warning: Citation `Falcke_1998' on page 3 undefined on input lin
+e 38.
+
+
+Package natbib Warning: Citation `Gammie_2003' on page 3 undefined on input lin
+e 42.
+
+
+Package natbib Warning: Citation `Penrose_1969' on page 3 undefined on input li
+ne 42.
+
+
+Package natbib Warning: Citation `Balbus_1998' on page 3 undefined on input lin
+e 42.
+
+
+Package natbib Warning: Citation `Narayan_2013' on page 3 undefined on input li
+ne 42.
+
+
+Overfull \hbox (33.49287pt too wide) in paragraph at lines 42--43
+[]\OT1/cmr/m/n/12 Theoretical stud-ies and Gen-eral Rel-a-tivis-tic Magneto-Hyd
+rodynamic (GRMHD)
+ []
+
+[3]
+
+Package natbib Warning: Citation `Narayan_1995' on page 4 undefined on input li
+ne 46.
+
+
+Package natbib Warning: Citation `Yuan_2003' on page 4 undefined on input line 
+46.
+
+
+Package natbib Warning: Citation `Narayan_2003' on page 4 undefined on input li
+ne 50.
+
+
+Package natbib Warning: Citation `Merloni_2003' on page 4 undefined on input li
+ne 54.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+
+Package natbib Warning: Citation `Johannsen_2010' on page 5 undefined on input 
+line 60.
+
+
+Package natbib Warning: Citation `Luminet_1979' on page 5 undefined on input li
+ne 60.
+
+<Images/lensed_cartoon.png, id=62, 1442.38875pt x 559.08875pt>
+File: Images/lensed_cartoon.png Graphic file (type png)
+
+<use Images/lensed_cartoon.png>
+Package pdftex.def Info: Images/lensed_cartoon.png used on input line 65.
+(pdftex.def)             Requested size: 390.0pt x 151.16925pt.
+
+
+Package natbib Warning: Citation `Luminet_1979' on page 5 undefined on input li
+ne 67.
+
+
+Package natbib Warning: Citation `Luminet_1979' on page 5 undefined on input li
+ne 67.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `Kramer_2006' on page 5 undefined on input lin
+e 72.
+
+
+Package natbib Warning: Citation `Takahashi_2004' on page 5 undefined on input 
+line 75.
+
+
+Package natbib Warning: Citation `Johannsen_2010' on page 5 undefined on input 
+line 75.
+
+[5] [6 <./Images/lensed_cartoon.png>]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 90.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 90.
+
+
+Package natbib Warning: Citation `Whitney_1971' on page 7 undefined on input li
+ne 90.
+
+
+Package natbib Warning: Citation `Miyoshi_1995' on page 7 undefined on input li
+ne 90.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+<Images/spec_ang.png, id=84, 937.5025pt x 645.41125pt>
+File: Images/spec_ang.png Graphic file (type png)
+
+<use Images/spec_ang.png>
+Package pdftex.def Info: Images/spec_ang.png used on input line 95.
+(pdftex.def)             Requested size: 390.0pt x 268.4808pt.
+
+
+Package natbib Warning: Citation `Doeleman_2010' on page 8 undefined on input l
+ine 104.
+
+
+Package natbib Warning: Citation `Broderick_2009' on page 8 undefined on input 
+line 104.
+
+
+Package natbib Warning: Citation `Falcke_2013' on page 8 undefined on input lin
+e 104.
+
+<Images/eht_globe.png, id=88, 1171.37625pt x 599.23875pt>
+File: Images/eht_globe.png Graphic file (type png)
+
+<use Images/eht_globe.png>
+Package pdftex.def Info: Images/eht_globe.png used on input line 106.
+(pdftex.def)             Requested size: 312.00119pt x 159.6113pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./Images/spec_ang.png (PNG copy)>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `Krichbaum_1998' on page 9 undefined on input 
+line 116.
+
+
+Package natbib Warning: Citation `Doeleman_2008' on page 9 undefined on input l
+ine 116.
+
+
+Package natbib Warning: Citation `Broderick_2011' on page 9 undefined on input 
+line 116.
+
+
+Package natbib Warning: Citation `Doeleman_2008' on page 9 undefined on input l
+ine 116.
+
+
+Package natbib Warning: Citation `Goddi_2016' on page 9 undefined on input line
+ 116.
+
+[9]
+
+Package natbib Warning: Citation `Doeleman_2009' on page 10 undefined on input 
+line 120.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./Images/eht_globe.png>]
+
+Package natbib Warning: Citation `Fish_2014' on page 11 undefined on input line
+ 126.
+
+
+LaTeX Warning: Reference `fig:scattering_law' on page 11 undefined on input lin
+e 126.
+
+
+LaTeX Warning: Reference `sec:ism_scat' on page 11 undefined on input line 126.
+
+
+
+LaTeX Warning: Reference `sec:variability' on page 11 undefined on input line 1
+28.
+
+
+LaTeX Warning: Reference `sec:self_cal' on page 11 undefined on input line 128.
+
+
+
+Package natbib Warning: Citation `Broderick_2016' on page 11 undefined on input
+ line 133.
+
+
+Package natbib Warning: Citation `Broderick_2014' on page 11 undefined on input
+ line 133.
+
+
+Package natbib Warning: Citation `Psaltis_2016' on page 11 undefined on input l
+ine 133.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12]
+
+Package natbib Warning: Citation `Hamaker_1996' on page 13 undefined on input l
+ine 155.
+
+
+Package natbib Warning: Citation `Smirnov_2011a' on page 13 undefined on input 
+line 155.
+
+
+Package natbib Warning: Citation `Smirnov_2011b' on page 13 undefined on input 
+line 155.
+
+
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 155--156
+\OT1/cmr/m/n/12 ad-vanced ra-dio in-ter-fer-o-met-ric cal-i-bra-tion and imag-i
+ng al-go-rithms
+ []
+
+
+Overfull \hbox (6.04245pt too wide) in paragraph at lines 155--156
+\OT1/cmr/m/n/12 (HERA). A lead-ing soft-ware pack-age in this pur-suit is \OT1/
+cmr/m/sc/12 MeqTrees[][][]
+ []
+
+[13]
+
+Package natbib Warning: Citation `Fish_2014' on page 14 undefined on input line
+ 159.
+
+
+Package natbib Warning: Citation `Lu_2014' on page 14 undefined on input line 1
+59.
+
+
+Package natbib Warning: Citation `Bouman_2015' on page 14 undefined on input li
+ne 159.
+
+
+Package natbib Warning: Citation `Lu_2016' on page 14 undefined on input line 1
+59.
+
+
+Package natbib Warning: Citation `Chael_2016' on page 14 undefined on input lin
+e 159.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 170.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 170.
+
+Overfull \hbox (8.83958pt too wide) in paragraph at lines 172--173
+[]\OT1/cmr/m/n/12 introduces ra-dio in-ter-fer-om-e-try via the Mea-sure-ment E
+qua-
+ []
+
+[15]) (./Main.bbl [16]
 Underfull \hbox (badness 2020) in paragraph at lines 25--31
 \OT1/cmr/m/n/12 OF RE-FRAC-TIVE SUB-STRUC-TURE IN RE-SOLVED SCATTER-
  []
 
-[3
+[17
 
 ]
 ! Misplaced alignment tab character &.
@@ -797,80 +1100,61 @@ might try typing `S' now just to see what is salvageable.
 
 )
 
+Package natbib Warning: There were undefined citations.
+
+
 Package caption Warning: Unused \captionsetup[table] on input line 18.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
-[4]
+[18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
  (./Main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
+Package rerunfilecheck Info: File `Main.out' has not changed.
+(rerunfilecheck)             Checksum: 11BEC1F45E3EA016FBCAB038CF0B13BF;467.
 
-
-Package rerunfilecheck Warning: File `Main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Main.out':
-(rerunfilecheck)             Before: B34A9D96FCD23714ABEB537D219958CD;853
-(rerunfilecheck)             After:  16E1A9960A3CA2DF41F8893219DCC45E;93.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  ) 
 Here is how much of TeX's memory you used:
- 8489 strings out of 494506
- 126005 string characters out of 6172963
- 220197 words of memory out of 5000000
- 11746 multiletter control sequences out of 15000+600000
- 10685 words of font info for 42 fonts, out of 8000000 for 9000
+ 8584 strings out of 494506
+ 127247 string characters out of 6172963
+ 219230 words of memory out of 5000000
+ 11804 multiletter control sequences out of 15000+600000
+ 15876 words of font info for 64 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 36i,5n,38p,1089b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{chapter*.13} has been referenced but does not exi
+ 40i,11n,41p,1812b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.1.2.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.2.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.1.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.1.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.1.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.1.1} has been referenced but does not exist
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Main.pdf (4 pages, 77198 bytes).
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Main.pdf (18 pages, 1813692 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 

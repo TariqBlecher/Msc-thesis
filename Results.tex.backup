@@ -175,14 +175,15 @@ The primary use of synthetic data is to provide 'known' datasets on which to run
 %bayesian calibration
 %An original motivation for the {\sc meqsilhouette} simulator was that it could eventually be implemented as a bayesian calibration routine where the signal corruptions were solved for. However, as many of the dominant signal corruptions have turned out to be stochastic and hence indeterminant, it no longer makes sense to go down this route. Indeed one would need a GPU-accelerated simulator to be able to sample the parameter space. Fortunately then, a collegue is planning a GPU bayesian calibration routine.  
 
-%end-to-end
-With the current work on automated fringe-fitters at JIVE (Des Small) and UCT/SKA SA (Iniyan Natarajan), there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
-%site upgrades + new site selection
+%end-to-end st 2 - but you dont need an end- to end for some of this
+With the current work on automated fringe-fitters at JIVE (Des Small) and UCT/SKA SA (Iniyan Natarajan), there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
 This argument can be extended to the realm of station upgrades (e.g. enhanced bandwidth) and the investigation into novel (sub)millimetre sites. 
+
 
 %Data interpretation
 As the EHT will be observing in a unique regime, there will be doubt as to what the interpretation of . say if its closure \citep[e.g.][]{Fish_2016} of  one can not be sure what to expect the source to appear. help scientically formulate plausible scenarios. 
 QUANTITATIVE
+
 
 %Connecting theory to data
 \begin{quotation}
@@ -212,6 +213,14 @@ In addition to tropospheric turbulence-induced phase errors, the turbulent contr
 Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations possibly by fluctuating the input climate parameters., but this might be unfeasible.
 
 
+\subsubsection{Anomalous pointing error}
+There is another class of pointing error which we did not include in our analysis, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the anomalous pointing error due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Carilli_1999}. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s and as a fraction of beam size are proportional to $d_{\rm dish}^\beta$. \citet{Holdaway} derives 
+\begin{equation}
+ \sigma_{\rm pe} = \frac{\sqrt{2 D(d_{\rm dish})\sec z}}{\lambda}
+\end{equation}
+
+
+and hence is a serious consideration for mm-VLBI. 
 
 
 
