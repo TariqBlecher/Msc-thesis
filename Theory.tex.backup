@@ -216,9 +216,8 @@ To explain the observed delays between flares in different frequency bands, an e
 In the case of an compact, unresolved flare, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. Alternatively \citet{Lu_2016} show that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines, losing information of the finer angular scales. All of these approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors.
  
 
-%calibration
-As stated eariler, the standard mm-VLBI calibration techniques like fringe-fitting assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. {\sc meqsilhouette} could help characterise the errors which emerge when a variable source is fringe-fit/self-calibrated in the presence of troposheric-induced errors. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry).
-
+%calibration st 1
+As stated eariler, the standard mm-VLBI calibration techniques i.e. fringe-fitting, assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.
 \section{Signal Corruptions}
 %plan
 In this chapter we explore in detail signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections, in order for these corruptions to be implemented in the {\sc meqsilhouette} simulator. 
@@ -625,5 +624,4 @@ We identify two main classes of pointing error. Firstly, an antenna tracking a s
 Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with relatively well-known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
 
 
-There is another class of pointing error which we have not simulated here but which should be included in the future. This is the anomalous pointing error due to the time-variable refraction angle of the atmosphere \citep{}. This is caused by a phased
 

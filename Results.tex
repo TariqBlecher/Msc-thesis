@@ -154,6 +154,19 @@ For this simulation we use three different pointing error models, as introduced 
 \end{quotation}
 
 
+\subsubsection{Anomalous pointing error}
+There is another class of pointing error which we did not include in our simulation, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the so-called `anomalous pointing error' due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Carilli_1999}. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture and hence could be difficult to calibrate.
+
+
+\citet{holdaway_1998} derives the standard deviation of the pointing error as a fraction of beam width,
+\begin{equation}
+ \sigma_{\rm pe}(d_{\rm dish}),\theta) = \frac{\sqrt{2 D(d_{\rm dish})}}{\sqrt{\sin\theta}\lambda},
+\end{equation}
+where $D$ is the structure function and $\theta$ is the elevation angle. Hence for LMT $\theta=30^\circ$, this becomes 
+$\sigma_{\rm pe}(50,30^\circ) = ( $
+
+and hence is a serious consideration for mm-VLBI. 
+
 
 %\subsubsection{Performance?}
 %Performance/speed
@@ -166,7 +179,7 @@ For this simulation we use three different pointing error models, as introduced 
 % In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
 
 
-\section{Suggested applications}
+\section{Suggested applications and improvements}
 
 %Testing and development of calibration, imaging and parameter estimation pipelines st 1
 The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the true source and the results are compared post-facto. This is especially useful with imaging algorithms which have many `hand-tuned' parameters and difficulty with repeatability, uniqueness and fidelity of their solutions. Alternatively, one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source. A key point of such an investigation being the capability of assigning quantitative values to systematic and stochastic uncertainties across a wide range of physically relevant conditions.
@@ -175,17 +188,14 @@ The primary use of synthetic data is to provide 'known' datasets on which to run
 %bayesian calibration
 %An original motivation for the {\sc meqsilhouette} simulator was that it could eventually be implemented as a bayesian calibration routine where the signal corruptions were solved for. However, as many of the dominant signal corruptions have turned out to be stochastic and hence indeterminant, it no longer makes sense to go down this route. Indeed one would need a GPU-accelerated simulator to be able to sample the parameter space. Fortunately then, a collegue is planning a GPU bayesian calibration routine.  
 
-%end-to-end st 2 - but you dont need an end- to end for some of this
-With the current work on automated fringe-fitters at JIVE (Des Small) and UCT/SKA SA (Iniyan Natarajan), there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
+%end-to-end st 2 - but you dont need an end- to end for some of this - but good enough 
+With the current work developing automated fringe-fitters at JIVE (casa-based) and UCT/SKA-SA (bayesian) by Des Small and Iniyan Natarajan respectively, there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
 This argument can be extended to the realm of station upgrades (e.g. enhanced bandwidth) and the investigation into novel (sub)millimetre sites. 
 
 
-%Data interpretation
-As the EHT will be observing in a unique regime, there will be doubt as to what the interpretation of . say if its closure \citep[e.g.][]{Fish_2016} of  one can not be sure what to expect the source to appear. help scientically formulate plausible scenarios. 
-QUANTITATIVE
+%Data interpretation st1
+As the EHT will be observing in a unique regime, there will always be doubt, double-checking and questioning of the interpretation of the data. This is especially the case with the use of closure quantities, where the recent result of an increase in closure phase with UT hour, measured on the Hawaii-Arizona-California triangle \citep{Fish_2016}, provides a good example. Simulations help formulate and test quatitatively plausible scenarios.
 
-
-%Connecting theory to data
 \begin{quotation}
 ``Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon
 \citep[e.g.][]{Zanna_2007,Etienne_2010,Dexter_2013,Moscibrodzka_2014, McKinney_2014}. As the sensitivity of the EHT stands to dramatically increase, these theoretical efforts must be complemented by advances in interferometric simulations. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations.  Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.''\\
@@ -196,31 +206,32 @@ QUANTITATIVE
 
 \subsubsection{A public online interface}
 %st 1
-Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of an online GUI interface which would provide the user with the capability to run standard simulations without having to delve into code. The capability to run such simulations would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. 
+Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of an online GUI interface which would provide the user with the capability to run standard simulations without having to delve into code. The capability to run such simulations would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015} with an early version of the {\sc meqsilhouette} simulator, which was well received by the researchers present. We are, however, yet to convert the latest version of the pipeline \citep{Blecher_2016} into such an interface, but hopefully this implementation will be made available in the future when matters relating to public/propriety status of the codebase are cleared up.
 
-
-For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015} with an early version of the {\sc meqsilhouette} simulator, which was well received by the researchers present. We are, however, yet to convert the latest version of the pipeline \citep{Blecher_2016} into such an interface, but hopefully this implementation will be made available in the future when matters relating to public/propriety status of the codebase are cleared up.
-
-\section{Suggested improvements}
 
 \subsubsection{Full Stokes}
-One of the key observables for the EHT is polarisation dependent quantities \citep[e.g.][]{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic including parallactic angle rotation. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping. 
-polarisation leakage in the RIME.
+%st 1
+One of the key observables for the EHT is polarisation dependent quantities \citep{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cube as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic including parallactic angle rotation. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to deal with the book-keeping of the extra dimension. In addition the implementation of the associated signal corruption, polarisation leakage, is straightforward in the RIME formalism as it is simply an off-diagonal Jones matrix which is approximately constant over the course of an observation.
 
-\subsubsection{Opacity and atmospheric brightness temperature fluctuations}
-% basically you could make the atmospheric contribution even more physical if you needed to
-In addition to tropospheric turbulence-induced phase errors, the turbulent contribution to variations in opacity is also a challenge to calibration and imaging. Opacity fluctuations could be confused with s 
-Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations possibly by fluctuating the input climate parameters., but this might be unfeasible.
+%\subsubsection{Opacity and atmospheric brightness temperature fluctuations}
+% basically 
+%In addition to tropospheric turbulence-induced phase errors, the turbulent contribution to variations in opacity is also important.
+%Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations %possibly by fluctuating the input climate parameters., but this might be unfeasible.
 
 
-\subsubsection{Anomalous pointing error}
-There is another class of pointing error which we did not include in our analysis, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the anomalous pointing error due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Carilli_1999}. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture. \citet{holdaway_1998} derives the standard deviation of the pointing error in radians,
-\begin{equation}
- \sigma_{\rm pe} = \frac{\sqrt{2 D(d_{\rm dish})\sec z}}{\lambda},
-\end{equation}
-where $D$ is the structure function and $z$ is the zenith angle. Hence for LMT, this becomes \sigma_{\rm pe}
 
-and hence is a serious consideration for mm-VLBI. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
