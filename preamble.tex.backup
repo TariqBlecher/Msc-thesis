@@ -24,53 +24,48 @@
 \begin{center}
  {\large Dissertation presented in fulfillment of the requirements for the degree of} \\
  {\large \textbf{MASTER OF SCIENCE}} \\
- {\large in the Department of Physics and Electronics} \\
+ {\large in the Department of Physics and Electronics,} \\
  {\large Rhodes University}
 \end{center}
-\vspace{0.15\textheight}
+\vspace{0.02\textheight}
+
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
--------------------------------------------------
-\begin{minipage}{}
-\begin{flushleft}
-\large \emph{Author:} \\
-Tariq \textsc{Blecher} \\
-{\small \textit{Department of Physics and Electronics, Rhodes University}}\\
+
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft}\large 
+\emph{Author:} \\
+Tariq  {\sc Blecher}\\
 \end{flushleft}
 \end{minipage}
+\begin{minipage}{0.45\textwidth}
 
-\begin{minipage}{}
 \begin{flushright} \large
 \emph{Supervisors:} \\
-Roger \textsc{Deane} \\
-Gianni \textsc{Bernardi} \\
-Oleg \textsc{Smirnov} \\
-{\small \textit{Department of Physics and Electronics, Rhodes University}}
+Dr. Roger {\sc Deane} \\
+Dr. Gianni {\sc Bernardi} \\
+Prof. Oleg {\sc Smirnov} \\
 \end{flushright}
-\end{minipage}\\[3cm]
+\end{minipage}\\[2cm]
 
 
-%----------------------------------------------------------------------------------------
-%	DATE SECTION
-%----------------------------------------------------------------------------------------
-{\large \today}\\[1.5cm] % Date, change the \today to a set date if you want to be precise
-
-\vfill % Fill the rest of the page with whitespace
+{\large December 2016}
 
 \end{titlepage}
 
 \chapter*{Abstract}
+
  The Event Horizon Telescope (EHT) aims to spatially resolve the silhouette (or shadow) of the supermassive black holes in the Galactic Centre (Sgr~A$^\star$) and M87. The primary scientific objectives are to test general relativity in the strong-field regime and to probe accretion and jet-launch physics at event-horizon scales. This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors. In this, the first paper in a series, we present the \textsc{MeqSilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
  \addcontentsline{toc}{chapter}{Abstract}
 
  
 \chapter*{Acknowledgements}
  \addcontentsline{toc}{chapter}{Acknowledgements}
-
+ 
 \chapter*{Plagiarism}
  \addcontentsline{toc}{chapter}{Plagiarism}
- I acknowledge that plagiarism is wrong and hereby declare that the work contained in this document and in the supporting software is my own, save for that which is properly acknowledged.
+ I acknowledge that plagiarism is wrong and hereby declare that the work contained in this document and in the supporting software is my own, save for that which is properly acknowledged. I recognise that much of the work in this thesis has already been presented in our recent paper \citet{Blecher_2016}. This thesis is essentially an expanded version of the paper and as the latter was published first, much of the material from it has been reproduced directly, however this has been cited properly.  
  \vspace{55pt}
  
 Tariq Dylan Blecher
@@ -79,8 +74,7 @@ Tariq Dylan Blecher
   \vspace*{\fill}
     \begin{center}
      \huge
-     The source code for the imaging software package (along with its full development history) accompanying this document is publicly available on the Rhodes University Radio Astronomy 
-     Techniques and Technologies software repository at . As such no part of the source code will be printed in this document.
+     Source code repo and license, accessibility etc
     \end{center}
   \vspace*{\fill}
  \clearpage

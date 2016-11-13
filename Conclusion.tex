@@ -1,23 +1,36 @@
-\chapter{Conclusion}
-%summary of key findings in comparison to introduction
-%why this research is important
-%answer the research questions
-%Synthesize, don’t summarize: Include a brief summary of the paper’s main points, but don’t simply repeat things that were in your paper. Instead, show your reader how the points you made and the support and examples you used fit together. Pull it all together.
-%you're not introducing new parts by your putting parts together
+\chapter{Conclusion} %synthesis not summary..distill key and best ideas: 
 
-%write with introduction in mind.. possibly flesh out below
-``In light of the science objectives of mm-VLBI observations and software advances in the broader radio interferometry community, a mm-VLBI data simulator has been developed. An important feature is that this simulation pipeline is performed using the {\sc Measurement Set} format, in line with ALMA and future VLBI data formats. The focus has been placed on simulating realistic data given an arbitrary theoretical sky model. To this end, the simulator includes signal corruptions in the interstellar medium (ISM), troposphere and instrumentation. Examples of typical corruptions have been demonstrated, which show that each corruption can significantly affect the inferred scientific parameters. Particular focus has been placed on EHT observations, however, the pipeline is completely general with respect to observation configuration and source structure. Time variability in all domains (source, array, ISM, troposphere) is implemented.  Future releases of \textsc{MeqSilhouette} will include polarisation dependent corruptions. The creation of a close interface between sophisticated theoretical and interferometric mm-VLBI simulations will enhance the scientific opportunities possible with the EHT.
-
-%rewrite with references to proper sections
-In section~\ref{sec:sim} we have described the layout of \textsc{MeqSilhouette} synthetic data simulation framework. A wide range of signal propagation effects can be implemented using the Measurement Equation formalism, with tropospheric scattering and antenna pointing errors given as illustrative examples. The framework is sufficiently general and flexible so that time variability in all relevant domains (source, array, ISM, troposphere) can be incorporated. The run time for a typical simulation with a realistic instrumental setup is on the order of minutes.  Implementation of polarisation effects is intended in the next version. 
-''\\
-%other sources of errors.. st 2
-Whilst there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.). The point of this investigation has been to demonstrate a mm-VLBI framework that enables more sophisticated interferometric simulations. As such, we have focused on capabilties not present in other mm-VLBI simulations and represent different Jones Matrix implmentations (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement. The MeqSilhouette framework, rooted in the Measurement Equation formalism, enables any arbitary error to be incorporated as a Jones Matrix (e.g. correlator model error is a simple scalar matrix. Our intention here is to demonstrate some of the key features of MeqSilhouette and its potential to provide realistic mm-VLBI simulations for systematic studies.
+%intro
+In light of the science objectives of mm-VLBI observations and software advances in the broader radio interferometry community, a mm-VLBI data simulator has been developed \citep{Blecher_2016}.
 
 %link to design objectives
-Apparent in these results is the realisation of the design objectives laid out in \ref{sec:des_obj}.
+Apparent in the results present is the realisation of the design objectives laid out in \ref{sec:des_obj}.
 
+%data formats
+An important feature is that this simulation pipeline is performed using the {\sc Measurement Set} format, in line with ALMA and future VLBI data formats. The focus has been placed on simulating realistic data given an arbitrary theoretical sky model. 
+
+
+%experimental setup
+Particular focus has been placed on EHT observations, however, the pipeline is completely general with respect to observation configuration and source structure. 
+%time variability
+Time variability in all domains (source, array, ISM, troposphere) is implemented. We highlight this point as we view the development of interferometric tools which deal appropriately with intrinsic source variability an essential challenge which for observations of Sgr~A*. 
+%corruptions & formalism
+To this end, the simulator includes signal corruptions in the interstellar medium (ISM), troposphere and instrumentation. Examples of typical corruptions have been demonstrated, which show that each corruption can significantly affect the inferred scientific parameters.
+
+A wide range of signal propagation effects can be implemented using the Measurement Equation formalism, with tropospheric scattering and antenna pointing errors given as illustrative examples. 
+
+%ISM
 The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline.
+%
+
+%future
+Future [improvements] of \textsc{meqsilhouette} will include polarisation dependent corruptions. 
+
+fringe fitting variable troposphere with time variable soure
+%closing
+
+The creation of a close interface between sophisticated theoretical and interferometric mm-VLBI simulations will enhance the scientific opportunities possible with the EHT.''
+
 
 more collaboration and working with EHT observing groups to ran their actual data processing algorithms on. this needs a good data format converter. 
 %end on a positive note!

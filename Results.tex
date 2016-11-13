@@ -18,13 +18,11 @@ Following the discussion on the ISM theory (section~\ref{sec:ism_scat}), we comp
 ``We present the results of a simulated observation of 10 minutes duration at 14:00 UTC on four consecutive days in Fig.~\ref{ISM_sequence}. To compare to published observations, we use the three-station EHT array consisting of the Submillimeter Telescope (SMT) in Arizona, the Combined Array for Research in Millimeter-wave Astronomy (CARMA) in California and the James Clerk Maxwell Telescope (JCMT) on Mauna Kea, Hawaii. The relative transverse velocity between the observer and scattering screen is set to $50~\rm{km\,s}^{-1}$ to be consistent with \citet{Ortiz_2016}. The source is a circular Gaussian with a $\rm{FHWM}=40$~$\mu$-arcsec, approximately the angular distance that a scattering screen would travel over $\sim 4$~days. The source size has been chosen such that it is consistent with the latest estimate of the size of Sgr~A$^\star$ at $230$~GHz \citep{Fish_2011}.  Closure quantities are model dependent and calculated as specified in \citet{Rogers_1995}, where the thermal noise was added based on the system equivalent flux density (SEFD) table in \citep{Lu_2014}.
 
 
-
-
 Fig.~\ref{ISM_sequence} provides an example of closure phase and flux variability over a 4 day period using a static source. Accurate simulation of the ISM-induced closure phase variation is essential in order to make any inference on asymmetric, event-horizon scale structure \citep[e.g.][]{Fish_2016,Ortiz_2016}. This will become even more important as the EHT sensitivity increases by an order of magnitude in the near future when [phased ALMA is included in the array.]''
 \citep{Blecher_2016} 
 \end{quotation}
 
-%to do : expand the analysis of the simulation out 
+%to do : expand the analysis of the simulation out ?? not sure how
 %st 1
 This simulation clearly shows how the longest baselines are more sensitive to the refractive substructure, which in turn strengthens the challenge of imaging compact features and/or fine structure like the BH shadow. 
 
@@ -168,24 +166,24 @@ For this simulation we use three different pointing error models, as introduced 
 % In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
 
 
-
-
 \section{Suggested applications}
 
-%Testing and development of calibration, imaging and parameter estimation pipelines
-The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the truth source and the results are compared post-facto. This is especially useful with algorithms which have many hand-tuned parameters and difficulties with repeatability, uniqueness and fidelity. Alternatively one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source.
+%Testing and development of calibration, imaging and parameter estimation pipelines st 1
+The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the true source and the results are compared post-facto. This is especially useful with imaging algorithms which have many `hand-tuned' parameters and difficulty with repeatability, uniqueness and fidelity of their solutions. Alternatively, one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source. A key point of such an investigation being the capability of assigning quantitative values to systematic and stochastic uncertainties across a wide range of physically relevant conditions.
 
 
-With the current work on automated fringe-fitters, there arises the possibility is an end-to-end simulation pipeline from theory to calibrated data product in the medium term future. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymetry). This will also allow weak points in the calibration/analysis to be identified and subsequently improved and which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
+%bayesian calibration
+%An original motivation for the {\sc meqsilhouette} simulator was that it could eventually be implemented as a bayesian calibration routine where the signal corruptions were solved for. However, as many of the dominant signal corruptions have turned out to be stochastic and hence indeterminant, it no longer makes sense to go down this route. Indeed one would need a GPU-accelerated simulator to be able to sample the parameter space. Fortunately then, a collegue is planning a GPU bayesian calibration routine.  
 
-\\
-~\\
+%end-to-end st 2 - but you dont need an end- to end for some of this
+With the current work on automated fringe-fitters at JIVE (Des Small) and UCT/SKA SA (Iniyan Natarajan), there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
+This argument can be extended to the realm of station upgrades (e.g. enhanced bandwidth) and the investigation into novel (sub)millimetre sites. 
 
 
-QUANTITATIVE
 %Data interpretation
-help scientically formulate plausible scenarios. 
+As the EHT will be observing in a unique regime, there will be doubt as to what the interpretation of . say if its closure \citep[e.g.][]{Fish_2016} of  one can not be sure what to expect the source to appear. help scientically formulate plausible scenarios. 
 QUANTITATIVE
+
 
 %Connecting theory to data
 \begin{quotation}
@@ -193,9 +191,6 @@ QUANTITATIVE
 \citep[e.g.][]{Zanna_2007,Etienne_2010,Dexter_2013,Moscibrodzka_2014, McKinney_2014}. As the sensitivity of the EHT stands to dramatically increase, these theoretical efforts must be complemented by advances in interferometric simulations. With \textsc{MeqSilhouette}, we now have the ability to couple these with sophisticated interferometric and signal propagation simulations.  Moreover, detailed interferometric simulations will enable us to quantify systematic effects on the black hole and/or accretion flow parameter estimation.''\\
 \citep{Blecher_2016}
 \end{quotation}
-
-%site upgrades + new site selection
-
 
 
 
@@ -209,7 +204,7 @@ For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI works
 \section{Suggested improvements}
 
 \subsubsection{Full Stokes}
-One of the key observables for the EHT is polarisation dependent quantities \citep[e.g.][]{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping. 
+One of the key observables for the EHT is polarisation dependent quantities \citep[e.g.][]{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cubes as input. This should not entail much work as our chosen data formats (MS, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic including parallactic angle rotation. Signal propagation through the ISM and troposphere as well as antenna based complex gains errors are polarisation independent. The work would be primarly involve altering the existing scripts to dealing with the extra dimension in the {\sc fits} files i.e. book keeping. 
 polarisation leakage in the RIME.
 
 \subsubsection{Opacity and atmospheric brightness temperature fluctuations}
@@ -219,5 +214,12 @@ Run multiple realisations of atm to link the phase fluctuations to opacity and b
 
 
 
-\subsubsection{GPU acceleration}
+
+
+
+
+
+
+
+
 
