@@ -195,31 +195,23 @@ In principle, the variability timescale could be comparable to the period of the
 
 
 %Phenomenology : main, motivation
-We will now introduce several plausible modes of variability within ah observation which demonstrate the challenge which variability brings to data analysis and interpretation. Following this, we outline the role of {\sc meqsilhouette} in this scenario.
+We now attempt to isolate several separate but interlink modes of intrinsic variability. We focus on variability within an observation time as this represents the dominant challenge to calibration, imaging and/or parameter estimation. Following this, we outline the role of {\sc meqsilhouette} to assist with the analysis and interpretation. It has also been proposed by \citet{Lu_2016} that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines, losing information of the finer angular scales.
 
-synchontron self-absorption and the variable size of emission region
-
-simulataneous multiwavelength observations and spectral analysis
-
-%orbits
-Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008} which could be explained by power-law turbulence. 
-
-
-%polarisation
-A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic fields structure is highly dynamic, see section~\ref{sec:unsolved_qs}.  
 
 
 %%Flares The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. 
+By far the most well studied type of variability, is simply variations in total flux, referred to as flares. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}. This highlights the importance of synchontron self-absorption and the variable size of emission region, as the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
 
-To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}.
-%relation between frequency and size of emission as introduced in the introduction (i.e the $\tau \sim 1$ surface) st3
+%orbits
+Secondly, consider a source structure which is varying primarily in spatial position in the innermost flow, e.g. an orbiting unresolved component or jet launch region e.g. a shock. Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. %mitigation + tracking variability - previous sims
+In the case of an compact, unresolved variable component, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008} which could be explained by power-law turbulence. 
 
+%Magnetic field
+Another possible `mode' of variability is one that is primarily based on magnetic field structures. A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic field structure is highly dynamic, see section~\ref{sec:unsolved_qs}. 
 
-%mitigation + tracking variability - previous sims
-In the case of an compact, unresolved variable component, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. Alternatively \citet{Lu_2016} show that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines, losing information of the finer angular scales.
 
 %These approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors. Whether or not the st
- 
+
 
 %calibration st 1
 As stated earlier, the standard mm-VLBI calibration techniques i.e. fringe-fitting, assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.
@@ -579,7 +571,7 @@ Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk f
 %plan
 All instruments suffer from both systematic and stochastic errors, the characterisation of which determines the measurement accuracy and precision respectively. In this section we explore thermal noise (stochastic) and antenna pointing errors (systematic). 
 %completeness and classes of corruptions
-While there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model, etc.), the primary aim here is to demonstrate the mm-VLBI framework that enables more sophisticated interferometric simulations. The Measurement Equation formalism enables any arbitrary linear error to be incorporated as a Jones Matrix, for example, a bandpass error would be a frequency-dependent diagonal Jones matrix.
+%While there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model, etc.), the primary aim here is to demonstrate the mm-VLBI framework that enables more sophisticated interferometric simulations. The Measurement Equation formalism enables any arbitrary linear error to be incorporated as a Jones Matrix, for example, a bandpass error would be a frequency-dependent diagonal Jones matrix.
 
 \subsubsection{Thermal Noise}
 %Pr 1 St 1

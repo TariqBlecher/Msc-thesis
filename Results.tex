@@ -154,18 +154,7 @@ For this simulation we use three different pointing error models, as introduced 
 \end{quotation}
 
 
-\subsubsection{Anomalous pointing error}
-There is another class of pointing error which we did not include in our simulation, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the so-called `anomalous pointing error' due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Carilli_1999}. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture and hence could be difficult to calibrate.
 
-
-\citet{holdaway_1998} derives the standard deviation of the pointing error as a fraction of beam width,
-\begin{equation}
- \sigma_{\rm pe}(d_{\rm dish}),\theta) = \frac{\sqrt{2 D(d_{\rm dish})}}{\sqrt{\sin\theta}\lambda},
-\end{equation}
-where $D$ is the structure function and $\theta$ is the elevation angle. Hence for LMT $\theta=30^\circ$, this becomes 
-$\sigma_{\rm pe}(50,30^\circ) = ( $
-
-and hence is a serious consideration for mm-VLBI. 
 
 
 %\subsubsection{Performance?}
@@ -181,6 +170,22 @@ and hence is a serious consideration for mm-VLBI.
 
 \section{Suggested applications and improvements}
 
+\subsubsection{Anomalous pointing error}
+There is another class of pointing error which we did not include in our simulation, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the so-called `anomalous pointing error' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the antenna and hence will be proportional to the structure function evaluated at the dish diameters. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture.  
+
+\citet{holdaway_1998} derives the standard deviation of the pointing error as a fraction of beam width,
+\begin{equation}
+ \sigma_{\rm pe}(d_{\rm dish}),\theta) = \frac{\sqrt{2} \sigma_l(d_{\rm dish)}}{\sqrt{\sin\theta}\lambda},
+\end{equation}
+where $\sigma_l(d_{\rm dish)} = \sqrt{D_l(d_{\rm dish}}$ is the standard deviation of path length fluctuations over the antenna diameter and $\theta$ is the elevation angle. Hence in terms of fractional beam size, the effect goes as $D^{\beta/2}$ and hence the effect for large dishes will be larger amplitude variations (as shown by Fig.~\ref{fig:pointing}) over longer time periods. 
+
+
+Estimates of $\sigma_{\rm pe}$ shown in \citet{holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere.  
+
+Apertures which are fitted with radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT station are currently not fitted with radiometers and hence this effect could be tricky to calibrate.
+
+\subsubsection{Testing calibration, imaging and parameter estimation}
+
 %Testing and development of calibration, imaging and parameter estimation pipelines st 1
 The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the true source and the results are compared post-facto. This is especially useful with imaging algorithms which have many `hand-tuned' parameters and difficulty with repeatability, uniqueness and fidelity of their solutions. Alternatively, one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source. A key point of such an investigation being the capability of assigning quantitative values to systematic and stochastic uncertainties across a wide range of physically relevant conditions.
 
@@ -194,7 +199,7 @@ This argument can be extended to the realm of station upgrades (e.g. enhanced ba
 
 
 %Data interpretation st1
-As the EHT will be observing in a unique regime, there will always be doubt, double-checking and questioning of the interpretation of the data. This is especially the case with the use of closure quantities, where the recent result of an increase in closure phase with UT hour, measured on the Hawaii-Arizona-California triangle \citep{Fish_2016}, provides a good example. Simulations help formulate and test quatitatively plausible scenarios.
+As the EHT will be observing in a unique regime, there will always be doubt, double-checking and questioning of the interpretation of the data. This is especially the case with the use of closure quantities, where the recent result of an increase in closure phase with UT hour, measured on the Hawaii-Arizona-California triangle \citep{Fish_2016}, provides a good example. Simulations help formulate and test quatitatively plausible scenarios. For example the contribution of different components (e.g. ISM substructure, SNR) to the scatter in this result could be investigated for different source models. 
 
 \begin{quotation}
 ``Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon
