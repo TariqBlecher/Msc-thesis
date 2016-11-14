@@ -171,18 +171,18 @@ For this simulation we use three different pointing error models, as introduced 
 \section{Suggested applications and improvements}\label{sec:improv}
 
 \subsubsection{Anomalous pointing error}
-There is another class of pointing error which we did not include in our simulation, but which could be folded in through a combination of the tropospheric and antenna pointing modules. This is the so-called `anomalous pointing error' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the antenna and hence will be proportional to the structure function evaluated at the dish diameters. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture.  
+There is another class of pointing error which we did not include in our simulation, but which should be folded in through a combination of the tropospheric and antenna pointing modules. This effect is called the `anomalous refraction' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the dish diameter $d_{\rm dish}$ (i.e. a wedge) and hence will be a function of $D_{\phi}(d_{\rm dish})$. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture.  
 
-\citet{Holdaway_1998} derives the standard deviation of the pointing error as a fraction of beam width,
+\citet{Holdaway_1998} derive the standard deviation of the pointing error as a fraction of beam width,
 \begin{equation}
- \sigma_{\rm pe}(d_{\rm dish}),\theta) = \frac{\sqrt{2} \sigma_l(d_{\rm dish)}}{\sqrt{\sin\theta}\lambda},
+ \sigma_{\rm pe}(d_{\rm dish}),\theta) = \frac{\sqrt{2 D_l(d_{\rm dish})}}{\sqrt{\sin\theta}\lambda},
 \end{equation}
-where $\sigma_l(d_{\rm dish)} = \sqrt{D_l(d_{\rm dish}}$ is the standard deviation of path length fluctuations over the antenna diameter and $\theta$ is the elevation angle. Hence in terms of fractional beam size, the effect goes as $D^{\beta/2}$ and hence the effect for large dishes will be larger amplitude variations (as shown by Fig.~\ref{fig:pointing}) over longer time periods. 
+where $l$ is the extra electric path length and $\theta$ is the elevation angle. Hence in terms of fractional beam size, the effect goes as $d_{\rm dish}^{\beta/2}$ and hence the effect for large dishes will be larger amplitude variations (as shown by Fig.~\ref{fig:pointing}) over longer time periods. 
 
 
-Estimates of $\sigma_{\rm pe}$ shown in \citet{Holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere.  
+%Estimates of $\sigma_{\rm pe}$ shown in \citet{Holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere.  
 
-Apertures which are fitted with radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT station are currently not fitted with radiometers and hence this effect could be tricky to calibrate.
+Apertures which are fitted with water vapour radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT stations are currently not fitted with radiometers and hence this effect could be tricky to calibrate.
 
 \subsubsection{Testing calibration, imaging and parameter estimation}
 
