@@ -187,7 +187,7 @@ Note that I am using the term `variability' in a general sense which refers to c
 
 %Observed variability from SgrA
 %intro - Phenomenology st 1
-Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the high frequency radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006, Maronne_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several constraints but the origin of the variability is still highly debated.
+Although the static source assumption holds for most interferometric observations, the accretion flow and/or magnetic field structures around a SMBH can be variable on far shorter timescales. The primary mm-VLBI target, Sgr~A*,  exhibits variability on timescales of minutes to hours in the high frequency radio (including EHT observations), near-infrared (NIR), and X-ray bands \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006,Marrone_2006, Fish_2011, Johnson_2015b}. This wealth of observational data has yielded several constraints but the origin of the variability is still highly debated.
 
 
 %ISCO - Light crossing analysis st 1
@@ -195,25 +195,23 @@ In principle, the variability timescale could be comparable to the period of the
 
 
 %Phenomenology : main, motivation
-We will now introduce several plausible modes of variability within an observation which demonstrate the challenge which variability brings to analysis. Following this, we outline the role of {\sc meqsilhouette} in this scenario.
+We now attempt to isolate several separate but interlink modes of intrinsic variability. We focus on variability within an observation time as this represents the dominant challenge to calibration, imaging and/or parameter estimation. Following this, we outline the role of {\sc meqsilhouette} to assist with the analysis and interpretation. It has also been proposed by \citet{Lu_2016} that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines, losing information of the finer angular scales.
 
 
-%orbits
-Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008} which could be explained by power-law turbulence. 
-
-%Magnetic field
-A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic field structure is highly dynamic, see section~\ref{sec:unsolved_qs}. 
 
 %%Flares The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. 
+By far the most well studied type of variability, is simply variations in total flux, referred to as flares. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}. This highlights the importance of synchontron self-absorption and the variable size of emission region, as the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
 
-To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}. This highlights the importance of synchontron self-absorption and the variable size of emission region, as the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
+%orbits
+Secondly, consider a source structure which is varying primarily in spatial position in the innermost flow, e.g. an orbiting unresolved component or jet launch region e.g. a shock. Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \cite{Doeleman_2009}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. %mitigation + tracking variability - previous sims
+In the case of an compact, unresolved variable component, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008} which could be explained by power-law turbulence. 
 
+%Magnetic field
+Another possible `mode' of variability is one that is primarily based on magnetic field structures. A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic field structure is highly dynamic, see section~\ref{sec:unsolved_qs}. 
 
-%mitigation + tracking variability - previous sims
-In the case of an compact, unresolved variable component, several approaches \citep{Doeleman_2009, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. Alternatively \citet{Lu_2016} show that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure although this approach would down-weight the longest baselines, losing information of the finer angular scales.
 
 %These approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors. Whether or not the st
- 
+
 
 %calibration st 1
 As stated earlier, the standard mm-VLBI calibration techniques i.e. fringe-fitting, assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.
@@ -248,7 +246,7 @@ D_\phi (\mathbf{x},\mathbf{x'}) = \langle \left[ \phi(\mathbf{x} +\mathbf{x'}) -
 \end{equation}
 where $\mathbf{x}$ and $\mathbf{x'} $ represent two points on the screen and $\langle .. \rangle$ denotes the ensemble average. 
 
-There is evidence that $D_\phi$ can be reasonably approximated by a power law dependence on the absolute distance $r$ between points on the screen  \citep{Armstrong_1995,carilli_1997}
+There is evidence that $D_\phi$ can be reasonably approximated by a power law dependence on the absolute distance $r$ between points on the screen  \citep{Armstrong_1995,Carilli_1997}
 \begin{equation}
 D_\phi (r) =  (r/r_0)^\beta,\qquad r^2 = (\mathbf{x} - \mathbf{x'})^2
 \label{kolmogorov}
@@ -375,14 +373,14 @@ A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~
 \hline
 \includegraphics[width=\columnwidth]{Images/ortizrepeat}\\
 \end{tabular}
-\caption{{\bf Top panel :} Closure phases recorded in a VLBA + LMT observation of  Sgr~A$^\star$ at $\lambda = 3.5$~mm \protect\cite{Ortiz_2016}. The data points are shown as red circles and blue squares and are only distinguished by the calibrator used. The green envelopes show the $1\sigma$ closure phase prediction induced by scattering-induced substructure. The prediction was generated by simulating interferometric observations of 500 independent realisations of a scattered circular Gaussian with FWHM~$=130\ \mu$-arcsec. Reproduced from \protect\citet{Ortiz_2016}. {\bf Bottom panel :} Reproduction of the above result using the {\sc meqsilhouette} simulator using 50 independent realisations of the scattering screen. The success of the reproduction confirms the functionality of a large section of the simulator.\label{fig:substructure2}
+\caption{{\bf Top panel :} Closure phases recorded in a VLBA + LMT observation of  Sgr~A$^\star$ at $\lambda = 3.5$~mm \protect\citep{Ortiz_2016}. The data points are shown as red circles and blue squares and are only distinguished by the calibrator used. The green envelopes show the $1\sigma$ closure phase prediction induced by scattering-induced substructure. The prediction was generated by simulating interferometric observations of 500 independent realisations of a scattered circular Gaussian with FWHM~$=130\ \mu$-arcsec. Reproduced from \protect\citet{Ortiz_2016}. {\bf Bottom panel :} Reproduction of the above result using the {\sc meqsilhouette} simulator using 50 independent realisations of the scattering screen. The success of the reproduction confirms the functionality of a large section of the simulator.\label{fig:substructure2}
 }
 
 \end{table}
 
 
 %Distinguishing intrinsic source structure and variability
-Distinguishing intrinsic source and ISM substructure and variability is an interesting challenge. Observations at mm-wavelengths have revealed deviations from the $\lambda^2$ scattering scaling law, see Fig.~\ref{fig:scattering_law}. This is interpreted as due to the presence of intrinsic source structure and has been fitted with a power-law with an exponent of $1.34 \pm 0.01$ \cite{Lu_2011}. This has enabled the constraint of various theoretical models \cite{Bower_2006}, excluding advection-dominated accretion flows (ADAF) \cite{Narayan_1998} and Bondi-Hoyle accretion \cite{Melia_1994}. However observations extending over month timescales are required to properly sample the larger scale inhomogeneities and even with multiple epoch observations, it can be difficult to distinguish source and scattering characteristics \citep*{Macquart_2006}. The developments in scattering theory presented above provide a robust mechanism for quantifying refractive effects. This could allow a decoupling without sampling a refractive ensemble but significant assumptions are always made on the source model. 
+Distinguishing intrinsic source and ISM substructure and variability is an interesting challenge. Observations at mm-wavelengths have revealed deviations from the $\lambda^2$ scattering scaling law, see Fig.~\ref{fig:scattering_law}. This is interpreted as due to the presence of intrinsic source structure and has been fitted with a power-law with an exponent of $1.34 \pm 0.01$ \cite{Lu_2011}. This has enabled the constraint of various theoretical models \cite{Bower_2006}, excluding advection-dominated accretion flows (ADAF) \cite{Narayan_1998} and Bondi-Hoyle accretion \citep{Melia_1994}. However observations extending over month timescales are required to properly sample the larger scale inhomogeneities and even with multiple epoch observations, it can be difficult to distinguish source and scattering characteristics \citep*{Macquart_2006}. The developments in scattering theory presented above provide a robust mechanism for quantifying refractive effects. This could allow a decoupling without sampling a refractive ensemble but significant assumptions are always made on the source model. 
 
 
 \subsection{Troposphere}\label{sec:trop}
@@ -568,7 +566,7 @@ Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk f
 \citep{Blecher_2016}
 \end{quotation}
 
-\subsection{Instrumental}
+\subsection{Instrumental}\label{sec:instrument}
 
 %plan
 All instruments suffer from both systematic and stochastic errors, the characterisation of which determines the measurement accuracy and precision respectively. In this section we explore thermal noise (stochastic) and antenna pointing errors (systematic). 
@@ -600,7 +598,7 @@ As the RIME was formulated for a thermal noise-free measurement, we do not apply
 where each component of $N_{pq}$ is sampled from a complex-valued Gaussian distribution of mean and variance, $|N_{pq}| \sim (0, \Delta S_{\rm ij}^2)$.
 
 
-\subsubsection{Antenna Pointing}\label{sec:point_theory}
+\subsubsection{Antenna Pointing}
 %Pr 1 St 1
 
 %Intro

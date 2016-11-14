@@ -1,9 +1,57 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{111}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Armstrong et~al.(1995)Armstrong, Rickett, and
+  Spangler]{Armstrong_1995}
+J.~W. Armstrong, B.~J. Rickett, and S.~R. Spangler.
+\newblock {Electron density power spectrum in the local interstellar medium}.
+\newblock \emph{{ApJ}}, 443:\penalty0 209, apr 1995.
+\newblock \doi{10.1086/175515}.
+\newblock URL \url{http://dx.doi.org/10.1086/175515}.
+
+\bibitem[{Backer}(1978)]{Backer_1978}
+D.~C. {Backer}.
+\newblock {Scattering of radio emission from the compact object in Sagittarius
+  A}.
+\newblock \emph{\apjl}, 222:\penalty0 L9--L12, May 1978.
+\newblock \doi{10.1086/182681}.
+
+\bibitem[{Baganoff} et~al.(2001){Baganoff}, {Bautz}, {Brandt}, {Chartas},
+  {Feigelson}, {Garmire}, {Maeda}, {Morris}, {Ricker}, {Townsley}, and
+  {Walter}]{Baganoff_2001}
+F.~K. {Baganoff}, M.~W. {Bautz}, W.~N. {Brandt}, G.~{Chartas}, E.~D.
+  {Feigelson}, G.~P. {Garmire}, Y.~{Maeda}, M.~{Morris}, G.~R. {Ricker}, L.~K.
+  {Townsley}, and F.~{Walter}.
+\newblock {Rapid X-ray flaring from the direction of the supermassive black
+  hole at the Galactic Centre}.
+\newblock \emph{\nat}, 413:\penalty0 45--48, September 2001.
+\newblock \doi{10.1038/35092510}.
+
+\bibitem[{Balbus} and {Hawley}(1991)]{Balbus_1991}
+S.~A. {Balbus} and J.~F. {Hawley}.
+\newblock {A powerful local shear instability in weakly magnetized disks. I -
+  Linear analysis. II - Nonlinear evolution}.
+\newblock \emph{\apj}, 376:\penalty0 214--233, July 1991.
+\newblock \doi{10.1086/170270}.
+
+\bibitem[{Balbus} and {Hawley}(1998)]{Balbus_1998}
+S.~A. {Balbus} and J.~F. {Hawley}.
+\newblock {Instability, turbulence, and enhanced transport in accretion disks}.
+\newblock \emph{Reviews of Modern Physics}, 70:\penalty0 1--53, January 1998.
+\newblock \doi{10.1103/RevModPhys.70.1}.
+
+\bibitem[{B{\'e}langer} et~al.(2006){B{\'e}langer}, {Terrier}, {de Jager},
+  {Goldwurm}, and {Melia}]{Belanger_2006}
+G.~{B{\'e}langer}, R.~{Terrier}, O.~C. {de Jager}, A.~{Goldwurm}, and
+  F.~{Melia}.
+\newblock {Periodic Modulations in an X-ray Flare from Sagittarius A*}.
+\newblock \emph{Journal of Physics Conference Series}, 54:\penalty0 420--426,
+  December 2006.
+\newblock \doi{10.1088/1742-6596/54/1/066}.
 
 \bibitem[{Blecher} et~al.(2016){Blecher}, {Deane}, {Bernardi}, and
   {Smirnov}]{Blecher_2016}
@@ -13,13 +61,450 @@ T.~{Blecher}, R.~{Deane}, G.~{Bernardi}, and O.~{Smirnov}.
 \newblock \emph{\mnras}, September 2016.
 \newblock \doi{10.1093/mnras/stw2311}.
 
+\bibitem[Born and Wolf(1980)]{BORN_1980}
+Max Born and Emil Wolf.
+\newblock Principles of optics.
+\newblock \emph{Pergamon, New York}, 1980.
+
+\bibitem[{Bouman} et~al.(2015){Bouman}, {Johnson}, {Zoran}, {Fish}, {Doeleman},
+  and {Freeman}]{Bouman_2015}
+K.~L. {Bouman}, M.~D. {Johnson}, D.~{Zoran}, V.~L. {Fish}, S.~S. {Doeleman},
+  and W.~T. {Freeman}.
+\newblock {Computational Imaging for VLBI Image Reconstruction}.
+\newblock \emph{ArXiv e-prints}, dec 2015.
+
+\bibitem[{Bower} et~al.(2004){Bower}, {Falcke}, {Herrnstein}, {Zhao}, {Goss},
+  and {Backer}]{Bower_2004}
+G.~C. {Bower}, H.~{Falcke}, R.~M. {Herrnstein}, J.-H. {Zhao}, W.~M. {Goss}, and
+  D.~C. {Backer}.
+\newblock {Detection of the Intrinsic Size of Sagittarius A* Through Closure
+  Amplitude Imaging}.
+\newblock \emph{Science}, 304:\penalty0 704--708, April 2004.
+\newblock \doi{10.1126/science.1094023}.
+
+\bibitem[Bower et~al.(2006)Bower, Goss, Falcke, Backer, and
+  Lithwick]{Bower_2006}
+Geoffrey~C. Bower, W.~M. Goss, Heino Falcke, Donald~C. Backer, and Yoram
+  Lithwick.
+\newblock {The Intrinsic Size of Sagittarius A{*} from 0.35 to 6 cm}.
+\newblock \emph{{ApJ}}, 648\penalty0 (2):\penalty0 L127--L130, aug 2006.
+\newblock \doi{10.1086/508019}.
+\newblock URL \url{http://dx.doi.org/10.1086/508019}.
+
+\bibitem[Bower et~al.(2013)Bower, Deller, Demorest, Brunthaler, Eatough,
+  Falcke, Kramer, Lee, and Spitler]{Bower_2014}
+Geoffrey~C Bower, Adam Deller, Paul Demorest, Andreas Brunthaler, Ralph
+  Eatough, Heino Falcke, Michael Kramer, KJ~Lee, and Laura Spitler.
+\newblock The angular broadening of the galactic center pulsar sgr j1745-29: A
+  new constraint on the scattering medium.
+\newblock \emph{{ApJ}}, 780\penalty0 (1):\penalty0 L2, 2013.
+
+\bibitem[{Brink} et~al.(2015){Brink}, {Geyer}, and {Hinderer}]{Brink_2015}
+J.~{Brink}, M.~{Geyer}, and T.~{Hinderer}.
+\newblock {Astrophysics of resonant orbits in the Kerr metric}.
+\newblock \emph{\prd}, 91\penalty0 (8):\penalty0 083001, April 2015.
+\newblock \doi{10.1103/PhysRevD.91.083001}.
+
+\bibitem[{Broderick} et~al.(2011){Broderick}, {Fish}, {Doeleman}, and
+  {Loeb}]{Broderick_2011}
+A.~E. {Broderick}, V.~L. {Fish}, S.~S. {Doeleman}, and A.~{Loeb}.
+\newblock {Constraining the Structure of Sagittarius A*'s Accretion Flow with
+  Millimeter Very Long Baseline Interferometry Closure Phases}.
+\newblock \emph{\apj}, 738:\penalty0 38, September 2011.
+\newblock \doi{10.1088/0004-637X/738/1/38}.
+
+\bibitem[Broderick and Loeb(2009)]{Broderick_2009}
+Avery~E. Broderick and Abraham Loeb.
+\newblock {{IMAGING} {THE} {BLACK} {HOLE} {SILHOUETTE} {OF} M87: {IMPLICATIONS}
+  {FOR} {JET} {FORMATION} {AND} {BLACK} {HOLE} {SPIN}}.
+\newblock \emph{{ApJ}}, 697\penalty0 (2):\penalty0 1164--1179, may 2009.
+\newblock \doi{10.1088/0004-637x/697/2/1164}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/697/2/1164}.
+
+\bibitem[Broderick et~al.(2014)Broderick, Johannsen, Loeb, and
+  Psaltis]{Broderick_2014}
+Avery~E. Broderick, Tim Johannsen, Abraham Loeb, and Dimitrios Psaltis.
+\newblock {{TESTING} {THE} {NO}-{HAIR} {THEOREM} {WITH} {EVENT} {HORIZON}
+  {TELESCOPE} {OBSERVATIONS} {OF} {SAGITTARIUS} A{*}}.
+\newblock \emph{{ApJ}}, 784\penalty0 (1):\penalty0 7, feb 2014.
+\newblock \doi{10.1088/0004-637x/784/1/7}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/784/1/7}.
+
+\bibitem[Broderick et~al.(2016)Broderick, Fish, Johnson, Rosenfeld, Wang,
+  Doeleman, Akiyama, Johannsen, and Roy]{Broderick_2016}
+Avery~E. Broderick, Vincent~L. Fish, Michael~D. Johnson, Katherine Rosenfeld,
+  Carlos Wang, Sheperd~S. Doeleman, Kazunori Akiyama, Tim Johannsen, and
+  Alan~L. Roy.
+\newblock {{MODELING} {SEVEN} {YEARS} {OF} {EVENT} {HORIZON} {TELESCOPE}
+  {OBSERVATIONS} {WITH} {RADIATIVELY} {INEFFICIENT} {ACCRETION} {FLOW}
+  {MODELS}}.
+\newblock \emph{{ApJ}}, 820\penalty0 (2):\penalty0 137, mar 2016.
+\newblock \doi{10.3847/0004-637x/820/2/137}.
+\newblock URL \url{http://dx.doi.org/10.3847/0004-637x/820/2/137}.
+
+\bibitem[Butler(1997)]{Butler_1997}
+Brian Butler.
+\newblock Another look at anomalous refraction on chajnantor.
+\newblock 1997.
+
+\bibitem[Carilli and Holdaway(1999)]{Carilli_1999}
+C.~L. Carilli and M.~A. Holdaway.
+\newblock {Tropospheric phase calibration in millimeter interferometry}.
+\newblock \emph{Radio Science}, 34\penalty0 (4):\penalty0 817--840, jul 1999.
+\newblock \doi{10.1029/1999rs900048}.
+\newblock URL \url{http://dx.doi.org/10.1029/1999rs900048}.
+
+\bibitem[Carilli and Holdaway(1997)]{Carilli_1997}
+CL~Carilli and MA~Holdaway.
+\newblock {Application of Fast Switching Phase Calibration at mm Wavelengths on
+  33 km Baselines}.
+\newblock \emph{MMA/ALMA Memorandum Series No 173, NRAO}, 1997.
+
+\bibitem[{Chael} et~al.(2016){Chael}, {Johnson}, {Narayan}, {Doeleman},
+  {Wardle}, and {Bouman}]{Chael_2016}
+A.~A. {Chael}, M.~D. {Johnson}, R.~{Narayan}, S.~S. {Doeleman}, J.~F.~C.
+  {Wardle}, and K.~L. {Bouman}.
+\newblock {High-resolution Linear Polarimetric Imaging for the Event Horizon
+  Telescope}.
+\newblock \emph{\apj}, 829:\penalty0 11, September 2016.
+\newblock \doi{10.3847/0004-637X/829/1/11}.
+
+\bibitem[Coulman(1985)]{Coulman_1985}
+C.~E. Coulman.
+\newblock {Fundamental and Applied Aspects of Astronomical
+  {\textquotedblleft}Seeing{\textquotedblright}}.
+\newblock \emph{Annual Review of Astronomy and Astrophysics}, 23\penalty0
+  (1):\penalty0 19--57, sep 1985.
+\newblock \doi{10.1146/annurev.aa.23.090185.000315}.
+\newblock URL \url{http://dx.doi.org/10.1146/annurev.aa.23.090185.000315}.
+
+\bibitem[Curtis et~al.(2009)Curtis, Nikolic, Richer, and Pardo]{Curtis_2009}
+Emily~I Curtis, Bojan Nikolic, John~S Richer, and Juan~R Pardo.
+\newblock {Atmospheric dispersion and the implications for phase calibration}.
+\newblock \emph{arXiv preprint arXiv:0912.2852}, 2009.
+
+\bibitem[{Del Zanna} et~al.(2007){Del Zanna}, {Zanotti}, {Bucciantini}, and
+  {Londrillo}]{Zanna_2007}
+L.~{Del Zanna}, O.~{Zanotti}, N.~{Bucciantini}, and P.~{Londrillo}.
+\newblock {ECHO: a Eulerian conservative high-order scheme for general
+  relativistic magnetohydrodynamics and magnetodynamics}.
+\newblock \emph{\aap}, 473:\penalty0 11--30, October 2007.
+\newblock \doi{10.1051/0004-6361:20077093}.
+
+\bibitem[{Dexter} and {Fragile}(2013)]{Dexter_2013}
+J.~{Dexter} and P.~C. {Fragile}.
+\newblock {Tilted black hole accretion disc models of Sagittarius A*:
+  time-variable millimetre to near-infrared emission}.
+\newblock \emph{\mnras}, 432:\penalty0 2252--2272, July 2013.
+\newblock \doi{10.1093/mnras/stt583}.
+
+\bibitem[{Doeleman} et~al.(2010){Doeleman}, {Agol}, {Backer}, {Baganoff},
+  {Bower}, {Broderick}, {Fabian}, {Fish}, {Gammie}, {Ho}, {Honman},
+  {Krichbaum}, {Loeb}, {Marrone}, {Reid}, {Rogers}, {Shapiro}, {Strittmatter},
+  {Tilanus}, {Weintroub}, {Whitney}, {Wright}, and {Ziurys}]{Doeleman_2010}
+S.~{Doeleman}, E.~{Agol}, D.~{Backer}, F.~{Baganoff}, G.~C. {Bower},
+  A.~{Broderick}, A.~{Fabian}, V.~{Fish}, C.~{Gammie}, P.~{Ho}, M.~{Honman},
+  T.~{Krichbaum}, A.~{Loeb}, D.~{Marrone}, M.~{Reid}, A.~{Rogers},
+  I.~{Shapiro}, P.~{Strittmatter}, R.~{Tilanus}, J.~{Weintroub}, A.~{Whitney},
+  M.~{Wright}, and L.~{Ziurys}.
+\newblock {Imaging an Event Horizon: submm-VLBI of a Super Massive Black Hole}.
+\newblock In \emph{astro2010: The Astronomy and Astrophysics Decadal Survey},
+  volume 2010 of \emph{Astronomy}, 2010.
+
+\bibitem[Doeleman et~al.(2001)Doeleman, Shen, Rogers, Bower, Wright, Zhao,
+  Backer, Crowley, Freund, Ho, Lo, and Woody]{Doeleman_2001}
+S.~S. Doeleman, Z.-Q. Shen, A.~E.~E. Rogers, G.~C. Bower, M.~C.~H. Wright,
+  J.~H. Zhao, D.~C. Backer, J.~W. Crowley, R.~W. Freund, P.~T.~P. Ho, K.~Y. Lo,
+  and D.~P. Woody.
+\newblock {Structure of Sagittarius A{*} at 86 {GH}[{CLC}]z[/{CLC}] using
+  {VLBI} Closure Quantities}.
+\newblock \emph{\aj}, 121\penalty0 (5):\penalty0 2610--2617, may 2001.
+\newblock \doi{10.1086/320376}.
+\newblock URL \url{http://dx.doi.org/10.1086/320376}.
+
+\bibitem[Doeleman et~al.(2008)Doeleman, Weintroub, Rogers, Plambeck, Freund,
+  Tilanus, Friberg, Ziurys, Moran, Corey, Young, Smythe, Titus, Marrone,
+  Cappallo, Bock, Bower, Chamberlin, Davis, Krichbaum, Lamb, Maness, Niell,
+  Roy, Strittmatter, Werthimer, Whitney, and Woody]{Doeleman_2008}
+Sheperd~S. Doeleman, Jonathan Weintroub, Alan E.~E. Rogers, Richard Plambeck,
+  Robert Freund, Remo P.~J. Tilanus, Per Friberg, Lucy~M. Ziurys, James~M.
+  Moran, Brian Corey, Ken~H. Young, Daniel~L. Smythe, Michael Titus, Daniel~P.
+  Marrone, Roger~J. Cappallo, Douglas C.-J. Bock, Geoffrey~C. Bower, Richard
+  Chamberlin, Gary~R. Davis, Thomas~P. Krichbaum, James Lamb, Holly Maness,
+  Arthur~E. Niell, Alan Roy, Peter Strittmatter, Daniel Werthimer, Alan~R.
+  Whitney, and David Woody.
+\newblock {Event-horizon-scale structure in the supermassive black hole
+  candidate at the Galactic Centre}.
+\newblock \emph{Nature}, 455\penalty0 (7209):\penalty0 78--80, sep 2008.
+\newblock \doi{10.1038/nature07245}.
+\newblock URL \url{http://dx.doi.org/10.1038/nature07245}.
+
+\bibitem[Doeleman et~al.(2009)Doeleman, Fish, Broderick, Loeb, and
+  Rogers]{Doeleman_2009}
+Sheperd~S. Doeleman, Vincent~L. Fish, Avery~E. Broderick, Abraham Loeb, and
+  Alan E.~E. Rogers.
+\newblock {{DETECTING} {FLARING} {STRUCTURES} {IN} {SAGITTARIUS} A{*} {WITH}
+  {HIGH}-{FREQUENCY} {VLBI}}.
+\newblock \emph{{ApJ}}, 695\penalty0 (1):\penalty0 59--74, mar 2009.
+\newblock \doi{10.1088/0004-637x/695/1/59}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/695/1/59}.
+
+\bibitem[{Etienne} et~al.(2010){Etienne}, {Liu}, and {Shapiro}]{Etienne_2010}
+Z.~B. {Etienne}, Y.~T. {Liu}, and S.~L. {Shapiro}.
+\newblock {Relativistic magnetohydrodynamics in dynamical spacetimes: A new
+  adaptive mesh refinement implementation}.
+\newblock \emph{\prd}, 82\penalty0 (8):\penalty0 084031, October 2010.
+\newblock \doi{10.1103/PhysRevD.82.084031}.
+
+\bibitem[Falcke and Markoff(2013)]{Falcke_2013}
+H~Falcke and S~B Markoff.
+\newblock {Toward the event horizon{\textemdash}the supermassive black hole in
+  the Galactic Center}.
+\newblock \emph{Class. Quantum Grav.}, 30\penalty0 (24):\penalty0 244003, nov
+  2013.
+\newblock \doi{10.1088/0264-9381/30/24/244003}.
+\newblock URL \url{http://dx.doi.org/10.1088/0264-9381/30/24/244003}.
+
+\bibitem[Falcke et~al.(1998)Falcke, Goss, Matsuo, Teuben, Zhao, and
+  Zylka]{Falcke_1998}
+Heino Falcke, W.~M. Goss, Hiroshi Matsuo, Peter Teuben, Jun-Hui Zhao, and
+  Robert Zylka.
+\newblock {The Simultaneous Spectrum of Sagittarius A{*} from 20 Centimeters to
+  1 Millimeter and the Nature of the Millimeter Excess}.
+\newblock \emph{{ApJ}}, 499\penalty0 (2):\penalty0 731--734, jun 1998.
+\newblock \doi{10.1086/305687}.
+\newblock URL \url{http://dx.doi.org/10.1086/305687}.
+
+\bibitem[{Fish} et~al.(2009){Fish}, {Doeleman}, {Broderick}, {Loeb}, and
+  {Rogers}]{Fish_2009b}
+V.~L. {Fish}, S.~S. {Doeleman}, A.~E. {Broderick}, A.~{Loeb}, and A.~E.~E.
+  {Rogers}.
+\newblock {Detecting Changing Polarization Structures in Sagittarius A* with
+  High Frequency VLBI}.
+\newblock \emph{\apj}, 706:\penalty0 1353--1363, December 2009.
+\newblock \doi{10.1088/0004-637X/706/2/1353}.
+
+\bibitem[Fish et~al.(2011)Fish, Doeleman, Beaudoin, Blundell, Bolin, Bower,
+  Chamberlin, Freund, Friberg, Gurwell, Honma, Inoue, Krichbaum, Lamb, Marrone,
+  Moran, Oyama, Plambeck, Primiani, Rogers, Smythe, SooHoo, Strittmatter,
+  Tilanus, Titus, Weintroub, Wright, Woody, Young, and Ziurys]{Fish_2011}
+Vincent~L. Fish, Sheperd~S. Doeleman, Christopher Beaudoin, Ray Blundell,
+  David~E. Bolin, Geoffrey~C. Bower, Richard Chamberlin, Robert Freund, Per
+  Friberg, Mark~A. Gurwell, Mareki Honma, Makoto Inoue, Thomas~P. Krichbaum,
+  James Lamb, Daniel~P. Marrone, James~M. Moran, Tomoaki Oyama, Richard
+  Plambeck, Rurik Primiani, Alan E.~E. Rogers, Daniel~L. Smythe, Jason SooHoo,
+  Peter Strittmatter, Remo P.~J. Tilanus, Michael Titus, Jonathan Weintroub,
+  Melvyn Wright, David Woody, Ken~H. Young, and Lucy~M. Ziurys.
+\newblock {1.3 mm {WAVELENGTH} {VLBI} {OF} {SAGITTARIUS} A{*}: {DETECTION} {OF}
+  {TIME}-{VARIABLE} {EMISSION} {ON} {EVENT} {HORIZON} {SCALES}}.
+\newblock \emph{{ApJ}}, 727\penalty0 (2):\penalty0 L36, jan 2011.
+\newblock \doi{10.1088/2041-8205/727/2/l36}.
+\newblock URL \url{http://dx.doi.org/10.1088/2041-8205/727/2/l36}.
+
+\bibitem[Fish et~al.(2014)Fish, Johnson, Lu, Doeleman, Bouman, Zoran, Freeman,
+  Psaltis, Narayan, Pankratius, Broderick, Gwinn, and
+  Vertatschitsch]{Fish_2014}
+Vincent~L. Fish, Michael~D. Johnson, Ru-Sen Lu, Sheperd~S. Doeleman,
+  Katherine~L. Bouman, Daniel Zoran, William~T. Freeman, Dimitrios Psaltis,
+  Ramesh Narayan, Victor Pankratius, Avery~E. Broderick, Carl~R. Gwinn, and
+  Laura~E. Vertatschitsch.
+\newblock {{IMAGING} {AN} {EVENT} {HORIZON}: {MITIGATION} {OF} {SCATTERING}
+  {TOWARD} {SAGITTARIUS} A{*}}.
+\newblock \emph{{ApJ}}, 795\penalty0 (2):\penalty0 134, oct 2014.
+\newblock \doi{10.1088/0004-637x/795/2/134}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/795/2/134}.
+
+\bibitem[Fish et~al.(2016)Fish, Johnson, Doeleman, Broderick, Psaltis, Lu,
+  Akiyama, Alef, Algaba, Asada, Beaudoin, Bertarini, Blackburn, Blundell,
+  Bower, Brinkerink, Cappallo, Chael, Chamberlin, Chan, Crew, Dexter, Dexter,
+  Dzib, Falcke, Freund, Friberg, Greer, Gurwell, Ho, Honma, Inoue, Johannsen,
+  Kim, Krichbaum, Lamb, Le{\'{o}}n-Tavares, Loeb, Loinard, MacMahon, Marrone,
+  Moran, Mo{\'{s}}cibrodzka, Ortiz-Le{\'{o}}n, Oyama, Özel, Plambeck, Pradel,
+  Primiani, Rogers, Rosenfeld, Rottmann, Roy, Ruszczyk, Smythe, SooHoo,
+  Spilker, Stone, Strittmatter, Tilanus, Titus, Vertatschitsch, Wagner, Wardle,
+  Weintroub, Woody, Wright, Yamaguchi, Young, Young, Zensus, and
+  Ziurys]{Fish_2016}
+Vincent~L. Fish, Michael~D. Johnson, Sheperd~S. Doeleman, Avery~E. Broderick,
+  Dimitrios Psaltis, Ru-Sen Lu, Kazunori Akiyama, Walter Alef, Juan~Carlos
+  Algaba, Keiichi Asada, Christopher Beaudoin, Alessandra Bertarini, Lindy
+  Blackburn, Ray Blundell, Geoffrey~C. Bower, Christiaan Brinkerink, Roger
+  Cappallo, Andrew~A. Chael, Richard Chamberlin, Chi-Kwan Chan, Geoffrey~B.
+  Crew, Jason Dexter, Matt Dexter, Sergio~A. Dzib, Heino Falcke, Robert Freund,
+  Per Friberg, Christopher~H. Greer, Mark~A. Gurwell, Paul T.~P. Ho, Mareki
+  Honma, Makoto Inoue, Tim Johannsen, Junhan Kim, Thomas~P. Krichbaum, James
+  Lamb, Jonathan Le{\'{o}}n-Tavares, Abraham Loeb, Laurent Loinard, David
+  MacMahon, Daniel~P. Marrone, James~M. Moran, Monika Mo{\'{s}}cibrodzka,
+  Gisela~N. Ortiz-Le{\'{o}}n, Tomoaki Oyama, Feryal Özel, Richard~L. Plambeck,
+  Nicolas Pradel, Rurik~A. Primiani, Alan E.~E. Rogers, Katherine Rosenfeld,
+  Helge Rottmann, Alan~L. Roy, Chester Ruszczyk, Daniel~L. Smythe, Jason
+  SooHoo, Justin Spilker, Jordan Stone, Peter Strittmatter, Remo P.~J. Tilanus,
+  Michael Titus, Laura Vertatschitsch, Jan Wagner, John F.~C. Wardle, Jonathan
+  Weintroub, David Woody, Melvyn Wright, Paul Yamaguchi, Andr{\'{e}} Young,
+  Ken~H. Young, J.~Anton Zensus, and Lucy~M. Ziurys.
+\newblock {{PERSISTENT} {ASYMMETRIC} {STRUCTURE} {OF} {SAGITTARIUS} A{*} {ON}
+  {EVENT} {HORIZON} {SCALES}}.
+\newblock \emph{{ApJ}}, 820\penalty0 (2):\penalty0 90, mar 2016.
+\newblock \doi{10.3847/0004-637x/820/2/90}.
+\newblock URL \url{http://dx.doi.org/10.3847/0004-637x/820/2/90}.
+
+\bibitem[{Gammie} et~al.(2003){Gammie}, {McKinney}, and
+  {T{\'o}th}]{Gammie_2003}
+C.~F. {Gammie}, J.~C. {McKinney}, and G.~{T{\'o}th}.
+\newblock {HARM: A Numerical Scheme for General Relativistic
+  Magnetohydrodynamics}.
+\newblock \emph{\apj}, 589:\penalty0 444--457, May 2003.
+\newblock \doi{10.1086/374594}.
+
+\bibitem[{Gebhardt} et~al.(2000){Gebhardt}, {Bender}, {Bower}, {Dressler},
+  {Faber}, {Filippenko}, {Green}, {Grillmair}, {Ho}, {Kormendy}, {Lauer},
+  {Magorrian}, {Pinkney}, {Richstone}, and {Tremaine}]{Gebhardt_2000}
+K.~{Gebhardt}, R.~{Bender}, G.~{Bower}, A.~{Dressler}, S.~M. {Faber}, A.~V.
+  {Filippenko}, R.~{Green}, C.~{Grillmair}, L.~C. {Ho}, J.~{Kormendy}, T.~R.
+  {Lauer}, J.~{Magorrian}, J.~{Pinkney}, D.~{Richstone}, and S.~{Tremaine}.
+\newblock {A Relationship between Nuclear Black Hole Mass and Galaxy Velocity
+  Dispersion}.
+\newblock \emph{\apjl}, 539:\penalty0 L13--L16, August 2000.
+\newblock \doi{10.1086/312840}.
+
+\bibitem[{Genzel} et~al.(2003){Genzel}, {Sch{\"o}del}, {Ott}, {Eckart},
+  {Alexander}, {Lacombe}, {Rouan}, and {Aschenbach}]{Genzel_2003}
+R.~{Genzel}, R.~{Sch{\"o}del}, T.~{Ott}, A.~{Eckart}, T.~{Alexander},
+  F.~{Lacombe}, D.~{Rouan}, and B.~{Aschenbach}.
+\newblock {Near-infrared flares from accreting gas around the supermassive
+  black hole at the Galactic Centre}.
+\newblock \emph{\nat}, 425:\penalty0 934--937, October 2003.
+\newblock \doi{10.1038/nature02065}.
+
+\bibitem[{Gillessen} et~al.(2009){Gillessen}, {Eisenhauer}, {Fritz}, {Bartko},
+  {Dodds-Eden}, {Pfuhl}, {Ott}, and {Genzel}]{Gillessen_2009}
+S.~{Gillessen}, F.~{Eisenhauer}, T.~K. {Fritz}, H.~{Bartko}, K.~{Dodds-Eden},
+  O.~{Pfuhl}, T.~{Ott}, and R.~{Genzel}.
+\newblock {The Orbit of the Star S2 Around SGR A* from Very Large Telescope and
+  Keck Data}.
+\newblock \emph{\apjl}, 707:\penalty0 L114--L117, December 2009.
+\newblock \doi{10.1088/0004-637X/707/2/L114}.
+
+\bibitem[{Goddi} et~al.(2016){Goddi}, {Falcke}, {Kramer}, {Rezzolla},
+  {Brinkerink}, {Bronzwaer}, {Deane}, {De Laurentis}, {Desvignes}, {Davelaar},
+  {Eisenhauer}, {Eatough}, {Fraga-Encinas}, {Fromm}, {Gillessen}, {Grenzebach},
+  {Issaoun}, {Jan{\ss}en}, {Konoplya}, {Krichbaum}, {Laing}, {Liu}, {Lu},
+  {Mizuno}, {Moscibrodzka}, {M{\"u}ller}, {Olivares}, {Porth}, {Pfuhl}, {Ros},
+  {Roelofs}, {Schuster}, {Tilanus}, {Torne}, {van Bemmel}, {van Langevelde},
+  {Wex}, {Younsi}, and {Zhidenko}]{Goddi_2016}
+C.~{Goddi}, H.~{Falcke}, M.~{Kramer}, L.~{Rezzolla}, C.~{Brinkerink},
+  T.~{Bronzwaer}, R.~{Deane}, M.~{De Laurentis}, G.~{Desvignes}, J.~R.~J.
+  {Davelaar}, F.~{Eisenhauer}, R.~{Eatough}, R.~{Fraga-Encinas}, C.~M. {Fromm},
+  S.~{Gillessen}, A.~{Grenzebach}, S.~{Issaoun}, M.~{Jan{\ss}en},
+  R.~{Konoplya}, T.~P. {Krichbaum}, R.~{Laing}, K.~{Liu}, R.-S. {Lu},
+  Y.~{Mizuno}, M.~{Moscibrodzka}, C.~{M{\"u}ller}, H.~{Olivares}, O.~{Porth},
+  O.~{Pfuhl}, E.~{Ros}, F.~{Roelofs}, K.~{Schuster}, R.~{Tilanus}, P.~{Torne},
+  I.~{van Bemmel}, H.~J. {van Langevelde}, N.~{Wex}, Z.~{Younsi}, and
+  A.~{Zhidenko}.
+\newblock {BlackHoleCam: fundamental physics of the Galactic center}.
+\newblock \emph{ArXiv e-prints}, June 2016.
+
+\bibitem[Goodman and Narayan(1989)]{Goodman_1989}
+J.~Goodman and R.~Narayan.
+\newblock {The shape of a scatter-broadened image - {II}. Interferometric
+  visibilities}.
+\newblock \emph{\mnras}, 238\penalty0 (3):\penalty0 995--1028, jun 1989.
+\newblock \doi{10.1093/mnras/238.3.995}.
+\newblock URL \url{http://dx.doi.org/10.1093/mnras/238.3.995}.
+
+\bibitem[{Gwinn} et~al.(2012){Gwinn}, {Johnson}, {Reynolds}, {Jauncey},
+  {Tzioumis}, {Hirabayashi}, {Kobayashi}, {Murata}, {Edwards}, {Dougherty},
+  {Carlson}, {del Rizzo}, {Quick}, {Flanagan}, and {McCulloch}]{Gwinn_2012}
+C.~R. {Gwinn}, M.~D. {Johnson}, J.~E. {Reynolds}, D.~L. {Jauncey}, A.~K.
+  {Tzioumis}, H.~{Hirabayashi}, H.~{Kobayashi}, Y.~{Murata}, P.~G. {Edwards},
+  S.~{Dougherty}, B.~{Carlson}, D.~{del Rizzo}, J.~F.~H. {Quick}, C.~S.
+  {Flanagan}, and P.~M. {McCulloch}.
+\newblock {Size of the Vela Pulsar's Emission Region at 18 cm Wavelength}.
+\newblock \emph{\apj}, 758:\penalty0 7, October 2012.
+\newblock \doi{10.1088/0004-637X/758/1/7}.
+
 \bibitem[Gwinn et~al.(2014)Gwinn, Kovalev, Johnson, and Soglasnov]{Gwinn_2014}
 C.~R. Gwinn, Y.~Y. Kovalev, M.~D. Johnson, and V.~A. Soglasnov.
 \newblock {{DISCOVERY} {OF} {SUBSTRUCTURE} {IN} {THE} {SCATTER}-{BROADENED}
-  {IMAGE} {OF} {SGR} A*}.
+  {IMAGE} {OF} {SGR} A{*}}.
 \newblock \emph{{ApJ}}, 794\penalty0 (1):\penalty0 L14, sep 2014.
 \newblock \doi{10.1088/2041-8205/794/1/l14}.
 \newblock URL \url{http://dx.doi.org/10.1088/2041-8205/794/1/l14}.
+
+\bibitem[{Hamaker} et~al.(1996){Hamaker}, {Bregman}, and {Sault}]{Hamaker_1996}
+J.~P. {Hamaker}, J.~D. {Bregman}, and R.~J. {Sault}.
+\newblock {Understanding radio polarimetry. I. Mathematical foundations.}
+\newblock \emph{\aaps}, 117:\penalty0 137--147, May 1996.
+
+\bibitem[Hogg et~al.(1981)Hogg, Guiraud, and Decker]{hogg_1981}
+DC~Hogg, FO~Guiraud, and MT~Decker.
+\newblock {Measurement of excess radio transmission length on earth-space
+  paths}.
+\newblock \emph{\aap}, 95:\penalty0 304--307, 1981.
+
+\bibitem[Holdaway(1997)]{Holdaway_1997}
+MA~Holdaway.
+\newblock Calculation of anomalous refraction on chajnantor.
+\newblock 1997.
+
+\bibitem[Holdaway and Woody(1998)]{Holdaway_1998}
+MA~Holdaway and DP~Woody.
+\newblock Yet another look at anomalous refraction.
+\newblock 1998.
+
+\bibitem[{Johannsen} and {Psaltis}(2010)]{Johannsen_2010}
+T.~{Johannsen} and D.~{Psaltis}.
+\newblock {Testing the No-hair Theorem with Observations in the Electromagnetic
+  Spectrum. II. Black Hole Images}.
+\newblock \emph{\apj}, 718:\penalty0 446--454, July 2010.
+\newblock \doi{10.1088/0004-637X/718/1/446}.
+
+\bibitem[{Johnson}(2013)]{Johnson_2013}
+M.~D. {Johnson}.
+\newblock {Probing Strongly-Scattered Compact Objects Using
+  Ultra-High-Resolution Techniques in Radio Astronomy}.
+\newblock 2013.
+
+\bibitem[{Johnson} et~al.(2014){Johnson}, {Fish}, {Doeleman}, {Broderick},
+  {Wardle}, and {Marrone}]{Johnson_2014}
+M.~D. {Johnson}, V.~L. {Fish}, S.~S. {Doeleman}, A.~E. {Broderick}, J.~F.~C.
+  {Wardle}, and D.~P. {Marrone}.
+\newblock {Relative Astrometry of Compact Flaring Structures in Sgr A* with
+  Polarimetric Very Long Baseline Interferometry}.
+\newblock \emph{\apj}, 794:\penalty0 150, October 2014.
+\newblock \doi{10.1088/0004-637X/794/2/150}.
+
+\bibitem[Johnson et~al.(2015)Johnson, Fish, Doeleman, Marrone, Plambeck,
+  Wardle, Akiyama, Asada, Beaudoin, Blackburn, Blundell, Bower, Brinkerink,
+  Broderick, Cappallo, Chael, Crew, Dexter, Dexter, Freund, Friberg, Gold,
+  Gurwell, Ho, Honma, Inoue, Kosowsky, Krichbaum, Lamb, Loeb, Lu, MacMahon,
+  McKinney, Moran, Narayan, Primiani, Psaltis, Rogers, Rosenfeld, SooHoo,
+  Tilanus, Titus, Vertatschitsch, Weintroub, Wright, Young, Zensus, and
+  Ziurys]{Johnson_2015b}
+M.~D. Johnson, V.~L. Fish, S.~S. Doeleman, D.~P. Marrone, R.~L. Plambeck,
+  J.~F.~C. Wardle, K.~Akiyama, K.~Asada, C.~Beaudoin, L.~Blackburn,
+  R.~Blundell, G.~C. Bower, C.~Brinkerink, A.~E. Broderick, R.~Cappallo, A.~A.
+  Chael, G.~B. Crew, J.~Dexter, M.~Dexter, R.~Freund, P.~Friberg, R.~Gold,
+  M.~A. Gurwell, P.~T.~P. Ho, M.~Honma, M.~Inoue, M.~Kosowsky, T.~P. Krichbaum,
+  J.~Lamb, A.~Loeb, R.-S. Lu, D.~MacMahon, J.~C. McKinney, J.~M. Moran,
+  R.~Narayan, R.~A. Primiani, D.~Psaltis, A.~E.~E. Rogers, K.~Rosenfeld,
+  J.~SooHoo, R.~P.~J. Tilanus, M.~Titus, L.~Vertatschitsch, J.~Weintroub,
+  M.~Wright, K.~H. Young, J.~A. Zensus, and L.~M. Ziurys.
+\newblock {Resolved magnetic-field structure and variability near the event
+  horizon of Sagittarius A}.
+\newblock \emph{Science}, 350\penalty0 (6265):\penalty0 1242--1245, dec 2015.
+\newblock \doi{10.1126/science.aac7087}.
+\newblock URL \url{http://dx.doi.org/10.1126/science.aac7087}.
+
+\bibitem[{Johnson} et~al.(2016){Johnson}, {Kovalev}, {Gwinn}, {Gurvits},
+  {Narayan}, {Macquart}, {Jauncey}, {Voitsik}, {Anderson}, {Sokolovsky}, and
+  {Lisakov}]{Johnson_2016}
+M.~D. {Johnson}, Y.~Y. {Kovalev}, C.~R. {Gwinn}, L.~I. {Gurvits}, R.~{Narayan},
+  J.-P. {Macquart}, D.~L. {Jauncey}, P.~A. {Voitsik}, J.~M. {Anderson}, K.~V.
+  {Sokolovsky}, and M.~M. {Lisakov}.
+\newblock {Extreme Brightness Temperatures and Refractive Substructure in 3C273
+  with RadioAstron}.
+\newblock \emph{\apjl}, 820:\penalty0 L10, March 2016.
+\newblock \doi{10.3847/2041-8205/820/1/L10}.
 
 \bibitem[Johnson and Gwinn(2015)]{Johnson_2015a}
 Michael~D. Johnson and Carl~R. Gwinn.
@@ -28,6 +513,251 @@ Michael~D. Johnson and Carl~R. Gwinn.
 \newblock \emph{{ApJ}}, 805\penalty0 (2):\penalty0 180, jun 2015.
 \newblock \doi{10.1088/0004-637x/805/2/180}.
 \newblock URL \url{http://dx.doi.org/10.1088/0004-637x/805/2/180}.
+
+\bibitem[Jones(1941)]{Jones_1941}
+R~Clark Jones.
+\newblock A new calculus for the treatment of optical systemsi. description and
+  discussion of the calculus.
+\newblock \emph{JOSA}, 31\penalty0 (7):\penalty0 488--493, 1941.
+
+\bibitem[{Kormendy} and {Richstone}(1995)]{Kormendy_1995}
+J.~{Kormendy} and D.~{Richstone}.
+\newblock {Inward Bound---The Search For Supermassive Black Holes In Galactic
+  Nuclei}.
+\newblock \emph{\araa}, 33:\penalty0 581, 1995.
+\newblock \doi{10.1146/annurev.aa.33.090195.003053}.
+
+\bibitem[{Kramer} et~al.(2006){Kramer}, {Stairs}, {Manchester}, {McLaughlin},
+  {Lyne}, {Ferdman}, {Burgay}, {Lorimer}, {Possenti}, {D'Amico}, {Sarkissian},
+  {Hobbs}, {Reynolds}, {Freire}, and {Camilo}]{Kramer_2006}
+M.~{Kramer}, I.~H. {Stairs}, R.~N. {Manchester}, M.~A. {McLaughlin}, A.~G.
+  {Lyne}, R.~D. {Ferdman}, M.~{Burgay}, D.~R. {Lorimer}, A.~{Possenti},
+  N.~{D'Amico}, J.~M. {Sarkissian}, G.~B. {Hobbs}, J.~E. {Reynolds}, P.~C.~C.
+  {Freire}, and F.~{Camilo}.
+\newblock {Tests of General Relativity from Timing the Double Pulsar}.
+\newblock \emph{Science}, 314:\penalty0 97--102, October 2006.
+\newblock \doi{10.1126/science.1132305}.
+
+\bibitem[{Krichbaum} et~al.(1998){Krichbaum}, {Graham}, {Witzel}, {Greve},
+  {Wink}, {Grewing}, {Colomer}, {de Vicente}, {Gomez-Gonzalez}, {Baudry}, and
+  {Zensus}]{Krichbaum_1998}
+T.~P. {Krichbaum}, D.~A. {Graham}, A.~{Witzel}, A.~{Greve}, J.~E. {Wink},
+  M.~{Grewing}, F.~{Colomer}, P.~{de Vicente}, J.~{Gomez-Gonzalez},
+  A.~{Baudry}, and J.~A. {Zensus}.
+\newblock {VLBI observations of the galactic center source SGR A* at 86 GHz and
+  215 GHz}.
+\newblock \emph{\aap}, 335:\penalty0 L106--L110, July 1998.
+
+\bibitem[Lamb and Woody(1998)]{Lamb_1998}
+James~W Lamb and David Woody.
+\newblock Radiometric correction of anomalous refraction.
+\newblock \emph{ALMA Millimeter Array Memo Series}, \penalty0 (224), 1998.
+
+\bibitem[{Lane}(1998)]{Lane_1998}
+A.~P. {Lane}.
+\newblock {Submillimeter Transmission at South Pole}.
+\newblock In G.~{Novak} and R.~{Landsberg}, editors, \emph{Astrophysics From
+  Antarctica}, volume 141 of \emph{Astronomical Society of the Pacific
+  Conference Series}, pages 289--295, 1998.
+
+\bibitem[Lane et~al.(1992)Lane, Glindemann, and Dainty]{Lane_1992}
+R~G Lane, A~Glindemann, and J~C Dainty.
+\newblock {Simulation of a Kolmogorov phase screen}.
+\newblock \emph{Waves in Random Media}, 2\penalty0 (3):\penalty0 209--224, jul
+  1992.
+\newblock \doi{10.1088/0959-7174/2/3/003}.
+\newblock URL \url{http://dx.doi.org/10.1088/0959-7174/2/3/003}.
+
+\bibitem[Lay(1997)]{Lay_1997}
+O.~P. Lay.
+\newblock {The temporal power spectrum of atmospheric fluctuations due to water
+  vapor}.
+\newblock \emph{\aaps}, 122\penalty0 (3):\penalty0 535--545, may 1997.
+\newblock \doi{10.1051/aas:1997154}.
+\newblock URL \url{http://dx.doi.org/10.1051/aas:1997154}.
+
+\bibitem[{Lu} et~al.(2011){Lu}, {Krichbaum}, {Eckart}, {K{\"o}nig},
+  {Kunneriath}, {Witzel}, {Witzel}, and {Zensus}]{Lu_2011}
+R.-S. {Lu}, T.~P. {Krichbaum}, A.~{Eckart}, S.~{K{\"o}nig}, D.~{Kunneriath},
+  G.~{Witzel}, A.~{Witzel}, and J.~A. {Zensus}.
+\newblock {Multiwavelength VLBI observations of Sagittarius A*}.
+\newblock \emph{\aap}, 525:\penalty0 A76, January 2011.
+\newblock \doi{10.1051/0004-6361/200913807}.
+
+\bibitem[{Lu} et~al.(2016){Lu}, {Roelofs}, {Fish}, {Shiokawa}, {Doeleman},
+  {Gammie}, {Falcke}, {Krichbaum}, and {Zensus}]{Lu_2016}
+R.-S. {Lu}, F.~{Roelofs}, V.~L. {Fish}, H.~{Shiokawa}, S.~S. {Doeleman}, C.~F.
+  {Gammie}, H.~{Falcke}, T.~P. {Krichbaum}, and J.~A. {Zensus}.
+\newblock {Imaging an Event Horizon: Mitigation of Source Variability of
+  Sagittarius A*}.
+\newblock \emph{\apj}, 817:\penalty0 173, February 2016.
+\newblock \doi{10.3847/0004-637X/817/2/173}.
+
+\bibitem[Lu et~al.(2014)Lu, Broderick, Baron, Monnier, Fish, Doeleman, and
+  Pankratius]{Lu_2014}
+Ru-Sen Lu, Avery~E. Broderick, Fabien Baron, John~D. Monnier, Vincent~L. Fish,
+  Sheperd~S. Doeleman, and Victor Pankratius.
+\newblock {{IMAGING} {THE} {SUPERMASSIVE} {BLACK} {HOLE} {SHADOW} {AND} {JET}
+  {BASE} {OF} M87 {WITH} {THE} {EVENT} {HORIZON} {TELESCOPE}}.
+\newblock \emph{{ApJ}}, 788\penalty0 (2):\penalty0 120, may 2014.
+\newblock \doi{10.1088/0004-637x/788/2/120}.
+\newblock URL \url{http://dx.doi.org/10.1088/0004-637x/788/2/120}.
+
+\bibitem[{Luminet}(1979)]{Luminet_1979}
+J.-P. {Luminet}.
+\newblock {Image of a spherical black hole with thin accretion disk}.
+\newblock \emph{\aap}, 75:\penalty0 228--235, May 1979.
+
+\bibitem[{Macquart} and {Bower}(2006)]{Macquart_2006}
+J.-P. {Macquart} and G.~C. {Bower}.
+\newblock {Understanding the Radio Variability of Sagittarius A*}.
+\newblock \emph{\apj}, 641:\penalty0 302--318, April 2006.
+\newblock \doi{10.1086/500317}.
+
+\bibitem[{Magorrian} et~al.(1998){Magorrian}, {Tremaine}, {Richstone},
+  {Bender}, {Bower}, {Dressler}, {Faber}, {Gebhardt}, {Green}, {Grillmair},
+  {Kormendy}, and {Lauer}]{Magorrian_1998}
+J.~{Magorrian}, S.~{Tremaine}, D.~{Richstone}, R.~{Bender}, G.~{Bower},
+  A.~{Dressler}, S.~M. {Faber}, K.~{Gebhardt}, R.~{Green}, C.~{Grillmair},
+  J.~{Kormendy}, and T.~{Lauer}.
+\newblock {The Demography of Massive Dark Objects in Galaxy Centers}.
+\newblock \emph{\aj}, 115:\penalty0 2285--2305, June 1998.
+\newblock \doi{10.1086/300353}.
+
+\bibitem[{Marrone} et~al.(2006){Marrone}, {Baganoff}, {Morris}, {Moran},
+  {Ghez}, {Hornstein}, {Dowell}, {Bautz}, {Ricker}, {Brandt}, {Garmire}, {Lu},
+  {Matthews}, {Bower}, {Zhao}, and {Rao}]{Marrone_2006}
+D.~P. {Marrone}, F.~K. {Baganoff}, M.~{Morris}, J.~M. {Moran}, A.~{Ghez},
+  S.~{Hornstein}, D.~{Dowell}, M.~W. {Bautz}, G.~R. {Ricker}, W.~N. {Brandt},
+  G.~P. {Garmire}, J.~{Lu}, K.~{Matthews}, G.~{Bower}, J.~{Zhao}, and R.~{Rao}.
+\newblock {An X-ray, IR, and Submillimeter Flare of Sagittarius A*}.
+\newblock 38:\penalty0 112.06, December 2006.
+
+\bibitem[{Marrone} et~al.(2008){Marrone}, {Baganoff}, {Morris}, {Moran},
+  {Ghez}, {Hornstein}, {Dowell}, {Mu{\~n}oz}, {Bautz}, {Ricker}, {Brandt},
+  {Garmire}, {Lu}, {Matthews}, {Zhao}, {Rao}, and {Bower}]{Marrone_2008}
+D.~P. {Marrone}, F.~K. {Baganoff}, M.~R. {Morris}, J.~M. {Moran}, A.~M. {Ghez},
+  S.~D. {Hornstein}, C.~D. {Dowell}, D.~J. {Mu{\~n}oz}, M.~W. {Bautz}, G.~R.
+  {Ricker}, W.~N. {Brandt}, G.~P. {Garmire}, J.~R. {Lu}, K.~{Matthews}, J.-H.
+  {Zhao}, R.~{Rao}, and G.~C. {Bower}.
+\newblock {An X-Ray, Infrared, and Submillimeter Flare of Sagittarius A*}.
+\newblock \emph{\apj}, 682:\penalty0 373-383, July 2008.
+\newblock \doi{10.1086/588806}.
+
+\bibitem[{Masson}(1994)]{Masson_1994}
+C.~R. {Masson}.
+\newblock {Atmospheric Effects and Calibrations}.
+\newblock In M.~{Ishiguro} and J.~{Welch}, editors, \emph{IAU Colloq. 140:
+  Astronomy with Millimeter and Submillimeter Wave Interferometry}, volume~59
+  of \emph{Astronomical Society of the Pacific Conference Series}, pages
+  87--95, 1994.
+
+\bibitem[{McKinney} et~al.(2014){McKinney}, {Tchekhovskoy}, {Sadowski}, and
+  {Narayan}]{McKinney_2014}
+J.~C. {McKinney}, A.~{Tchekhovskoy}, A.~{Sadowski}, and R.~{Narayan}.
+\newblock {Three-dimensional general relativistic radiation
+  magnetohydrodynamical simulation of super-Eddington accretion, using a new
+  code HARMRAD with M1 closure}.
+\newblock \emph{\mnras}, 441:\penalty0 3177--3208, July 2014.
+\newblock \doi{10.1093/mnras/stu762}.
+
+\bibitem[{Melia}(1994)]{Melia_1994}
+F.~{Melia}.
+\newblock {An accreting black hole model for Sagittarius A(*). 2: A detailed
+  study}.
+\newblock \emph{\apj}, 426:\penalty0 577--585, May 1994.
+\newblock \doi{10.1086/174094}.
+
+\bibitem[{Merloni} et~al.(2003){Merloni}, {Heinz}, and {di
+  Matteo}]{Merloni_2003}
+A.~{Merloni}, S.~{Heinz}, and T.~{di Matteo}.
+\newblock {A Fundamental Plane of black hole activity}.
+\newblock \emph{\mnras}, 345:\penalty0 1057--1076, November 2003.
+\newblock \doi{10.1046/j.1365-2966.2003.07017.x}.
+
+\bibitem[{Meyer} et~al.(2008){Meyer}, {Do}, {Ghez}, {Morris}, {Witzel},
+  {Eckart}, {B{\'e}langer}, and {Sch{\"o}del}]{Meyer_2008}
+L.~{Meyer}, T.~{Do}, A.~{Ghez}, M.~R. {Morris}, G.~{Witzel}, A.~{Eckart},
+  G.~{B{\'e}langer}, and R.~{Sch{\"o}del}.
+\newblock {A 600 Minute Near-Infrared Light Curve of Sagittarius A*}.
+\newblock \emph{\apjl}, 688:\penalty0 L17, November 2008.
+\newblock \doi{10.1086/593147}.
+
+\bibitem[{Miyoshi} et~al.(1995){Miyoshi}, {Moran}, {Herrnstein}, {Greenhill},
+  {Nakai}, {Diamond}, and {Inoue}]{Miyoshi_1995}
+M.~{Miyoshi}, J.~{Moran}, J.~{Herrnstein}, L.~{Greenhill}, N.~{Nakai},
+  P.~{Diamond}, and M.~{Inoue}.
+\newblock {Evidence for a black hole from high rotation velocities in a
+  sub-parsec region of NGC4258}.
+\newblock \emph{\nat}, 373:\penalty0 127--129, January 1995.
+\newblock \doi{10.1038/373127a0}.
+
+\bibitem[Monnier(2007)]{Monnier_2007}
+John~D. Monnier.
+\newblock {Phases in interferometry}.
+\newblock \emph{New Astronomy Reviews}, 51\penalty0 (8-9):\penalty0 604--616,
+  oct 2007.
+\newblock \doi{10.1016/j.newar.2007.06.006}.
+\newblock URL \url{http://dx.doi.org/10.1016/j.newar.2007.06.006}.
+
+\bibitem[{Mo{\'s}cibrodzka} et~al.(2014){Mo{\'s}cibrodzka}, {Falcke},
+  {Shiokawa}, and {Gammie}]{Moscibrodzka_2014}
+M.~{Mo{\'s}cibrodzka}, H.~{Falcke}, H.~{Shiokawa}, and C.~F. {Gammie}.
+\newblock {Observational appearance of inefficient accretion flows and jets in
+  3D GRMHD simulations: Application to Sagittarius A*}.
+\newblock \emph{\aap}, 570:\penalty0 A7, October 2014.
+\newblock \doi{10.1051/0004-6361/201424358}.
+
+\bibitem[Narayan(1992)]{Narayan_1992}
+R.~Narayan.
+\newblock {The Physics of Pulsar Scintillation}.
+\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical
+  Physical and Engineering Sciences}, 341\penalty0 (1660):\penalty0 151--165,
+  oct 1992.
+\newblock \doi{10.1098/rsta.1992.0090}.
+\newblock URL \url{http://dx.doi.org/10.1098/rsta.1992.0090}.
+
+\bibitem[Narayan and Goodman(1989)]{Narayan_1989}
+R.~Narayan and J.~Goodman.
+\newblock {The shape of a scatter-broadened image - I. Numerical simulations
+  and physical principles}.
+\newblock \emph{\mnras}, 238\penalty0 (3):\penalty0 963--994, jun 1989.
+\newblock \doi{10.1093/mnras/238.3.963}.
+\newblock URL \url{http://dx.doi.org/10.1093/mnras/238.3.963}.
+
+\bibitem[{Narayan} and {McClintock}(2013)]{Narayan_2013}
+R.~{Narayan} and J.~E. {McClintock}.
+\newblock {Observational Evidence for Black Holes}.
+\newblock \emph{ArXiv e-prints}, December 2013.
+
+\bibitem[{Narayan} and {Yi}(1995)]{Narayan_1995}
+R.~{Narayan} and I.~{Yi}.
+\newblock {Advection-dominated Accretion: Underfed Black Holes and Neutron
+  Stars}.
+\newblock \emph{\apj}, 452:\penalty0 710, October 1995.
+\newblock \doi{10.1086/176343}.
+
+\bibitem[{Narayan} et~al.(2003){Narayan}, {Igumenshchev}, and
+  {Abramowicz}]{Narayan_2003}
+R.~{Narayan}, I.~V. {Igumenshchev}, and M.~A. {Abramowicz}.
+\newblock {Magnetically Arrested Disk: an Energetically Efficient Accretion
+  Flow}.
+\newblock \emph{\pasj}, 55:\penalty0 L69--L72, December 2003.
+\newblock \doi{10.1093/pasj/55.6.L69}.
+
+\bibitem[{Narayan} et~al.(2014){Narayan}, {McClintock}, and
+  {Tchekhovskoy}]{Narayan_2014}
+R.~{Narayan}, J.~E. {McClintock}, and A.~{Tchekhovskoy}.
+\newblock {Energy Extraction from Spinning Black Holes Via Relativistic Jets}.
+\newblock page 523, 2014.
+\newblock \doi{10.1007/978-3-319-06349-2_25}.
+
+\bibitem[Nikolic et~al.(2013)Nikolic, Bolton, Graves, Hills, and
+  Richer]{Nikolic_2013}
+Bojan Nikolic, Rosie~C Bolton, Sarah~F Graves, Richard~E Hills, and John~S
+  Richer.
+\newblock {Phase correction for ALMA with 183 GHz water vapour radiometers}.
+\newblock \emph{\aap}, 552:\penalty0 A104, 2013.
 
 \bibitem[Noordam and Smirnov(2010)]{Noordam_2010}
 J.~E. Noordam and O.~M. Smirnov.
@@ -52,6 +782,20 @@ G.~N. {Ortiz-Le{\'o}n}, M.~D. {Johnson}, S.~S. {Doeleman}, L.~{Blackburn},
 \newblock \emph{\apj}, 824:\penalty0 40, June 2016.
 \newblock \doi{10.3847/0004-637X/824/1/40}.
 
+\bibitem[Pardo et~al.(2001)Pardo, Cernicharo, and Serabyn]{Pardo_2001}
+J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
+\newblock {Atmospheric transmission at microwaves ({ATM}): an improved model
+  for millimeter/submillimeter applications}.
+\newblock \emph{{IEEE} Trans. Antennas Propagat.}, 49\penalty0 (12):\penalty0
+  1683--1694, 2001.
+\newblock \doi{10.1109/8.982447}.
+\newblock URL \url{http://dx.doi.org/10.1109/8.982447}.
+
+\bibitem[{Penrose}(1969)]{Penrose_1969}
+R.~{Penrose}.
+\newblock {Gravitational Collapse: the Role of General Relativity}.
+\newblock \emph{Nuovo Cimento Rivista Serie}, 1, 1969.
+
 \bibitem[Popping and Braun(2008)]{Popping_2008}
 A.~Popping and R.~Braun.
 \newblock {The standing wave phenomenon in radio telescopes}.
@@ -59,20 +803,159 @@ A.~Popping and R.~Braun.
 \newblock \doi{10.1051/0004-6361:20079122}.
 \newblock URL \url{http://dx.doi.org/10.1051/0004-6361:20079122}.
 
-\bibitem[Smirnov(2011{\natexlab{a}})]{Smirnov_2011c}
+\bibitem[{Psaltis} et~al.(2015){Psaltis}, {{\"O}zel}, {Chan}, and
+  {Marrone}]{Psaltis_2015}
+D.~{Psaltis}, F.~{{\"O}zel}, C.-K. {Chan}, and D.~P. {Marrone}.
+\newblock {A General Relativistic Null Hypothesis Test with Event Horizon
+  Telescope Observations of the Black Hole Shadow in Sgr A*}.
+\newblock \emph{\apj}, 814:\penalty0 115, December 2015.
+\newblock \doi{10.1088/0004-637X/814/2/115}.
+
+\bibitem[Psaltis et~al.(2016)Psaltis, Wex, and Kramer]{Psaltis_2016}
+Dimitrios Psaltis, Norbert Wex, and Michael Kramer.
+\newblock {A {QUANTITATIVE} {TEST} {OF} {THE} {NO}-{HAIR} {THEOREM} {WITH} Sgr
+  A{*} {USING} {STARS} {PULSARS} {AND} {THE} {EVENT} {HORIZON} {TELESCOPE}}.
+\newblock \emph{{ApJ}}, 818\penalty0 (2):\penalty0 121, feb 2016.
+\newblock \doi{10.3847/0004-637x/818/2/121}.
+\newblock URL \url{http://dx.doi.org/10.3847/0004-637x/818/2/121}.
+
+\bibitem[{Radford} and {Holdaway}(1998)]{Radford_1998}
+S.~J. {Radford} and M.~A. {Holdaway}.
+\newblock {Atmospheric conditions at a site for submillimeter-wavelength
+  astronomy}.
+\newblock In T.~G. {Phillips}, editor, \emph{Advanced Technology MMW, Radio,
+  and Terahertz Telescopes}, volume 3357 of \emph{\procspie}, pages 486--494,
+  jul 1998.
+
+\bibitem[Rogers et~al.(1995)Rogers, Doeleman, and Moran]{Rogers_1995}
+Alan E.~E. Rogers, Sheperd~S. Doeleman, and James~M. Moran.
+\newblock {Fringe detection methods for very long baseline arrays}.
+\newblock \emph{\aj}, 109:\penalty0 1391, mar 1995.
+\newblock \doi{10.1086/117371}.
+\newblock URL \url{http://dx.doi.org/10.1086/117371}.
+
+\bibitem[Serabyn et~al.(1997)Serabyn, Carlstrom, Lay, Lis, Hunter, Lacy, and
+  Hills]{Serabyn_1997}
+E.~Serabyn, J.~Carlstrom, O.~Lay, D.~C. Lis, T.~R. Hunter, J.~H. Lacy, and
+  R.~E. Hills.
+\newblock {High-Frequency Measurements of the Spectrum of Sagittarius A{*}}.
+\newblock \emph{{ApJ}}, 490\penalty0 (1):\penalty0 L77--L81, nov 1997.
+\newblock \doi{10.1086/311010}.
+\newblock URL \url{http://dx.doi.org/10.1086/311010}.
+
+\bibitem[Serabyn et~al.(1998)Serabyn, Weisstein, Lis, and Pardo]{Serabyn_1998}
+E.~Serabyn, E.~W. Weisstein, D.~C. Lis, and J.~R. Pardo.
+\newblock {Submillimeter Fourier-transform spectrometer measurements of
+  atmospheric opacity above Mauna Kea}.
+\newblock \emph{Appl. Opt.}, 37\penalty0 (12):\penalty0 2185, apr 1998.
+\newblock \doi{10.1364/ao.37.002185}.
+\newblock URL \url{http://dx.doi.org/10.1364/ao.37.002185}.
+
+\bibitem[{Shen} et~al.(2005){Shen}, {Lo}, {Liang}, {Ho}, and {Zhao}]{Shen_2005}
+Z.-Q. {Shen}, K.~Y. {Lo}, M.-C. {Liang}, P.~T.~P. {Ho}, and J.-H. {Zhao}.
+\newblock {A size of \~{}1AU for the radio source Sgr A* at the centre of the
+  Milky Way}.
+\newblock \emph{\nat}, 438:\penalty0 62--64, November 2005.
+\newblock \doi{10.1038/nature04205}.
+
+\bibitem[{Skilling} and {Bryan}(1984)]{Skilling_1984}
+J.~{Skilling} and R.~K. {Bryan}.
+\newblock {Maximum Entropy Image Reconstruction - General Algorithm}.
+\newblock \emph{\mnras}, 211:\penalty0 111, November 1984.
+\newblock \doi{10.1093/mnras/211.1.111}.
+
+\bibitem[Smirnov(2011{\natexlab{a}})]{Smirnov_2011a}
 O.~M. Smirnov.
 \newblock {Revisiting the radio interferometer measurement equation}.
-\newblock \emph{A&A}, 527:\penalty0 A108, 2011{\natexlab{a}}.
+\newblock \emph{A\&A}, 527:\penalty0 A106, 2011{\natexlab{a}}.
+\newblock \doi{10.1051/0004-6361/201016082}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201016082}.
+
+\bibitem[Smirnov(2011{\natexlab{b}})]{Smirnov_2011b}
+O.~M. Smirnov.
+\newblock {Revisiting the radio interferometer measurement equation}.
+\newblock \emph{A\&A}, 527:\penalty0 A107, 2011{\natexlab{b}}.
+\newblock \doi{10.1051/0004-6361/201116434}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201116434}.
+
+\bibitem[Smirnov(2011{\natexlab{c}})]{Smirnov_2011c}
+O.~M. Smirnov.
+\newblock {Revisiting the radio interferometer measurement equation}.
+\newblock \emph{A\&A}, 527:\penalty0 A108, 2011{\natexlab{c}}.
 \newblock \doi{10.1051/0004-6361/201116435}.
 \newblock URL \url{http://dx.doi.org/10.1051/0004-6361/201116435}.
 
-\bibitem[Smirnov(2011{\natexlab{b}})]{Smirnov_Calim_2011}
+\bibitem[{Smirnov} and {Tasse}(2015)]{Smirnov_2015}
+O.~M. {Smirnov} and C.~{Tasse}.
+\newblock {Radio interferometric gain calibration as a complex optimization
+  problem}.
+\newblock \emph{\mnras}, 449:\penalty0 2668--2684, May 2015.
+\newblock \doi{10.1093/mnras/stv418}.
+
+\bibitem[Smirnov(2011{\natexlab{d}})]{Smirnov_Calim_2011}
 O.M. Smirnov.
 \newblock {presentation at `SKA CALIM workshop : Solving for primary beams,
   pointing errors, and The Westerbork Wobble', Manchester, 25-29 July 2011.},
-  June 2011{\natexlab{b}}.
+  June 2011{\natexlab{d}}.
 \newblock URL
   \url{https://indico.skatelescope.org/event/171/session/9/contribution/20}.
 \newblock (accessed June 13, 2016).
+
+\bibitem[{Takahashi}(2004)]{Takahashi_2004}
+R.~{Takahashi}.
+\newblock {Shapes and Positions of Black Hole Shadows in Accretion Disks and
+  Spin Parameters of Black Holes}.
+\newblock \emph{\apj}, 611:\penalty0 996--1004, August 2004.
+\newblock \doi{10.1086/422403}.
+
+\bibitem[{Tatarskii}(1971)]{Tatarskii_1971}
+V.~I. {Tatarskii}.
+\newblock {The effects of the turbulent atmosphere on wave propagation}.
+\newblock 1971.
+
+\bibitem[{Thompson} et~al.(2001){Thompson}, {Moran}, and
+  {Swenson}]{Thompson_2001}
+A.~R. {Thompson}, J.~M. {Moran}, and G.~W. {Swenson}, Jr.
+\newblock \emph{{Interferometry and Synthesis in Radio Astronomy, 2nd
+  Edition}}.
+\newblock New York : John Wiley \& Sons, 2001.
+
+\bibitem[Treuhaft and Lanyi(1987)]{Treuhaft_1987}
+R.~N. Treuhaft and G.~E. Lanyi.
+\newblock {The effect of the dynamic wet troposphere on radio interferometric
+  measurements}.
+\newblock \emph{Radio Science}, 22\penalty0 (2):\penalty0 251--265, mar 1987.
+\newblock \doi{10.1029/rs022i002p00251}.
+\newblock URL \url{http://dx.doi.org/10.1029/rs022i002p00251}.
+
+\bibitem[{Whitney} et~al.(1971){Whitney}, {Shapiro}, {Rogers}, {Robertson},
+  {Knight}, {Clark}, {Goldstein}, {Marandino}, and {Vandenberg}]{Whitney_1971}
+A.~R. {Whitney}, I.~I. {Shapiro}, A.~E.~E. {Rogers}, D.~S. {Robertson}, C.~A.
+  {Knight}, T.~A. {Clark}, R.~M. {Goldstein}, G.~E. {Marandino}, and N.~R.
+  {Vandenberg}.
+\newblock {Quasars Revisited: Rapid Time Variations Observed Via
+  Very-Long-Baseline Interferometry}.
+\newblock \emph{Science}, 173:\penalty0 225--230, July 1971.
+\newblock \doi{10.1126/science.173.3993.225}.
+
+\bibitem[{Wrobel} and {Walker}(1999)]{Wrobel_1999}
+J.~M. {Wrobel} and R.~C. {Walker}.
+\newblock {Sensitivity}.
+\newblock 180:\penalty0 171, 1999.
+
+\bibitem[{Yuan} et~al.(2003){Yuan}, {Quataert}, and {Narayan}]{Yuan_2003}
+F.~{Yuan}, E.~{Quataert}, and R.~{Narayan}.
+\newblock {Nonthermal Electrons in Radiatively Inefficient Accretion Flow
+  Models of Sagittarius A*}.
+\newblock \emph{\apj}, 598:\penalty0 301--312, November 2003.
+\newblock \doi{10.1086/378716}.
+
+\bibitem[{Yusef-Zadeh} et~al.(2006){Yusef-Zadeh}, {Roberts}, {Wardle},
+  {Heinke}, and {Bower}]{Yusef-Zadeh_2006}
+F.~{Yusef-Zadeh}, D.~{Roberts}, M.~{Wardle}, C.~O. {Heinke}, and G.~C. {Bower}.
+\newblock {Flaring Activity of Sagittarius A* at 43 and 22 GHz: Evidence for
+  Expanding Hot Plasma}.
+\newblock \emph{\apj}, 650:\penalty0 189--194, October 2006.
+\newblock \doi{10.1086/506375}.
 
 \end{thebibliography}
