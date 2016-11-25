@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  14 NOV 2016 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.9)  25 NOV 2016 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,54 +752,72 @@ LaTeX Info: Redefining \nameref on input line 23.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./Main.toc
-LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
+ (./preamble.tex
+<Images/Rhode.png, id=148, 1284.8pt x 792.9625pt>
+File: Images/Rhode.png Graphic file (type png)
+ <use Images/Rhode.png>
+Package pdftex.def Info: Images/Rhode.png used on input line 11.
+(pdftex.def)             Requested size: 155.99762pt x 96.27666pt.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/Rhode.png>] [2
+
+] [3
+
+] [4
+
+] [5
+
+]
+(./Main.toc [6
+
+])
 \tf@toc=\write4
 \openout4 = `Main.toc'.
 
- [2] (./Main.lof
-Underfull \vbox (badness 1400) has occurred while \output is active []
-
- [3
-
-]
+ (./Main.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-[5]
+ [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6])
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+Underfull \vbox (badness 4168) has occurred while \output is active []
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11])
 \tf@lof=\write5
 \openout5 = `Main.lof'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-[8] (./Main.lot
+ [12]
+(./Main.lot
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9
-
-]
+ [13]
 Overfull \hbox (0.35712pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/12 The list of the pa-ram-e-ters, aside from the source 
 model, needed 
@@ -809,27 +827,44 @@ model, needed
 \tf@lot=\write6
 \openout6 = `Main.lot'.
 
- (./Introduction.tex [10]
+) [14] [1
+
+] (./Main.toc)
+\tf@toc=\write7
+\openout7 = `Main.toc'.
+
+ [2
+
+] (./Main.lof)
+\tf@lof=\write8
+\openout8 = `Main.lof'.
+
+ [3
+
+] (./Main.lot)
+\tf@lot=\write9
+\openout9 = `Main.lot'.
+
+ (./Introduction.tex
+[4
+
+]
 Chapter 1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
+ [5
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
+ [6]
 Overfull \hbox (33.49287pt too wide) in paragraph at lines 42--43
 []\OT1/cmr/m/n/12 Theoretical stud-ies and Gen-eral Rel-a-tivis-tic Magneto-Hyd
 rodynamic (GRMHD)
  []
 
-[13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-<Images/lensed_cartoon.png, id=518, 1442.38875pt x 559.08875pt>
+[7] [8] <Images/lensed_cartoon.png, id=601, 1442.38875pt x 559.08875pt>
 File: Images/lensed_cartoon.png Graphic file (type png)
 
 <use Images/lensed_cartoon.png>
@@ -839,10 +874,10 @@ Package pdftex.def Info: Images/lensed_cartoon.png used on input line 65.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15]
+[9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./Images/lensed_cartoon.png>]
+ [10 <./Images/lensed_cartoon.png>]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
@@ -850,8 +885,8 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 
 Underfull \vbox (badness 3118) has occurred while \output is active []
 
- [17]
-<Images/spec_ang.png, id=557, 937.5025pt x 645.41125pt>
+ [11]
+<Images/spec_ang.png, id=640, 937.5025pt x 645.41125pt>
 File: Images/spec_ang.png Graphic file (type png)
 
 <use Images/spec_ang.png>
@@ -861,32 +896,26 @@ Package pdftex.def Info: Images/spec_ang.png used on input line 95.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/eht_globe.png, id=567, 1171.37625pt x 599.23875pt>
+<Images/eht_globe.png, id=650, 1171.37625pt x 599.23875pt>
 File: Images/eht_globe.png Graphic file (type png)
 
 <use Images/eht_globe.png>
 Package pdftex.def Info: Images/eht_globe.png used on input line 106.
 (pdftex.def)             Requested size: 312.00119pt x 159.6113pt.
- [18]
+ [12]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./Images/spec_ang.png (PNG copy)>]
+[13 <./Images/spec_ang.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./Images/eht_globe.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
+ [14 <./Images/eht_globe.png>] [15]
 Overfull \hbox (10.44029pt too wide) in paragraph at lines 135--137
 \OT1/cmr/m/n/12 pre-clude ro-bust, ac-cu-rate Bayesian pa-ram-e-ter es-ti-ma-ti
 on and model
  []
 
-[22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
+[16] [17]
 Overfull \hbox (2.05426pt too wide) in paragraph at lines 160--161
 \OT1/cmr/m/n/12 ad-vanced ra-dio in-ter-fer-o-met-ric cal-i-bra-tion and imag-i
 ng al-go-rithms
@@ -898,7 +927,7 @@ Overfull \hbox (6.04245pt too wide) in paragraph at lines 160--161
 cmr/m/sc/12 MeqTrees[][][]
  []
 
-[24]
+[18]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -912,61 +941,50 @@ Overfull \hbox (8.83958pt too wide) in paragraph at lines 177--178
 qua-
  []
 
-[25]) (./Theory.tex [26]
+[19]) (./Theory.tex [20]
 Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27
+[21
 
 ]
-[28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-Underfull \vbox (badness 6396) has occurred while \output is active []
+ [22]
+Underfull \vbox (badness 7362) has occurred while \output is active []
 
- [30]
-[31]
+ [23]
+[24] [25]
 
-Package natbib Warning: Citation `Fish_2009' on page 32 undefined on input line
+Package natbib Warning: Citation `Fish_2009' on page 26 undefined on input line
  156.
 
-[32] [33] [34]
+[26]
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+ [27]
+[28]
 Overfull \hbox (9.43057pt too wide) in paragraph at lines 198--199
 \OT1/cmr/m/n/12 in-ter-linked modes : static flar-ing re-gions, changes in mag-
 netic field/polarisation
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
+[29]
 Overfull \hbox (3.69pt too wide) in paragraph at lines 217--218
 []\OT1/cmr/m/n/12 As stated ear-lier, the stan-dard mm-VLBI cal-i-bra-tion tech
 -niques i.e. fringe-
  []
 
+[30] [31]
+Underfull \vbox (badness 7344) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-[37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
-<Images/scatter.pdf, id=867, 626.15933pt x 372.5619pt>
+ [32]
+<Images/scatter.pdf, id=951, 626.15933pt x 372.5619pt>
 File: Images/scatter.pdf Graphic file (type pdf)
 
 <use Images/scatter.pdf>
 Package pdftex.def Info: Images/scatter.pdf used on input line 264.
 (pdftex.def)             Requested size: 390.0pt x 232.04337pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
-[40 <./Images/scatter.pdf>]
-<Images/scattering_law.jpg, id=921, 216.81pt x 217.89404pt>
+ [33] [34 <./Images/scatter.pdf>]
+<Images/scattering_law.jpg, id=1003, 216.81pt x 217.89404pt>
 File: Images/scattering_law.jpg Graphic file (type jpg)
 
 <use Images/scattering_law.jpg>
@@ -977,27 +995,27 @@ Package pdftex.def Info: Images/scattering_law.jpg used on input line 288.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 293.
 
-[41]
-Underfull \vbox (badness 1796) has occurred while \output is active []
-
- [42 <./Images/scattering_law.jpg>] [43]
+[35] [36 <./Images/scattering_law.jpg>]
 Overfull \hbox (19.37671pt too wide) in paragraph at lines 329--330
 \OT1/cmr/m/it/12 ensemble-average \OT1/cmr/m/n/12 regimes [[]Narayan and Good-m
 an[], []1989[], []Good-man and Narayan[],
  []
 
 
-Underfull \vbox (badness 4913) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
-[45] <Images/ism_cp.jpg, id=1015, 495.0495pt x 105.5142pt>
+ [37]
+[38]
+Underfull \vbox (badness 3229) has occurred while \output is active []
+
+ [39]
+<Images/ism_cp.jpg, id=1100, 495.0495pt x 105.5142pt>
 File: Images/ism_cp.jpg Graphic file (type jpg)
-
-<use Images/ism_cp.jpg>
+ <use Images/ism_cp.jpg>
 Package pdftex.def Info: Images/ism_cp.jpg used on input line 372.
 (pdftex.def)             Requested size: 390.0pt x 83.12668pt.
 
-<Images/ortizrepeat.png, id=1016, 1860.9525pt x 579.16376pt>
+<Images/ortizrepeat.png, id=1101, 1860.9525pt x 579.16376pt>
 File: Images/ortizrepeat.png Graphic file (type png)
 
 <use Images/ortizrepeat.png>
@@ -1012,48 +1030,51 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 371--377
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 3826) has occurred while \output is active []
+Underfull \vbox (badness 1221) has occurred while \output is active []
 
- [46]
-Underfull \vbox (badness 5133) has occurred while \output is active []
+ [40]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47 <./Images/ism_cp.jpg> <./Images/ortizrepeat.png>] [48]
-Underfull \vbox (badness 6016) has occurred while \output is active []
+ [41 <./Images/ism_cp.jpg> <./Images/ortizrepeat.png>]
+Underfull \vbox (badness 3281) has occurred while \output is active []
 
- [49]
-<Images/absorption.png, id=1080, 863.225pt x 555.07375pt>
+ [42]
+[43] <Images/absorption.png, id=1162, 863.225pt x 555.07375pt>
 File: Images/absorption.png Graphic file (type png)
 
 <use Images/absorption.png>
 Package pdftex.def Info: Images/absorption.png used on input line 425.
 (pdftex.def)             Requested size: 390.0pt x 250.77182pt.
- [50 <./Images/absorption.png>]
+ [44 <./Images/absorption.png>]
 Overfull \hbox (0.25972pt too wide) in paragraph at lines 450--451
 \OT1/cmr/m/n/12 (\OT1/cmr/m/sc/12 atm\OT1/cmr/m/n/12 ) soft-ware [[]Pardo et al
 .[], []2001[]]. \OT1/cmr/m/sc/12 atm \OT1/cmr/m/n/12 has been in-cor-po-rated i
 nto \OT1/cmr/m/sc/12 MeqSil-
  []
 
-[51] [52]
-Underfull \vbox (badness 2005) has occurred while \output is active []
+[45]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-[54] <Images/screentransition.png, id=1167, 914.41624pt x 688.5725pt>
+ [46]
+[47] [48] <Images/screentransition.png, id=1251, 914.41624pt x 688.5725pt>
 File: Images/screentransition.png Graphic file (type png)
 
 <use Images/screentransition.png>
 Package pdftex.def Info: Images/screentransition.png used on input line 522.
 (pdftex.def)             Requested size: 390.0pt x 293.67435pt.
- [55] [56 <./Images/screentransition.png>]
-[57] [58]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [49] [50 <./Images/screentransition.png>]
+[51]
+Underfull \vbox (badness 1072) has occurred while \output is active []
 
- [59]
-[60]) (./Implementation.tex [61]
+ [52]
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+ [53])
+(./Implementation.tex [54]
 Chapter 3.
-[62
+[55
 
-] [63] [64] <Images/flow_full2.png, id=1271, 512.14961pt x 293.06339pt>
+] [56] [57] <Images/flow_full2.png, id=1349, 512.14961pt x 293.06339pt>
 File: Images/flow_full2.png Graphic file (type png)
 
 <use Images/flow_full2.png>
@@ -1063,7 +1084,7 @@ Package pdftex.def Info: Images/flow_full2.png used on input line 53.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/Class_module_structure.png, id=1275, 935.495pt x 242.9075pt>
+<Images/Class_module_structure.png, id=1353, 935.495pt x 242.9075pt>
 File: Images/Class_module_structure.png Graphic file (type png)
 
 <use Images/Class_module_structure.png>
@@ -1073,28 +1094,21 @@ Package pdftex.def Info: Images/Class_module_structure.png used on input line 9
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-[66]
-Underfull \vbox (badness 1117) has occurred while \output is active []
-
- [67 <./Images/flow_full2.png>]
+ [58]
+[59] [60 <./Images/flow_full2.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68 <./Images/Class_module_structure.png (PNG copy)>] [69] [70]
+ [61 <./Images/Class_module_structure.png (PNG copy)>] [62] [63]
 Overfull \hbox (21.74207pt too wide) in paragraph at lines 171--172
 \OT1/cmr/m/n/12 To sim-u-late point-ing er-rors, we use the im-ple-men-ta-tion 
 built into the \OT1/cmr/m/sc/12 MeqTrees\OT1/cmr/m/n/12 .
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71])
-(./Results.tex [72]
+[64]) (./Results.tex [65]
 Chapter 4.
-[73
+[66
 
-] [74] <Images/ism.png, id=1393, 1108.14pt x 707.7642pt>
+] [67] <Images/ism.png, id=1471, 1108.14pt x 707.7642pt>
 File: Images/ism.png Graphic file (type png)
 
 <use Images/ism.png>
@@ -1104,22 +1118,22 @@ Package pdftex.def Info: Images/ism.png used on input line 41.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[75] [76 <./Images/ism.png>]
-<Images/opacity.png, id=1416, 848.57025pt x 467.94826pt>
+[68] [69 <./Images/ism.png>]
+<Images/opacity.png, id=1494, 848.57025pt x 467.94826pt>
 File: Images/opacity.png Graphic file (type png)
 
 <use Images/opacity.png>
 Package pdftex.def Info: Images/opacity.png used on input line 57.
 (pdftex.def)             Requested size: 390.0pt x 215.06602pt.
- [77 <./Images/opacity.png>]
-<Images/delays.png, id=1434, 1505.625pt x 600.2425pt>
+ [70 <./Images/opacity.png>]
+<Images/delays.png, id=1511, 1505.625pt x 600.2425pt>
 File: Images/delays.png Graphic file (type png)
  <use Images/delays.png>
 Package pdftex.def Info: Images/delays.png used on input line 73.
 (pdftex.def)             Requested size: 390.0pt x 155.48235pt.
 
-[78 <./Images/delays.png>]
-<Images/trop_images.png, id=1448, 1505.625pt x 1123.19624pt>
+[71 <./Images/delays.png>]
+<Images/trop_images.png, id=1526, 1505.625pt x 1123.19624pt>
 File: Images/trop_images.png Graphic file (type png)
 
 <use Images/trop_images.png>
@@ -1129,78 +1143,87 @@ Package pdftex.def Info: Images/trop_images.png used on input line 88.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79]
+[72]
 
-LaTeX Warning: Text page 80 contains only floats.
+LaTeX Warning: Text page 73 contains only floats.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80 <./Images/trop_images.png>] [81] [82]
-<Images/point_Crop.png, id=1490, 1328.965pt x 843.15pt>
+ [73 <./Images/trop_images.png>] [74] [75]
+<Images/point_Crop.png, id=1568, 1328.965pt x 843.15pt>
 File: Images/point_Crop.png Graphic file (type png)
 
 <use Images/point_Crop.png>
 Package pdftex.def Info: Images/point_Crop.png used on input line 145.
 (pdftex.def)             Requested size: 390.0pt x 247.42769pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[83]
+ [76 <./Images/point_Crop.png>]
 Overfull \hbox (2.85374pt too wide) in paragraph at lines 171--171
 []\OT1/cmr/bx/n/17.28 Suggested ap-pli-ca-tions and im-prove-ments 
  []
 
-[84 <./Images/point_Crop.png>] [85] [86]
-Underfull \vbox (badness 3492) has occurred while \output is active []
-
- [87])
-(./Conclusion.tex [88]
+[77] [78] [79] [80]) (./Conclusion.tex [81]
 Chapter 5.
-[89
+[82
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [83]) (./Appendix.tex [84]
+Appendix A.
+[85
 
- [90])
-(./Main.bbl [91] [92
+] [86]) [87] (./Main.bbl [88
 
-] [93]
+] [89
+
+] [90]
 Underfull \hbox (badness 1412) in paragraph at lines 126--132
 []\OT1/cmr/m/n/12 Avery E. Brod-er-ick, Tim Jo-hannsen, Abra-ham Loeb, and Dim-
 itrios
  []
 
-[94] [95] [96] [97] [98] [99]
+[91] [92] [93] [94] [95] [96]
 Underfull \hbox (badness 2020) in paragraph at lines 510--516
 \OT1/cmr/m/n/12 OF RE-FRAC-TIVE SUB-STRUC-TURE IN RE-SOLVED SCATTER-
  []
 
-[100] [101] [102] [103] [104] [105] [106] [107])
+[97] [98] [99] [100] [101] [102] [103] [104])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
-[108]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
+[105]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
  (./Main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 43.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 64BE0DA7E896A24E700AD8B6987291EB;1969.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
+(rerunfilecheck)             Checksum: 2DE6AE4486ED2874175C9EC5C9040673;2447.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 9314 strings out of 494506
- 139371 string characters out of 6172963
- 262369 words of memory out of 5000000
- 12211 multiletter control sequences out of 15000+600000
- 17408 words of font info for 69 fonts, out of 8000000 for 9000
+ 9373 strings out of 494506
+ 140041 string characters out of 6172963
+ 262327 words of memory out of 5000000
+ 12227 multiletter control sequences out of 15000+600000
+ 18357 words of font info for 72 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  36i,12n,43p,1812b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
-st, replaced by a fixed one
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
 , replaced by a fixed one
@@ -1235,22 +1258,22 @@ public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb>
-Output written on Main.pdf (108 pages, 8575009 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Main.pdf (119 pages, 8693764 bytes).
 PDF statistics:
- 1875 PDF objects out of 2073 (max. 8388607)
- 1662 compressed objects within 17 object streams
- 346 named destinations out of 1000 (max. 500000)
- 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1996 PDF objects out of 2073 (max. 8388607)
+ 1768 compressed objects within 18 object streams
+ 377 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 

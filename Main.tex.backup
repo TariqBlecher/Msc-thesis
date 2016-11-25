@@ -14,7 +14,8 @@
 \usepackage{hyperref}
 \usepackage[onehalfspacing]{setspace}
 \hypersetup{colorlinks=false,pdfborder={0 0 0}}
-
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
 \newcommand{\bm}{\boldsymbol}
 
 
@@ -24,11 +25,14 @@
 %\frontmatter
 %\input{preamble}
 %\mainmatter
-%\input{Introduction}
-%\input{Theory}
-%\input{Implementation}
+\tableofcontents
+\listoffigures
+\listoftables
+\input{Introduction}
+\input{Theory}
+\input{Implementation}
 \input{Results}
-%\input{Conclusion}
+\input{Conclusion}
 \bibliography{thesis}
 \bibliographystyle{plainnat}
 \addcontentsline{toc}{chapter}{Bibliography}

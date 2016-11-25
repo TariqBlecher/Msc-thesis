@@ -1,0 +1,84 @@
+\chapter{Software documentation}
+%st 1
+The following appendix serves as documentation for the installation and use of {\sc meqsilhouette}.
+
+\section{Installation}
+%st 1
+
+The {\sc meqsilhouette} repository is currently private, however if made public it is maintained here\footnote{https://github.com/ratt-ru/MeqSilhouette}. Currently, the simulator is running on {\sc Ubuntu 14.04} and has not been tested on other operating systems. Software requirements which are being maintained elsewhere and are publicly available: 
+\begin{itemize}
+ \item {\sc simms}\footnote{https://github.com/radio-astro/simms}
+ \item {\sc MeqTrees}\footnote{https://ska-sa.github.io/meqtrees/} 
+ \item {\sc Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane}
+\end{itemize}
+
+Note that {\sc simms} in turn requires {\sc casa}, where we have used version 4.2.2. Several different routes for the installation of {\sc MeqTrees} are available\footnote{https://github.com/ska-sa/meqtrees/wiki/Installation}. Note that as {\sc aatm} is not currently being maintained or easily available, we include it's distribution within the {\sc meqsilhouette} repository.
+
+
+Once the {\sc meqsilhouette} repository has been cloned, either add the framework module to the PYTHONPATH directly or install using pip,
+\begin{verbatim}
+$ cd MeqSilhouette/framework/; sudo pip install .
+\end{verbatim}
+
+\section{Usage}
+
+%st 1
+We will first discuss the simple case of running a simulation with the canonical pre-written driver script. Following this, we will discuss how to write one's own driver script.
+
+\subsection{Running a standard simulation}
+%st1
+
+We will focus on the standard `azishe' pipeline, the central concepts are captured in Fig.~\ref{flow}, however antenna pointing errors are not included and the sky model needs to be in {\sc fits} format. 
+
+To run in the MeqSilhouette repository we pass the driver script and parameter dictionary to {\sc Python},
+\begin{verbatim}
+$python driver/azishe.py input/parameters.json
+\end{verbatim}
+
+
+The content of the parameter dictionary is shown, slightly altered, in table~\ref{tab:parameters}. The parameters in the dictionary can be altered by editing the dictionary directly. Note that if the content of antenna table is changed, so should the content of station information file. The path of the folder containing the sky model is also located in the parameter dictionary, for multiple fits files, i.e. a time-variable source, the order of their implementation is the same as if their names with sorted with numpy.sort, where each fits files is observed for approximately the same amount of time. If the ISM-scattering is turned on, the extra logistics of moving and creating fits files and folders are automatically handled. The primary log is set by `v.LOG' variable, intialised in the driver script. The output will be found in the `output' directory, within a subdirectory whose name will be the same as the fitsfolder in the parameter dictionary. 
+
+%%UNITS in parameter dictionary?? shiiit
+
+\subsection{Writing a driver script}
+% leave until 
+Most important steps :
+\begin{enumerate}
+ \item setup and pass dictionaries
+ \item create measurement sets
+ \item initialise SimCoordinator with measurement set, input source, and parameter dictionary
+ \item run 
+\end{enumerate}
+
+
+
+
+As an example of another driver script, look at the script `driver/cp_envelope.py', this script looks over a subsection of the simulation which ISM-scatters the source and reobserves using the same measurement set.
+
+
+You shouldn't need to get any deeper than the \emph{SimCoordinator} class
+
+## Running the simulator
+To run this simulator, you need :
+
+1. a driver script (e.g. driver/azishe.py)
+2. a configuration file (input/parameters.json is an example.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
