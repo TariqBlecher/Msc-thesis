@@ -1,4 +1,4 @@
-\begin{thebibliography}{111}
+\begin{thebibliography}{119}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -44,6 +44,20 @@ S.~A. {Balbus} and J.~F. {Hawley}.
 \newblock \emph{Reviews of Modern Physics}, 70:\penalty0 1--53, January 1998.
 \newblock \doi{10.1103/RevModPhys.70.1}.
 
+\bibitem[{Bardeen}(1973)]{Bardeen_1973}
+J.~M. {Bardeen}.
+\newblock {Timelike and null geodesics in the Kerr metric.}
+\newblock In C.~{Dewitt} and B.~S. {Dewitt}, editors, \emph{Black Holes (Les
+  Astres Occlus)}, pages 215--239, 1973.
+
+\bibitem[{Begelman} et~al.(2006){Begelman}, {Volonteri}, and
+  {Rees}]{Begelman_2006}
+M.~C. {Begelman}, M.~{Volonteri}, and M.~J. {Rees}.
+\newblock {Formation of supermassive black holes by direct collapse in
+  pre-galactic haloes}.
+\newblock \emph{\mnras}, 370:\penalty0 289--298, July 2006.
+\newblock \doi{10.1111/j.1365-2966.2006.10467.x}.
+
 \bibitem[{B{\'e}langer} et~al.(2006){B{\'e}langer}, {Terrier}, {de Jager},
   {Goldwurm}, and {Melia}]{Belanger_2006}
 G.~{B{\'e}langer}, R.~{Terrier}, O.~C. {de Jager}, A.~{Goldwurm}, and
@@ -52,6 +66,12 @@ G.~{B{\'e}langer}, R.~{Terrier}, O.~C. {de Jager}, A.~{Goldwurm}, and
 \newblock \emph{Journal of Physics Conference Series}, 54:\penalty0 420--426,
   December 2006.
 \newblock \doi{10.1088/1742-6596/54/1/066}.
+
+\bibitem[{Blandford} and {Begelman}(1999)]{Blandford_1999}
+R.~D. {Blandford} and M.~C. {Begelman}.
+\newblock {On the fate of gas accreting at a low rate on to a black hole}.
+\newblock \emph{\mnras}, 303:\penalty0 L1--L5, February 1999.
+\newblock \doi{10.1046/j.1365-8711.1999.02358.x}.
 
 \bibitem[{Blecher} et~al.(2016){Blecher}, {Deane}, {Bernardi}, and
   {Smirnov}]{Blecher_2016}
@@ -265,6 +285,12 @@ H~Falcke and S~B Markoff.
 \newblock \doi{10.1088/0264-9381/30/24/244003}.
 \newblock URL \url{http://dx.doi.org/10.1088/0264-9381/30/24/244003}.
 
+\bibitem[{Falcke} et~al.(2000){Falcke}, {Melia}, and {Agol}]{Falcke_2000}
+H.~{Falcke}, F.~{Melia}, and E.~{Agol}.
+\newblock {Viewing the Shadow of the Black Hole at the Galactic Center}.
+\newblock \emph{\apjl}, 528:\penalty0 L13--L16, January 2000.
+\newblock \doi{10.1086/312423}.
+
 \bibitem[Falcke et~al.(1998)Falcke, Goss, Matsuo, Teuben, Zhao, and
   Zylka]{Falcke_1998}
 Heino Falcke, W.~M. Goss, Hiroshi Matsuo, Peter Teuben, Jun-Hui Zhao, and
@@ -434,6 +460,13 @@ C.~R. Gwinn, Y.~Y. Kovalev, M.~D. Johnson, and V.~A. Soglasnov.
 J.~P. {Hamaker}, J.~D. {Bregman}, and R.~J. {Sault}.
 \newblock {Understanding radio polarimetry. I. Mathematical foundations.}
 \newblock \emph{\aaps}, 117:\penalty0 137--147, May 1996.
+
+\bibitem[{Hawking}(1972)]{Hawking_1972}
+S.~W. {Hawking}.
+\newblock {Black holes in general relativity}.
+\newblock \emph{Communications in Mathematical Physics}, 25:\penalty0 152--166,
+  June 1972.
+\newblock \doi{10.1007/BF01877517}.
 
 \bibitem[Hogg et~al.(1981)Hogg, Guiraud, and Decker]{hogg_1981}
 DC~Hogg, FO~Guiraud, and MT~Decker.
@@ -737,6 +770,15 @@ R.~{Narayan} and I.~{Yi}.
 \newblock \emph{\apj}, 452:\penalty0 710, October 1995.
 \newblock \doi{10.1086/176343}.
 
+\bibitem[{Narayan} et~al.(1998){Narayan}, {Mahadevan}, {Grindlay}, {Popham},
+  and {Gammie}]{Narayan_1998}
+R.~{Narayan}, R.~{Mahadevan}, J.~E. {Grindlay}, R.~G. {Popham}, and
+  C.~{Gammie}.
+\newblock {Advection-dominated accretion model of Sagittarius A$^{*}$: evidence
+  for a black hole at the Galactic center.}
+\newblock \emph{\apj}, 492:\penalty0 554--568, January 1998.
+\newblock \doi{10.1086/305070}.
+
 \bibitem[{Narayan} et~al.(2003){Narayan}, {Igumenshchev}, and
   {Abramowicz}]{Narayan_2003}
 R.~{Narayan}, I.~V. {Igumenshchev}, and M.~A. {Abramowicz}.
@@ -751,6 +793,15 @@ R.~{Narayan}, J.~E. {McClintock}, and A.~{Tchekhovskoy}.
 \newblock {Energy Extraction from Spinning Black Holes Via Relativistic Jets}.
 \newblock page 523, 2014.
 \newblock \doi{10.1007/978-3-319-06349-2_25}.
+
+\bibitem[Narayan et~al.(2012)Narayan, S{\k{a}}dowski, Penna, and
+  Kulkarni]{Narayan_2012}
+Ramesh Narayan, Aleksander S{\k{a}}dowski, Robert~F Penna, and Akshay~K
+  Kulkarni.
+\newblock Grmhd simulations of magnetized advection-dominated accretion on a
+  non-spinning black hole: role of outflows.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society},
+  426\penalty0 (4):\penalty0 3241--3259, 2012.
 
 \bibitem[Nikolic et~al.(2013)Nikolic, Bolton, Graves, Hills, and
   Richer]{Nikolic_2013}
@@ -795,6 +846,11 @@ J.R. Pardo, J.~Cernicharo, and E.~Serabyn.
 R.~{Penrose}.
 \newblock {Gravitational Collapse: the Role of General Relativity}.
 \newblock \emph{Nuovo Cimento Rivista Serie}, 1, 1969.
+
+\bibitem[Perley et~al.(1984)Perley, Dreher, and Cowan]{Perley_1984}
+RA~Perley, JW~Dreher, and JJ~Cowan.
+\newblock The jet and filaments in cygnus a.
+\newblock \emph{The Astrophysical Journal}, 285:\penalty0 L35--L38, 1984.
 
 \bibitem[Popping and Braun(2008)]{Popping_2008}
 A.~Popping and R.~Braun.
