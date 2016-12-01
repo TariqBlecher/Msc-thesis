@@ -7,7 +7,7 @@ In this chapter we will showcase a series of results from the {\sc meqsilhouette
 \section{Canonical simulations}\label{sec:can_sim}
 {\it Author's note: This section draws largely from the work of \citet{Blecher_2016}.}
 
-\subsubsection{ISM variability and substructure}
+\subsection{ISM variability and substructure}
 %st 1
 We remind the reader of the reproduction of the ISM-induced closure phase uncertainty result \citep{Ortiz_2016}, shown in Fig.~\ref{fig:substructure2}. To obtain this result we simulated 50 observations, each with an independent realisation of the ISM scattering screen. The success of the reproduction verifies a large section of the simulation software, including I/O, the interferometric and the ISM modules. 
 
@@ -24,11 +24,11 @@ Fig.~\ref{ISM_sequence} provides an example of closure phase and flux variabilit
 
 %to do : expand the analysis of the simulation out ?? not sure how
 %st 1
-This simulation clearly shows how the longest baselines are more sensitive to the refractive substructure, which in turn strengthens the challenge of imaging compact features and/or fine structure like the BH shadow. 
+This simulation clearly shows how the longest baselines are more sensitive to the refractive substructure, which in turn increases the challenge of imaging compact features and/or fine features like the BH shadow. 
 
 
 %%orbiting hot spot st1
-Recalling the variability associated with Sgr~A* (section~\ref{sec:variability}), if the source has intrinsic spatial variability, e.g. an orbiting hotspot model \citep{Doeleman_2009} or jet shocks, this will increase ISM variability as the relative motion between source, screen and observer is increased \citep{Blecher_2016}. Although an orbiting plasma blob might be torn apart on sub-orbit timescales by differential rotation and the non-linear shear of the Magneto-Rotational Instability \citep[(MRI)][]{Balbus_1991}, this scenario becomes more of a physical possibility when resonant orbits are considered \citep{Brink_2015}. A resonant orbit occurs when the ratio of characteristic radial $\omega_r$ and longitudinal frequencies $\omega_\theta$ is a rational number $\omega_r/\omega_\theta = n/m$, where $n,m \in \mathbb{N}$. A hotspot in such an orbit could be stable against differential rotation and associated shearing. In the case of Sgr A*, the $1/2$ and $2/3$ resonances have  length scales of 41 and 55~$\mu$-arcsec respectively for a Schwarschild BH \citep{Brink_2015}, which is observable with the EHT. Also note that these resonant length scales are greater than $r_{\rm ref} \sim 10\ \mu$-arcsec and so the orbit would traverse independent refractive substructure fluctuations. This is relevant to methods like that demonstrated in \citet{Doeleman_2009} which rely on periodic closure phases. The periodic signal would exist (albeit altered by the ISM) but only on timescales less than $t_{\rm ref}$, assuming the orbiting body is unresolved.
+Recalling the variability associated with Sgr~A* (section~\ref{sec:variability}), if the source has intrinsic spatial variability, e.g. an orbiting hotspot model \citep{Doeleman_2009b} or jet shocks, this will increase ISM variability as the relative motion between source, screen and observer is increased \citep{Blecher_2016}. Although an orbiting plasma blob might be torn apart on sub-orbit timescales by differential rotation and the non-linear shear of the Magneto-Rotational Instability \citep[(MRI)][]{Balbus_1991}, this scenario becomes more of a physical possibility when resonant orbits are considered \citep{Brink_2015}. A resonant orbit occurs when the ratio of characteristic radial $\omega_r$ and longitudinal frequencies $\omega_\theta$ is a rational number $\omega_r/\omega_\theta = n/m$, where $n,m \in \mathbb{N}$. A hotspot in such an orbit could be stable against differential rotation and associated shearing. In the case of Sgr A*, the $1/2$ and $2/3$ resonances have  length scales of 41 and 55~$\mu$-arcsec respectively for a Schwarschild BH \citep{Brink_2015}, which is observable with the EHT. Also note that these resonant length scales are greater than $r_{\rm ref} \sim 10\ \mu$-arcsec and so the orbit would traverse independent refractive substructure fluctuations. This is relevant to methods like that demonstrated in \citet{Doeleman_2009b} which rely on periodic closure phases. The periodic signal would exist (albeit altered by the ISM) but only on timescales less than $t_{\rm ref}$, assuming the orbiting body is unresolved.
 
 
 %polarisation st 1 
@@ -43,10 +43,10 @@ Finally, we note that the ISM is polarisation invariant, hence the variability o
 }
 \end{figure}
 
-\subsubsection{Atmospheric transmission and scattering}
+\subsection{Atmospheric transmission and scattering}
 
 %st1
-As described in section~\ref{sec:trop_imp}, the implementation of the tropospheric module is separated into mean and turbulent components. For the mean atmosphere, we simulate opacity, sky brightness temperature and time delay as a function of site weather, elevation angle and frequency. The most important climate parameters are precipitable water vapour column depth (PWV), ground temperature and ground pressure. The turbulent module simulates Guassian fluctuations in the time delay $\tilde{t}$ arriving at each station, where $\sigma(\tilde{t})$ is based on Kolmogorov turbulence on a two-dimensional scattering screen.
+As described in section~\ref{sec:trop_imp}, the implementation of the tropospheric module is separated into mean and turbulent components. For the mean atmosphere, we simulate opacity, sky brightness temperature and time delay as a function of site weather, elevation angle and frequency. The most important climate parameters are precipitable water vapour column depth (PWV), ground temperature and ground pressure. The turbulent module simulates Kolmogorov fluctuations in the time delay $\tilde{t}$ arriving at each station, where $\sigma(\tilde{t})$ is based on Kolmogorov turbulence on a two-dimensional scattering screen.
 
 
 %Opacity + Brightness temperature st 1 - leave for now
@@ -86,23 +86,17 @@ Of vital importance to an interferometric site is atmospheric stability. An exam
 %Trop images
 \begin{figure}[h!]
 \includegraphics[width=\columnwidth]{Images/trop_images}
-\caption{``The effect of residual troposphere phase noise on interferometric images of a point source observed for 12 hours at 230~GHz with 4~GHz bandwidth with the following array : SPT, ALMA, SMA, SMT, LMT and JCMT, assuming the same SEFDs as \protect\citet{Lu_2014} and an elevation limit of 15$^\circ$. For simplicity the weather parameters at each station were set to: coherence time $t_{\rm 0}=10$~sec; PWV depth $w=1$~mm; ground pressure $P=600$~mb; ground temperature $T =273$~K. {\bf Top left:} interferometric map with thermal noise only. {\bf Top right:} atmospheric attenuation and sky noise (due to non-zero opacity) with 1\% of the turbulent phase noise added. {\bf Bottom left:} as previous but with 3\% of turbulent phase contribution. {\bf Bottom right:} as previous but with 6\% turbulent phase contribution. The fractional turbulent phase contributions are illustrative of the effect of fringe-fitting errors. The black crosshairs indicate the original source position. ''(Image and caption reproduced from \citet{Blecher_2016}) \label{fig:trop_images}%
+\caption{``The effect of residual troposphere phase noise on interferometric images of a point source observed for 12 hours at 230~GHz with 4~GHz bandwidth with the following array : SPT, ALMA, SMA, SMT, LMT and JCMT, assuming the same SEFDs as \protect\citet{Lu_2014} and an elevation limit of 15$^\circ$. For simplicity the weather parameters at each station were set to: coherence time $t_{\rm 0}=10$~sec; PWV depth $w=1$~mm; ground pressure $P=600$~mb; ground temperature $T =273$~K. {\bf Top left:} interferometric map with thermal noise only. {\bf Top right:} atmospheric attenuation and sky noise (due to non-zero opacity) with 1\% of the turbulent phase noise added. {\bf Bottom left:} as previous but with 3\% of turbulent phase contribution. {\bf Bottom right:} as previous but with 6\% turbulent phase contribution. The fractional turbulent phase contributions are illustrative of the effect of stochastic fringe-fitting errors. The black crosshairs indicate the original source position. ''(Image and caption reproduced from \citet{Blecher_2016}) \label{fig:trop_images}%
 }
 \end{figure}
 
 
 %st 1 - attenuation of flux
-Analysis of the images reveal increasing attenuation in the original peak, central flux due to the simulated residual calibration errors. In the calibration procedure, station gains cannot be solved for on arbitrarily short intervals as adequate SNR is needed to fringe-fit/self-calibrated. Aside from the fact that solutions are imperfect, within a given solution interval, there will also be a degree of uncalibrated turbulence-induced phase fluctuations.
-
-Specifically, the flux of original central peak component is reduced to $76.5\%$ (attenuation only - not shown in plot), $75.1\%$ (1\% turbulence), 65.5\% (3\% turbulence) and  40.5\% (6\% turbulence). In the case of 6\% turbulence, the imaging artifact vertically below the source at 44.5\% of the original source flux becomes brighter than the corrupted source. 
-
-
+Analysis of the images reveal increasing attenuation in the original peak, central flux due to the simulated residual calibration errors. In the calibration procedure, station gains cannot be solved for on arbitrarily short intervals as adequate SNR is needed to fringe-fit/self-calibrate. Aside from the fact that solutions are imperfect, within a given solution interval, there will also be a degree of uncalibrated turbulence-induced phase fluctuations. Specifically, the flux of original central peak component is reduced to $76.5\%$ (attenuation only - not shown in plot), $75.1\%$ (1\% turbulence), 65.5\% (3\% turbulence) and  40.5\% (6\% turbulence). In the case of 6\% turbulence, the lowest declination, bright ($\sim 1$~Jy/beam) spot is at 44.5\% of the original centroid flux and hence brighter than the corrupted central source. 
+%st 1 PSF discussion
+The residual calibration errors distort the Point Spread Function (PSF, as seen in the uncorrupted image), which result from inadequate sampling of the Fourier domain before imaging. This distortion causes a breakdown in image-plane deconvolution and source finding algorithms as the PSF is difficult to subtract. This is can be seen by comparing the difference in image substructure from the well-behaved PSF in the uncorrupted case (top-left) to the asymmetric substructure at 6\% turbulence (lower-right). This further weakens the ability of such source finding algorithms to extract, with high accuracy, the BH shadow feature.
 %offset in original source st 1
-Furthermore, there are slight offsets in the central peak flux from the original source position as shown by progressive movement away from the black crosshairs. This shift $\approx 5.6\ \mu$-arcsec at 6\% turbulence. 
-
-
-%st 1
-The residual calibration errors also distort the interferometric artifacts (as seen in the uncorrupted image), which result from inadequate sampling of the Fourier domain before imaging. This distortion causes a breakdown in image-plane deconvolution and source finding algorithms as the Point Spread Function (PSF) is difficult to subtract and the interferometric artefacts are difficult to distinguish from source structure. This further weakens the ability of such source finding algorithms to extract, with high fidelity, the BH shadow feature.
+Furthermore, there are slight offsets in the central peak flux from the original source position as shown by progressive movement away from the black crosshairs. This shift is $\approx 5.6\ \mu$-arcsec at 6\% turbulence. This illustrates a systematic error of centroid astrometry which could lead (mis)interpretations of spatial variability and flaring in total intensity.
 
 
 %Absence of blurring st 1
@@ -115,7 +109,7 @@ There was no evidence of blurring or a loss of resolution in the simulated image
 %Non-closing errors due to incoherent averaging - "no conjugates for triples" - possibly comes down to how one defines SNR. In the definition used in the literature we followed, they assumed only gaussian noise, which was not the case..A better definition would be to look at the distribution of a number of samples 
 %maybe just a mention of how the closure phase uncertainty could change.
 
-\subsubsection{Antenna pointing offset}
+\subsection{Antenna pointing offset}
 
 %mild intro
 
@@ -132,7 +126,7 @@ We make use of the RMS fractional visibility amplitude error $\sigma_{\Delta V/V
 \end{quotation}
 
 %the different pointing models
-For this simulation we use three different pointing error models, as introduced in section~\ref{sec:instrument}. Firstly, we simulate a simple \emph{constant} pointing offset. For the second case, we simulate a smooth, \emph{sinusoidal} pointing error to replicate a tracking error. The period of the sinusoid is sampled from a uniform distribution between 0.5 and 6 hours, and a peak amplitude $A_{\rho} = \sqrt{2} \sigma_{\rho}$ , where the factor $\sqrt{2}$ relates the peak amplitude to the RMS of a sinusoidal, zero-mean waveform.  In the third case, we simulate \emph{stochastic} variability which replicates slewing from source/calibrator to source/calibrator, where the pointing error is re-sampled every 10 minutes from a Gaussian of characteristic width equal to the quoted pointing error. This simulation is repeated for 50 realisations for each pointing offset to generate reasonable uncertainties \citep{Blecher_2016}. In Fig.~\ref{fig:pointing}, $\sigma_{\Delta V/V_0}$ is plotted against pointing error $\rho$ over the range $0 \le \rho \le 4.5$~arcsec for the three classes of error. Note that although plotted on the same set of axes, $\rho$ represents slightly different quantities for each of the three simulations.
+For this simulation we use three different pointing error models, as introduced in section~\ref{sec:instrument}. Firstly, we simulate a simple \emph{constant} pointing offset. For the second case, we simulate a smooth, \emph{sinusoidal} pointing error to replicate a tracking error. The period of the sinusoid is sampled from a uniform distribution between 0.5 and 6 hours, and a peak amplitude $A_{\rho} = \sqrt{2} \sigma_{\rho}$ , where the factor $\sqrt{2}$ relates the peak amplitude to the RMS of a sinusoidal, zero-mean waveform.  In the third case, we simulate \emph{stochastic} variability which replicates slewing from source/calibrator to source/calibrator, where the pointing error is re-sampled every 10 minutes from a Gaussian of characteristic width equal to the quoted pointing error. This simulation is repeated for 50 realisations for each pointing offset to generate sufficient statistical power \citep{Blecher_2016}. In Fig.~\ref{fig:pointing}, $\sigma_{\Delta V/V_0}$ is plotted against pointing error $\rho$ over the range $0 \le \rho \le 4.5$~arcsec for the three pointing error models. Note that although plotted on the same set of axes, $\rho$ represents slightly different quantities for each of the three simulations.
 
 %analysis : why LMT, and phased array
 \begin{quotation}
@@ -156,7 +150,6 @@ For this simulation we use three different pointing error models, as introduced 
 
 
 
-
 %\subsubsection{Performance?}
 %Performance/speed
 
@@ -168,7 +161,7 @@ For this simulation we use three different pointing error models, as introduced 
 % In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
 
 
-\section{Suggested applications and improvements}\label{sec:improv}
+\section{Future work and other applications}\label{sec:improv}
 
 \subsubsection{Anomalous pointing error}
 There is another class of pointing error which we did not include in our simulation, but which should be folded in through a combination of the tropospheric and antenna pointing modules. This effect is called the `anomalous refraction' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the dish diameter $d_{\rm dish}$ (i.e. a wedge) and hence will be a function of $D_{\phi}(d_{\rm dish})$. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture.  
@@ -182,24 +175,24 @@ where $l$ is the extra electric path length and $\theta$ is the elevation angle.
 
 %Estimates of $\sigma_{\rm pe}$ shown in \citet{Holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere.  
 
-Apertures which are fitted with water vapour radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT stations are currently not fitted with radiometers and hence this effect could be tricky to calibrate.
+Apertures which are fitted with water vapour radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT stations are currently not fitted with radiometers and hence this effect could prove challenging to calibrate.
 
 \subsubsection{Testing calibration, imaging and parameter estimation}
 
 %Testing and development of calibration, imaging and parameter estimation pipelines st 1
-The primary use of synthetic data is to provide 'known' datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of beauty contests, where various algorithms are utilised without knowledge of the true source and the results are compared post-facto. This is especially useful with imaging algorithms which have many `hand-tuned' parameters and difficulty with repeatability, uniqueness and fidelity of their solutions. Alternatively, one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source. A key point of such an investigation being the capability of assigning quantitative values to systematic and stochastic uncertainties across a wide range of physically relevant conditions.
+The primary use of synthetic data is to provide known datasets on which to run calibration, imaging and parameter estimation pipelines. This can take the form of `imaging challenges', where various algorithms are utilised without knowledge of the true source and the results are compared post-facto, see initial run\footnote{http://vlbiimaging.csail.mit.edu/imagingchallenge_round01} (Bouman et al. in prep). This is especially useful with imaging algorithms which have many `hand-tuned' parameters and difficulty with repeatability, uniqueness and fidelity of their solutions. Alternatively, one could perform a more systematic investigation of how an algorithm performs under a range different conditions. A key test which we have alluded to throughout this thesis is a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, including the added complexity of a time-variable source. A key point of such an investigation being the capability of assigning quantitative values to systematic and stochastic uncertainties across a wide range of physically relevant conditions.
 
 
 %bayesian calibration
 %An original motivation for the {\sc meqsilhouette} simulator was that it could eventually be implemented as a bayesian calibration routine where the signal corruptions were solved for. However, as many of the dominant signal corruptions have turned out to be stochastic and hence indeterminant, it no longer makes sense to go down this route. Indeed one would need a GPU-accelerated simulator to be able to sample the parameter space. Fortunately then, a collegue is planning a GPU bayesian calibration routine.  
 
 %end-to-end st 2 - but you dont need an end- to end for some of this - but good enough 
-With the current work developing automated fringe-fitters at JIVE (casa-based) and UCT/SKA-SA (bayesian) by Des Small and Iniyan Natarajan respectively, there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
-This argument can be extended to the realm of station upgrades (e.g. enhanced bandwidth) and the investigation into novel (sub)millimetre sites. 
+With the current work developing automated fringe-fitters at JIVE ({\sc casa}-based) and Rhodes/UCT/SKA-SA (Bayesian) by Des Small and Iniyan Natarajan respectively, there arises the possibility of an end-to-end simulation pipeline, i.e. from theory to calibrated data product, within the next year. In this scenario, one could estimate the precision and accuracy with which the EHT could extract parameters (e.g. shadow size and asymmetry) in a range of canonical scenarios. This will also allow weak points in the calibration/analysis to be identified and subsequently improved as well as to determine which approaches to extracting science are more viable (e.g. analysis in the visibility domain vs image domain).
+This argument can be extended to the realm of station upgrades (e.g. enhanced bandwidth) and the investigation into array-performance driven site selection (sub)millimetre sites. 
 
 
 %Data interpretation st1
-As the EHT will be observing in a unique regime, there will always be doubt, double-checking and questioning of the interpretation of the data. This is especially the case with the use of closure quantities, where the recent result of an increase in closure phase with UT hour, measured on the Hawaii-Arizona-California triangle \citep{Fish_2016}, provides a good example. Simulations help formulate and test quatitatively plausible scenarios. For example the contribution of different components (e.g. ISM substructure, SNR) to the scatter in this result could be investigated for different source models. 
+As the EHT will be observing in a unique regime robust interpretation of the data with multiple, independent methods will be critical. This is especially the case with the use of closure quantities, where the recent result of an increase in closure phase with GST, measured on the Hawaii-Arizona-California triangle \citep{Fish_2016}, provides a good example. Simulations help formulate and test quantitatively plausible scenarios. For example the contribution of different components (e.g. ISM substructure, SNR) to the scatter in this result could be investigated for different source models. 
 
 \begin{quotation}
 ``Significant progress has been made in the theoretical and numerical modeling of the inner accretion flow and jet launch regions near a supermassive black hole event horizon
@@ -211,7 +204,7 @@ As the EHT will be observing in a unique regime, there will always be doubt, dou
 
 \subsubsection{A public online interface}
 %st 1
-Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of an online GUI interface which would provide the user with the capability to run standard simulations without having to delve into code. The capability to run such simulations would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015} with an early version of the {\sc meqsilhouette} simulator, which was well received by the researchers present. We are, however, yet to convert the latest version of the pipeline \citep{Blecher_2016} into such an interface, but hopefully this implementation will be made available in the future when matters relating to public/propriety status of the codebase are cleared up.
+Table~\ref{tab:parameters} shows the set of parameters needed to run a standard {\sc meqsilhouette} simulation. This moderate number of parameters ($24+6N_{\rm stations}$) can be quickly chosen or selected from a list, especially if most of the defaults are preset and unlikely to change. This speaks to the possibility of an online GUI interface which would provide the user with the capability to run standard simulations without having to delve into code. The capability to run such simulations would be useful to both theorists and observers in the broader AGN/SMBH/mm-VLBI community. For this reason, we trialed an online interface at the Leiden 2015 mm-VLBI workshop\footnote{http://www.astron.nl/other/workshop/mm-VLBI2015} with an early version of the {\sc meqsilhouette} simulator, which was well received by the researchers present. We are, however, yet to convert the latest version of the pipeline \citep{Blecher_2016} into such an interface due to a number of technical reasons, but we expect this service to the community to be available in the near future.
 
 
 \subsubsection{Full Stokes}
