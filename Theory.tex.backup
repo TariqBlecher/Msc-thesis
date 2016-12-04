@@ -276,25 +276,23 @@ To evolve the screen in time, we assume a frozen screen model i.e. that the velo
 %PR 1 St 1 
 
 %introduction and plan
-Electron density inhomogeneities in the interstellar medium (ISM) plasma scatter the radio waves propagating through it, increasingly so towards the Galactic Centre. Radio interferometric observations of Sgr~A$^\star$ have characterised the basic properties of the intervening plasma material, however extensive developments in scattering theory and simulations have proved essential to the interpretation of more subtle scattering phenomena. This section begins with previous VLBI results which studied the Gaussian blurring effect of the scattering of Sgr~A*. We then expand on the scattering theory introduced in Sec.~\ref{sec:basic_scat} to review the latest theoretical developments which explore the presence of scattering-induced substructure. Finally, we review recent observational results which account for scattering substructure in their data interpretation. 
+Electron density inhomogeneities in the interstellar medium (ISM) plasma scatter the radio waves propagating through it, increasingly so towards the Galactic Centre. Radio interferometric observations of Sgr~A$^\star$ have characterised the basic properties of the intervening plasma material, however extensive developments in scattering theory and simulations have proved essential to the interpretation of more subtle scattering phenomena. This section begins with previous VLBI results which studied the Gaussian blurring effect of the scattering of Sgr~A*. We then expand on the scattering theory introduced in section~\ref{sec:basic_scat} to review the latest theoretical developments which explore the presence of scattering-induced substructure. Finally, we review recent observational results which account for scattering substructure in their data interpretation. 
 
 
 %blurring
-The dominant observational effect of this scattering scenario for $\lambda \gtrsim 1$~cm is to convolve the intrinsic source structure with an elliptical Gaussian. The size of the Guassian exhibits a $\lambda^2$ scaling dependence over several orders of magnitude \citep[Fig.~\ref{fig:scattering_law}][]{Backer_1978, Shen_2005, Bower_2006, Lu_2011}, which is consistent with the wavelength dependence of the refractive index of a plasma. In order to determine the parameters of the scattering kernel, i.e. major axis, minor axis and position angle,  one has to observe at wavelengths where the angular size of scattering ellipse is much larger than the expected source size. A Very Long Baseline Array (VLBA) + Green Bank Telescope (GBT) campaign  estimated the size at $1.31 \times 0.64$~mas cm$^{-2}$, oriented $78^\circ$ east of north \citep{Bower_2006}. 
+The dominant observational effect of this scattering scenario for $\lambda \gtrsim 1$~cm is to convolve the intrinsic source structure with an elliptical Gaussian. The size of the Guassian exhibits a $\lambda^2$ scaling dependence over several orders of magnitude \citep[Fig.~\ref{fig:scattering_law}][]{Backer_1978, Shen_2005, Bower_2006, Lu_2011}, which is consistent with the wavelength dependence of the refractive index of a plasma. In order to determine the parameters of the scattering kernel, i.e. major axis, minor axis and position angle,  one has to observe at wavelengths where the angular size of scattering ellipse is much larger than the expected source size. A Very Long Baseline Array (VLBA) + Green Bank Telescope (GBT) campaign  estimated the size at $1.31 \times 0.64$~mas cm$^{-2}$, oriented $78^\circ$ east of north \citep{Bower_2006}. However, A recent review of VLBI observations of Sgr~A$^\star$ \cite{Psaltis_2015} has noted that there are significant inconsistencies between different measurements. The authors used a Bayesian methodology to re-analyse the datasets resulting in increased uncertainties as shown in table~\ref{tab:ism_gauss}. The minor axis has a much larger uncertainty than the major axis due to the limited north-south coverage of the VLBA array. 
 
 
-%debluring,uncertainties of the extrapolation
-An accurate extrapolation of the scattering kernel to 1.3~mm is important for the EHT scattering-mitigation strategy \citep{Fish_2014} which aims to deblur the scattered image through a deconvolution procedure. However as this extrapolation is over at least an order of magnitude, any small systematic error in the original measurement can significantly effect the 1.3~mm extrapolated parameters. A recent review of VLBI observations of Sgr~A$^\star$ \cite{Psaltis_2015} has noted that there are significant inconsistencies between different measurements. The authors used a Bayesian methodology to re-analyse the datasets resulting in increased uncertainties as shown in table~\ref{tab:ism_gauss}. The minor axis has a much larger uncertainty than the major axis due to the limited north-south coverage of the VLBA array. 
-%fig showing power laws of scattering and intrinsic source
+
 \begin{figure*}
 \includegraphics[width=0.8\columnwidth]{Images/scattering_law}
-\caption[{The $\lambda^2$ dependence of ISM scattering kernel size is shown by the solid line. The dotted line shows the derived intrinsic source size which scales as $\lambda^{1.44}$.]{The $\lambda^2$ dependence of scattering kernel size is shown by the solid line. This has been derived from measurements made at $\lambda > 1.7$~cm \protect\cite{Bower_2006}. The dotted line shows the derived intrinsic source size which scales as $\lambda^{1.44}$. This was derived from measurements in the wavelength range, 2~cm~$< \lambda < 1.3$~mm \citep{Doeleman_2008}. The red circles show major-axis observed sizes of Sgr~A$^\star$  and the green points show the derived intrinsic major-axis size. This plot was reproduced from \protect\citet{Doeleman_2008}.\label{fig:scattering_law}
+\caption[The $\lambda^2$ dependence of ISM scattering kernel size is shown by the solid line. The dotted line shows the derived intrinsic source size which scales as $\lambda^{1.44}$.]{The $\lambda^2$ dependence of scattering kernel size is shown by the solid line. This has been derived from measurements made at $\lambda > 1.7$~cm \protect\cite{Bower_2006}. The dotted line shows the derived intrinsic source size which scales as $\lambda^{1.44}$. This was derived from measurements in the wavelength range, 2~cm~$< \lambda < 1.3$~mm \citep{Doeleman_2008}. The red circles show major-axis observed sizes of Sgr~A$^\star$  and the green points show the derived intrinsic major-axis size. This plot was reproduced from \protect\citet{Doeleman_2008}.\label{fig:scattering_law}
 }
 \end{figure*}
 %table showing latest scattering kernel parameters
 \begin{table}[]
 \centering
-\caption{A re-analysis of VLBI observations of Sgr~A$^\star$ by \citet{Psaltis_2015} has yielded revised estimates of the parameters associated with the Gaussian scattering kernel. Note that the position angle is measured East of North. \label{tab:ism_gauss}}
+\caption[A re-analysis of VLBI observations of Sgr~A$^\star$ by \citet{Psaltis_2015} has yielded revised estimates of the parameters associated with the Gaussian scattering kernel.]{A re-analysis of VLBI observations of Sgr~A$^\star$ by \citet{Psaltis_2015} has yielded revised estimates of the parameters associated with the Gaussian scattering kernel. Note that the position angle is measured East of North. \label{tab:ism_gauss}}
 \begin{tabular}{l|ll}
 \hline
 major axis FWHM (mas/cm$^-2$)& 1.32 & 0.04 \\
@@ -306,7 +304,7 @@ position angle ($^\circ$)& 77.8 & 9.7\\
 
 
 %theory - refractive scale and size of blurred image
-The blurring effect can explained by the simple scattering model introduced in  Sec.~\ref{sec:basic_scat}. Recall, that in the strong scattering regime EM waves propagate from coherent patches with linear size $\sim r_0$, assuming a point source. Each patch will emit light coherently into a single-slit diffraction cone of angular size $\theta_{\rm scatt} \sim \lambda /r_0$. An observer will hence be illuminated by many patches spanning $\theta_{\rm scatt}$, yielding a blurred and broadened image, with projected size on the screen equal to the \emph{refractive scale},
+The blurring effect can explained by the simple scattering model introduced in  section~\ref{sec:basic_scat}. Recall, that in the strong scattering regime EM waves propagate from coherent patches with linear size $\sim r_0$, assuming a point source. Each patch will emit light coherently into a single-slit diffraction cone of angular size $\theta_{\rm scatt} \sim \lambda /r_0$. An observer will hence be illuminated by many patches spanning $\theta_{\rm scatt}$, yielding a blurred and broadened image, with projected size on the screen equal to the \emph{refractive scale},
 \begin{equation}
 r_{\rm ref} = \theta_{\rm scatt} D_{\rm os} = r_{\rm F}^2/r_0.
 \end{equation}
@@ -318,30 +316,30 @@ where $v$ is bulk, transverse velocity of the screen.
 %calculating r_0 given \theta_scatt 
 We can calculate $r_0$ given the FWHM of $\theta_{\rm scatt}$ through the more precise relation
 \begin{equation}\label{eq:theta_scatt}
- \theta_{\rm scatt} = \frac{2\sqrt{2\ln{2}}}{2\pi} \lambda / r_0 (M+1)
+ \theta_{\rm scatt} = \frac{2\sqrt{2\ln{2}}}{2\pi} \lambda / r_0 (M+1),
 \end{equation} 
-where $M = D_{\rm os}/R$ is the magnification factor and $R$ is the source-screen distance. The magnification factor is a correction to the model introduced in Sec.~\ref{sec:basic_scat} when $R \approx \infty$ no longer holds and should be used when calculating distances in the observer plane \citep*{Goodman_1989}.
+where $M = D_{\rm os}/R$ is the magnification factor and $R$ is the source-screen distance. The magnification factor is a correction to the model introduced in section~\ref{sec:basic_scat} when $R \approx \infty$ no longer holds and should be used when calculating distances in the observer plane \citep*{Goodman_1989}.
 %Locating the scattering screen Bower 2014
-The location of the scattering medium was originally thought to be in the Galactic Centre itself (within $\le 1$~kpc). However, observations of a newly discovered pulsar, SGR~J1745-29, indicate that the scattering screen is located at a distance $D_{\rm os} = 5.8 \pm 0.3$~kpc, within the Scutum spiral arm \citep{Bower_2014}. Using Eq.~\ref{eq:theta_scatt} and the parameters given in table \ref{tab:ism_gauss}, we find that the major axis of the coherence length at 1.3~mm, $r_0 \approx 3100$~km (i.e. 0.25 Earth diameters).
+The location of the scattering medium was originally thought to be in the Galactic Centre itself (within 1~kpc). However, observations of a newly discovered pulsar, SGR~J1745-29, indicate that the scattering screen is located at a distance $D_{\rm os} = 5.8 \pm 0.3$~kpc, within the Scutum spiral arm \citep{Bower_2014}. Using equation~\ref{eq:theta_scatt} and the parameters given in table \ref{tab:ism_gauss}, we find that the major axis of the coherence length at 1.3~mm, $r_0 \approx 3100$~km (i.e. 0.25 Earth diameters).
 
 
 %shift to looking at refractive effects,theory, 3 regimes of scattering
-Recent EHT and space-VLBI observations have been extending their focus past well-studied Gaussian convolution effect of ISM scattering and onto the presence of stochastic scattering-induced substructure \citep[e.g.][]{Fish_2016, Johnson_2016}. To understand this phenomenon, we must first develop the theory to be sensitive to averaging over time, frequency and extended structure. 
+Recent EHT and space-VLBI observations have been extending their focus past well-studied Gaussian convolution effect of ISM scattering and onto the presence of stochastic, time-variable, scattering-induced substructure \citep[e.g.][]{Fish_2016, Johnson_2016}. To understand this phenomenon, we must first develop the theory to be sensitive to averaging over time, frequency and extended structure. 
 
-Strong scattering can be further subdivided into \emph{snapshot}, \emph{average} and \emph{ensemble-average} regimes \citep*{Narayan_1989,Goodman_1989}. To understand the different regimes, remember that for each point on the source, the observer sees emission from coherent patches of area $A_{\rm strong} \sim \pi r_0^2$ over a total area $A_{\rm ref} \sim \pi r_{\rm ref}^2$. The diffraction cones from each of the patches will interfere, resulting in a \emph{diffractive scintillation} pattern, analagous to the classic multi-slit experiment. 
+Strong scattering can be further subdivided into \emph{snapshot}, \emph{average} and \emph{ensemble-average} regimes \citep*{Narayan_1989,Goodman_1989}. To understand the different regimes, recall that for each point on the source, the observer sees emission from coherent patches of area $A_{\rm strong} \sim \pi r_0^2$ over a total area $A_{\rm ref} \sim \pi r_{\rm ref}^2$. The diffraction cones from each of the patches will interfere, resulting in a \emph{diffractive scintillation} pattern, analagous to the classic multi-slit experiment. 
 
 %snapshot regime
 In the \emph{snapshot regime}, a compact source is observed with a narrow bandwidth and over a short time integration. This yields a single realisation of the diffractive scintillation pattern. By averaging over many snapshots, diffractive scintillation is quenched. This occurs if the source size $\theta_{\rm src}$ is much larger than the diffractive scale $\theta_{\rm src} \gg r_0/D_{\rm os}$; if the fractional bandwidth $\delta \nu/\nu$ is much larger than the decorrelation bandwidth $\delta \nu/\nu \gg \delta \nu_{\rm dc}/\nu \approx (r_0/r_{\rm F})^2$ \citep{Narayan_1992}; or if the integration time $t_{\rm int}$ is much larger the diffractive timescale $t_{\rm int} \gg t_{\rm 0} = r_0/v$, where $v$ is the relative velocity between screen, source and observer. This regime is hence only accessible through observations of compact objects like pulsars. This regime is also reached when stars are viewed with the naked eye, hence the appearance of `twinkling'. On a side note, observations in this regime can be used to probe the source with angular resolution $\sim \lambda /r_{\rm ref}$ \citep[e.g.][]{Gwinn_2012}. This is because the scattering screen is essentially a lens of diameter $\approx r_{\rm ref}$.
 
 %average regime 
-In the \emph{average regime}, diffractive scintillation has been averaged over, however there still exists scintillation over scales comparable to the size of the scattered image of a point source $\sim r_{\rm ref}$, termed \emph{refractive scintillation}. Phase fluctuations on this scale act like a weak lens to focus or defocus the $\lambda/ r_0$ scale diffraction cones in the direction of the observer. For a point source this would lead to weak flux variations in the total flux \citep{Narayan_1992}. We will show later that refractive scintillation leads to the presence of substructure for a resolved scatter-broadened source. In contrast to diffractive scintillation, refractive scintillation is much more difficult to average over. Typically the refractive time scale $t_{\rm ref} = r_{\rm ref}/v$ is on the order of weeks to months for scattering towards the Galactic Centre i.e. longer than an observation campaign; the fractional decorrelation bandwidth is on the order of unity $\delta \nu_{\rm dc}/\nu \sim 1$ (c.f. EHT $\sim 1-10$\%; and the source has to be much larger than the image of a scattered point source $\theta_{\rm src} \gg \theta_{\rm scatt} \sim 10 \mu$-arcsec at $\lambda = 230$~GHz. Continuing the analogy with viewing the sky with the naked eye, this regime is reach when planets are viewed, hence the diminished variability (`twinkling'). 
+In the \emph{average regime}, diffractive scintillation has been averaged over, however there still exists scintillation over scales comparable to the size of the scattered image of a point source $\sim r_{\rm ref}$, termed \emph{refractive scintillation}. Phase fluctuations on this scale act like a weak lens to focus or defocus the $\lambda/ r_0$ scale diffraction cones in the direction of the observer. For a point source this would lead to weak flux variations in the total flux \citep{Narayan_1992}. We will show later that refractive scintillation leads to the presence of substructure for a resolved scatter-broadened source. In contrast to diffractive scintillation, refractive scintillation is has stronger averaging requirements. Typically the refractive time scale $t_{\rm ref} = r_{\rm ref}/v$ is on the order of weeks to months for scattering towards the Galactic Centre at mm-wavelengths (i.e. longer than an observation campaign); the fractional decorrelation bandwidth is on the order of unity $\delta \nu_{\rm dc}/\nu \sim 1$ (c.f. EHT $\sim 1-10$\%); and the source has to be much larger than the image of a scattered point source, $\theta_{\rm src} \gg \theta_{\rm scatt} \sim 10 \mu$-arcsec at $\lambda = 230$~GHz. Continuing the analogy with viewing the sky with the naked eye, this regime is reach when planets are viewed, hence the diminished variability (`twinkling'). 
 
 %ensemble average
 In the \emph{ensemble-average regime}, both diffractive and refractive scintillation have been averaged over. It is in this regime when the scattering is equivalent to Gaussian convolution which is deterministic and not time variable. 
 
 
 %approximation of the scattered image by Johnson 2015
-A recent theoretical work \citep*{Johnson_2015a} has derived a useful approximation of the resolved scattered image $I_{\rm ss}$ in the average regime,
+Recent theoretical work by \citet{Johnson_2015a} derived a useful approximation of the resolved scattered image $I_{\rm ss}$ in the average regime,
 \begin{equation}\label{eq:scatterbrane}
 I_{\rm ss}(\bm{x}) \approx I_{\rm src}\left(\bm{x} + r_{\rm F}^2 \nabla \phi(\bm{x})\right),
 \end{equation}
@@ -354,7 +352,7 @@ Even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\b
 \end{equation}
 
 
-A generalised structure function \citep{Tatarskii_1971, Narayan_1989} is quadratic ($r^2$) at small scales ($r<< r_{\rm in}$), Kolmogorov in the range $r_{\rm in}<r<r_{\rm out}$ and constant for $r>r_{\rm out}$. Taking the simplifying case of $r_{\rm in} \gg r_0$ and $r_{\rm in}<r<r_{\rm out}$, $D_\phi$ becomes \citep{Johnson_2013},
+A generalised structure function \citep{Tatarskii_1971, Narayan_1989} is quadratic ($r^2$) at small scales ($r<< r_{\rm in}$), Kolmogorov in the range $r_{\rm in}<r<r_{\rm out}$ and constant for $r>r_{\rm out}$. Following \citep{Johnson_2013} by taking the simplifying case of $r_{\rm in} \gg r_0$ and $r_{\rm in}<r<r_{\rm out}$, $D_\phi$ becomes,
 \begin{equation}
 D_\phi = \frac{2}{\beta}\left( \frac{r_{\rm in}}{r_0}\right)^{2-\beta} \left( \frac{r}{r_0}\right)^\beta, 
 \end{equation}
@@ -366,7 +364,7 @@ and,
 Therefore in the Kolmogorov regime ($\beta = 5/3$), the coherence of image shift relative to the refractive scale $\propto (r/r_0)^{-1/3}$. Therefore, even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales, leading to the presence of refractive substructure \citep*{Johnson_2015a}.
 
 %Observations of substructure
-A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~\ref{fig:substructure2}][]{Ortiz_2016} has measured non-zero closure phases on its longest baselines. However it was also shown in the data anaylsis that the measured values are consistent with expectation refractive scintillation assuming a circular Gaussian source of FWHM~$=130\ \mu$-arcsec, which is the fitted size of the major axis of the intrinsic source emission. Another observation at 1.3~cm shows flux amplitude variability due to scattering substructure $\Delta S \sim 10$~mJy \citep{Gwinn_2014}. Predictions for $\lambda = 1.3$~mm show $\sim 60$~mJy for long East-West baselines and $\sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of FWHM~$=40\ \mu$-arcsec.
+A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~\ref{fig:substructure2}][]{Ortiz_2016} has measured non-zero closure phases on its longest baselines. However it was also shown in the data anaylsis that the measured values are consistent with expectation refractive scintillation assuming a circular Gaussian source of FWHM~$=130\ \mu$-arcsec, which is the fitted size of the major axis of the intrinsic source emission. Another observation at 1.3~cm shows flux amplitude variability due to scattering substructure at a level of $\Delta S \sim 10$~mJy \citep{Gwinn_2014}. Predictions for $\lambda = 1.3$~mm show $\Delta S \sim 60$~mJy for long (i.e. resolve ensemble-scattered image) East-West baselines and $\Delta S \sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of FWHM~$=40\ \mu$-arcsec.
 
 
 \begin{table}[h!]
@@ -382,21 +380,21 @@ A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~
 
 
 %Distinguishing intrinsic source structure and variability
-Distinguishing intrinsic source and ISM substructure and variability is an interesting challenge. Observations at mm-wavelengths have revealed deviations from the $\lambda^2$ scattering scaling law, see Fig.~\ref{fig:scattering_law}. This is interpreted as due to the presence of intrinsic source structure and has been fitted with a power-law with an exponent of $1.34 \pm 0.01$ \citep{Lu_2011}. This has enabled the constraint of various theoretical models \cite{Bower_2006}, excluding advection-dominated accretion flows \citep[(ADAF),][]{Narayan_1995} and Bondi-Hoyle accretion \citep{Melia_1994}. However observations extending over month timescales are required to properly sample the larger scale inhomogeneities and even with multiple epoch observations, it can be difficult to distinguish source and scattering characteristics \citep*{Macquart_2006}. The developments in scattering theory presented above provide a robust mechanism for quantifying refractive effects. This could allow a decoupling without sampling a refractive ensemble but significant assumptions are always made on the source model. 
+Distinguishing intrinsic source and ISM substructure and variability is an interesting challenge, with significant potential scientific yield. Observations at mm-wavelengths have revealed deviations from the $\lambda^2$ scattering scaling law (see Fig.~\ref{fig:scattering_law}). This is interpreted as due to the presence of intrinsic source structure and has been fitted with a power-law with an exponent of $1.34 \pm 0.01$ \citep{Lu_2011}. This has enabled the constraint of various theoretical models \cite{Bower_2006}, excluding advection-dominated accretion flows \citep[(ADAF),][]{Narayan_1995} and Bondi-Hoyle accretion \citep{Melia_1994}. However observations extending over month timescales are required to sample the larger scale inhomogeneities and even with multiple epoch observations, it can be difficult to distinguish source and scattering characteristics \citep*{Macquart_2006}. The developments in scattering theory presented above provide a robust mechanism for quantifying refractive effects. This could allow a decoupling without sampling a refractive ensemble but significant assumptions are always made on the source model. 
 
 
 \subsection{Troposphere}\label{sec:trop}
 %PR 1 St 1
 
 %Introduction - Troposphere is a problem. Define troposphere. st 1
-The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the lowest atmospheric layer, the troposphere which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components including primary gases $\rm N_2$ and  $\rm O_2$, trace gases e.g. water vapour and ${\rm CO_2}$, as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case beginning with insights from the fundamentals of electromagnetic propagation, followed by a review of atmospheric corruptions in the sub-mm regime. We then firm up our theory with a discussion on atmospheric radiative transfer and atmospheric turbulence. 
+The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the atmospheric layer of the troposphere, which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components, including primary gases (e.g. $\rm N_2$ and  $\rm O_2$), trace gases (e.g. water vapour and ${\rm CO_2}$), as well as particulates of water droplets a3nd dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case beginning with insights from the fundamentals of electromagnetic propagation, followed by a review of atmospheric corruptions in the sub-mm regime. We then firm up our theory with a discussion on atmospheric radiative transfer and atmospheric turbulence. 
 
 
 \subsubsection{Propagation fundamentals}\label{sec:prop_fund}
 %propagation fundamentals st 1
 Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
-E_\nu(x,t) = E_0 \exp^{i(kn_\nu x - 2\pi\nu t)},
+E_\nu(x,t) = E_0 e^{i(kn_\nu x - 2\pi\nu t)},
 \end{equation}		
 where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R} + j n_{\rm I}$ is the complex index of refraction. Note that we will occasionally omit the frequency dependence of $n$ and related quantities to simplify the notation. If $n_{\rm I}$ is nonzero, the electric flux $I$ will decay exponentially
 \begin{equation}
@@ -419,13 +417,13 @@ where $\epsilon_\nu = dI_\nu/dx$ is the emission coefficient and $B_\nu(T)$ is t
 \subsubsection{Atmospheric corruptions in the (sub-)mm regime}
 %st 1
 %Absorption in the GHz regime st 1
-An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorption}), shows that it is dominated by transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the cumulative effect of the far wings of a multitude of pressure-broadened water vapour lines above 1~THz \citep{Carilli_1999}. At 230~GHz the absorption is typically $5-10$\% at the best sites (e.g. Mauna Kea), during good weather . 
+An analysis of the absorption spectrum in the GHz range (Fig.~\ref{fig:absorption}), shows that it is dominated by transitions of $\rm H_2O$ and $\rm O_2$ as well as a pseudo-continuum opacity which increases with frequency. The pseudo-continuum opacity is due to the cumulative effect of the far wings of a multitude of pressure-broadened, water vapour lines peaking above 1~THz \citep{Carilli_1999}. At 230~GHz the absorption is typically $5-10$\% at the best sites (e.g. Mauna Kea) during good weather. 
 
 %Fig Absorption spectrum in the GHz st 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/absorption}
-\caption[Recorded zenith absorption spectrum in the $160-520$~GHz range, taken on Mauna Kea at an altitude of $\approx 4000$~m.]{Recorded zenith absorption spectrum in the $160-520$~GHz range, taken on Mauna Kea at an altitude of $\approx 4000$~m. The data has been fit to a sum of $\rm H_20$ lines, an $\rm H_20$ pseudo-continuum and dry absorption lines. The model has been generated using the \textsc{atm} code (see section~\ref{sec:atm_theory}), with the bottom panel showing the residuals. Here `dry' refers to all atmospheric constituents except $\rm H_20$. Reproduced from \citet{Pardo_2001} \label{fig:absorption}
+\caption[Recorded zenith absorption spectrum in the $160-520$~GHz range, taken on Mauna Kea at an altitude of $\approx 4000$~m.]{Recorded zenith absorption spectrum in the $160-520$~GHz range, taken on Mauna Kea at an altitude of $\approx 4000$~m. The data has been fit to a sum of $\rm H_20$ lines, an $\rm H_20$ pseudo-continuum and dry (i.e. ${\rm N_2}$, ${\rm O_2}$ etc.) absorption lines. The model has been generated using the \textsc{atm} code (see section~\ref{sec:atm_theory}), with the bottom panel showing the residuals. Here `dry' refers to all atmospheric constituents except $\rm H_20$. Reproduced from \citet{Pardo_2001} \label{fig:absorption}
 }
 \end{center}
 \end{figure*}
@@ -442,7 +440,7 @@ The water vapour column density is measured as the depth of the column when conv
 
 \noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \citep{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm (again, assuming $t=270$~K). 
 
-This sensitive dependence of phase coherence on atmospheric stability is aggravated by three factors. Firstly, antenna elevation angles are typically fairly low for EHT observations which increases the atmospheric path length. Secondly, as stations are far apart ($\gg 100$~km~$\gg r_{\rm out}$) the atmospheric variations are uncorrelated between stations, this increases visibility decoherence as atmospheric variations appearing in both terms of equation~\ref{eq:phase_ref} fall away. Thirdly, observing with few stations gives less constraints on unknown complex gains and therefore a smaller fraction of retrievable instrinsic information \citep{Thompson_2001}.
+This sensitive dependence of phase coherence on atmospheric stability is aggravated by three factors. Firstly, antenna elevation angles are typically fairly low for EHT observations which increases the atmospheric path length. Secondly, as stations are far apart ($\gg 100$~km~$\gg r_{\rm out}$) the atmospheric variations are uncorrelated between stations, this increases visibility decoherence as atmospheric variations appearing in both terms of equation~\ref{eq:phase_ref} fall away. Thirdly, observing with fewer stations provides fewer constraints on unknown complex gains and therefore a smaller fraction of retrievable instrinsic information \citep{Thompson_2001}.
 
 
 \subsubsection{Radiative transfer}\label{sec:atm_theory}
@@ -465,7 +463,7 @@ To calculate the $I_\nu(s)$, $\tau(s)$ and complete the above integral, requires
 
 
 %deriving the absorption coefficient st 1
-A general equation to determine the absorption coefficient for a transition between a lower $l$ and upper $u$ states is given in \citet{Pardo_2001}. Here we merely point out that it should be proportional to the energy of the photon, $h\nu_{l \to u}$, the transition probability or Einstein coefficient, $ B_{l \to u}$, the line-shape, $f(\nu,\nu_{l \to u})$ and the number densities $N$ of electronic populations. Line profiles which describe pressure broadening (perturbations to the Hamiltonian due to the presence of nearby molecules) and Doppler broadening are used. The condition of detailed balance further requires that decays from the upper state are included yielding, $g_u B_{u \to l} =g_l B_{l \to u}$, where $g$ is the degeneracy of the electronic state. Putting this together we find,
+A general equation to determine the absorption coefficient for a transition between a lower $l$ and upper $u$ states is given in \citet{Pardo_2001}. Here we merely point out that it should be proportional to the energy of the photon, $h\nu_{l \to u}$, the transition probability or Einstein coefficient, $ B_{l \to u}$, the lineshape, $f(\nu,\nu_{l \to u})$ and the number densities $N$ of electronic populations. Line profiles which describe pressure broadening (perturbations to the Hamiltonian due to the presence of nearby molecules) and Doppler broadening are used. The condition of detailed balance further requires that decays from the upper state are included yielding, $g_u B_{u \to l} =g_l B_{l \to u}$, where $g$ is the degeneracy of the electronic state. Putting this together we find,
 
 \begin{equation}
 \kappa(\nu) _{l \to u}  \propto  h\nu   B_{l \to u}  \left(\frac{N_l}{g_l}  -  \frac{N_u}{g_u} \right) f(\nu,\nu_{l \to u}),
@@ -484,16 +482,16 @@ Transition lines at radio wavelengths result from rotational state transitions. 
  
 
 %lineshapes and pseudocontina st 1 
-Far wing broadening of ${\rm H_2O}$ lines~$> 1.2$ THz extends to lower frequencies and is not completely represented by the line-shape used. This is believed to be due to self-self collisions of water molecules. Additionally there are terms from the dry atmosphere related to transient dipoles and Debye absorption which are not represented in the line-shape. To correct for these effects, two pseudocontina are used. These are modelled as a power law dependence on frequency, temperature and the molecular densities. 
+Far wing broadening of ${\rm H_2O}$ lines~$> 1.2$ THz extends to lower frequencies and is not completely represented by the line-shape used. This is believed to be due to self-self collisions of water molecules. Additionally there are terms from the dry atmosphere related to transient dipoles and Debye absorption which are not represented in the line-shape. To correct for these effects, two pseudocontinua are used. These are modelled as a power law dependence on frequency, temperature and the molecular densities. 
 
 %summarise radiative transfer and constrast to other approaches () basically Phenomenology  - gaussian
-The treatment of radiative transfer in {\sc atm}, and hence {\sc meqsilhouette}, aims to be as physical as possible whilst still being able to describe key phenomenological features e.g. the pseudocontinum opacity. The efficacy of the accuracy provided by this implementation is in the ability to contribute to a quantitative determination of the uncertainties inherent in mm-VLBI.
+The treatment of radiative transfer in {\sc atm}, and hence {\sc meqsilhouette}, aims to be as physical as possible whilst still being able to describe key phenomenological features (e.g. the pseudocontinum opacity). The efficacy of the accuracy provided by this implementation is in the ability to contribute to a quantitative determination of the uncertainties inherent to mm-VLBI.
 \subsubsection{Turbulent phase fluctuations}\label{sec:turb_theory}
 %St 1
 
 %phase fluctuations as a calibration problem st 1
 \begin{quotation}
-``Visibility phase instability  $\delta \phi(t)$ due to tropospheric turbulence is a fundamental limitation to producing high dynamic range, high fidelity, science-quality maps with a mm-VLBI array \citep{Thompson_2001}. The coherence time-scale is typically too rapid ($\lesssim10$~s) for fast switching calibration, so other calibration procedures (e.g. water vapour radiometry, paired antennas, and/or self-calibration) must be performed. Self-calibration is the most commonly used but is limited by the integration time needed to obtain adequate SNR to fringe-fit (see section~\ref{sec:self_cal}). Phase decoherence often leads to the use of closure quantities to perform model fitting \citep{Doeleman_2001,Bower_2004, Shen_2005}, and causes a decrease in measured flux due to incoherent complex averaging.''\\
+``Visibility phase instability  $\delta \phi(t,\nu)$ due to tropospheric turbulence is a fundamental limitation to producing high dynamic range, high fidelity, science-quality maps with a mm-VLBI array \citep{Thompson_2001}. The coherence time-scale is typically too rapid ($\lesssim10$~s) for fast switching calibration, so other calibration procedures (e.g. water vapour radiometry, paired antennas, dual freq receivers and/or self-calibration) must be performed. Self-calibration is the most commonly used but is limited by the integration time needed to obtain adequate SNR to fringe-fit (see section~\ref{sec:self_cal}). Phase decoherence often leads to the use of closure quantities to perform model fitting \citep{Doeleman_2001,Bower_2004, Shen_2005}, and causes a decrease in measured flux due to incoherent complex averaging.''\\
 \citep{Blecher_2016}
 \end{quotation}
 
@@ -502,17 +500,16 @@ In this section we will review and develop the weak scattering theory introduced
 
 
 %Following from scattering intro, weak scattering model setup st 1
-Following from section~\ref{sec:basic_scat}, we model the statistics of $\delta \phi(t)$ with a thin, frozen, Kolomogorov-turbulent phase screen moving with a bulk velocity, $v$. 
+Following from section~\ref{sec:basic_scat}, we model the statistics of $\delta \phi(t,\nu)$ with a thin, frozen, Kolomogorov-turbulent phase screen moving with a bulk velocity, $v$. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth, however note that dispersion is taken into account in the mean atmospheric component. The frequence dependence of $\delta \phi(t,\nu)$ is omitted for the remainder of this section.
 %Discussion on thickness of turbulent layer st3
-However, the turbulent layer has a finite width $\Delta h$ and outer scale $r_{\rm out}$ and both Kolmorogov theory and measurement \citep[Fig.~\ref{fig:screentransition},][]{Coulman_1985, Treuhaft_1987, Carilli_1997} show that $\beta$ should move continously through approximately three regimes,
+However, the turbulent layer has a finite width $\Delta h$ and outer scale $r_{\rm out}$. Both Kolmorogov theory and measurement \citep[Fig.~\ref{fig:screentransition},][]{Coulman_1985, Treuhaft_1987, Carilli_1997} show that $\beta$ should move continously through approximately three regimes,
 \begin{equation}
  \beta = \left\{
  \begin{array}{rl}
  5/3 & \text{if } r < \Delta h,\\
 2/3 & \text{if } r > \Delta h,\\
 0 & \text{if } r > r_{\rm out}.
- \end{array}
-\right\}
+ \end{array} \right.
 \end{equation}
 
 In Fig.~\ref{fig:screentransition} we can see estimations of $\Delta h \approx 1$~km and $r_{\rm out} \approx 6$~km. We will show later that even though we are working with a VLBI array, our implementation falls into the $r \ll \Delta h$ regime.
@@ -555,12 +552,12 @@ Assuming power-law turbulence and integrating yields,
 \end{equation}
 
 
-\noindent where $t_0 = r_0/v$ is the coherence time when observing at zenith and $1/\sin\theta$ is the approximate airmass which arises as $D_\phi \propto w$. As $r \ll \Delta h$, where $\Delta h$ is the thickness of the turbulent layer, an thin screen exponent of $\beta = 5/3$ is justified \citep*{Treuhaft_1987}.''\\
+\noindent where $t_0 = r_0/v$ is the coherence time when observing at zenith and $1/\sin\theta$ is the approximate airmass which arises as $D_\phi \propto w$. As $r \ll \Delta h$, where $\Delta h$ is the thickness of the turbulent layer, an exponent of $\beta = 5/3$ is justified \citep*{Treuhaft_1987}.''\\
 \citep{Blecher_2016}
 \end{quotation}
 
 
-Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk for each antenna, as this is essentially a random walk on the phase screen. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth, however note that phase dispersion is taken into account in the mean atmospheric component.
+Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk for each antenna, as this is essentially a random walk on the phase screen. As noted earlier, we can assume a simple linear scaling across the bandwidth.
 
 \begin{quotation}
 %A comparison to the phase screen approach st 1
@@ -614,14 +611,14 @@ where $\delta l_p, \delta m_p$ correspond to the directional cosine offsets.''\\
 \end{quotation}
 
 %Motivation, why this could be a problem for mm observations
-This could be a problem for millimetre observations as the primary beam is narrow. For example, at an observing frequency of 230~GHz, the primary beam of a 30~m dish is $\theta_{\rm PB} \sim 10$~arcsec. The typical pointing budget for millimetre stations are $\theta_{\rm PE} \sim 1$~arcsec. Hence we have chosen to investigate the effect which pointing errors could have on mm-VLBI observables. 
+This could be a problem for millimetre observations as the primary beam is narrow. For example, at an observing frequency of 230~GHz, the FWHM of the primary beam of a 30~m dish is $\theta_{\rm PB} \sim 10$~arcsec. The typical pointing specification for millimetre stations are $\theta_{\rm PE} \sim 1$~arcsec. Hence we have chosen to investigate the effect which pointing errors could have on mm-VLBI observables. 
 
 % Different categories of pointing error i.e. tracking vs slew
 
 We identify two main classes of pointing error. Firstly, an antenna tracking a source could suffer a slow, continuous time-variable pointing error associated with the tracking error $\sigma_{\rm track}$. Physically, this could be attributed to changes in wind, thermal and gravitational loading which all change with telescope pointing direction and over the course of a typical few hour observation. Using the {\sc meqtrees} software package, such behaviour has been demonstrated to occur with the Westerbork Synthesis Radio Telescope \citep[WSRT,]{Smirnov_Calim_2011,Smirnov_2011c}).
 
 
-Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with relatively well-known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source.
+Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with relatively well-known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source. In Chapter 4 we present the results of this.
 
 
-
+The ability to simulate an effect as sophisticated as time-dependent primary beams demonstrates the capability and potential of {\sc meqsilhouette} to incorporate analagous or arbitary instrumental effects. 

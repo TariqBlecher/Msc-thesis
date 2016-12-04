@@ -17,7 +17,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries MeqSilhouette : a mm-VLBI observation and signal corruption simulator}\\[0.4cm]
+{ \huge \bfseries {\sc meqsilhouette} : a mm-VLBI observation and signal corruption simulator}\\[0.4cm]
 \HRule \\[1.5cm]
 
 
@@ -54,18 +54,33 @@ Prof. Oleg {\sc Smirnov} \\
 
 \end{titlepage}
 
-\chapter*{Abstract}
+\chapter*{Abstract} 
 
- The Event Horizon Telescope (EHT) aims to spatially resolve the silhouette (or shadow) of the supermassive black holes in the Galactic Centre (Sgr~A$^\star$) and M87. The primary scientific objectives are to test general relativity in the strong-field regime and to probe accretion and jet-launch physics at event-horizon scales. This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors. In this, the first paper in a series, we present the \textsc{MeqSilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
- \addcontentsline{toc}{chapter}{Abstract}
+% to edit 
+The Event Horizon Telescope (EHT) aims to spatially resolve the silhouette (or shadow) of the supermassive black holes in the Galactic Centre (Sgr~A$^\star$) and M87. The primary scientific objectives are to test general relativity in the strong-field regime and to probe accretion and jet-launch physics at event-horizon scales. This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors. In this [thesis], we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
+
+\addcontentsline{toc}{chapter}{Abstract}
 
  
 \chapter*{Acknowledgements}
  \addcontentsline{toc}{chapter}{Acknowledgements}
- 
+ %Supervisors
+Research is g Dr. Roger Deane for his unwavering commitment and encouragement. Dr Gianni Bernardi, Professor Oleg Smirnov. 
+
+%Family
+
+%SKA 
+The financial assistance of the South African SKA Project (SKA SA) towards this research is hereby acknowledged. Opinions expressed and conclusions arrived at are those of the author and are not necessarily to be attributed to the SKA SA\footnote{www.ska.ac.za} O.~Smirnov's research is supported by the South African Research  Chairs Initiative of the Department of Science and Technology and National Research Foundation.
+
+%Ronel
+Ronel Gronewald for her magic. 
+
+%collaborators and colleagues
+It has been a pleasure to collaborate with researchers across the globe including Michael Johnson and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available, and for helpful discussions. Similarly, we thank Bojan Nikolic for \textsc{atm} support. We are grateful to Monika Mo\'{s}cibrodwska for supplying theoretical simulations we used in testing and to Ilse van Bemmel and Lindy Blackburn for useful discussions. 
+
 \chapter*{Plagiarism}
  \addcontentsline{toc}{chapter}{Plagiarism}
- I acknowledge that plagiarism is wrong and hereby declare that the work contained in this document and in the supporting software is my own, save for that which is properly acknowledged. I recognise that much of the work in this thesis has already been presented in our recent paper \citet{Blecher_2016}. This thesis is essentially an expanded version of the paper and as the latter was published first, much of the material from it has been reproduced directly, however this has been cited properly.  
+ I acknowledge that plagiarism is wrong and hereby declare that the work contained in this document and in the supporting software is my own, save for that which is properly acknowledged. I recognise that much of the work in this thesis has already been presented in our recent paper \citet{Blecher_2016}. This thesis is essentially an expanded version of the paper and as the latter was published first, some of the material from it has been reproduced directly, and cited where appropriate. 
  \vspace{55pt}
  
 Tariq Dylan Blecher
@@ -74,7 +89,7 @@ Tariq Dylan Blecher
   \vspace*{\fill}
     \begin{center}
      \huge
-     Source code repo and license, accessibility etc
+     The {\sc meqsilhouette} source code is at present still proprietary of SKA SA as in hence unavailable to the public at the time of writing. However, we do include an appendix which details installation and usage for a reference for public or private use.
     \end{center}
   \vspace*{\fill}
  \clearpage

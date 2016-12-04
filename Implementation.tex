@@ -47,7 +47,7 @@ The conceptual flow diagram of one realisation of a {\sc meqsilhouette} simulati
 
 
 %Inputs %st 1
-All inputs to the simulator are specified by a configuration file (.json text file), containing a dictionary (see table~\ref{tab:parameters} as an example), which is the sole input to the driver script. This dictionary contains everything needed by the pipeline to determine the particular observation configuration (frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model, station weather information and antenna table are located in the filesystem. The antenna table is in the {\sc ms} format, and can readily be created or altered using the {\sc pyrap} library using the station coordinates. The primary sky model used is a time-ordered list of {\sc fits} images, where each image represents the source total intensity over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images \citep{Blecher_2016}. Currently the pipeline only supports total intensity and the conversion of the pipeline to support full Stokes is discussed in section~\ref{sec:improv}. A variation of the pipeline has also been written which uses a parametric source model consisting of Gaussians or point sources as the sky model. This functionality was needed for the simulation of pointing errors as the {\sc MeqTrees} beams model does not support the {\sc fits} sky model.
+All inputs to the simulator are specified by a configuration file (.json text file), containing a dictionary (see table~\ref{tab:parameters} as an example), which is the sole input to the driver script. This dictionary contains everything needed by the pipeline to determine the particular observation configuration (frequency, bandwidth, start time, etc), which signal corruption implementation should be employed and where the sky model, station weather information and antenna table are located in the filesystem. The antenna table is in the {\sc ms} format, and can readily be created or altered using the {\sc pyrap} library using the station coordinates. The primary sky model used is a time-ordered list of {\sc fits} images, where each image represents the source total intensity over a time interval $\Delta t_{\rm src} = t_{\rm obs}/N_{\rm src}$, where $t_{\rm obs}$ is the observation length and $N_{\rm src}$ is the number of source images \citep{Blecher_2016}. Currently the pipeline only supports total intensity and the conversion of the pipeline to support full Stokes is discussed in section~\ref{sec:improv}. A variation of the pipeline has also been written which uses a parametric source model consisting of Gaussians or point sources as the sky model. This functionality was needed for the simulation of pointing errors as the {\sc MeqTrees} beams model does not support the {\sc fits} sky model. 
 
 \begin{figure*}[h!]
 \includegraphics[width=\columnwidth]{Images/flow_full2}
@@ -55,43 +55,61 @@ All inputs to the simulator are specified by a configuration file (.json text fi
 }
 \end{figure*}
 
-
-\begin{table}
-\caption{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filter into several subdictionaries which can be easily passed to functions or classes. {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}
-\label{tab:parameters}
-\begin{tabular}{ll}
+\begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
 \hline
 parameter&comment\\
 \hline
-input fits folder path&folder containing intrinsic sky models in {\sc fits} format\\
-antenna table path&antenna table in {\sc casa} format\\
+name of output folder&to keep track of simulations\\
+input fits folder path&folder containing intrinsic sky model in {\sc fits} format\\
+antenna table path&{\sc casa} format \\
 integration time (seconds)&time averaging interval for each visibility data point\\
-start time&time system (e.g. UTC) and the observation start date and time\\
+start time&time coordinate system (e.g. UTC) and the observation start date and time\\
 channel width (GHz)&\\
-number of channels& currently {\sc meqsilhouette} can only simulate 1 spectral window\\
-number of scans & split observation for into different scans of equal length\\
+number of channels& Note that currently {\sc meqsilhouette} only simulates one spectral window\\
+number of scans & splits observation for into different scans of equal length\\
 scan lag (hours)& lag time between scans\\
 elevation limit (radians) & limit below which all data is automatically flagged\\
-central observing frequency (GHz)& \\
+central observing frequency (GHz)&\\
 total observation length (hours)&\\
-apply ISM scattering?&\\
-number of ISM screen realisations&\\
-ISM screen speed&will come into effect only for multiple ISM screens\\
-ISM ${\rm N_{pix}}$& size of screen\\
-apply atmospheric attentuation?&\\
+apply atmospheric attentuation?& Uses weather table data\\
 add thermal noise?&calculated with station SEFD\\
-apply atmospheric thermal noise?& derived from atmospheric brightness temperature \\
+apply atmospheric thermal noise?& Uses weather table data. Derived from atmospheric brightness temperature \\
 apply tropospheric turbulence-induced phase noise?&applies to all antennae\\
 apply mean atmospheric time delays?&percentage tropospheric phase \\
-output image pixel size&output image ${\rm N_{pix}}$\\
-station information file path& station dependent details, headings of this table shown below
+output image pixel size&Specified as a string in [value][unit] format e.g. `1e-6arcsec'\\
+output image ${\rm N_{pix}}$\\
+station information file path& station dependent details, headings of this table shown below\\
 \hline
 \hline
-station&coherence time\\
-sefd&pvw\\
-ground pressure&ground temperature\\
-\end{tabular} 
-\end{table}
+apply ISM scattering?&\\
+number of ISM screen realisations& \\
+ISM screen speed& will come into effect only for multiple ISM screens\\
+ISM ${\rm N_{pix}}$& size of screen for one sky model\\
+ $r_{\rm 0}$ (km) & coherence length on the scattering scattering screen \\
+$N_{\rm pix}$& pixel number for one realisation of the screen \\
+$r_{\rm in}$ (km)& inner scale of turbulence\\ 
+principal angle of Gaussian scattering kernel &\\
+anisotropy of Gaussian scattering kernel\\            \\
+$r_{\rm out}$    & Outer scale of turbulence   \\
+d (pc)      & Observer-Source distance      \\
+r (pc)      & Screen-Source distance      \\
+$R$              & \\
+$\beta$ & turbulent exponent         \\
+screen resolution (units of $r_{\rm 0}$)& \\
+\hline
+\hline
+station name&ensure that the order of stations matches the order in the antenna table \\
+average atmospheric coherence time (seconds)& \\
+sefd&\\
+mean pwv content&\\
+ground pressure (mbars)&\\
+ground temperature (K)&\\
+\caption[Keywords of the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filter into several subdictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for readability. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created).  {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}
+\label{tab:parameters}
+\end{longtable}
+
+     
+
 
 %Outputs and Data products %st 1
 The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties, a dirty and/or deconvolved image, and tropospheric phase delays, opacities etc. Closure phases and uncertainties are calculated in a model-dependent way as described by section~\ref{data_products}. The modular structure of the pipeline allows for additional imaging and deconvolution algorithms to be easily appended to the final data processing steps. Noting that there are other data formats widely used in mm-VLBI, we make use of the {\sc casa} task for conversion to {\sc uvfits}. Similiarly other data products can be easily produced as needed e.g. polarisation ratios.
@@ -127,22 +145,9 @@ The third MS-related class, \emph{SimCoordinator}, is a child of the {\it TropMS
 %Pr 1 St 1
 
 %Link back to theory %st 1
-As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at sub(mm) wavelengths is subject to ISM scattering in the strong scattering regime. Due to the size of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation in all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
+As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at (sub)mm wavelengths are subject to ISM scattering in the strong scattering regime. Due to the solid angle of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation of all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen, which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
 
-%scatterbrane inputs and generality %st 1
-\begin{table}
-\centering
-\caption{The list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created).
-}
-\begin{tabular}{ll}\label{tab:parm_ism}
-$r_0$            & $N_{\rm pix}$ \\
-$r_{\rm in}$     & principal angle             \\
-$r_{\rm out}$    & anisotropy of scattering kernel    \\
-$D_{\rm os}$     & $\lambda$        \\
-$R$              & $\beta$          \\
-screen resolution &               
-\end{tabular}
-\end{table}
+
 
 
 
