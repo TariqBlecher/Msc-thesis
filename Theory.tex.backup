@@ -170,7 +170,7 @@ u(\Phi_{ijk}) = \frac{\sqrt{4 + (s_{ij}s_{jk})^2 + (s_{jk}s_{ki})^2 + (s_{ij}s_{
 \noindent where $s_{ij}$ is defined as
 \begin{equation}
 s_{ij}=|V_{ij}| \sqrt{\frac{ \tau \Delta \nu}{SEFD_i SEFD_j}},
-\end{equation}
+\end{equation}\label{eq:snr}
 where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $|V_{ij}|$ is the visibility amplitude of the assumed source model and $SEFD$ is the system equivalent flux density.
 
 
@@ -180,7 +180,7 @@ Some imaging algorithms use a technique called `hybrid mapping' \citep[e.g.][]{S
 \subsection{Variability and the static source assumption}\label{sec:variability}
 %Variability - why it's an important consideration and challenge for the EHT, hence importance in simulations
 %static src assumption and how it breaks the image-vis fourier transform relation st 1
-Implicit in our description of interferometry above (see equation~\ref{eq:van-citterlike}), is the assumption that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is intrinsically time-variable), the visibilities measured over the course of an observation can no longer be related to a single image. 
+Implicit in our description of interferometry above (see equation~\ref{eq:van-citterlike}), is the assumption that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is intrinsically time-variable), the visibilities measured over the course of an observation can no longer be related to a single image. It might be necessary to split the observation into several sub-intervals which are calibrate separately, although the determination of the sub-intervals is an open question.
 %explicitly defining variability as any intrinsic source variability st 1
 Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Variability is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
 
@@ -191,29 +191,23 @@ Although the static source assumption holds for most interferometric observation
 
 
 %ISCO - Light crossing analysis st 1
-In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days given its $\sim3$~dex larger mass. Considering light crossing times $\Delta t_{\rm cross}$, we estimate the intrinsic size $\Delta x$ of the emission region to be of order $\Delta x \sim \Delta t_{\rm cross} \rm c$, where c is the speed of light. Hence, a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $\Delta x < 15 R_{\rm Sch}$. Such analyses of Sgr~A* gave early evidence for an emission region on event horizon scales.
-
-
-%Phenomenology : main, motivation
-We consider separating source variability into the following interlinked modes : static flaring regions, changes in polarisation and spatial variability in total intensity. Each of the different modes may inform different approaches to calibration and parameter extraction especially when using different quantities (e.g. closure phases vs. polarisation ratios). It might be necessary to split the observation into several sub-intervals which are calibrate separately, although the determination of the sub-intervals is an open question.
-
-Following this, we outline the role of {\sc meqsilhouette} to assist with the analysis and interpretation. It has also been proposed by \citet{Lu_2016} that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure. However, this approach would down-weight the longest baselines, losing information of the finest angular scales.
-
+In principle, the variability timescale could be comparable to the period of the Innermost Stable Circular Orbit (ISCO), which for Sgr~A$^\star$, ranges from 4 minutes in the case of a maximally rotating BH with a prograde disc to about half an hour for a non-rotating BH. The ISCO period for M87 is substantially longer, on the order of days given its $\sim3$~dex larger mass. Considering light crossing times $\Delta t_{\rm cross}$, we estimate the intrinsic size $\Delta x$ of the emission region to be of order $\Delta x \sim \Delta t_{\rm cross} \rm c$, where c is the speed of light. Hence, a flare of duration $ \Delta t_{\rm cross} =10$~min corresponds to scales of  $\Delta x < 15 R_{\rm Sch}$. Such analyses of Sgr~A* gave early evidence for an emission region on event horizon scales \citep{Doeleman_2009b}.
 
 
 %%Flares The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. 
-By far the most well studied type of variability, is simply variations in total flux, referred to as flares. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \cite{Fish_2011}. This highlights the importance of synchontron self-absorption and the variable size of emission region, as the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
+By far the most well studied type of variability, is simply variations in total flux of an unresolved core, referred to as flares \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006,Marrone_2006}. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \citep{Fish_2011}. This highlights the importance of synchontron self-absorption and the variable size of emission region, as the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
 
 %orbits
-Secondly, consider a source structure which is varying primarily in spatial position in the innermost flow, e.g. an orbiting unresolved component or jet launch region e.g. a shock. Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \citep{Doeleman_2009b}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. %mitigation + tracking variability - previous sims
+Variation in the spatial position source structure in the innermost flow, e.g. an orbiting unresolved component or jet launch region e.g. a shock. Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \citep{Doeleman_2009b}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection periodic orbital features. %mitigation + tracking variability - previous sims
 In the case of an compact, unresolved variable component, several approaches \citep{Doeleman_2009b, Fish_2009b, Johnson_2014} show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array. On the other hand, a more recent observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability \cite{Meyer_2008} which could be explained by power-law turbulence. 
 
 %Magnetic field
 Another possible `mode' of variability is one that is primarily based on magnetic field structures. A recent mm-VLBI result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic field structure is highly dynamic, see section~\ref{sec:unsolved_qs}. 
 
 
-%These approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors. Whether or not the st
 
+%These approaches assume only Gaussian thermal noise, Gaussian-blurring in the ISM and no tropospheric-induced calibration errors. Whether or not the st
+It has also been proposed by \citet{Lu_2016} that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure. However, this approach would down-weight the longest baselines, losing information of the finest angular scales.
 
 %calibration st 1
 As stated earlier, the standard mm-VLBI calibration techniques i.e. fringe-fitting, assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. These effects could limit image fidelity and DR, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.

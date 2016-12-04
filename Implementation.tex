@@ -56,6 +56,7 @@ All inputs to the simulator are specified by a configuration file (.json text fi
 \end{figure*}
 
 \begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
+\caption[Keywords of the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filtered into several sub-dictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for comprehension. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created). {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}\label{tab:parameters}\\
 \hline
 parameter&comment\\
 \hline
@@ -71,18 +72,19 @@ scan lag (hours)& lag time between scans\\
 elevation limit (radians) & limit below which all data is automatically flagged\\
 central observing frequency (GHz)&\\
 total observation length (hours)&\\
-apply atmospheric attentuation?& Uses weather table data\\
+apply atmospheric attentuation?& Uses weather table data.\\
 add thermal noise?&calculated with station SEFD\\
 apply atmospheric thermal noise?& Uses weather table data. Derived from atmospheric brightness temperature \\
-apply tropospheric turbulence-induced phase noise?&applies to all antennae\\
-apply mean atmospheric time delays?&percentage tropospheric phase \\
+apply turbulent tropospheric delays?&Based on Kolmogorov screen statistics.\\
+apply mean atmospheric time delays?&Calculated through radiative transfer.\\
+percentage tropospheric phase&alter the `amount' of turbulence applied\\
 output image pixel size&Specified as a string in [value][unit] format e.g. `1e-6arcsec'\\
-output image ${\rm N_{pix}}$\\
-station information file path& station dependent details, headings of this table shown below\\
+output image ${\rm N_{pix}}$&\\
+station information file path& station dependent details, headings of this table shown in bottom section\\
 \hline
 \hline
 apply ISM scattering?&\\
-number of ISM screen realisations& \\
+number of ISM screen realisations&  \\
 ISM screen speed& will come into effect only for multiple ISM screens\\
 ISM ${\rm N_{pix}}$& size of screen for one sky model\\
  $r_{\rm 0}$ (km) & coherence length on the scattering scattering screen \\
@@ -104,8 +106,7 @@ sefd&\\
 mean pwv content&\\
 ground pressure (mbars)&\\
 ground temperature (K)&\\
-\caption[Keywords of the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filter into several subdictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for readability. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created).  {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}
-\label{tab:parameters}
+
 \end{longtable}
 
      

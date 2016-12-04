@@ -122,7 +122,7 @@ The development of mm-VLBI instrumentation has been spurred by the formation of 
 
  
 %moving to higher freq st 1
-The move to higher frequencies is accompanied by requirements on the instrument including: increased data volumes ($1 \to 16$~GHz) and stability of timing standards; as well as increased accuracy of dish surfaces and antenna pointing accuracy \citep{Tilanus_2014}. Difficulties emerge also from the effects of the Earth's lower atmosphere where the optical depth at becomes  non-negligible at mm-wavelengths and turbulence causes rapid phase fluctuations which causes decoherence in the visibilities when averaged. Even though the stations are at high altitude, desert locations, the atmospheric coherence times are still short, typically $\lesssim$10~s at $230$~GHz \citep{Doeleman_2009}. The extensive requirements on instruments and location drive up the cost of mm-VLBI stations, resulting in few element ($<10$) interferometric arrays which make for sparse sampling of the Fourier domain. This is exacerbated by short mutual viewing windows at the different sites and imperfect weather. Traditional phase referencing calibration is ruled out due to the variable atmosphere, the low source density of the millimetre sky and that calibrators are resolved and variable too at this high angular resolution. 
+The move to higher frequencies is accompanied by requirements on the instrument including: increased data volumes ($1 \to 16$~GHz) and stability of timing standards; as well as increased accuracy of dish surfaces and antenna pointing accuracy \citep{Tilanus_2014}. Difficulties emerge also from the effects of the Earth's lower atmosphere where the optical depth at becomes  non-negligible at mm-wavelengths and turbulence causes rapid phase fluctuations which causes decoherence in the visibilities when averaged. Even though the stations are at high altitude, desert locations, the atmospheric coherence times are still short, typically $\lesssim$10~s at $230$~GHz \citep{Doeleman_2009b}. The extensive requirements on instruments and location drive up the cost of mm-VLBI stations, resulting in few element ($<10$) interferometric arrays which make for sparse sampling of the Fourier domain. This is exacerbated by short mutual viewing windows at the different sites and imperfect weather. Traditional phase referencing calibration is ruled out due to the variable atmosphere, the low source density of the millimetre sky and that calibrators are resolved and variable too at this high angular resolution. 
 
 
 %More complicated effects 
@@ -148,7 +148,7 @@ Hence the data product used in the Bayesian parameter estimation routine, cannot
 %St : 1
 
 %Why simulate: intro 
-Given the significant observational challenges that the EHT faces, we have undertaken the project to build a mm-VLBI observation and signal corruption simulator. There are many benefits for using such a toolkit and indeed synthetic data simulation is common practice for major scientific experiments. A prominent example is the extensive gravitational wave template matching scheme for The Laser Interferometer Gravitational-Wave Observatory (LIGO) which operates in the presence of tidal loading and other seismic perturbations. In essence such a simulator would fill in a component of the theoretical signal propagation chain, effectively taking astrophysical simulations of the source (e.g. accretion onto a SMBH) as an input and returning realistic synthetic interferometric data. This allows a more effective interplay between theory and observation, quantifying systematic effects and the measurement limits. The remainder of this section will briefly discuss several research questions relevant to an EHT synthetic data simulator and how we approach the software design in order to address these questions. 
+Given the significant observational challenges that the EHT faces, we have undertaken the project this thesis is focused on mm-VLBI observation and signal corruption simulator. There are many benefits for using such a toolkit and indeed synthetic data simulation is common practice for major scientific experiments. A prominent example is the extensive gravitational wave template matching scheme for The Laser Interferometer Gravitational-Wave Observatory (LIGO) which operates in the presence of tidal loading and other seismic perturbations. In essence such a simulator would fill in a component of the theoretical signal propagation chain, effectively taking astrophysical simulations of the source (e.g. accretion onto a SMBH) as an input and returning realistic synthetic interferometric data. This allows a more effective interplay between theory and observation, quantifying systematic effects and the measurement limits. The remainder of this section will briefly discuss several research questions relevant to an EHT synthetic data simulator and how we approach the software design in order to address these questions. 
 
 %Specific use cases of simulations
 
@@ -166,7 +166,7 @@ Simulated data can also assist in the optimisation of the experimental configura
 
 
 %other simulation efforts 
-Recently, there has been an increase in the attention given to simulating EHT observations of Sgr~A*  and M87 \citep{Lu_2011,Fish_2014,Lu_2014,Bouman_2015,Lu_2016,Chael_2016}. However, these are primarily focused on image reconstruction and assume either negligible or Gaussian distributed gain errors; perfect antenna pointing accuracy; and in most cases only Gaussian convolution to simulate ISM scattering. Clearly, as the EHT array is enhanced (and possibly expanded), so too must the interferometric simulations evolve to provide ever-more physical predictions on the confidence levels with which parameters can be extracted and hence exclude theoretical models of gravity and/or accretion flows.
+Recently, there has been an increase in the attention given to simulating EHT observations of Sgr~A*  and M87 \citep{Lu_2011,Fish_2014,Lu_2014,Bouman_2015,Lu_2016,Chael_2016}. However, these are primarily focused on image reconstruction and assume either negligible or Gaussian distributed gain errors; perfect antenna pointing accuracy; and in most cases only Gaussian convolution to simulate ISM scattering. Clearly, as the EHT array is enhanced (and possibly expanded), so too must the interferometric simulations evolve to provide ever-more physical predictions on the confidence levels with which parameters can be extracted and hence exclude theoretical models of gravity and/or accretion flow.
 
 
 Given the significant, yet surmountable, observational challenges that the EHT faces, [this thesis will] leverage metre and cm-wavelength simulation and calibration successes and build a \textsc{MeqTrees}-based mm-VLBI-specific software package called \textsc{meqsilhouette}. While \textsc{MeqTrees} has not yet been used in the context of mm-wavelength observations, the framework is agnostic to higher frequency implementation as long as the Measurement Equation is appropriately constructed. \textsc{meqsilhouette} enables realistic interferometric simulations of mm-VLBI observations in order to gain deeper understanding of a wide range of signal propagation and calibration effects.''\\
@@ -190,17 +190,12 @@ This thesis is divided into the following chapters and sections,
  \end{description}
 
  
- \item {\bf Chapter 4 : Results}
+ \item {\bf Chapter 4 : Results and Analysis}
  \begin{description}
-  \item  [Section 4.1] showcases the basics of the simulator output through a series of canonical results.
-  \item [Section 4.2] presents a more sophisticated scenario which tests an {\sc aips} calibration routine in the presence of source and tropospheric time-variability.
+  \item  [Section 4.1] showcases and discusses the basics of the simulator output through a series of canonical results.
+  \item [Section 4.2] future applications of and improvements to the simulator.
  \end{description}
  
-  \item {\bf Chapter 5 : Discussion}
-  \begin{description}
-   \item [Section 5.1] explores the implications of the results shown in the previous chapter.
-   \item [Section 5.2] makes suggestions for future applications of and improvements to the simulator.
-  \end{description}
 
 \end{itemize}
 

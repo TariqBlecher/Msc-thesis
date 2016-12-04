@@ -55,32 +55,44 @@ Prof. Oleg {\sc Smirnov} \\
 \end{titlepage}
 
 \chapter*{Abstract} 
+%2 paragraphs : 1 intro, 2. Results
+%Intro
+%eht
+The Event Horizon Telescope (EHT) aims to spatially resolve the innermost emission from nearby supermassive black holes with event horizon scale resolution.
+%shadow
+The emission is expected to be gravitationally lensed in such a way as to produce an image or shadow of the photon ring. The primary scientific objectives are to test general relativity in the strong-field regime 
+%accretion jet
+and to probe accretion and jet-launch physics. 
+%vlbi
+This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. 
+%challenges
+However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors.\
+%this approach
+In this thesis, we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present.
 
-% to edit - last
-The Event Horizon Telescope (EHT) aims to spatially resolve the silhouette (or shadow) of the supermassive black holes in the Galactic Centre (Sgr~A$^\star$) and M87. The primary scientific objectives are to test general relativity in the strong-field regime and to probe accretion and jet-launch physics at event-horizon scales. This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors. In this [thesis], we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
+
+%Results
+%More details on approach?
+%canonical simulations results
+
+%conclusion
+In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
 
 \addcontentsline{toc}{chapter}{Abstract}
 
  
 \chapter*{Acknowledgements}
  \addcontentsline{toc}{chapter}{Acknowledgements}
- %Supervisors
-First and foremost I would like to thank my primary supervisor, Roger Deane, for his unwavering commitment and encouragement to my scientific development. Furthermore thanks to Dr Gianni Bernardi and Professor Oleg Smirnov for further supervision and help with software. 
+I would like to thank my primary supervisor, Roger Deane, for guiding my first foray into full time research work. His unwavering commitment and excitement about both the project and my personal scientific development as well as his creativity has an astronomer has always inspired me. Furthermore I thank my co-supervisors Gianni Bernardi and Oleg Smirnov for their guidance and technical expertise. I thank Ronel Gronewald for always being more than willing to help with administration and the rest of the researchers and students in the RATT group for providing an rich context for my own work. In particular, I would like to thank Gijs Molenaar for always sharing his extensive software expertise and Sphe Makhathini for suggesting design elements of the simulator. 
 
+
+It has been exciting to collaborate with researchers across the globe. I am grateful for Ilse van Bemmel and Monika Mo\'{s}cibrodwska for inviting me to visit JIVE and Radboud university in the Netherlands, and again to Monika for supplying us with her GRMHD simulations which made data analysis a lot more enjoyable. I thank Michael Johnson (Harvard) and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available and for their helpful discussions. Similarly, we thank Bojan Nikolic for \textsc{atm} support.  
 
 %Family
-Support from my family and friends for helping carrying the burden.
-
-
-%Ronel
-Ronel Gronewald for her magic. 
-
-%collaborators and colleagues
-It has been exciting to collaborate with researchers across the globe. In particular, I thank   including Michael Johnson (Harvard) and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available, and for helpful discussions. Similarly, we thank Bojan Nikolic for \textsc{atm} support. We are grateful to Monika Mo\'{s}cibrodwska for supplying theoretical simulations we used in testing and to Ilse van Bemmel and Lindy Blackburn for useful discussions. 
-
+Furthermore. I thank my family and friends for their continuous support and willingness to endure confusing black hole explanations.
 
 %SKA 
-The financial assistance of the South African SKA Project (SKA SA) towards this research is hereby acknowledged appreciated. 
+Finally, the financial assistance of the South African SKA Project (SKA SA) towards this research is hereby acknowledged appreciated. 
 
 \chapter*{Plagiarism declaration}
  \addcontentsline{toc}{chapter}{Plagiarism}

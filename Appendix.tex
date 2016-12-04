@@ -1,6 +1,6 @@
 \chapter{Software documentation}
 %st 1
-The following appendix serves as additional documentation for the installation and use of the {\sc meqsilhouette} simulator. Please reference \citep{Blecher_2016} when publishing results based on {\sc meqsilhouette} simulations.
+The following appendix serves as additional documentation for the installation and use of the {\sc meqsilhouette} simulator. Please reference \citep{Blecher_2016} when publishing results based on this code.
 
 \section{Installation}
 %st 1
@@ -35,29 +35,31 @@ $python driver/azishe.py input/parameters.json
 
 
 %Experimenting with parameters
-The content of the parameter dictionary is shown, slightly altered, in table~\ref{tab:parameters}. The parameters in the dictionary are altered by editing the dictionary directly. 
+The content of the parameter dictionary is shown, slightly altered, in table~\ref{tab:parameters}. The parameters in the dictionary are can be edited directly. 
 
 %logging
-The primary log is set by `v.LOG' variable, initialised in the driver script. 
+The primary log is set by `v.LOG' variable, initialised in the driver script. If the variable is commented out, the logs will display to screen. 
 
 %Outputs
-The output directory is set by the `v.OUTPUT' variable, initialised in the driver script. In this directory there will be a variety of files including the {\sc ms}, {\sc fits} sky models, a dirty image (if enabled), a number of dictionaries and arrays associated with analysing the data as well as a number of arrays and text files associated with the tropospheric corruption. See table~\ref{tab:outputs} for a brief explanation of each of these files. Note that Antenna based arrays to follow (Time, Freq, Antenna)
-Arrays in the shape of DATA follow (Time, Freq, Pol) per baseline
+The output directory is set by the `v.OUTPUT' variable, initialised in the driver script. In this directory there will be a variety of files a list and explanation of which is given in table~\ref{tab:outputs}.
 
 \begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
+\caption[List and explanation of files output by a standard simulation]{List and explanation of files output by a standard simulation. There are several file formats and data types in parenthesis for easier comprehension. (antenna-based) {\sc NumPy} arrays have a shape corresponding to indexing (Time, Frequency, Antenna); ({\sc ms}-structured) {\sc NumPy} arrays reflect the data format of the {\sc ms} (i.e. Row, Frequency, Polarisation); (baseline dictionary) refers to {\sc pickle} dictionaries where the key is (Station 1, Station 2); (triangle dictionary) is same as a (baseline dictionary) except with an extra dimension i.e. (Station 1, Station 2, Station 3).}
+\label{tab:outputs}\\
+\hline
 name&comment\\
 \hline
 Measurement Set (.MS) & Final simulated Measurement set \\
 Sky models (.fits)& Sky models which were observed\\
-parameters.json &input parameter dictionary\\
-(antenna number)atm\_abs.txt&atmospheric opacity and sky brightness temperature output by {\sc atm}\\
-(antenna number)atm\_disp.txt&atmospheric delays output by {\sc atm}\\
+parameters (.json) &input parameter dictionary\\
+(atm/antenna number)atm abs (.txt)& zenith atmospheric opacity and sky brightness temperature output by {\sc atm}\\
+(atm/antenna number)atm disp (.txt)& zenith atmospheric delays output by {\sc atm}\\
 closure phases (.p) & Dictionary of closure phases where keys are a tuple of station names (triangle dictionary)\\
 closure phase uncertainties (.p) & Dictionary of closure phase uncertainties where keys are a tuple of station names (triangle dictionary)\\
-Thermal noise (Jy) (.p)  & Dictionary of expected thermal noise levels used to generate closure phase uncertainties (baseline dictionary)\\
+Thermal noise  (.p)  & Dictionary of expected thermal noise levels used to generate closure phase uncertainties (baseline dictionary)\\
 SNR (.p)  & Dictionary of SNR values (see equation~\ref{eq:snr}) used to generate closure phase uncertainties (baseline dictionary). \\
-receiver noise (.npy) & thermal noise generated from SEFDs (MS-structured)\\
-sky noise (.npy) & thermal noise generated from atmosphere (MS-structured)\\
+receiver noise (.npy) & thermal noise generated from SEFDs ({\sc ms}-structured)\\
+sky noise (.npy) & thermal noise generated from atmosphere ({\sc ms}-structured)\\
 transmission (.npy) & atmosphere transmission (antenna-based)\\
 turbulent phases (.npy) & atmospheric phase terms (antenna-based)\\
 Stokes I (.p)& visibilities in total intensity (baseline dictionary)\\
@@ -65,8 +67,7 @@ phase standard deviations (.npy)& standard deviations of the phase error between
 turbulent phases (.npy) & turbulent contribution to the atmospheric phase error (antenna-based)\\
 phase normalisation (.npy) & mean contribution to atmospheric phase error (antenna-based)\\
 
-\caption[List and explanation of files output by a standard simulation]{List and explanation of files output by a standard simulation}
-\label{tab:outputs}
+
 \end{longtable}
 
 \subsubsection{Further notes and reminders}
@@ -77,13 +78,13 @@ phase normalisation (.npy) & mean contribution to atmospheric phase error (anten
  \item Ensure that the {\sc fits} file is complete with satisfactory header and data shape (see examples in the input dictionary for guidance).
  \item Currently one spectral window can be simulated at a time.
  \item Currently only total intensity can be simulated.
- \item There are several cautions related to usage of ScatterBrane, see original documentation \footnote{http://krosenfeld.github.io/scatterbrane/current/}. 
+ \item There are several cautions related to usage of {\sc scatterbrane}, including restrictions on the compactness of sky models. See original documentation \footnote{http://krosenfeld.github.io/scatterbrane/current/}. 
  \item The path of the folder containing the sky model is also located in the parameter dictionary, for multiple fits files, i.e. a time-variable source, the order of their implementation is the same as if their names with sorted with numpy.sort, where each fits files is observed for approximately the same amount of time. If the ISM-scattering is turned on, the extra logistics of moving and creating fits files and folders are automatically handled. 
 \end{itemize}
 
 \subsection{Writing a driver script}
  
-A number of different pipelines are available in the driver scripts folder, which should be provide `worked examples' when writing a novel driver script. The most important steps are:
+Often it is useful to perform iterations of subset of steps of the standard pipeline which is straightforward with a \emph{for} loop and several simple functions or clearing and copying measurement sets. A number of different pipelines are available in the driver scripts folder, which should be provide `worked examples' when writing a novel driver script. The most important steps are:
 \begin{enumerate}
  \item setup parameter dictionary as well as sub-dictionaries
  \item create measurement set
@@ -91,7 +92,11 @@ A number of different pipelines are available in the driver scripts folder, whic
  \item Use SimCoordinator to generate visibilities and apply signal corruptions
 \end{enumerate}
 
-Often it is useful to perform iterations of subset of steps in the pipeline which is straightforward with a \emph{for} loop and several simple functions or clearing and copying measurement sets. Additional instrumental signal corruptions should ideally be implemented within the TropMS class. It is important that the pipeline respects the causality of signal transmission path and/or the commutativity of Jones-matricies.
+ Also, it is also possible to save/load from most of the signal corruptions if you needed to ensure that the corruption used is exactly the same in different realisations. 
+
+
+
+If additional instrumental corruptions are implemented, this should be within the TropMS class for consistency. Also it is important that the pipeline respects the causality of signal transmission path and/or the commutativity of Jones-matricies.
 
 
 
