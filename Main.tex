@@ -19,27 +19,25 @@
 \usepackage{caption} 
 \captionsetup[table]{skip=10pt}
 \newcommand{\bm}{\boldsymbol}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 
 
 \begin{document}
 
-%\frontmatter
-%\input{preamble}
-%\mainmatter
-%\tableofcontents
-%\listoffigures
-%\listoftables
-%\input{Introduction}
-%\input{Theory}
+\frontmatter
+\input{preamble}
+\mainmatter
+\input{Introduction}
+\input{Theory}
 \input{Implementation}
-%\input{Results}
-%\input{Conclusion}
+\input{Results}
+\input{Conclusion}
 \appendix
 \input{Appendix}
-%\backmatter
-%\bibliography{thesis}
-%\bibliographystyle{plainnat}
-%\addcontentsline{toc}{chapter}{Bibliography}
+\backmatter
+\bibliography{thesis}
+\bibliographystyle{plainnat}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 \end{document}

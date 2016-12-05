@@ -3,7 +3,7 @@
 \section{Design objectives}\label{sec:des_obj}
 %St 1
 %broad objectives
-Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diverse set of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should :
+Our primary aim is to test and research mm-VLBI calibration, imaging and parameter estimation algorithms/strategies through the construction of a synthetic data simulation framework. To address the many questions within the wide scope of this objective, one must be able to setup and run a diverse set of experiments within the simulation framework. This places definite constraints on the software architechure. In particular, the framework should:
 
 
 %specific objectives
@@ -41,7 +41,7 @@ Our data formats of choice are: {\sc fits} for image cubes and the {\sc measurem
 To create a flexible and modular structure necessary to be able to run a diversity of experiments, the software implementation is divided into 2 components:
 \begin{itemize}
  \item an object-oriented framework into which is programmed the logic of each individual step in the signal propagation chain,
- \item a driver script which initialises the most abstract class in the framework with the required inputs and determines the signal propagation chain relevant to that particular pipeline.
+ \item a driver script which initialises the highest (in terms of abstraction) class in the framework with the required inputs and determines the signal propagation chain relevant to that particular pipeline.
 \end{itemize}
 The conceptual flow diagram of one realisation of a {\sc meqsilhouette} simulation pipeline is shown in Fig.~\ref{flow}. To emphasise, the framework is not restricted to this sequence of operations, allowing the exact pipeline to be quite general. Note that this diagram is not entirely accurate as antenna pointing errors are not compatible with the {\sc fits} sky model output by the ISM scattering module.
 
@@ -51,12 +51,12 @@ All inputs to the simulator are specified by a configuration file (.json text fi
 
 \begin{figure*}[h!]
 \includegraphics[width=\columnwidth]{Images/flow_full2}
-\caption{Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline. The specific sequence is determined by the driver script whereas the logic of each step is contained in an object-oriented framework. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is extendable, allowing any additional, arbitrary Jones matrices to be incorporated. \label{flow}%
+\caption[Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline.]{Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline. The specific sequence is determined by the driver script whereas the logic of each step is contained in an object-oriented framework. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is extendable, allowing any additional, arbitrary Jones matrices to be incorporated. \label{flow}%
 }
 \end{figure*}
 
 \begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
-\caption[Keywords of the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filtered into several sub-dictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for comprehension. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created). {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}\label{tab:parameters}\\
+\caption[List and explanation of keywords in the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filtered into several sub-dictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for comprehension.{\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}\label{tab:parameters}\\
 \hline
 parameter&comment\\
 \hline
@@ -73,7 +73,7 @@ elevation limit (radians) & limit below which all data is automatically flagged\
 central observing frequency (GHz)&\\
 total observation length (hours)&\\
 apply atmospheric attentuation?& Uses weather table data.\\
-add thermal noise?&calculated with station SEFD\\
+add thermal noise?&calculated with station $SEFD$\\
 apply atmospheric thermal noise?& Uses weather table data. Derived from atmospheric brightness temperature \\
 apply turbulent tropospheric delays?&Based on Kolmogorov screen statistics.\\
 apply mean atmospheric time delays?&Calculated through radiative transfer.\\
@@ -86,9 +86,8 @@ station information file path& station dependent details, headings of this table
 apply ISM scattering?&\\
 number of ISM screen realisations&  \\
 ISM screen speed& will come into effect only for multiple ISM screens\\
-ISM ${\rm N_{pix}}$& size of screen for one sky model\\
- $r_{\rm 0}$ (km) & coherence length on the scattering scattering screen \\
-$N_{\rm pix}$& pixel number for one realisation of the screen \\
+ISM ${\rm N_{pix}}$& size of screen for one (square) {\sc fits} sky model\\
+ $r_{\rm 0}$ (km) & coherence length on the scattering screen \\
 $r_{\rm in}$ (km)& inner scale of turbulence\\ 
 principal angle of Gaussian scattering kernel &\\
 anisotropy of Gaussian scattering kernel\\            \\
@@ -101,11 +100,11 @@ screen resolution (units of $r_{\rm 0}$)& \\
 \hline
 \hline
 station name&ensure that the order of stations matches the order in the antenna table \\
-average atmospheric coherence time (seconds)& \\
-sefd&\\
-mean pwv content&\\
-ground pressure (mbars)&\\
-ground temperature (K)&\\
+average atmospheric coherence time (seconds)& $t_0$ in equation~\ref{eq:turb_final} \\
+$SEFD$& see equation~\ref{eq:sefd}\\
+mean zenith PWV content above station (mm)& \\
+ground pressure at station (mbar)& \\
+ground temperature at station (K)&\\
 
 \end{longtable}
 
@@ -113,7 +112,7 @@ ground temperature (K)&\\
 
 
 %Outputs and Data products %st 1
-The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties, a dirty and/or deconvolved image, and tropospheric phase delays, opacities etc. Closure phases and uncertainties are calculated in a model-dependent way as described by section~\ref{data_products}. The modular structure of the pipeline allows for additional imaging and deconvolution algorithms to be easily appended to the final data processing steps. Noting that there are other data formats widely used in mm-VLBI, we make use of the {\sc casa} task for conversion to {\sc uvfits}. Similiarly other data products can be easily produced as needed e.g. polarisation ratios.
+The primary outputs of the pipeline are an interferometric dataset in MS format along with the closure phases and uncertainties, a dirty and/or deconvolved image, and tropospheric phase delays, opacities but see the Appendix for more detais. Closure phases and uncertainties are calculated in a model-dependent way as described by section~\ref{data_products}. The modular structure of the pipeline allows for additional imaging and deconvolution algorithms to be easily appended to the final data processing steps. Noting that there are other data formats widely used in mm-VLBI, we make use of the {\sc casa} task for conversion to {\sc uvfits}. Similiarly other data products can be easily produced as needed e.g. polarisation ratios.
 
 
 %Overview of the workflow
@@ -122,7 +121,7 @@ The primary outputs of the pipeline are an interferometric dataset in MS format 
 
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Images/Class_module_structure}
-\caption{The basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module. The \emph{SimCoordinator} class is initialised in the driver script. \label{class_struc}%
+\caption[The basic class and module structure of the {\sc meqsilhouette} implementation.]{The basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module. The \emph{SimCoordinator} class is initialised in the driver script. \label{class_struc}%
 }
 \end{figure*}
 
@@ -146,7 +145,7 @@ The third MS-related class, \emph{SimCoordinator}, is a child of the {\it TropMS
 %Pr 1 St 1
 
 %Link back to theory %st 1
-As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at (sub)mm wavelengths are subject to ISM scattering in the strong scattering regime. Due to the solid angle of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation of all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen, which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
+As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at (sub)mm wavelengths are subject to ISM scattering in the strong scattering regime. Due to the solid angle of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation of all parameters (see table~\ref{tab:parameters}) associated with the scattering screen, which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
 
 
 
@@ -159,7 +158,7 @@ We include the {\sc ScatterBrane} software, which has already yielded important 
 \item $\Delta t_{\rm ism}=\Delta t_{\rm src}$ \qquad \qquad if \qquad  $\Delta t_{\rm src} < \Delta t_{\rm ism}$
 \item $\Delta t_{\rm ism}={\rm R}(\frac{\Delta t_{\rm src}}{\Delta t_{\rm ism}})\Delta t_{\rm src}$ \ if \qquad  $\Delta t_{\rm src} > \Delta t_{\rm ism}$,
 \end{itemize}
-where ${\rm R}$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.
+where ${\rm R}$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.  {\sc ScatterBrane} allows the $N_{\rm pix}$ parameter (see table~\ref{tab:parameters}) to be a 2-tuple. i.e. a rectangular screen can be created which can then moved over square source images. The ratio of sides needed is calculated automatically given the sky models and the screen parameters, hence the $N_{\rm pix}$ parameter need only be an integer in the parameter dictionary. 
 
 
 \subsection{Atmospheric corruption simulator}\label{sec:trop_imp}

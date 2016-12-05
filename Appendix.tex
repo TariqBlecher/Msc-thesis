@@ -5,7 +5,7 @@ The following appendix serves as additional documentation for the installation a
 \section{Installation}
 %st 1
 
-The {\sc meqsilhouette} repository is currently private, however if made public it is maintained here\footnote{https://github.com/ratt-ru/MeqSilhouette}. For bug reports, if public, open an issue on github/submit a pull request, alternatively if private, please contact Tariq Blecher\footnote{tariq.blecher@gmail.com} or Roger Deane\footnote{deane.roger@gmail.com}. Currently, the simulator is running on {\sc Ubuntu 14.04} and has not been tested on other operating systems. Software requirements which are being maintained elsewhere and are publicly available: 
+The {\sc meqsilhouette} repository is currently private, however if made public it is maintained here\footnote{https://github.com/ratt-ru/MeqSilhouette}. For bug reports, if public, open an issue on github/submit a pull request. Currently, the simulator is running on {\sc Ubuntu 14.04} and has not been tested on other operating systems. Software requirements which are being maintained elsewhere and are publicly available: 
 \begin{itemize}
  \item {\sc simms}\footnote{https://github.com/radio-astro/simms}
  \item {\sc MeqTrees}\footnote{https://ska-sa.github.io/meqtrees/} 
@@ -41,24 +41,24 @@ The content of the parameter dictionary is shown, slightly altered, in table~\re
 The primary log is set by `v.LOG' variable, initialised in the driver script. If the variable is commented out, the logs will display to screen. 
 
 %Outputs
-The output directory is set by the `v.OUTPUT' variable, initialised in the driver script. In this directory there will be a variety of files a list and explanation of which is given in table~\ref{tab:outputs}.
+The output directory is set by the `v.OUTPUT' variable, initialised in the driver script. In this directory there will be a variety of files, a list and explanation of which is given in table~\ref{tab:outputs}.
 
 \begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
-\caption[List and explanation of files output by a standard simulation]{List and explanation of files output by a standard simulation. There are several file formats and data types in parenthesis for easier comprehension. (antenna-based) {\sc NumPy} arrays have a shape corresponding to indexing (Time, Frequency, Antenna); ({\sc ms}-structured) {\sc NumPy} arrays reflect the data format of the {\sc ms} (i.e. Row, Frequency, Polarisation); (baseline dictionary) refers to {\sc pickle} dictionaries where the key is (Station 1, Station 2); (triangle dictionary) is same as a (baseline dictionary) except with an extra dimension i.e. (Station 1, Station 2, Station 3).}
+\caption[List and explanation of files output by a standard simulation]{List and explanation of files output by a standard simulation. There are several file formats and data types in parenthesis for easier comprehension. (antenna-based) {\sc NumPy} arrays have a shape corresponding to indexing (Time, Frequency, Antenna); ({\sc ms}-structured) {\sc NumPy} arrays reflect the data format of the {\sc ms} (i.e. Row, Frequency, Polarisation); (baseline dictionary) refers to {\sc pickle} dictionaries where keys are (Station 1, Station 2); (triangle dictionary) is same as a (baseline dictionary) except with an extra dimension i.e. (Station 1, Station 2, Station 3).}
 \label{tab:outputs}\\
 \hline
 name&comment\\
 \hline
-Measurement Set (.MS) & Final simulated Measurement set \\
-Sky models (.fits)& Sky models which were observed\\
+measurement set (.MS) & simulated Measurement set \\
+sky models (.fits)& sky models which were observed\\
 parameters (.json) &input parameter dictionary\\
 (atm/antenna number)atm abs (.txt)& zenith atmospheric opacity and sky brightness temperature output by {\sc atm}\\
 (atm/antenna number)atm disp (.txt)& zenith atmospheric delays output by {\sc atm}\\
-closure phases (.p) & Dictionary of closure phases where keys are a tuple of station names (triangle dictionary)\\
-closure phase uncertainties (.p) & Dictionary of closure phase uncertainties where keys are a tuple of station names (triangle dictionary)\\
+closure phases (.p) & Dictionary of closure phases  (triangle dictionary)\\
+closure phase uncertainties (.p) & Dictionary of closure phase uncertainties (triangle dictionary)\\
 Thermal noise  (.p)  & Dictionary of expected thermal noise levels used to generate closure phase uncertainties (baseline dictionary)\\
 SNR (.p)  & Dictionary of SNR values (see equation~\ref{eq:snr}) used to generate closure phase uncertainties (baseline dictionary). \\
-receiver noise (.npy) & thermal noise generated from SEFDs ({\sc ms}-structured)\\
+receiver noise (.npy) & thermal noise generated from $SEFD$s ({\sc ms}-structured)\\
 sky noise (.npy) & thermal noise generated from atmosphere ({\sc ms}-structured)\\
 transmission (.npy) & atmosphere transmission (antenna-based)\\
 turbulent phases (.npy) & atmospheric phase terms (antenna-based)\\
@@ -72,10 +72,10 @@ phase normalisation (.npy) & mean contribution to atmospheric phase error (anten
 
 \subsubsection{Further notes and reminders}
 \begin{itemize}
- \item Note that if the content of antenna table is changed, so should the content of station information file which contains station $SEFD$ and weather information. 
- \item Ensure that the order of stations matches the order in the antenna table.
+ \item If the content of antenna table is changed, so should the content of station information file, which contains station $SEFD$ and weather information. 
+ \item Ensure that the order of stations in the station information file matches the order in the antenna table.
  \item Ensure that the antenna table is complete, including names, positions in metres and dish diameters.
- \item Ensure that the {\sc fits} file is complete with satisfactory header and data shape (see examples in the input dictionary for guidance).
+ \item Ensure that the {\sc fits} file is complete with satisfactory header and data shape (see examples in the input directory for guidance).
  \item Currently one spectral window can be simulated at a time.
  \item Currently only total intensity can be simulated.
  \item There are several cautions related to usage of {\sc scatterbrane}, including restrictions on the compactness of sky models. See original documentation \footnote{http://krosenfeld.github.io/scatterbrane/current/}. 

@@ -12,6 +12,8 @@
 \usepackage{natbib}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{longtable}
+
 \usepackage[onehalfspacing]{setspace}
 \hypersetup{colorlinks=false,pdfborder={0 0 0}}
 \usepackage{caption} 
@@ -33,8 +35,8 @@
 \input{Implementation}
 %\input{Results}
 %\input{Conclusion}
-%\appendix
-%\input{Appendix}
+\appendix
+\input{Appendix}
 %\backmatter
 %\bibliography{thesis}
 %\bibliographystyle{plainnat}

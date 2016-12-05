@@ -1,7 +1,7 @@
 \chapter{Conclusion} %synthesis not summary..distill key and best ideas: 
 
 %intro
-In light of upcoming EHT observations and science goals as well as software advances in the broader radio interferometry community, a mm-VLBI data simulator has been developed as described first in \citet{Blecher_2016} and  expanded upon in this thesis.
+In light of upcoming EHT observations and science goals as well as software advances in the broader radio interferometry community, a mm-VLBI data simulator has been developed as described first in \citet{Blecher_2016} and expanded upon in this thesis.
 
 %link to design objectives
 We believe that our design objectives, laid out in section~\ref{sec:des_obj}, are met from the diversity of simulations shown by our results. This work provides the most sophisticated data simulator for the EHT to date due to the implementation of several dominant physically-based signal corruptions and the generality of framework used. Even though the foundation of the simulator has been built, it is only through collaboration with the various EHT working groups that its potential will truly be achieved.
@@ -12,32 +12,38 @@ The focus has been placed on simulating realistic data given an arbitrary theore
 
 
 %experimental setup
-We have focused on EHT observations, however, the pipeline is completely general with respect to observation configuration and allow any source structure in the form of {\sc fits} format. 
+We have focused on EHT observations, however, the pipeline is completely general with respect to observation configuration and allow any source structure in the form of {\sc fits} format e.g. through inclusion of an ionospheric module, simulations of low-frequency observations (e.g. with LOFAR) can be performed. 
 %time variability
-Time variability in all domains (source, array, ISM, troposphere) is implemented. We highlight this point as we view the development of calibration and imaging routines which deal appropriately with source variability an essential challenge for observations of Sgr~A*. Distinguising complex gain variations, i.e. $\bm G$-Jones terms from short intrinsic variability will depend on the SNR obtained, where the inclusion of ALMA in the array will be pivotal in this regard. However, software advances can also add further utility. A synthetic data simulator could prove essential to research and test calibration, imaging and parameter estimation strategies.
+Time variability in all domains (source, array, ISM, troposphere) is implemented. We highlight this point as we view the development of calibration and imaging routines which deal appropriately with source variability an essential challenge for observations of Sgr~A* and M87. Distinguising complex gain variations, i.e. $\bm G$-Jones terms from short intrinsic variability will depend on the SNR obtained, where the inclusion of ALMA in the array will be pivotal in this regard. Software advances can also add further utility and aid in the construction of a high precision instrument. A synthetic data simulator could prove essential to research and test calibration, imaging and parameter estimation strategies.
 %corruptions & formalism
 To this end, the simulator includes signal corruptions in the interstellar medium (ISM), troposphere and instrumentation. Examples of typical corruptions have been demonstrated, which show that each corruption can significantly affect the inferred scientific parameters. A wide range of signal propagation effects can be implemented using the Measurement Equation formalism, and the simulator can be easily extended to include bandpass imperfections and polarisation leakage.
 %SPECIFIES, VALUES etc
 
 
 %ISM
-The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline. We have discussed how ISM substructure and variability can be difficult to disentangle from the instrinsic source structure, especially if the source is also variable. The magnitude of the refractive substructure will depend on the size of the emission region which at 1.3mm is sensitive to optical depth effects due to synchrotron self-absorption and accretion history. If possible, observations of Sgr~A* should ideally be spaced apart by $r_{\rm ref}/v \sim$ a week  in order to sample independent realisations of the scattering screen. 
+The ISM scattering implementation \textsc{ScatterBrane}, based on \citet*{Johnson_2015a}, has been incorporated into the pipeline.
+%ISM - 4 day
+We have shown an intuitive example of how ISM substructure and variability in the average regime is different to the purely deterministic Gaussian-blurring effect of the ensemble-average regime (Fig.~\ref{ISM_sequence}). This was explored through multiple observables, including the appearance of the scattered image, the closure phase and visibility amplitude.
+%ISM cp envelope
+In addition to this, we have also shown that the ISM module has statisical power by reproducing the ISM-induced closure phase uncertainty envelope calculated in \citet{Ortiz_2016}, shown in Fig.~\ref{fig:substructure2}.
+%ISM general
+We have discussed how ISM substructure and variability can be difficult to disentangle from the instrinsic source structure, especially if the source is also variable. The magnitude of the refractive substructure will depend on the size of the emission region which at 1.3~mm is sensitive to optical depth effects due to synchrotron self-absorption and accretion history. If possible, observations of Sgr~A* should ideally be spaced apart by $r_{\rm ref}/v \sim$ a week in order to sample independent realisations of the scattering screen. 
 
 %mean trop
-
+We have taken a unique approach to separate the atmosphere in mean and turbulent components. In the mean component, we perform a sophisticated radiative transfer calculation using the {\sc atm} software, with an example calculation for three millimetre sites over a range of weather conditions shown in Fig.~\ref{fig:mean_atm}.
 %trop im
-Where we simulated images of a point sources with residual calibration errors, we find rapidly increasing flux attenuation from 1\% at 1\% turbulence to 36\% at 3\% turbulence. We also find offsets of a few microarcseconds. Interestingly the remnants of the PSF in the image are also distorted which can cause them to be difficult to identify as artefacts of the imaging procedure.
+For the turblent model, we employ Kolmogorov, thin-screen statisics to simulate independent phase corruptions for each station. Where we simulated images of a point sources with residual calibration errors, we find rapidly increasing flux attenuation from 1\% at 1\% turbulence to 36\% at 6\% turbulence. Tropospheric phase noise also distorts the typical interferometric response or PSF in the image which could cause difficulties in source extraction. We also find a centroid offset of $\approx 5.6\ \mu$-arcsec at 6\% turbulence, which could be difficult to separate from source variability.
 
 
 %antenna pointing
-We have simulated the effects of antenna pointing error models corresponding to tracking or slew errors on the LMT. Furthermore, we have briefly discussed the effects of the turbulent atmosphere on antenna pointing. This `anomalous' pointing error is potentially a serious calibration difficulty for sites without radiometers. 
+We have simulated the effects of antenna pointing error models corresponding to tracking and slew errors on the LMT. We find that slewing introduces large fraction visibility amplitude errors $\sigma_{\Delta V/V_0} \sim 0.1 - 0.4$ while tracking introduces smaller errors $\sigma_{\Delta V/V_0} \le 0.05$ but still large enough to significant in the larger uncertainty budget. Furthermore, we have briefly discussed the effects of the turbulent atmosphere on antenna pointing. This `anomalous' pointing error is potentially a serious calibration difficulty for sites without radiometers, and systematic simulations are recommended to quantify this further. 
 
 %
 Applications for which the current version of the pipeline is well suited for include testing calibration and imaging routines in total intensity. One example which we have discussed is fringe-fitting in the presence of a variable troposphere with time-variable source.  
 The creation of a close interface between sophisticated theoretical and interferometric mm-VLBI simulations will enhance the scientific opportunities possible with the EHT. 
 
 %future
-If the development of {\sc meqsilhouette} is continued, future capabilities would include a full Stokes capability including polarised sources and polarisation leakage as well as the simulation of pointing errors due to 'anomalous refraction'.  To promote connection between theory and data, a standard version of {\sc meqsilhouette} could be run through an online interface. This would make interferometric simulations public or available to the mm-VLBI community.  
+As the development of {\sc meqsilhouette} continues, future capabilities will include full Stokes capability including polarised sky models and polarisation leakage as well as the simulation of pointing errors due to `anomalous refraction'.  To promote connection between theory and data, a standard version of {\sc meqsilhouette} could be run through an online interface. This would make interferometric simulations public or available to the mm-VLBI community.  
 
 
 

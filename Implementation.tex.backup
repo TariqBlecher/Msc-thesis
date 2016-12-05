@@ -51,12 +51,12 @@ All inputs to the simulator are specified by a configuration file (.json text fi
 
 \begin{figure*}[h!]
 \includegraphics[width=\columnwidth]{Images/flow_full2}
-\caption{Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline. The specific sequence is determined by the driver script whereas the logic of each step is contained in an object-oriented framework. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is extendable, allowing any additional, arbitrary Jones matrices to be incorporated. \label{flow}%
+\caption[Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline.]{Flow diagram showing basic sequence of a \textsc{meqsilhouette} simulation pipeline. The specific sequence is determined by the driver script whereas the logic of each step is contained in an object-oriented framework. The details of the station information, observation strategy, tropospheric and ISM conditions are specified in a user-defined input configuration file. The pipeline is extendable, allowing any additional, arbitrary Jones matrices to be incorporated. \label{flow}%
 }
 \end{figure*}
 
 \begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
-\caption[Keywords of the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filtered into several sub-dictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for comprehension. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created).  {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}
+\caption[List and explanation of keywords in the input configuration dictionary used in a standard simulation.]{{\bf Top section:} keywords of the input configuration dictionary used in a standard simulation similar to that depicted in Fig.~\ref{flow} but without antenna pointing errors. The variable names have been expanded for clarity and keywords which have boolean values have written as questions. In practice, most of these keywords are predeced by an index, which allows this dictionary to be filtered into several sub-dictionaries which can be easily passed to functions or classes. {\bf Middle section:} the list of the parameters, aside from the source model, needed to initialise and run {\sc ScatterBrane}. These parameters are within the main dictionary but have been separated here for comprehension. Time variability is made possible as $N_{\rm pix}$ can be a 2-tuple (i.e. a rectangular screen can be created). {\bf Bottom section:} the headings of station weather table whose path is indicated in the input dictionary.}\label{tab:parameters}\\
 \hline
 parameter&comment\\
 \hline
@@ -77,14 +77,14 @@ add thermal noise?&calculated with station SEFD\\
 apply atmospheric thermal noise?& Uses weather table data. Derived from atmospheric brightness temperature \\
 apply turbulent tropospheric delays?&Based on Kolmogorov screen statistics.\\
 apply mean atmospheric time delays?&Calculated through radiative transfer.\\
-percentage tropospheric phase&\\
+percentage tropospheric phase&alter the `amount' of turbulence applied\\
 output image pixel size&Specified as a string in [value][unit] format e.g. `1e-6arcsec'\\
-output image ${\rm N_{pix}}$\\
-station information file path& station dependent details, headings of this table shown below\\
+output image ${\rm N_{pix}}$&\\
+station information file path& station dependent details, headings of this table shown in bottom section\\
 \hline
 \hline
 apply ISM scattering?&\\
-number of ISM screen realisations& \\
+number of ISM screen realisations&  \\
 ISM screen speed& will come into effect only for multiple ISM screens\\
 ISM ${\rm N_{pix}}$& size of screen for one sky model\\
  $r_{\rm 0}$ (km) & coherence length on the scattering scattering screen \\
@@ -107,7 +107,6 @@ mean pwv content&\\
 ground pressure (mbars)&\\
 ground temperature (K)&\\
 
-\label{tab:parameters}
 \end{longtable}
 
      
@@ -123,7 +122,7 @@ The primary outputs of the pipeline are an interferometric dataset in MS format 
 
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Images/Class_module_structure}
-\caption{The basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module. The \emph{SimCoordinator} class is initialised in the driver script. \label{class_struc}%
+\caption[The basic class and module structure of the {\sc meqsilhouette} implementation.]{The basic class and module structure of the {\sc meqsilhouette} implementation. Solid lines represent a class while dashed lines represent a module. The \emph{SimCoordinator} class is initialised in the driver script. \label{class_struc}%
 }
 \end{figure*}
 
@@ -147,7 +146,7 @@ The third MS-related class, \emph{SimCoordinator}, is a child of the {\it TropMS
 %Pr 1 St 1
 
 %Link back to theory %st 1
-As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at (sub)mm wavelengths are subject to ISM scattering in the strong scattering regime. Due to the solid angle of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation of all parameters (see table~\ref{tab:parm_ism}) associated with the scattering screen, which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
+As described in section~\ref{sec:ism_scat}, observations of Sgr~A$^\star$ at (sub)mm wavelengths are subject to ISM scattering in the strong scattering regime. Due to the solid angle of Sgr~A* at mm-wavelengths, a single epoch observation of the scattering screen is further defined as falling into the \emph{average regime}, wherein diffractive scintillation is averaged out but refractive scintillation is still present. As mm-VLBI observations can resolve the scatter-broadened image of Sgr~A$^\star$, an implementation of scattering is needed which approximates the subtle changes in its extended source structure. Such an approximation has been implemented in the \textsc{Python}-based \textsc{Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane} package, and is based on \citet*{Johnson_2015a}. In this algorithm a phase screen is created based on the two dimensional spatial power spectrum  \citep*[see][Appendix C]{Johnson_2015a} which incorporates inner and outer turbulent lengths scales. With the screen generated, the original image is scattered according to equation~\ref{eq:scatterbrane}. In practice equation~\ref{eq:scatterbrane} is implemented using an interpolation function which is modified by the values on the phase screen. {\sc ScatterBrane} allows variation of all parameters (see table~\ref{tab:parameters}) associated with the scattering screen, which is essential as aspects of the scattering towards the Galactic Centre are still unconstrained \citep[e.g.][]{Gwinn_2014}.
 
 
 

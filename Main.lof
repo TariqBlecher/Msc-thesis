@@ -1,0 +1,20 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Cartoon image combined with the ray-tracing of a thin accretion disc surrounding a BH. The dark area in the centre, known as the black hole shadow is the lensed image of the photon ring orbiting the BH.}}{7}{figure.caption.12}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces An illustration of angular resolution vs. observing frequency across the entire observational spectrum, shown for a selection of observatories. The VLBI arrays : Spektr-R SVLBI (or RadioAstron) and the EHT clearly achieve the highest angular resolution due to their long baselines.}}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The view of the Event Horizon Telescope (EHT) from Sgr\nobreakspace {}A*.}}{11}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration depicting the basics of scattering in the weak and strong regimes.}}{31}{figure.caption.17}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The $\lambda ^2$ dependence of ISM scattering kernel size is shown by the solid line. The dotted line shows the derived intrinsic source size which scales as $\lambda ^{1.44}$.}}{34}{figure.caption.18}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Recorded zenith absorption spectrum in the $160-520$\nobreakspace {}GHz range, taken on Mauna Kea at an altitude $\approx 4000$\nobreakspace {}m.}}{42}{figure.caption.23}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A log-log plot of RMS visibility phase versus baseline length for an observation of 1\nobreakspace {}Jy source, showing the different turbulent regimes.}}{48}{figure.caption.26}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Flow diagram showing basic sequence of a \textsc {meqsilhouette} simulation pipeline.}}{59}{figure.caption.29}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The basic class and module structure of the {\sc meqsilhouette} implementation.}}{60}{figure.caption.30}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces An example simulation of ISM scattering towards Sgr\nobreakspace {}A$^{\star }$, observed with SMT-JCMT-CARMA over four consecutive days. We use a Gaussian source model, and illustrate the effects on visibility amplitude, closure phase and the scattered image.}}{68}{figure.caption.31}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Simulated mean opacity and sky brightness temperature at $\nu =230$\nobreakspace {}GHz for three typical ground pressures and temperatures over a typical PWV range which approximately represent the sites of SPT, ALMA and SMA.}}{69}{figure.caption.32}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Simulation of the total delay and the turbulent atmospheric delay for SMA and ALMA sites towards Sgr\nobreakspace {}A$^\star $.}}{70}{figure.caption.33}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The effect of increasing levels residual troposphere phase noise on interferometric images of a point source observed with an 8 station EHT array for 12 hours at 230\nobreakspace {}GHz.}}{72}{figure.caption.34}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces RMS relative amplitude error induced by pointing error with the 50\nobreakspace {}m LMT antenna as a function of pointing error offset $\rho $ at 230\nobreakspace {}GHz.}}{76}{figure.caption.35}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

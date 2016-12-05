@@ -17,7 +17,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries {\sc meqsilhouette} : a mm-VLBI observation and signal corruption simulator}\\[0.4cm]
+{ \huge {\sc meqsilhouette} : a mm-VLBI observation and signal corruption simulator}\\[0.4cm]
 \HRule \\[1.5cm]
 
 
@@ -58,35 +58,20 @@ Prof. Oleg {\sc Smirnov} \\
 %2 paragraphs : 1 intro, 2. Results
 %Intro
 %eht
-The Event Horizon Telescope (EHT) aims to spatially resolve the innermost emission from nearby supermassive black holes with event horizon scale resolution.
-%shadow
-The emission is expected to be gravitationally lensed in such a way as to produce an image or shadow of the photon ring. The primary scientific objectives are to test general relativity in the strong-field regime 
-%accretion jet
-and to probe accretion and jet-launch physics. 
-%vlbi
-This is made possible by the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. 
-%challenges
-However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure in both polarized and total intensity; as well as non-negligible antenna pointing errors.\
-%this approach
-In this thesis, we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It includes realistic descriptions of a number of signal corruptions that can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present.
+The Event Horizon Telescope (EHT) aims to spatially resolve the innermost emission from nearby supermassive black holes, Sgr~A* and M87, on event horizon scales. This emission is predicted to be gravitationally lensed by the black hole which should produce a shadow (or silhouette) feature, a precise measurement of which is a test of gravity in the strong-field regime. This emission is also an ideal probe of the innermost accretion and jet-launch physics, offering the first insights into this data-limited observing regime. The EHT will use the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure; as well as non-negligible antenna pointing errors. 
 
 
-%Results
-%More details on approach?
-%canonical simulations results
-
-%conclusion
-In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
+In this thesis, we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It has the capability to simulate a time-variable source, and includes realistic descriptions of the effects of the atmosphere, the interstellar medium as well as primary beams and associated antenna pointing errors. We have demonstrated through several examples simulations that these effects can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
 
 \addcontentsline{toc}{chapter}{Abstract}
 
  
 \chapter*{Acknowledgements}
  \addcontentsline{toc}{chapter}{Acknowledgements}
-I would like to thank my primary supervisor, Roger Deane, for guiding my first foray into full time research work. His unwavering commitment and excitement about both the project and my personal scientific development as well as his creativity has an astronomer has always inspired me. Furthermore I thank my co-supervisors Gianni Bernardi and Oleg Smirnov for their guidance and technical expertise. I thank Ronel Gronewald for always being more than willing to help with administration and the rest of the researchers and students in the RATT group for providing an rich context for my own work. In particular, I would like to thank Gijs Molenaar for always sharing his extensive software expertise and Sphe Makhathini for suggesting design elements of the simulator. 
+I would like to thank my primary supervisor, Roger Deane, for guiding my first foray into full time research work. His unwavering commitment and excitement about both the project and my personal scientific development as well as his creativity has an astronomer has always inspired me. Furthermore I thank my co-supervisors Gianni Bernardi and Oleg Smirnov for their guidance and technical expertise. I thank Ronel Gronewald for always being more than willing to help with administrative trouble and the rest of the researchers and students in the RATT group for providing an rich context for my own work. In particular, I would like to thank Gijs Molenaar for sharing his extensive software expertise and Sphe Makhathini for suggesting design elements of the simulator. 
 
 
-It has been exciting to collaborate with researchers across the globe. I am grateful for Ilse van Bemmel and Monika Mo\'{s}cibrodwska for inviting me to visit JIVE and Radboud university in the Netherlands, and again to Monika for supplying us with her GRMHD simulations which made data analysis a lot more enjoyable. I thank Michael Johnson (Harvard) and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available and for their helpful discussions. Similarly, we thank Bojan Nikolic for \textsc{atm} support.  
+It has been exciting to collaborate with researchers across the globe. I am grateful for Ilse van Bemmel and Monika Mo\'{s}cibrodwska for inviting me to visit JIVE and Radboud university in the Netherlands, and again to Monika for supplying us with her GRMHD simulations which made data analysis a lot more enjoyable. I thank Michael Johnson (Harvard) and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available and for their helpful discussions. Similarly, we thank Bojan Nikolic for support with the \textsc{atm} software.  
 
 %Family
 Furthermore. I thank my family and friends for their continuous support and willingness to endure confusing black hole explanations.
@@ -105,7 +90,7 @@ Tariq Dylan Blecher
   \vspace*{\fill}
     \begin{center}
      \huge
-     The {\sc meqsilhouette} source code is at present still proprietary of SKA SA as in hence unavailable to the public at the time of writing. However, we do include an appendix which details installation and usage for a reference for public or private use.
+     The {\sc meqsilhouette} source code is at present still proprietary of SKA SA as in hence unavailable to the public at the time of writing. However, we do include an appendix which details installation and usage as reference for private or future public use.
     \end{center}
   \vspace*{\fill}
 \tableofcontents
