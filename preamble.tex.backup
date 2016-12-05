@@ -1,0 +1,101 @@
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[width=0.4\columnwidth]{Images/Rhode.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge {\sc meqsilhouette} : a mm-VLBI observation and signal corruption simulator}\\[0.4cm]
+\HRule \\[1.5cm]
+
+
+\begin{center}
+ {\large Dissertation presented in fulfillment of the requirements for the degree of} \\
+ {\large \textbf{MASTER OF SCIENCE}} \\
+ {\large in the Department of Physics and Electronics,} \\
+ {\large Rhodes University}
+\end{center}
+\vspace{0.02\textheight}
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft}\large 
+\emph{Author:} \\
+Tariq  {\sc Blecher}\\
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+
+\begin{flushright} \large
+\emph{Supervisors:} \\
+Dr. Roger {\sc Deane} \\
+Dr. Gianni {\sc Bernardi} \\
+Prof. Oleg {\sc Smirnov} \\
+\end{flushright}
+\end{minipage}\\[2cm]
+
+
+{\large December 2016}
+
+\end{titlepage}
+
+\chapter*{Abstract} 
+%2 paragraphs : 1 intro, 2. Results
+%Intro
+%eht
+The Event Horizon Telescope (EHT) aims to spatially resolve the innermost emission from nearby supermassive black holes, Sgr~A* and M87, on event horizon scales. This emission is predicted to be gravitationally lensed by the black hole which should produce a shadow (or silhouette) feature, a precise measurement of which is a test of gravity in the strong-field regime. This emission is also an ideal probe of the innermost accretion and jet-launch physics, offering the new insights into this data-limited observing regime. The EHT will use the technique of Very Long Baseline Interferometry (VLBI) at (sub)millimetre wavelengths, which can achieve angular resolutions of order $\sim10~\mu$-arcsec. However, this approach suffers from unique observational challenges, including scattering in the troposphere and interstellar medium; rapidly time-variable source structure; as well as non-negligible antenna pointing errors. 
+
+
+In this thesis, we present the \textsc{meqsilhouette} software package which is specifically designed to accurately simulate EHT observations. It has the capability to simulate a time-variable source, and includes realistic descriptions of the effects of the atmosphere, the interstellar medium as well as primary beams and associated antenna pointing errors. We have demonstrated through several examples simulations that these effects can limit the ability to measure the key science parameters. This can be used to quantify calibration requirements, test parameter estimation and imaging strategies, and investigate systematic uncertainties that may be present. In doing so, a stronger link can be made between observational capabilities and theoretical predictions, with the goal of maximising scientific output from the upcoming order of magnitude increase in EHT sensitivity. 
+
+\addcontentsline{toc}{chapter}{Abstract}
+
+ 
+\chapter*{Acknowledgements}
+ \addcontentsline{toc}{chapter}{Acknowledgements}
+I would like to thank my primary supervisor, Roger Deane, for guiding my first foray into full time research work. His unwavering commitment and excitement about both the project and my personal scientific development as well as his creativity has an astronomer has always inspired me. Furthermore I thank my co-supervisors Gianni Bernardi and Oleg Smirnov for their guidance and technical expertise. I thank Ronel Gronewald for always being more than willing to help with administrative trouble and the rest of the researchers and students in the RATT group for providing an rich context for my own work. In particular, I would like to thank Gijs Molenaar for sharing his extensive software expertise and Sphe Makhathini for suggesting design elements of the simulator. 
+
+
+It has been exciting to collaborate with researchers across the globe. I am grateful for Ilse van Bemmel and Monika Mo\'{s}cibrodwska for inviting me to visit JIVE and Radboud university in the Netherlands, and again to Monika for supplying us with her GRMHD simulations which made data analysis a lot more enjoyable. I thank Michael Johnson (Harvard) and Katherine Rosenfeld for making the {\sc ScatterBrane} code publicly available and for their helpful discussions. Similarly, we thank Bojan Nikolic for support with the \textsc{atm} software.  
+
+%Family
+Furthermore. I thank my family and friends for their continuous support and willingness to endure confusing black hole explanations.
+
+%SKA 
+Finally, the financial assistance of the South African SKA Project (SKA SA) towards this research is hereby acknowledged appreciated. 
+
+\chapter*{Plagiarism declaration}
+ \addcontentsline{toc}{chapter}{Plagiarism}
+ I acknowledge that plagiarism is wrong and hereby declare that the work contained in this document and in the supporting software is my own, save for that which is properly acknowledged. I recognise that much of the work in this thesis has already been presented in our recent paper \citep{Blecher_2016}. This thesis is essentially an expanded version of the paper and as the latter was published first, some of the material from it has been reproduced directly. In these cases we indent the text, place it in quotations and cite \citep{Blecher_2016} after the quotation. 
+ \vspace{55pt}
+ 
+Tariq Dylan Blecher
+ \clearpage
+  \topskip0pt
+  \vspace*{\fill}
+    \begin{center}
+     \huge
+     The {\sc meqsilhouette} source code is at present still proprietary of SKA SA as in hence unavailable to the public at the time of writing. However, we do include an appendix which details installation and usage as reference for private or future public use.
+    \end{center}
+  \vspace*{\fill}
+\tableofcontents
+\phantomsection
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}

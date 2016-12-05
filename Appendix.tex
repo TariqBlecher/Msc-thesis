@@ -43,29 +43,29 @@ The primary log is set by `v.LOG' variable, initialised in the driver script. If
 %Outputs
 The output directory is set by the `v.OUTPUT' variable, initialised in the driver script. In this directory there will be a variety of files, a list and explanation of which is given in table~\ref{tab:outputs}.
 
-\begin{longtable}{p{0.5\linewidth}|p{0.6\linewidth}}
+\begin{longtable}{p{0.5\linewidth}|p{0.5\linewidth}}
 \caption[List and explanation of files output by a standard simulation]{List and explanation of files output by a standard simulation. There are several file formats and data types in parenthesis for easier comprehension. (antenna-based) {\sc NumPy} arrays have a shape corresponding to indexing (Time, Frequency, Antenna); ({\sc ms}-structured) {\sc NumPy} arrays reflect the data format of the {\sc ms} (i.e. Row, Frequency, Polarisation); (baseline dictionary) refers to {\sc pickle} dictionaries where keys are (Station 1, Station 2); (triangle dictionary) is same as a (baseline dictionary) except with an extra dimension i.e. (Station 1, Station 2, Station 3).}
 \label{tab:outputs}\\
 \hline
-name&comment\\
+name&comment\nl
 \hline
-measurement set (.MS) & simulated Measurement set \\
-sky models (.fits)& sky models which were observed\\
-parameters (.json) &input parameter dictionary\\
-(atm/antenna number)atm abs (.txt)& zenith atmospheric opacity and sky brightness temperature output by {\sc atm}\\
-(atm/antenna number)atm disp (.txt)& zenith atmospheric delays output by {\sc atm}\\
-closure phases (.p) & Dictionary of closure phases  (triangle dictionary)\\
-closure phase uncertainties (.p) & Dictionary of closure phase uncertainties (triangle dictionary)\\
-Thermal noise  (.p)  & Dictionary of expected thermal noise levels used to generate closure phase uncertainties (baseline dictionary)\\
-SNR (.p)  & Dictionary of SNR values (see equation~\ref{eq:snr}) used to generate closure phase uncertainties (baseline dictionary). \\
-receiver noise (.npy) & thermal noise generated from $SEFD$s ({\sc ms}-structured)\\
-sky noise (.npy) & thermal noise generated from atmosphere ({\sc ms}-structured)\\
-transmission (.npy) & atmosphere transmission (antenna-based)\\
-turbulent phases (.npy) & atmospheric phase terms (antenna-based)\\
-Stokes I (.p)& visibilities in total intensity (baseline dictionary)\\
-phase standard deviations (.npy)& standard deviations of the phase error between two data points at zenith (antenna-based)\\
-turbulent phases (.npy) & turbulent contribution to the atmospheric phase error (antenna-based)\\
-phase normalisation (.npy) & mean contribution to atmospheric phase error (antenna-based)\\
+measurement set (.MS) & simulated Measurement set \nl
+sky models (.fits)& sky models which were observed\nl
+parameters (.json) &input parameter dictionary\nl
+(atm/antenna number)atm abs (.txt)& zenith atmospheric opacity and sky brightness temperature output by {\sc atm}\nl
+(atm/antenna number)atm disp (.txt)& zenith atmospheric delays output by {\sc atm}\nl
+closure phases (.p) & Dictionary of closure phases  (triangle dictionary)\nl
+closure phase uncertainties (.p) & Dictionary of closure phase uncertainties (triangle dictionary)\nl
+Thermal noise  (.p)  & Dictionary of expected thermal noise levels used to generate closure phase uncertainties (baseline dictionary)\nl
+SNR (.p)  & Dictionary of SNR values (see equation~\ref{eq:snr}) used to generate closure phase uncertainties (baseline dictionary). \nl
+receiver noise (.npy) & thermal noise generated from $SEFD$s ({\sc ms}-structured)\nl
+sky noise (.npy) & thermal noise generated from atmosphere ({\sc ms}-structured)\nl
+transmission (.npy) & atmosphere transmission (antenna-based)\nl
+turbulent phases (.npy) & atmospheric phase terms (antenna-based)\nl
+Stokes I (.p)& visibilities in total intensity (baseline dictionary)\nl
+phase standard deviations (.npy)& standard deviations of the phase error between two data points at zenith (antenna-based)\nl
+turbulent phases (.npy) & turbulent contribution to the atmospheric phase error (antenna-based)\nl
+phase normalisation (.npy) & mean contribution to atmospheric phase error (antenna-based)\nl
 
 
 \end{longtable}
@@ -77,9 +77,9 @@ phase normalisation (.npy) & mean contribution to atmospheric phase error (anten
  \item Ensure that the antenna table is complete, including names, positions in metres and dish diameters.
  \item Ensure that the {\sc fits} file is complete with satisfactory header and data shape (see examples in the input directory for guidance).
  \item Currently one spectral window can be simulated at a time.
- \item Currently only total intensity can be simulated.
- \item There are several cautions related to usage of {\sc scatterbrane}, including restrictions on the compactness of sky models. See original documentation \footnote{http://krosenfeld.github.io/scatterbrane/current/}. 
- \item The path of the folder containing the sky model is also located in the parameter dictionary, for multiple fits files, i.e. a time-variable source, the order of their implementation is the same as if their names with sorted with numpy.sort, where each fits files is observed for approximately the same amount of time. If the ISM-scattering is turned on, the extra logistics of moving and creating fits files and folders are automatically handled. 
+ \item Currently only total intensity (RR and LL components) are simulated, see section~\ref{sec:full_stokes} for more information.
+ \item There are several cautions related to usage of {\sc scatterbrane}, including a restriction on the compactness of sky models. See original documentation \footnote{http://krosenfeld.github.io/scatterbrane/current/}. 
+ \item The path of the folder containing the sky model is also located in the parameter dictionary, for multiple fits files, i.e. a time-variable source, the order of their implementation is the same as if their names with sorted with numpy.sort, where each fits files is observed for approximately the same amount of time. If the ISM-scattering is turned on, the extra logistics of moving and creating fits files and folders are automatically handled.
 \end{itemize}
 
 \subsection{Writing a driver script}

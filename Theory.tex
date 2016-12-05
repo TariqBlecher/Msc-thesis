@@ -1,6 +1,6 @@
 \chapter{Theory}\label{chap:theory}
 %plan st 1
-In this chapter we review and develop the theory required to model signal transmission from cosmic sources to uncalibrated (raw) interferometric data. The first half of this chapter provides the necessary introduction to fundamental radio interferometric concepts while the second half is focused specificially on describing several key signal corruptions relevant to mm-VLBI observations. 
+In this chapter we review and develop the theory required to model signal transmission from cosmic sources to uncalibrated (raw) interferometric data. The first half of this chapter provides the necessary introduction to fundamental radio interferometric concepts while the second half is focused on describing several key signal corruptions relevant to mm-VLBI observations. 
 
 \section{Radio Interferometry}\label{sec:radio_int}
 %St 2
@@ -29,13 +29,13 @@ E_b \\
 \begin{equation}
 \bm{E'} = \bm{J E}.
 \end{equation}
-For example, the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matricies, forming a Jones chain,
+For example, the conversion of the electric field to a voltage $\bm{v}$ at an antenna can be specified by such a transformation i.e. $\bm{v} \equiv \bm{E'}$ under multiplication with the appropriate $\bm{J}$. Multiple effects then can be represented by multiplication of various Jones matrices, forming a Jones chain,
 \begin{equation}
 \bm{E'} = \bm{J}_n \ldots \bm{J}_1\ \bm{E}.
 \end{equation}
 
 %More on Jones matricies: commutivity and order, DDE vs DIE. phenomenological vs. physical
-The order of the Jones matricies should obey the causal order of the signal transmission path (i.e. $\bm{J}_1$ would occur closest to the source, $\bm{J}_n$ closest to the antenna). However, the rules of commutivity of matricies allows us some flexibility. Matricies which are scalar commute with everything, while diagonal matricies commute with each other as do matricies which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convienent formulations as required. In other words, the signal path can be parameterised in different ways. For example during calibration, it is useful to contruct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical}, commuting processes/matricies (e.g. ionospheric delay and electronic drift). The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be easily distingushed and/or have the same Jones matrix form. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on the exact physical process.
+The order of the Jones matrices should obey the causal order of the signal transmission path (i.e. $\bm{J}_1$ would occur closest to the source, $\bm{J}_n$ closest to the antenna). However, the rules of commutativity of matrices allows us some flexibility. Matrices which are scalar commute with everything, while diagonal matrices commute with each other as do matrices which effect a rotation of $\bm{E}$. This allows the Jones chain to be re-ordered into more convenient formulations as required. In other words, the signal path can be parametrised in different ways. For example during calibration, it is useful to construct a \emph{phenomenological} Jones matrix which represents the combined action of several \emph{physical}, commuting processes/matrices (e.g. ionospheric delay and electronic drift). The advantage would be that only the cumulative effect is considered, which keeps the number of parameters to solve for to a minimum. This would be useful when the individual effects cannot be easily distinguished and/or have the same Jones matrix form. On the other hand, for realistic data simulation, we prefer to model the signal transmission path by formulating a Jones matrix based on the exact physical process.
 
 
 %visibility definition
@@ -63,7 +63,7 @@ U-iV & I-Q \\
 \end{array}
 \right)\bm{J}_q^H,
 \end{eqnarray}
-where $I$ is the total intensity, $V$ is the circularly polarised intensity, $Q$ and $U$ the linear polarised intensity. Note that the Jones matricies are assumed to be constant over the time and frequency averaging interval. As this formalism is coordinate system independent, we can easily transform any 2~x~2 from a linear to circular basis and vice-versa. 
+where $I$ is the total intensity, $V$ is the circularly polarised intensity, $Q$ and $U$ the linear polarised intensity. Note that the Jones matrices are assumed to be constant over the time and frequency averaging interval. As this formalism is coordinate system independent, we can easily transform any 2~x~2 from a linear to circular basis and vice-versa. 
 
 % Example RIME and re-derivation of van-citterlike
 We now review the RIME for a single, uncorrupted, unpolarised point source, which will illustrate the Fourier transform relation between the measured visibility and a section of approximately flat sky.
@@ -72,7 +72,7 @@ Considering that there are no signal corruptions, the only Jones matrix to consi
 
 
 %coordinate systems
-Consider the unit vector $\hat{\bm{\sigma}}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector in a convienent coordinate system as $\bm{u} = (u,v,w)$,  with the w-axis in the direction of $\hat{\bm{\sigma}}$. Next we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\hat{\bm{\sigma}}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antennae is therefore,
+Consider the unit vector $\hat{\bm{\sigma}}$ which points from the centre of the Earth towards the source. We define the position difference between the two antenna or baseline vector in a convenient coordinate system as $\bm{u} = (u,v,w)$,  with the w-axis in the direction of $\hat{\bm{\sigma}}$. Next, we denote the angular position on the sky by $(l, m)$ which are the directional cosines on the sky measured in the direction of $(u, v)$ respectively. Note that we consider only a small approximately flat section of the celestial sphere centred on $\hat{\bm{\sigma}}$, also called the \emph{phase centre}. The phase difference between rays arriving at the two antennae is therefore,
 \begin{equation}
  \delta \phi = 2\pi (\bm{u}/\lambda \cdot \bm{\sigma})
 \end{equation}
@@ -118,7 +118,7 @@ Our RIME with antenna gains included becomes,
 \subsection{Self-calibration and fringe-fitting}\label{sec:self_cal}
 %Pr 2 St 1
 %intro-motivation & plan st1
-We now discuss two (similiar) calibration algorithms frequently used in VLBI: self-calibration and fringe-fitting. These algorithms are used to solve for station based gain terms, i.e. $\bm G$-Jones terms, knowledge of which is essential to extract information of the actual sky. Later in this chapter, we show how signal corruptions e.g. turbulence in the Earth's troposphere or timing errors can lead to rapid variability in the $\bm G$-Jones terms, making them difficult to determine. Our motivation is that we are interested how these algorithms fare in the context of the unique observational challenges faced by the EHT (see section~\ref{sec:eht_obs}). Crucially, {\sc meqsilhouette} is able to provide the synthetic datasets on which these algorithms can be tested, by implementing a range of physically-grounded Jones matricies. 
+We now discuss two (similar) calibration algorithms frequently used in VLBI: self-calibration and fringe-fitting. These algorithms are used to solve for station based gain terms, i.e. $\bm G$-Jones terms, knowledge of which is essential to extract information of the actual sky. Later in this chapter, we show how signal corruptions e.g. turbulence in the Earth's troposphere or timing errors can lead to rapid variability in the $\bm G$-Jones terms, making them difficult to determine. Our motivation is that we are interested how these algorithms fare in the context of the unique observational challenges faced by the EHT (see section~\ref{sec:eht_obs}). Crucially, {\sc meqsilhouette} is able to provide the synthetic datasets on which these algorithms can be tested, by implementing a range of physically-grounded Jones matrices. 
 
 
 %Self-calibration st1
@@ -136,18 +136,18 @@ The algorithm consists of the following, simplified iteration:
 
 
 %Fringe fitting definitions - how it's different to self cal st 1
-Fringe-fitting is similar to self-calibration as it also solves for station gains in equation~\ref{eq:G_rime} whilst assuming a source model. However, fringe-fitting is typically run before self-calibration. It's emphasis is less focused towards building a complete sky model and more towards optimising phase coherence and hence SNR. This is not a problem for connected elemented interferometry where phases are more coherent and correlator models are more accurate. 
+Fringe-fitting is similar to self-calibration as it also solves for station gains in equation~\ref{eq:G_rime} whilst assuming a source model. However, fringe-fitting is typically run before self-calibration. It's emphasis is less focused towards building a complete sky model and more towards optimising phase coherence and hence SNR. This is not a problem for connected element interferometry where phases are more coherent and correlator models are more accurate. 
 
 
 %the algorithm st 1
 Instead of a solver, fringe fitting is primarily a grid search across the first order derivatives of the station gain phases with respect to time and frequency. These derivatives are phrased in terms of residual station time delays $\tilde{t}_{\rm p}$ (often shortened to `delay'), where ${\rm p}$ is the antenna, and the rate of change in time delays $r_{\rm p} = \partial_t \tilde{t}_{\rm p}$  (often shortened to `rate'). Hence $\bm G$ for antenna $p$ in equation~\ref{eq:G_rime} is expanded to,
 \begin{equation}
-\bm G_{\rm p}(t,\nu) = \exp\left[-i(\phi_0 +2\pi\tilde{t}_{\rm p}\nu + 2\pi r_{\rm p}*t)\right].
+\bm G_{\rm p}(t,\nu) = \exp\left[-i(\phi_0 +2\pi\tilde{t}_{\rm p}\nu + 2\pi r_{\rm p}t)\right].
 \end{equation}
 
 
 %time intervals and SNR st 1
-Note that the solution time interval is specified by the user. The gain amplitude are often calibrated in later iterations with longer solution intervals, reducing the number of parameters to optimise. The sky model used is typically just a point source at the centre of the field, however more complex sky models may be manually iterated upon and manually assessed \citep{Walker_1999}. 
+Note that the solution time interval is specified by the user. The gain amplitudes are often calibrated in later iterations with longer solution intervals, thus reducing the number of parameters to optimise. The sky model used is typically just a point source at the centre of the field, however more complex sky models may be manually iterated upon and manually assessed \citep{Walker_1999}. 
 
 \subsection{mm-VLBI observables and data products}\label{data_products}
 %PR 2 St 1
@@ -175,12 +175,12 @@ where $\tau$ is the vector averaging timescale, $\Delta \nu$ is the bandwidth, $
 
 
 %Hybrid mapping - not sure if Bouman_2015 is regularisation
-Some imaging algorithms use a technique called `hybrid mapping' \citep[e.g.][]{Skilling_1984,Bouman_2015,Chael_2016} which uses closure phase as a regulariser or prior on the initial sky model and facilitate convergence in the solving of station gains.
+Some imaging algorithms use a technique called `hybrid mapping' \citep[e.g.][]{Skilling_1984,Bouman_2015,Chael_2016} which uses closure phase as a regulariser or prior on the initial sky model which facilitates convergence in the solving of station gains.
 
 \subsection{Variability and the static source assumption}\label{sec:variability}
 %Variability - why it's an important consideration and challenge for the EHT, hence importance in simulations
 %static src assumption and how it breaks the image-vis fourier transform relation st 1
-Implicit in our description of interferometry above (see equation~\ref{eq:van-citterlike}), is the assumption that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is intrinsically time-variable), the visibilities measured over the course of an observation can no longer be related to a single image. It might be necessary to split the observation into several sub-intervals which are calibrate separately, although the determination of the sub-intervals is an open question.
+Implicit in our description of interferometry above (see equation~\ref{eq:van-citterlike}), is the assumption that the source remains approximately unchanged or static during the course of the observation. However, if this assumption does not hold (i.e. if the source is intrinsically time-variable), the visibilities measured over the course of an observation can no longer be related to a single sky model. It might be necessary to split the observation into several sub-intervals which are calibrate separately, although the determination of the sub-intervals is an open question.
 %explicitly defining variability as any intrinsic source variability st 1
 Note that I am using the term `variability' in a general sense which refers to changes in any source observables. Variability is most often used to denote changes in source flux but we extend the definition to include changes in source structure, position and polarisation.
 
@@ -196,11 +196,11 @@ In principle, the variability timescale could be comparable to the period of the
 
 %%Flares The cumulative evidence of these observations point to the possibility of multiple flaring mechanisms. 
 By far the most well studied type of variability, is simply variations in total flux of an unresolved core, referred to as flares \citep[e.g.][]{Baganoff_2001, Genzel_2003, Yusef-Zadeh_2006,Marrone_2006}. To explain the observed delays between flares in different frequency bands, an expanding adiabatic plasma model \citep[e.g.][]{Marrone_2008} has been presented, however a recent flare observed with the EHT did not exhibit the increase in size expected from an expanding plasma outflow model \citep{Fish_2011}.
-This highlights the importance of synchontron self-absorption and the variable size of emission region, as size of observed $\tau \sim 1$ surface could also change depending on accretion history and the magnetic field configuration. As the $\tau \sim 1$ surface is frequency dependent, simultaneous multi-wavelength observations could lead to a more profitable EHT variability analysis.
+
 
 %orbits
 Source structure in the innermost flow, e.g. an orbiting unresolved component, could also be variable on sub-observation timescale. Signatures of periodic variability at NIR and X-ray \citep{Genzel_2003,Belanger_2006} have been used to argue for the presence of orbiting hotspots \citep{Doeleman_2009b}. As the Innermost Stable Circular Orbit (ISCO) depends on spin of the BH, the spin can be constrained through the detection of periodic orbital features. %mitigation + tracking variability - previous sims
-In the case of a compact, unresolved variable component, several approaches show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array \citep{Doeleman_2009b, Fish_2009b, Johnson_2014}. On the other hand, a later observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale variability  which could be explained by power-law turbulence \citep{Meyer_2008}. 
+In the case of a compact, unresolved variable component, several approaches show that EHT can track such a structure with $\sim 5\ \mu$-arcsec precision using closure quantities and polarimetric ratios, assuming that ALMA is participating in the array \citep{Doeleman_2009b, Fish_2009b, Johnson_2014}. On the other hand, a later observation of a longer, 600~minute light curve in the NIR is more representative of a power-law scale MHD turbulence \citep{Meyer_2008}. 
 
 %Magnetic field
 Another possible `mode' of variability is one that is primarily based on magnetic field structures. A recent EHT result is that variability in the polarisation domain is far more rapid than the total intensity \citep{Johnson_2015b}, indicating that the magnetic field structure is highly dynamic, see section~\ref{sec:unsolved_qs}. 
@@ -210,17 +210,17 @@ Another possible `mode' of variability is one that is primarily based on magneti
 It has been proposed by \citet{Lu_2016} that a Gaussian weighting scheme can be applied to mitigate the effects of variability and measure the quiescent structure. However, this approach would down-weight the longest baselines, losing information of the finest angular scales.
 %roger - baseline based errors?
 %calibration st 1
-As stated earlier, the standard VLBI calibration techniques assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. These effects could limit image fidelity and dynamic range, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.
+As stated earlier, the standard VLBI calibration techniques assume that the source is static over the course of the observation. However, if this is not the case, these techniques should be tested to check the consequences of using them under this broken assumption. This could limit image fidelity and dynamic range, but could also cause systematic effects relevant to the EHT measurement objectives (e.g. shadow asymmetry). To help characterise the errors in this scenario, it is important that {\sc meqsilhouette} has the capability to handle time variability of the source in a consistent manner with the rest of the simulator.
 
 \section{Signal Corruptions}
 %plan
 In this chapter we explore in detail signal corruptions due to the transmission through the ISM and Earth's atmosphere as well as instrumental imperfections, in order for these corruptions to be implemented in the {\sc meqsilhouette} simulator. 
 %why these corruptions
-Whilst there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.), the point of this investigation is to demonstrate a mm-VLBI framework that enables more sophisticated interferometric simulations than have previously been performed. As such, we have focused on capabilties not present in other mm-VLBI simulations and those which represent different implementation forms (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement and present the biggest calibration, parameter estimation, and imaging challenges. The {\sc meqsilhouette} framework, rooted in the Measurement Equation formalism, enables any arbitary error to be incorporated as a Jones Matrix (e.g. correlator model error is a simple scalar matrix). Our intention here is to demonstrate some of the key features of {\sc meqsilhouette} and its potential to provide realistic mm-VLBI simulations for systematic studies.
+Whilst there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model etc.), the point of this investigation is to demonstrate a mm-VLBI framework that enables more sophisticated interferometric simulations than have previously been performed. As such, we have focused on capabilities not present in other mm-VLBI simulations and those which represent different implementation forms (i.e. the troposphere, ISM and antenna pointing errors). These also represent amongst the most challenging signal corruptions to implement and present the biggest calibration, parameter estimation, and imaging challenges. The {\sc meqsilhouette} framework, rooted in the Measurement Equation formalism, enables any arbitrary linear error to be incorporated as a Jones matrix (e.g. correlator model error is a simple scalar matrix). Our intention here is to demonstrate some of the key features of {\sc meqsilhouette} and its potential to provide realistic mm-VLBI simulations for systematic studies.
 
 \subsection{Scattering basics}\label{sec:basic_scat}
 
-{\it This subsection (with the exception of Fig.\ref{fig:scatter} has been reproduced from \citet{Blecher_2016}.}
+{\it This subsection (\ref{sec:basic_scat}) (with the exception of Fig.\ref{fig:scatter} has been reproduced from \citet{Blecher_2016}.}
 
 %motivation
 Millimetre wavelength radiation originating at the Galactic Centre is repeatedly scattered along the signal path to the Earth-based observer. The first occurrence is due to electron plasma in the ISM \citep[e.g.][]{Bower_2006,Gwinn_2014}, while the second is due to poorly-mixed water vapour in the Earth's troposphere \citep*[e.g.][]{Lay_1997,Carilli_1999}. It is essential that the effects of the scattering phenomena are understood for accurate calibration and robust inference of the intrinsic source properties. As an introduction to the separate descriptions of each, we review a simple scattering model.
@@ -274,7 +274,7 @@ Electron density inhomogeneities in the interstellar medium (ISM) plasma scatter
 
 
 %blurring
-The dominant observational effect of this scattering scenario for $\lambda \gtrsim 1$~cm is to convolve the intrinsic source structure with an elliptical Gaussian. The size of the Guassian exhibits a $\lambda^2$ scaling dependence over several orders of magnitude \citep[Fig.~\ref{fig:scattering_law}][]{Backer_1978, Shen_2005, Bower_2006, Lu_2011}, which is consistent with the wavelength dependence of the refractive index of a plasma. In order to determine the parameters of the scattering kernel, i.e. major axis, minor axis and position angle,  one has to observe at wavelengths where the angular size of scattering ellipse is much larger than the expected source size. A Very Long Baseline Array (VLBA) + Green Bank Telescope (GBT) campaign  estimated the size at $1.31 \times 0.64$~mas cm$^{-2}$, oriented $78^\circ$ east of north \citep{Bower_2006}. However, A recent review of VLBI observations of Sgr~A$^\star$  has noted that there are significant inconsistencies between different measurements \citep{Psaltis_2015}. The authors used a Bayesian methodology to re-analyse the datasets resulting in increased uncertainties as shown in table~\ref{tab:ism_gauss}. The minor axis has a much larger uncertainty than the major axis due to the limited north-south coverage of the VLBA array. 
+The dominant observational effect of this scattering scenario for $\lambda \gtrsim 1$~cm is to convolve the intrinsic source structure with an elliptical Gaussian. The size of the Gaussian exhibits a $\lambda^2$ scaling dependence over several orders of magnitude \citep[Fig.~\ref{fig:scattering_law}][]{Backer_1978, Shen_2005, Bower_2006, Lu_2011}, which is consistent with the wavelength dependence of the refractive index of a plasma. In order to determine the parameters of the scattering kernel, i.e. major axis, minor axis and position angle,  one has to observe at wavelengths where the angular size of scattering ellipse is much larger than the expected source size. A Very Long Baseline Array (VLBA) + Green Bank Telescope (GBT) campaign  estimated the size at $1.31 \times 0.64$~mas cm$^{-2}$, oriented $78^\circ$ east of north \citep{Bower_2006}. However, A recent review of VLBI observations of Sgr~A$^\star$  has noted that there are significant inconsistencies between different measurements \citep{Psaltis_2015}. The authors used a Bayesian methodology to re-analyse the datasets resulting in increased uncertainties as shown in table~\ref{tab:ism_gauss}. The minor axis has a much larger uncertainty than the major axis due to the limited north-south coverage of the VLBA array. 
 
 
 
@@ -320,7 +320,7 @@ The location of the scattering medium was originally thought to be in the Galact
 %shift to looking at refractive effects,theory, 3 regimes of scattering
 Recent EHT and space-VLBI observations have been extending their focus past well-studied Gaussian convolution effect of ISM scattering and onto the presence of stochastic, time-variable, scattering-induced substructure \citep[e.g.][]{Fish_2016, Johnson_2016}. To understand this phenomenon, we must first develop the theory to be sensitive to averaging over time, frequency and extended structure. 
 
-Strong scattering can be further subdivided into \emph{snapshot}, \emph{average} and \emph{ensemble-average} regimes \citep*{Narayan_1989,Goodman_1989}. To understand the different regimes, recall that for each point on the source, the observer sees emission from coherent patches of area $A_{\rm strong} \sim \pi r_0^2$ over a total area $A_{\rm ref} \sim \pi r_{\rm ref}^2$. The diffraction cones from each of the patches will interfere, resulting in a \emph{diffractive scintillation} pattern, analagous to the classic multi-slit experiment. 
+Strong scattering can be further subdivided into \emph{snapshot}, \emph{average} and \emph{ensemble-average} regimes \citep*{Narayan_1989,Goodman_1989}. To understand the different regimes, recall that for each point on the source, the observer sees emission from coherent patches of area $A_{\rm strong} \sim \pi r_0^2$ over a total area $A_{\rm ref} \sim \pi r_{\rm ref}^2$. The diffraction cones from each of the patches will interfere, resulting in a \emph{diffractive scintillation} pattern, analogous to the classic multi-slit experiment. 
 
 %snapshot regime
 In the \emph{snapshot regime}, a compact source is observed with a narrow bandwidth and over a short time integration. This yields a single realisation of the diffractive scintillation pattern. By averaging over many snapshots, diffractive scintillation is quenched. This occurs if the source size $\theta_{\rm src}$ is much larger than the diffractive scale $\theta_{\rm src} \gg r_0/D_{\rm os}$; if the fractional bandwidth $\delta \nu/\nu$ is much larger than the decorrelation bandwidth $\delta \nu/\nu \gg \delta \nu_{\rm dc}/\nu \approx (r_0/r_{\rm F})^2$ \citep{Narayan_1992}; or if the integration time $t_{\rm int}$ is much larger the diffractive timescale $t_{\rm int} \gg t_{\rm 0} = r_0/v$, where $v$ is the relative velocity between screen, source and observer. This regime is hence only accessible through observations of compact objects like pulsars. This regime is also reached when stars are viewed with the naked eye, hence the appearance of `twinkling'. On a side note, observations in this regime can be used to probe the source with angular resolution $\sim \lambda /r_{\rm ref}$ \citep[e.g.][]{Gwinn_2012}. This is because the scattering screen is essentially a lens of diameter $\approx r_{\rm ref}$.
@@ -358,7 +358,7 @@ and,
 Therefore in the Kolmogorov regime ($\beta = 5/3$), the coherence of image shift relative to the refractive scale $\propto (r/r_0)^{-1/3}$. Therefore, even though $\phi(\bm{x})$ is only coherent to $\sim r_{\rm 0}$, $\nabla \phi(\bm{x})$ remains spatially coherent over much larger scales, leading to the presence of refractive substructure \citep*{Johnson_2015a}.
 
 %Observations of substructure
-A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~\ref{fig:substructure2}][]{Ortiz_2016} has measured non-zero closure phases on its longest baselines. However it was also shown in the data anaylsis that the measured values are consistent with expectation refractive scintillation assuming a circular Gaussian source of FWHM~$=130\ \mu$-arcsec, which is the fitted size of the major axis of the intrinsic source emission. Another observation at 1.3~cm shows flux amplitude variability due to scattering substructure at a level of $\Delta S \sim 10$~mJy \citep{Gwinn_2014}. Predictions for $\lambda = 1.3$~mm show $\Delta S \sim 60$~mJy for long (i.e. resolve ensemble-scattered image) East-West baselines and $\Delta S \sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of FWHM~$=40\ \mu$-arcsec.
+A recent observation of Sgr~A$^\star$ at 3.5~mm by the VLBA+LMT \citep[see Fig.~\ref{fig:substructure2}][]{Ortiz_2016} has measured non-zero closure phases on its longest baselines. However it was also shown in the data analysis that the measured values are consistent with expectation refractive scintillation assuming a circular Gaussian source of FWHM~$=130\ \mu$-arcsec, which is the fitted size of the major axis of the intrinsic source emission. Another observation at 1.3~cm shows flux amplitude variability due to scattering substructure at a level of $\Delta S \sim 10$~mJy \citep{Gwinn_2014}. Predictions for $\lambda = 1.3$~mm show $\Delta S \sim 60$~mJy for long (i.e. resolve ensemble-scattered image) East-West baselines and $\Delta S \sim 25$~mJy for long North-South baselines \citep*{Johnson_2015a}, assuming a Gaussian source of FWHM~$=40\ \mu$-arcsec.
 
 
 \begin{table}[h!]
@@ -381,7 +381,7 @@ Distinguishing intrinsic source and ISM substructure and variability is an inter
 %PR 1 St 1
 
 %Introduction - Troposphere is a problem. Define troposphere. st 1
-The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the atmospheric layer of the troposphere, which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components, including primary gases (e.g. $\rm N_2$ and  $\rm O_2$), trace gases (e.g. water vapour and ${\rm CO_2}$), as well as particulates of water droplets a3nd dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case beginning with insights from the fundamentals of electromagnetic propagation, followed by a review of atmospheric corruptions in the sub-mm regime. We then firm up our theory with a discussion on atmospheric radiative transfer and atmospheric turbulence. 
+The coherence and intensity of millimetre wavelength electromagnetic waves are most severely deteriorated in the atmospheric layer of the troposphere, which extends up to an altitude of $7-10$~km above sea level and down to a temperature $T \sim 218$~K \citep{Thompson_2001}. The troposphere is composed of a number of different components, including primary gases (e.g. $\rm N_2$ and  $\rm O_2$), trace gases (e.g. water vapour and ${\rm CO_2}$), as well as particulates of water droplets and dust. The rest of this section will explore the tropospheric corruption for the mm-VLBI case beginning with insights from the fundamentals of electromagnetic propagation, followed by a review of atmospheric corruptions in the sub-mm regime. We then firm up our theory with a discussion on atmospheric radiative transfer and atmospheric turbulence. 
 
 
 \subsubsection{Propagation fundamentals}\label{sec:prop_fund}
@@ -390,7 +390,7 @@ Consider a quasi-monochromatic wave passing through a linear medium,
 \begin{equation}
 E_\nu(x,t) = E_0 e^{i(kn_\nu x - 2\pi\nu t)},
 \end{equation}		
-where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R} + j n_{\rm I}$ is the complex index of refraction. Note that we will occasionally omit the frequency dependence of $n$ and related quantities to simplify the notation. If $n_{\rm I}$ is nonzero, the electric flux $I$ will decay exponentially
+where $k=2\pi \nu/c$ is the propagation constant in free space and $n= n_{\rm R} + j n_{\rm I}$ is the complex index of refraction. Note that we will occasionally omit the frequency dependence of $n$ and related quantities to simplify the notation. If $n_{\rm I}$ is non-zero, the electric flux $I$ will decay exponentially
 \begin{equation}
 I = EE^\ast = E_0^2 \exp(-\tau),
 \end{equation}
@@ -400,7 +400,7 @@ where $\tau$ is called the opacity or optical depth and is related to the absorp
 \end{equation}
 
 %the relationship between delay-absorption-noise st 1
-In the interferometric context opacity and time delay are often viewed independently. However, the electric field is real and causal which imposes restrictions on the complex refractive index. Specificially $n_{\rm R}$ and $n_{\rm I}$ contain the same information and can be interchanged via the Kramers-Kronig relations. 
+In the interferometric context opacity and time delay are often viewed independently. However, the electric field is real and causal which imposes restrictions on the complex refractive index. Specifically $n_{\rm R}$ and $n_{\rm I}$ contain the same information and can be interchanged via the Kramers-Kronig relations. 
 
 Absorption is accompanied by emission and for a medium in local thermodynamic equilibrium, Kirchoff's law states that 
 \begin{equation}\label{kirchoff}
@@ -434,14 +434,14 @@ The water vapour column density is measured as the depth of the column when conv
 
 \noindent where $w$ is the depth of the PWV column \citep*{Carilli_1999} and an atmospheric temperature $T=270$~K has been assumed. This relationship between phase and water vapour content has been experimentally verified \citep{hogg_1981}. At 230~GHz, the change in PWV needed to offset the phase by 1~rad is $\Delta w\approx0.03$~mm (again, assuming $t=270$~K). 
 
-This sensitive dependence of phase coherence on atmospheric stability is aggravated by three factors. Firstly, antenna elevation angles are typically fairly low for EHT observations which increases the atmospheric path length. Secondly, as stations are far apart ($\gg 100$~km~$\gg r_{\rm out}$) the atmospheric variations are uncorrelated between stations, this increases visibility decoherence as atmospheric variations appearing in both terms of equation~\ref{eq:phase_ref} fall away. Thirdly, observing with fewer stations provides fewer constraints on unknown complex gains and therefore a smaller fraction of retrievable instrinsic information \citep{Thompson_2001}.
+This sensitive dependence of phase coherence on atmospheric stability is aggravated by three factors. Firstly, antenna elevation angles are typically fairly low for EHT observations which increases the atmospheric path length. Secondly, as stations are far apart ($\gg 100$~km~$\gg r_{\rm out}$) the atmospheric variations are uncorrelated between stations, this increases visibility decoherence as atmospheric variations appearing in both terms of equation~\ref{eq:phase_ref} fall away. Thirdly, observing with fewer stations provides fewer constraints on unknown complex gains and therefore a smaller fraction of retrievable intrinsic information \citep{Thompson_2001}.
 
 
 \subsubsection{Radiative transfer}\label{sec:atm_theory}
 %St 1
 
 %Radiative transfer, how solving it will give observables in a self-consistent manner st 1
-The problem of radiative transfer through a static atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) software \citep{Pardo_2001}. \textsc{atm} has been incorporated into \textsc{MeqSilhouette} to provide a fast and sophisticated procedure to calculate average opacities, sky brightness temperatures and time delays. Here we provide a brief summary of the theory underpinning the package but refer the reader to \citet{Pardo_2001} for more detail. \textsc{atm} is commonly used in the Atacama Large Millimeter Array (ALMA) community \citep[e.g.][]{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
+The problem of radiative transfer through a static atmosphere is well described and implemented by the Atmospheric Transmission at Microwaves (\textsc{atm}) software \citep{Pardo_2001}. \textsc{atm} has been incorporated into \textsc{meqsilhouette} to provide a fast and sophisticated procedure to calculate average opacities, sky brightness temperatures and time delays. Here we provide a brief summary of the theory underpinning the package but refer the reader to \citet{Pardo_2001} for more detail. \textsc{atm} is commonly used in the Atacama Large Millimeter Array (ALMA) community \citep[e.g.][]{Curtis_2009,Nikolic_2013} and has been tested with atmospheric transmission spectra taken on Mauna Kea \citep{Serabyn_1998}.
 
 %Radiative transfer st 1
 We start from the unpolarised radiative transfer equation, which is unidirectional in the absence of scattering,
@@ -472,7 +472,7 @@ where $|u>$, $|l>$,$|\mu>$ are the wavefunctions of upper and lower states and t
 \end{equation}
 where the partition function, $Q = \sum_i g_i  \exp{-E_n/kT}$. 
 %inner product st 1
-Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation~\ref{coefficient}, operators which describe linearly symmetric rotors (e.g. ${\rm O_2}$, ${\rm CO}$) and asymetric rotors are used. The asymetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
+Transition lines at radio wavelengths result from rotational state transitions. To calculate the inner product given in equation~\ref{coefficient}, operators which describe linearly symmetric rotors (e.g. ${\rm O_2}$, ${\rm CO}$) and asymmetric rotors are used. The asymmetric rotations are decomposed into three principal rotation axes with differing rotational constants governing each axis. Rotational constants were measured by the authors as well as drawn from a variety of literature. Partition functions and transition probability are calculated using approximations taken from the literature.
  
 
 %lineshapes and pseudocontina st 1 
@@ -494,9 +494,9 @@ In this section we will review and develop the weak scattering theory introduced
 
 
 %Following from scattering intro, weak scattering model setup st 1
-Following from section~\ref{sec:basic_scat}, we model the statistics of $\delta \phi(t,\nu)$ with a thin, frozen, Kolomogorov-turbulent phase screen moving with a bulk velocity, $v$. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth, however note that dispersion is taken into account in the mean atmospheric component. The frequence dependence of $\delta \phi(t,\nu)$ is omitted for the remainder of this section.
+Following from section~\ref{sec:basic_scat}, we model the statistics of $\delta \phi(t,\nu)$ with a thin, frozen, Kolomogorov-turbulent phase screen moving with a bulk velocity, $v$. At mm-wavelengths, the spectrum of water vapour is non-dispersive up to a few percent \citep{Curtis_2009} and so we can assume a simple linear scaling across the bandwidth, however note that dispersion is taken into account in the mean atmospheric component. The frequency dependence of $\delta \phi(t,\nu)$ is omitted for the remainder of this section.
 %Discussion on thickness of turbulent layer st3
-However, the turbulent layer has a finite width $\Delta h$ and outer scale $r_{\rm out}$. Both Kolmorogov theory and measurement \citep[Fig.~\ref{fig:screentransition},][]{Coulman_1985, Treuhaft_1987, Carilli_1997} show that $\beta$ should move continously through approximately three regimes,
+However, the turbulent layer has a finite width $\Delta h$ and outer scale $r_{\rm out}$. Both Kolmorogov theory and measurement \citep[Fig.~\ref{fig:screentransition},][]{Coulman_1985, Treuhaft_1987, Carilli_1997} show that $\beta$ should move continuously through approximately three regimes,
 \begin{equation}
  \beta = \left\{
  \begin{array}{rl}
@@ -513,7 +513,7 @@ In Fig.~\ref{fig:screentransition} we can see estimations of $\Delta h \approx 1
 \begin{figure*}
 \begin{center}
 \includegraphics[width=\columnwidth]{Images/screentransition}
-\caption[A log-log plot of RMS visibility phase versus baseline length for an observation of 1~Jy source, showing the different turbulent regimes.]{A log-log plot of RMS visibility phase versus baseline length for an observation of 1~Jy source 0748~+~240 with VLA at 22~GHz over a 90~min duration. The open circles show RMS phase as measured whereas the solid squares show the same values with a constant thermal noise contribution of $10^\circ$ subtracted in quadrature. Note that the measured and theoretical Kolmogorov turbulent exponent $\beta$ changes with distance on the phase screen as the viewing configuration transitions from a ``thick screen'' ($\beta_{\rm theory} = 5/3$) to a ``thin screen'' ($\beta_{\rm theory} = 2/3$) at $r \approx 1$~km and from a thin screen to completely uncorrelated regime ($\beta = 0$) beyond the outer scale at $r \approx 6$~km. Although these regimes appear distinct, there is continous variation between them. Note that the term ``thin'' screen in this figure and caption have a different meaning to the ``thin screen model'' we have employed to model the turbulence, as our ``thin screen model''  is in effect simulating 3D turbulence ($\beta_{\rm theory} = 5/3$). Reproduced from \citet*{Carilli_1997} \label{fig:screentransition}
+\caption[A log-log plot of RMS visibility phase versus baseline length for an observation of 1~Jy source, showing the different turbulent regimes.]{A log-log plot of RMS visibility phase versus baseline length for an observation of 1~Jy source 0748~+~240 with VLA at 22~GHz over a 90~min duration. The open circles show RMS phase as measured whereas the solid squares show the same values with a constant thermal noise contribution of $10^\circ$ subtracted in quadrature. Note that the measured and theoretical Kolmogorov turbulent exponent $\beta$ ($\alpha$ in the plot) changes with distance on the phase screen as the viewing configuration transitions from a ``thick screen'' ($\beta_{\rm theory} = 5/3$) to a ``thin screen'' ($\beta_{\rm theory} = 2/3$) at $r \approx 1$~km and from a thin screen to completely uncorrelated regime ($\beta = 0$) beyond the outer scale at $r \approx 6$~km. Although these regimes appear distinct, there is continuous variation between them. Note that the term ``thin'' screen in this figure and caption have a different meaning to the ``thin screen model'' we have employed to model the turbulence, as our ``thin screen model''  is in effect simulating 3D turbulence ($\beta_{\rm theory} = 5/3$). Reproduced from \citet*{Carilli_1997} \label{fig:screentransition}
 }
 \end{center}
 \end{figure*}
@@ -524,7 +524,7 @@ In Fig.~\ref{fig:screentransition} we can see estimations of $\Delta h \approx 1
 
 
 %simplifying the scattering model st 1
-The required field-of-view (FoV) of a global mm-VLBI array is typically $FWHM < 1$~marcsec or $\sim10~\mu$-m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modeled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\bm{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently. This assumption only holds for VLBI baselines and the framework needs to be extended to simulate the effects of turbulence on individual phased arrays stations (e.g. SMA) and short ($<10$~km) baselines (e.g. JCMT - SMA).'' 
+The required field-of-view (FoV) of a global mm-VLBI array is typically $FWHM < 1$~marcsec or $\sim10~\mu$-m at a height of 2~km, which is roughly 7-8 orders of magnitude smaller than the tropospheric coherence length. The tropospheric corruption can therefore be considered constant across the FoV and, from the perspective of the Measurement Equation, modelled as a diagonal Jones matrix per time and frequency interval. As VLBI baselines are much longer than the coherence length, $|\bm{b}| \ge 1000$~km~$\gg \rm r_0$, the phase screen at each site must be simulated independently. This assumption only holds for VLBI baselines and the framework needs to be extended to simulate the effects of turbulence on individual phased arrays stations (e.g. SMA) and short ($<10$~km) baselines (e.g. JCMT - SMA).'' 
 \citep{Blecher_2016}
 \end{quotation}
 In principle, this could be approximated by assuming a time-variable phase efficiency for the phased array stations, however this is for future work.
@@ -563,8 +563,7 @@ Hence we can write $\left\{\delta \phi(t_i)\right\}$ as a Gaussian random walk f
 
 %plan
 All instruments suffer from both systematic and stochastic errors, the characterisation of which determines the measurement accuracy and precision respectively. In this section we explore thermal noise (stochastic) and antenna pointing errors (systematic). 
-%completeness and classes of corruptions
-%While there are many additional potential sources of error (e.g. clock errors, bandpass, polarisation leakage, phasing errors, quantisation, correlator model, etc.), the primary aim here is to demonstrate the mm-VLBI framework that enables more sophisticated interferometric simulations. The Measurement Equation formalism enables any arbitrary linear error to be incorporated as a Jones Matrix, for example, a bandpass error would be a frequency-dependent diagonal Jones matrix.
+
 
 \subsubsection{Thermal Noise}
 %Pr 1 St 1
@@ -575,7 +574,7 @@ The level of thermal noise of the measurement defines the absolute limit on the 
 \begin{equation}
  \Delta S_{\rm ij} = \frac{1}{\eta_{\rm s}}\sqrt{\frac{SEFD_{\rm i}\ SEFD_{\rm j}}{2 \Delta \nu t_{\rm int}}},  
 \end{equation}
-where $\eta_{\rm s}$ is the system efficiency and $2 \Delta \nu t_{\rm int}$ is the number of independent samples. The $SEFD$ is a measure of the sensitivity of an antenna, accounting for the effiency, collecting area and instrumental noise and is defined as the flux density of a source with the same power,
+where $\eta_{\rm s}$ is the system efficiency and $2 \Delta \nu t_{\rm int}$ is the number of independent samples. The $SEFD$ is a measure of the sensitivity of an antenna, accounting for the efficiency, collecting area and instrumental noise and is defined as the flux density of a source with the same power,
 \begin{equation}
  SEFD = 2 k_{\rm B} T_{\rm sys} / (\eta_{\rm a} A),
 \end{equation}\label{eq:sefd}
@@ -614,4 +613,4 @@ We identify two main classes of pointing error. Firstly, an antenna tracking a s
 Secondly, whilst a stationary phase centre is tracked, the pointing error should evolve slowly and smoothly, however, in mm-VLBI observations the phase centre is often shifted to another source/calibrator. This would cause the pointing error to change abruptly, with an absolute pointing error $\sim \sigma_{\rm abs}$. Source/calibrator change is scheduled every 5-10 minutes in a typical millimetre observation. The point is that even though EHT will be able to determine the pointing offset when observing a calibrator with relatively well-known structure, when the antennas slew back to a source (e.g. Sgr~A$^\star$) with less certain or variable source structure, the pointing error could change significantly. This is exacerbated by the scarcity of mm-wavelength calibrators, which are often widely separated from the source. In Chapter 4 we present the results of this.
 
 
-The ability to simulate an effect as sophisticated as time-dependent primary beams demonstrates the capability and potential of {\sc meqsilhouette} to incorporate analagous or arbitary instrumental effects. 
+The ability to simulate an effect as sophisticated as time-dependent primary beams demonstrates the capability and potential of {\sc meqsilhouette} to incorporate analogous or arbitrary instrumental effects. 

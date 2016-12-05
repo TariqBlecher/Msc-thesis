@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.2.2.4}{Instrumental}{section.2.2}% 22
 \BOOKMARK [0][-]{chapter.3}{Software implementation}{}% 23
 \BOOKMARK [1][-]{section.3.1}{Design objectives}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.2}{Architechure and Workflow}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Architecture and Workflow}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.2.1}{ISM scattering}{section.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.2.2}{Atmospheric corruption simulator}{section.3.2}% 27
 \BOOKMARK [2][-]{subsection.3.2.3}{Antenna pointing error simulator}{section.3.2}% 28
