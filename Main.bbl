@@ -1,4 +1,4 @@
-\begin{thebibliography}{123}
+\begin{thebibliography}{122}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -692,13 +692,6 @@ J.~C. {McKinney}, A.~{Tchekhovskoy}, A.~{Sadowski}, and R.~{Narayan}.
   code HARMRAD with M1 closure}.
 \newblock \emph{\mnras}, 441:\penalty0 3177--3208, July 2014.
 \newblock \doi{10.1093/mnras/stu762}.
-
-\bibitem[{Melia}(1994)]{Melia_1994}
-F.~{Melia}.
-\newblock {An accreting black hole model for Sagittarius A(*). 2: A detailed
-  study}.
-\newblock \emph{\apj}, 426:\penalty0 577--585, May 1994.
-\newblock \doi{10.1086/174094}.
 
 \bibitem[{Merloni} et~al.(2003){Merloni}, {Heinz}, and {di
   Matteo}]{Merloni_2003}
