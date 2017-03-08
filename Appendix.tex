@@ -12,7 +12,7 @@ The {\sc meqsilhouette} repository is currently private, however if made public 
  \item {\sc Scatterbrane}\footnote{http://krosenfeld.github.io/scatterbrane}
 \end{itemize}
 
-Note that {\sc simms} in turn requires {\sc casa}, where we have had success with version 4.2.2. Several different routes for the installation of {\sc MeqTrees} are available\footnote{https://github.com/ska-sa/meqtrees/wiki/Installation}. As {\sc aatm} is not currently being maintained or easily available, we include it within the {\sc meqsilhouette} repository. 
+Note that {\sc simms} in turn requires {\sc casa}, where we have had success with version 4.2.2. Several different routes for the installation of {\sc MeqTrees} are available\footnote{https://github.com/ska-sa/meqtrees/wiki/Installation}. As {\sc atm} is not currently being maintained or easily available, we include it within the {\sc meqsilhouette} repository. 
 
 
 Once the {\sc meqsilhouette} repository has been cloned, either add the framework module to the PYTHONPATH directly or install using pip,
@@ -35,7 +35,7 @@ $python driver/azishe.py input/parameters.json
 
 
 %Experimenting with parameters
-The content of the parameter dictionary is shown, slightly altered, in table~\ref{tab:parameters}. The parameters in the dictionary are can be edited directly. 
+The content of the parameter dictionary is shown, slightly altered, in table~\ref{tab:parameters}. The parameters in the dictionary can be edited directly. 
 
 %logging
 The primary log is set by `v.LOG' variable, initialised in the driver script. If the variable is commented out, the logs will display to screen. 
@@ -96,7 +96,7 @@ Often it is useful to perform iterations of subset of steps of the standard pipe
 
 
 
-If additional instrumental corruptions are implemented, this should be within the TropMS class for consistency. Also it is important that the pipeline respects the causality of signal transmission path and/or the commutativity of Jones-matricies.
+If additional instrumental corruptions are implemented, this should be within the TropMS class for consistency. Also it is important that the pipeline respects the causality of signal transmission path and/or the commutativity of Jones-matrices.
 
 
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{122}
+\begin{thebibliography}{124}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -73,6 +73,19 @@ R.~D. {Blandford} and M.~C. {Begelman}.
 \newblock \emph{\mnras}, 303:\penalty0 L1--L5, February 1999.
 \newblock \doi{10.1046/j.1365-8711.1999.02358.x}.
 
+\bibitem[{Blandford} and {Payne}(1982)]{Blandford_1982}
+R.~D. {Blandford} and D.~G. {Payne}.
+\newblock {Hydromagnetic flows from accretion discs and the production of radio
+  jets}.
+\newblock \emph{\mnras}, 199:\penalty0 883--903, June 1982.
+\newblock \doi{10.1093/mnras/199.4.883}.
+
+\bibitem[{Blandford} and {Znajek}(1977)]{Blandford_1977}
+R.~D. {Blandford} and R.~L. {Znajek}.
+\newblock {Electromagnetic extraction of energy from Kerr black holes}.
+\newblock \emph{\mnras}, 179:\penalty0 433--456, May 1977.
+\newblock \doi{10.1093/mnras/179.3.433}.
+
 \bibitem[{Blecher} et~al.(2016){Blecher}, {Deane}, {Bernardi}, and
   {Smirnov}]{Blecher_2016}
 T.~{Blecher}, R.~{Deane}, G.~{Bernardi}, and O.~{Smirnov}.
@@ -102,6 +115,15 @@ G.~C. {Bower}, H.~{Falcke}, R.~M. {Herrnstein}, J.-H. {Zhao}, W.~M. {Goss}, and
 \newblock \emph{Science}, 304:\penalty0 704--708, April 2004.
 \newblock \doi{10.1126/science.1094023}.
 
+\bibitem[{Bower} et~al.(2014){Bower}, {Deller}, {Demorest}, {Brunthaler},
+  {Eatough}, {Falcke}, {Kramer}, {Lee}, and {Spitler}]{Bower_2014}
+G.~C. {Bower}, A.~{Deller}, P.~{Demorest}, A.~{Brunthaler}, R.~{Eatough},
+  H.~{Falcke}, M.~{Kramer}, K.~J. {Lee}, and L.~{Spitler}.
+\newblock {The Angular Broadening of the Galactic Center Pulsar SGR J1745-29: A
+  New Constraint on the Scattering Medium}.
+\newblock \emph{\apjl}, 780:\penalty0 L2, January 2014.
+\newblock \doi{10.1088/2041-8205/780/1/L2}.
+
 \bibitem[Bower et~al.(2006)Bower, Goss, Falcke, Backer, and
   Lithwick]{Bower_2006}
 Geoffrey~C. Bower, W.~M. Goss, Heino Falcke, Donald~C. Backer, and Yoram
@@ -110,14 +132,6 @@ Geoffrey~C. Bower, W.~M. Goss, Heino Falcke, Donald~C. Backer, and Yoram
 \newblock \emph{{ApJ}}, 648\penalty0 (2):\penalty0 L127--L130, aug 2006.
 \newblock \doi{10.1086/508019}.
 \newblock URL \url{http://dx.doi.org/10.1086/508019}.
-
-\bibitem[Bower et~al.(2013)Bower, Deller, Demorest, Brunthaler, Eatough,
-  Falcke, Kramer, Lee, and Spitler]{Bower_2014}
-Geoffrey~C Bower, Adam Deller, Paul Demorest, Andreas Brunthaler, Ralph
-  Eatough, Heino Falcke, Michael Kramer, KJ~Lee, and Laura Spitler.
-\newblock The angular broadening of the galactic center pulsar sgr j1745-29: A
-  new constraint on the scattering medium.
-\newblock \emph{{ApJ}}, 780\penalty0 (1):\penalty0 L2, 2013.
 
 \bibitem[{Brink} et~al.(2015){Brink}, {Geyer}, and {Hinderer}]{Brink_2015}
 J.~{Brink}, M.~{Geyer}, and T.~{Hinderer}.

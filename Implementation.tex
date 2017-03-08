@@ -30,7 +30,7 @@ We have chosen to write the high level simulation code using the \textsc{Python}
 %Meqtrees-description
 We use the interferometric toolbox, {\sc MeqTrees} \citep{Noordam_2010}, which can simulate and calibrate radio interferometric data through evaluation of a user-defined RIME. The evaluation draws on directed-acyclic-graphs (or compute trees) where each element of the graph can process a multi-dimensional grid of values (typically specified along axes of $\nu$ and $t$).
 %our usuage of it
-Although we have decided to construct a large portion of our RIME outside of {\sc MeqTrees}, we call pre-built {\sc MeqTrees} RIMEs to augment our pipeline in two ways. Firstly to perform the Fourier transform  to generate visibilities from the input sky model (FFT for fits files; DFT for parametric sources), where degridding and interpolation steps are also called when the FFT is used. The second is to simulate the primary beam and antenna pointing error, which will be discussed later in this chapter. On a side note, use of \textsc{MeqTrees} and \textsc{measurement set} also lends itself to investigating a range of different techniques that are used in other areas of interferometry \citep*[e.g.][]{Smirnov_2015}.
+Although we have decided to construct a large portion of our RIME outside of {\sc MeqTrees}, we call pre-built {\sc MeqTrees} RIMEs to augment our pipeline in two ways. Firstly to perform the Fourier transform  to generate visibilities from the input sky model (Fast Fourier Transform (FFT) for fits files; Direct Fourier Transform (DFT), i.e. an analytic calculation, for parametric sources), where degridding and interpolation steps are also called when the FFT is used. The second is to simulate the primary beam and antenna pointing error, which will be discussed later in this chapter. On a side note, use of \textsc{MeqTrees} and \textsc{measurement set} also lends itself to investigating a range of different techniques that are used in other areas of interferometry \citep*[e.g.][]{Smirnov_2015}.
 
 
 %data format choice
@@ -128,7 +128,7 @@ The primary outputs of the pipeline are an interferometric dataset in MS format 
 
 %Framework - details %st 1
 %ms creation 
-An important step to reproduce realistic observations is to be able create a comprehensive {\sc ms} with arbitrary scan lengths, start times, channel and bandwidth structure. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use command line interface to construct a general MS, given the appropriate antenna table. The call to {\sc simms} is located within the driver script. 
+An important step to reproduce realistic observations is to be able to create a comprehensive {\sc ms} with arbitrary scan lengths, start times, channel and bandwidth structure. This is performed using the {\sc simms}\footnote{https://github.com/radio-astro/simms} tool. {\sc simms} provides an easy to use command line interface to construct a general MS, given the appropriate antenna table. The call to {\sc simms} is located within the driver script. 
 
 %%Class diagram
 % Calculation and & back end & object orientation
@@ -159,7 +159,7 @@ We include the {\sc ScatterBrane} software, which has already yielded important 
 \item $\Delta t_{\rm ism}=\Delta t_{\rm src}$ \qquad \qquad if \qquad  $\Delta t_{\rm src} < \Delta t_{\rm ism}$
 \item $\Delta t_{\rm ism}={\rm R}(\frac{\Delta t_{\rm src}}{\Delta t_{\rm ism}})\Delta t_{\rm src}$ \ if \qquad  $\Delta t_{\rm src} > \Delta t_{\rm ism}$,
 \end{itemize}
-where ${\rm R}$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.  {\sc ScatterBrane} allows the $N_{\rm pix}$ parameter (see table~\ref{tab:parameters}) to be a 2-tuple. i.e. a rectangular screen can be created which can then moved over square source images. In {\sc meqsilhouette} the ratio of sides needed is calculated automatically given the sky models and the screen parameters, hence the $N_{\rm pix}$ parameter need only be an integer in the parameter dictionary. 
+where ${\rm R}$ rounds the fraction to the nearest integer.  This modification to the ISM sampling resolution avoids interpolation between different snapshots of the intrinsic source structure.  {\sc ScatterBrane} allows the $N_{\rm pix}$ parameter (see table~\ref{tab:parameters}) to be a 2-tuple. i.e. a rectangular screen can be created which can then moved over square source images. In {\sc meqsilhouette} the ratio of sides needed is calculated automatically given the sky models and the screen parameters, hence the $N_{\rm pix}$ parameter needs only to be an integer in the parameter dictionary. 
 
 
 \subsection{Atmospheric corruption simulator}\label{sec:trop_imp}
