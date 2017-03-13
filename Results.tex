@@ -149,33 +149,19 @@ For this simulation we use three different pointing error models, as introduced 
 
 
 
-
-%\subsubsection{Performance?}
-%Performance/speed
-
-
-
-%\section{Fringe-fitting test}
-%leave until done
-%First we fringe fit and image a stationary point source and compare to the result in Fig.~\ref{fig:trop_images}. 
-% In an upcoming paper, we perform a systematic exploration of the turbulent tropospheric effects on the accuracy of fringe-fitting algorithms/strategies, through use of an automated calibration procedure and including the added complexity of a time-variable source.
-
-
 \section{Future work and other applications}\label{sec:improv}
 
 \subsubsection{Anomalous pointing error}
-There is another class of antenna pointing error which we did not include in our simulation, but which should be folded in through a combination of the tropospheric and antenna pointing modules. This effect is called `anomalous refraction' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the dish diameter $d_{\rm dish}$ (i.e. a wedge) and hence will be a function of $D_{\phi}(d_{\rm dish})$. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $d_{\rm dish}$ is the diameter of the aperture.  
+There is another class of antenna pointing error which we did not include in our simulation, but which should be folded in through a combination of the tropospheric and antenna pointing modules. This effect is called `anomalous refraction' and is due to the time-variable phase-gradient across the aperture \citep[e.g.][]{Holdaway_1997,Butler_1997,Holdaway_1998}. This is essentially the first order fluctuation in water vapour across the dish diameter $d_{\rm dish}$ (i.e. a wedge) and hence will be a function of $D_{\phi}(d_{\rm dish})$, where $d_{\rm dish}$ is the diameter of the aperture. These are pointing errors which will change on the timescale $d_{\rm dish}/v \sim 1-50$~s for $10<d_{\rm dish}<50$~m and $1<v<10$~m/s, where $v$ is the speed of the phase screen.  
 
 \citet{Holdaway_1998} derive the standard deviation of the pointing error as a fraction of beam width,
 \begin{equation}
  \sigma_{\rm pe}(d_{\rm dish},\theta) = \frac{\sqrt{2 D_l(d_{\rm dish})}}{\sqrt{\sin\theta}\lambda},
 \end{equation}
-where $\theta$ is the elevation angle, $l$ is the extra electric path length and $D_l$ is the path length structure function. Hence in terms of fractional beam size, the effect goes as $d_{\rm dish}^{\beta/2}$ and hence the effect for large dishes will be larger amplitude variations over longer time periods. 
+where $\theta$ is the elevation angle, $\beta$ is the turbulent exponent, $l$ is the extra electric path length and $D_l$ is the path length structure function, defined analogous to $D_\phi$. Hence in terms of fractional beam size, the effect goes as $d_{\rm dish}^{\beta/2}$ and hence the effect for large dishes will be larger amplitude variations over longer time periods. 
 
 
-Estimates of $\sigma_{\rm pe}$ shown in \citet{Holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere.  
-
-Apertures which are fitted with water vapour radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT stations are currently not fitted with radiometers and hence this effect could prove challenging to calibrate.
+Estimates of $\sigma_{\rm pe}$ shown in \citet{Holdaway_1998} range between $0.48-3.68$-arcsec, where the lower bound was calculated for an 8m dish, observing at zenith with relatively stable atmosphere and the upper bound was calculated for a 15m dish observing at $10^\circ$ with a relatively unstable atmosphere. Apertures which are fitted with water vapour radiometers are able to track the PWV distribution across the primary beam \citep{Lamb_1998}. However, most of the EHT stations are currently not fitted with radiometers and hence this effect could prove challenging to calibrate.
 
 \subsubsection{Testing calibration, imaging and parameter estimation}
 
@@ -211,10 +197,6 @@ Table~\ref{tab:parameters} shows the set of parameters needed to run a standard 
 %st 1
 One of the key observables for the EHT is polarisation dependent quantities \citep{Johnson_2015b}. Although this version focused only on total intensity, if {\sc meqsilhouette} is taken up by members of the community, subsequent versions will enable the full Stokes cube as input. This should not entail much work given the RIME formalism and our chosen data formats ({\sc ms}, {\sc fits}) as well as the FFT and UV sampling routine in {\sc MeqTrees} already support full Stokes logic including parallactic angle rotation. Signal propagation at high frequencies through the ISM and troposphere as well as antenna based complex gain errors are largely polarisation independent. The work would primarily involve altering the existing scripts to deal with the book-keeping of the extra dimension. In addition, the implementation of the associated signal corruption, polarisation leakage, is straightforward in the RIME formalism as it is simply an off-diagonal Jones matrix which is typically approximately constant over the course of an observation \citep{Johnson_2015b}. Another aspect important to the EHT, is the capability to simulate both linear and circular feeds. This is also straightforward to accomplish, as the RIME would have to be written out in linear coordinates as usual, but have an extra conversion matrix (H-Jones, H for hybrid) at the antennas with circular feeds.
 
-%\subsubsection{Opacity and atmospheric brightness temperature fluctuations}
-% basically 
-%In addition to tropospheric turbulence-induced phase errors, the turbulent contribution to variations in opacity is also important.
-%Run multiple realisations of atm to link the phase fluctuations to opacity and brightness temperature fluctuations %possibly by fluctuating the input climate parameters., but this might be unfeasible.
 
 
 
